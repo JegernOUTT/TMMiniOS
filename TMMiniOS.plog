@@ -1,0 +1,2849 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="Solution_Path">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="SolutionPath" type="xs:string" minOccurs="0" />
+                <xs:element name="SolutionVersion" type="xs:string" minOccurs="0" />
+                <xs:element name="PlogVersion" type="xs:unsignedInt" minOccurs="0" />
+                <xs:element name="ModificationDate" msdata:DateTimeMode="Utc" type="xs:dateTime" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="PVS-Studio_Analysis_Log">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="FavIcon" type="xs:boolean" minOccurs="0" />
+                <xs:element name="Level" type="xs:unsignedInt" minOccurs="0" />
+                <xs:element name="DefaultOrder" type="xs:int" minOccurs="0" />
+                <xs:element name="ErrorCode" type="xs:string" minOccurs="0" />
+                <xs:element name="Message" type="xs:string" />
+                <xs:element name="Project" type="xs:string" minOccurs="0" />
+                <xs:element name="ShortFile" type="xs:string" minOccurs="0" />
+                <xs:element name="Line" type="xs:int" />
+                <xs:element name="FalseAlarm" type="xs:boolean" minOccurs="0" />
+                <xs:element name="File" type="xs:string" />
+                <xs:element name="CodePrev" type="xs:unsignedInt" minOccurs="0" />
+                <xs:element name="CodeCurrent" type="xs:unsignedInt" minOccurs="0" />
+                <xs:element name="CodeNext" type="xs:unsignedInt" minOccurs="0" />
+                <xs:element name="TrialMessage" type="xs:boolean" minOccurs="0" />
+                <xs:element name="Analyzer" type="xs:int" minOccurs="0" />
+                <xs:element name="LineExtension" type="xs:string" minOccurs="0" />
+                <xs:element name="Retired" type="xs:boolean" default="false" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+      <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+        <xs:selector xpath=".//PVS-Studio_Analysis_Log" />
+        <xs:field xpath="Line" />
+        <xs:field xpath="Message" />
+        <xs:field xpath="File" />
+      </xs:unique>
+    </xs:element>
+  </xs:schema>
+  <Solution_Path>
+    <SolutionPath>D:\Projects\ASU\ICPDAS\TMMiniOS\TMMiniOS.sln</SolutionPath>
+    <SolutionVersion>11.0</SolutionVersion>
+    <PlogVersion>3</PlogVersion>
+    <ModificationDate>2015-08-26T08:32:47.6356659Z</ModificationDate>
+  </Solution_Path>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>1</DefaultOrder>
+    <ErrorCode>V677</ErrorCode>
+    <Message>Custom declaration of a standard 'size_t' type. The system header file should be used: #include &lt;CRTDEFS.H&gt;.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>headersinclude.h</ShortFile>
+    <Line>38</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\headersinclude.h</File>
+    <CodePrev>3651483476</CodePrev>
+    <CodeCurrent>1551887047</CodeCurrent>
+    <CodeNext>0</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>4</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>3</Level>
+    <DefaultOrder>2</DefaultOrder>
+    <ErrorCode>V126</ErrorCode>
+    <Message>Be advised that the size of the type 'long' varies between LLP64/LP64 data models.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>headersinclude.h</ShortFile>
+    <Line>62</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\headersinclude.h</File>
+    <CodePrev>123</CodePrev>
+    <CodeCurrent>2602612450</CodeCurrent>
+    <CodeNext>123</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>3</Level>
+    <DefaultOrder>3</DefaultOrder>
+    <ErrorCode>V126</ErrorCode>
+    <Message>Be advised that the size of the type 'long' varies between LLP64/LP64 data models.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>headersinclude.h</ShortFile>
+    <Line>69</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\headersinclude.h</File>
+    <CodePrev>45563833</CodePrev>
+    <CodeCurrent>19397035</CodeCurrent>
+    <CodeNext>193</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>3</Level>
+    <DefaultOrder>4</DefaultOrder>
+    <ErrorCode>V126</ErrorCode>
+    <Message>Be advised that the size of the type 'long' varies between LLP64/LP64 data models.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>headersinclude.h</ShortFile>
+    <Line>94</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\headersinclude.h</File>
+    <CodePrev>123</CodePrev>
+    <CodeCurrent>3085645962</CodeCurrent>
+    <CodeNext>123</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>3</Level>
+    <DefaultOrder>5</DefaultOrder>
+    <ErrorCode>V126</ErrorCode>
+    <Message>Be advised that the size of the type 'long' varies between LLP64/LP64 data models.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>headersinclude.h</ShortFile>
+    <Line>99</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\headersinclude.h</File>
+    <CodePrev>125</CodePrev>
+    <CodeCurrent>18935</CodeCurrent>
+    <CodeNext>2868593</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>3</Level>
+    <DefaultOrder>6</DefaultOrder>
+    <ErrorCode>V126</ErrorCode>
+    <Message>Be advised that the size of the type 'long' varies between LLP64/LP64 data models.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>headersinclude.h</ShortFile>
+    <Line>103</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\headersinclude.h</File>
+    <CodePrev>34039</CodePrev>
+    <CodeCurrent>11528823</CodeCurrent>
+    <CodeNext>193</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>3</Level>
+    <DefaultOrder>7</DefaultOrder>
+    <ErrorCode>V122</ErrorCode>
+    <Message>Memsize type is used in the struct/class.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>model.h</ShortFile>
+    <Line>31</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\model.h</File>
+    <CodePrev>0</CodePrev>
+    <CodeCurrent>125874497</CodeCurrent>
+    <CodeNext>890029</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>3</Level>
+    <DefaultOrder>8</DefaultOrder>
+    <ErrorCode>V122</ErrorCode>
+    <Message>Memsize type is used in the struct/class.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>model.h</ShortFile>
+    <Line>32</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\model.h</File>
+    <CodePrev>125874497</CodePrev>
+    <CodeCurrent>890029</CodeCurrent>
+    <CodeNext>0</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>3</Level>
+    <DefaultOrder>9</DefaultOrder>
+    <ErrorCode>V122</ErrorCode>
+    <Message>Memsize type is used in the struct/class.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>model.h</ShortFile>
+    <Line>106</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\model.h</File>
+    <CodePrev>0</CodePrev>
+    <CodeCurrent>3255390530</CodeCurrent>
+    <CodeNext>546639959</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>3</Level>
+    <DefaultOrder>10</DefaultOrder>
+    <ErrorCode>V122</ErrorCode>
+    <Message>Memsize type is used in the struct/class.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>model.h</ShortFile>
+    <Line>107</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\model.h</File>
+    <CodePrev>3255390530</CodePrev>
+    <CodeCurrent>546639959</CodeCurrent>
+    <CodeNext>86492449</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>3</Level>
+    <DefaultOrder>11</DefaultOrder>
+    <ErrorCode>V122</ErrorCode>
+    <Message>Memsize type is used in the struct/class.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>model.h</ShortFile>
+    <Line>125</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\model.h</File>
+    <CodePrev>0</CodePrev>
+    <CodeCurrent>867681089</CodeCurrent>
+    <CodeNext>0</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>3</Level>
+    <DefaultOrder>12</DefaultOrder>
+    <ErrorCode>V126</ErrorCode>
+    <Message>Be advised that the size of the type 'long' varies between LLP64/LP64 data models.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>model.h</ShortFile>
+    <Line>129</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\model.h</File>
+    <CodePrev>4720659</CodePrev>
+    <CodeCurrent>92233225</CodeCurrent>
+    <CodeNext>2951223855</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>3</Level>
+    <DefaultOrder>13</DefaultOrder>
+    <ErrorCode>V126</ErrorCode>
+    <Message>Be advised that the size of the type 'long' varies between LLP64/LP64 data models.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>model.h</ShortFile>
+    <Line>130</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\model.h</File>
+    <CodePrev>92233225</CodePrev>
+    <CodeCurrent>2951223855</CodeCurrent>
+    <CodeNext>151313</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>3</Level>
+    <DefaultOrder>14</DefaultOrder>
+    <ErrorCode>V122</ErrorCode>
+    <Message>Memsize type is used in the struct/class.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>model.h</ShortFile>
+    <Line>166</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\model.h</File>
+    <CodePrev>45270</CodePrev>
+    <CodeCurrent>216916725</CodeCurrent>
+    <CodeNext>0</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>3</Level>
+    <DefaultOrder>15</DefaultOrder>
+    <ErrorCode>V122</ErrorCode>
+    <Message>Memsize type is used in the struct/class.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>model.h</ShortFile>
+    <Line>198</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\model.h</File>
+    <CodePrev>11496</CodePrev>
+    <CodeCurrent>5749205</CodeCurrent>
+    <CodeNext>0</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>3</Level>
+    <DefaultOrder>16</DefaultOrder>
+    <ErrorCode>V126</ErrorCode>
+    <Message>Be advised that the size of the type 'long' varies between LLP64/LP64 data models.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>model.h</ShortFile>
+    <Line>211</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\model.h</File>
+    <CodePrev>183748969</CodePrev>
+    <CodeCurrent>19009649</CodeCurrent>
+    <CodeNext>3524687278</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>3</Level>
+    <DefaultOrder>17</DefaultOrder>
+    <ErrorCode>V126</ErrorCode>
+    <Message>Be advised that the size of the type 'long' varies between LLP64/LP64 data models.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>model.h</ShortFile>
+    <Line>212</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\model.h</File>
+    <CodePrev>19009649</CodePrev>
+    <CodeCurrent>3524687278</CodeCurrent>
+    <CodeNext>71865273</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>3</Level>
+    <DefaultOrder>18</DefaultOrder>
+    <ErrorCode>V126</ErrorCode>
+    <Message>Be advised that the size of the type 'long' varies between LLP64/LP64 data models.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>model.h</ShortFile>
+    <Line>217</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\model.h</File>
+    <CodePrev>2764681177</CodePrev>
+    <CodeCurrent>345573493</CodeCurrent>
+    <CodeNext>1732471532</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>3</Level>
+    <DefaultOrder>19</DefaultOrder>
+    <ErrorCode>V126</ErrorCode>
+    <Message>Be advised that the size of the type 'long' varies between LLP64/LP64 data models.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>model.h</ShortFile>
+    <Line>218</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\model.h</File>
+    <CodePrev>345573493</CodePrev>
+    <CodeCurrent>1732471532</CodeCurrent>
+    <CodeNext>1382340257</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>20</DefaultOrder>
+    <ErrorCode>V2005</ErrorCode>
+    <Message>C-style explicit type casting is utilized. Consider using: static_cast/const_cast/reinterpret_cast.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>eepromsettings.cpp</ShortFile>
+    <Line>20</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\eepromsettings.cpp</File>
+    <CodePrev>0</CodePrev>
+    <CodeCurrent>378629467</CodeCurrent>
+    <CodeNext>2707129</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>6</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>21</DefaultOrder>
+    <ErrorCode>V104</ErrorCode>
+    <Message>Implicit conversion of 'count' to memsize type in an arithmetic expression: properties + count</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>eepromsettings.cpp</ShortFile>
+    <Line>25</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\eepromsettings.cpp</File>
+    <CodePrev>123</CodePrev>
+    <CodeCurrent>113923640</CodeCurrent>
+    <CodeNext>125</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>22</DefaultOrder>
+    <ErrorCode>V2005</ErrorCode>
+    <Message>C-style explicit type casting is utilized. Consider using: static_cast/const_cast/reinterpret_cast.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>eepromsettings.cpp</ShortFile>
+    <Line>25</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\eepromsettings.cpp</File>
+    <CodePrev>123</CodePrev>
+    <CodeCurrent>113923640</CodeCurrent>
+    <CodeNext>125</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>6</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>3</Level>
+    <DefaultOrder>23</DefaultOrder>
+    <ErrorCode>V631</ErrorCode>
+    <Message>Consider inspecting the 'fopen' function call. Defining an absolute path to the file or directory is considered a poor style.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>eepromsettings.cpp</ShortFile>
+    <Line>68</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\eepromsettings.cpp</File>
+    <CodePrev>15491</CodePrev>
+    <CodeCurrent>1715752080</CodeCurrent>
+    <CodeNext>0</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>4</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>24</DefaultOrder>
+    <ErrorCode>V2005</ErrorCode>
+    <Message>C-style explicit type casting is utilized. Consider using: static_cast/const_cast/reinterpret_cast.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>eepromsettings.cpp</ShortFile>
+    <Line>70</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\eepromsettings.cpp</File>
+    <CodePrev>0</CodePrev>
+    <CodeCurrent>2951834970</CodeCurrent>
+    <CodeNext>999609</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>6</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>25</DefaultOrder>
+    <ErrorCode>V2005</ErrorCode>
+    <Message>C-style explicit type casting is utilized. Consider using: static_cast/const_cast/reinterpret_cast.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>eepromsettings.cpp</ShortFile>
+    <Line>77</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\eepromsettings.cpp</File>
+    <CodePrev>123</CodePrev>
+    <CodeCurrent>113845496</CodeCurrent>
+    <CodeNext>125</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>6</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>1</Level>
+    <DefaultOrder>26</DefaultOrder>
+    <ErrorCode>V004</ErrorCode>
+    <Message>Diagnostics from the 64-bit rule set are not entirely accurate without the appropriate 64-bit compiler. Consider utilizing 64-bit compiler if possible.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile xml:space="preserve"> </ShortFile>
+    <Line>1</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File xml:space="preserve"> </File>
+    <CodePrev>0</CodePrev>
+    <CodeCurrent>0</CodeCurrent>
+    <CodeNext>0</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>27</DefaultOrder>
+    <ErrorCode>V112</ErrorCode>
+    <Message>Dangerous magic number 4 used: ...tAddress(), 4, 1000 - 1,...</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>deviceclasses.cpp</ShortFile>
+    <Line>25</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\deviceclasses.cpp</File>
+    <CodePrev>123</CodePrev>
+    <CodeCurrent>851475229</CodeCurrent>
+    <CodeNext>0</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>28</DefaultOrder>
+    <ErrorCode>V2005</ErrorCode>
+    <Message>C-style explicit type casting is utilized. Consider using: static_cast/const_cast/reinterpret_cast.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>deviceclasses.cpp</ShortFile>
+    <Line>36</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\deviceclasses.cpp</File>
+    <CodePrev>0</CodePrev>
+    <CodeCurrent>1659528606</CodeCurrent>
+    <CodeNext>125</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>6</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>29</DefaultOrder>
+    <ErrorCode>V112</ErrorCode>
+    <Message>Dangerous magic number 4 used: ...tAddress(), 4, 1000 - 1,...</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>deviceclasses.cpp</ShortFile>
+    <Line>40</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\deviceclasses.cpp</File>
+    <CodePrev>123</CodePrev>
+    <CodeCurrent>851456797</CodeCurrent>
+    <CodeNext>0</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>30</DefaultOrder>
+    <ErrorCode>V2005</ErrorCode>
+    <Message>C-style explicit type casting is utilized. Consider using: static_cast/const_cast/reinterpret_cast.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>deviceclasses.cpp</ShortFile>
+    <Line>51</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\deviceclasses.cpp</File>
+    <CodePrev>0</CodePrev>
+    <CodeCurrent>1659528606</CodeCurrent>
+    <CodeNext>125</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>6</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>31</DefaultOrder>
+    <ErrorCode>V112</ErrorCode>
+    <Message>Dangerous magic number 4 used: ...(i = 0; i &lt; 4; i++).</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>deviceclasses.cpp</ShortFile>
+    <Line>66</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\deviceclasses.cpp</File>
+    <CodePrev>0</CodePrev>
+    <CodeCurrent>2611755</CodeCurrent>
+    <CodeNext>123</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>32</DefaultOrder>
+    <ErrorCode>V112</ErrorCode>
+    <Message>Dangerous magic number 4 used: for (i = 4; i &lt; 8; i++).</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>deviceclasses.cpp</ShortFile>
+    <Line>71</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\deviceclasses.cpp</File>
+    <CodePrev>0</CodePrev>
+    <CodeCurrent>2610091</CodeCurrent>
+    <CodeNext>123</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>3</Level>
+    <DefaultOrder>33</DefaultOrder>
+    <ErrorCode>V2009</ErrorCode>
+    <Message>Consider rendering the 'prop' pointer as a constant one.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>deviceclasses.cpp</ShortFile>
+    <Line>82</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\deviceclasses.cpp</File>
+    <CodePrev>0</CodePrev>
+    <CodeCurrent>1043643216</CodeCurrent>
+    <CodeNext>123</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>6</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>34</DefaultOrder>
+    <ErrorCode>V2005</ErrorCode>
+    <Message>C-style explicit type casting is utilized. Consider using: static_cast/const_cast/reinterpret_cast.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>deviceclasses.cpp</ShortFile>
+    <Line>122</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\deviceclasses.cpp</File>
+    <CodePrev>123</CodePrev>
+    <CodeCurrent>3505400242</CodeCurrent>
+    <CodeNext>2865270350</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>6</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>35</DefaultOrder>
+    <ErrorCode>V2005</ErrorCode>
+    <Message>C-style explicit type casting is utilized. Consider using: static_cast/const_cast/reinterpret_cast.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>deviceclasses.cpp</ShortFile>
+    <Line>134</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\deviceclasses.cpp</File>
+    <CodePrev>123</CodePrev>
+    <CodeCurrent>3505400242</CodeCurrent>
+    <CodeNext>3845772620</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>6</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>36</DefaultOrder>
+    <ErrorCode>V112</ErrorCode>
+    <Message>Dangerous magic number 4 used: ...tAddress(), 4, 1000 - 1,...</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>deviceclasses.cpp</ShortFile>
+    <Line>135</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\deviceclasses.cpp</File>
+    <CodePrev>3505400242</CodePrev>
+    <CodeCurrent>3845772620</CodeCurrent>
+    <CodeNext>577386689</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>37</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: devices[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>74</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>0</CodePrev>
+    <CodeCurrent>134410914</CodeCurrent>
+    <CodeNext>123</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>38</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: devices[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>79</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>673063617</CodePrev>
+    <CodeCurrent>1481285893</CodeCurrent>
+    <CodeNext>0</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>39</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: devices[deviceCount]-&gt;properties[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>79</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>673063617</CodePrev>
+    <CodeCurrent>1481285893</CodeCurrent>
+    <CodeNext>0</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>40</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: devices[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>111</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>123</CodePrev>
+    <CodeCurrent>134410914</CodeCurrent>
+    <CodeNext>123</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>41</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: devices[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>113</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>123</CodePrev>
+    <CodeCurrent>3107122923</CodeCurrent>
+    <CodeNext>123</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>1</Level>
+    <DefaultOrder>42</DefaultOrder>
+    <ErrorCode>V713</ErrorCode>
+    <Message>The pointer devices[deviceCount] was utilized in the logical expression before it was verified against nullptr in the same logical expression.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>113</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>123</CodePrev>
+    <CodeCurrent>3107122923</CodeCurrent>
+    <CodeNext>123</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>4</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>43</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: properties[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>151</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>0</CodePrev>
+    <CodeCurrent>1678210611</CodeCurrent>
+    <CodeNext>3365923482</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>44</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: properties[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>154</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>0</CodePrev>
+    <CodeCurrent>540719690</CodeCurrent>
+    <CodeNext>932964004</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>45</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: properties[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>158</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>0</CodePrev>
+    <CodeCurrent>59332651</CodeCurrent>
+    <CodeNext>932970148</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>46</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: properties[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>162</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>0</CodePrev>
+    <CodeCurrent>1283516576</CodeCurrent>
+    <CodeNext>932968100</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>47</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: properties[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>166</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>0</CodePrev>
+    <CodeCurrent>1283516582</CodeCurrent>
+    <CodeNext>932957860</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>48</DefaultOrder>
+    <ErrorCode>V112</ErrorCode>
+    <Message>Dangerous magic number 4 used: ...terNumber = 4 + (count * 5);.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>167</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>1283516582</CodePrev>
+    <CodeCurrent>932957860</CodeCurrent>
+    <CodeNext>3365923482</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>49</DefaultOrder>
+    <ErrorCode>V112</ErrorCode>
+    <Message>Dangerous magic number 4 used: ...terNumber = 4 + (count * 5);.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>186</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>0</CodePrev>
+    <CodeCurrent>932957860</CodeCurrent>
+    <CodeNext>3365923482</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>50</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: properties[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>213</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>0</CodePrev>
+    <CodeCurrent>550505767</CodeCurrent>
+    <CodeNext>0</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>51</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: properties[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>216</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>932964004</CodePrev>
+    <CodeCurrent>531260547</CodeCurrent>
+    <CodeNext>0</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>52</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: properties[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>219</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>932970148</CodePrev>
+    <CodeCurrent>2148829856</CodeCurrent>
+    <CodeNext>0</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>53</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: properties[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>222</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>932968100</CodePrev>
+    <CodeCurrent>2803391507</CodeCurrent>
+    <CodeNext>0</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>54</DefaultOrder>
+    <ErrorCode>V112</ErrorCode>
+    <Message>Dangerous magic number 4 used: ...terNumber = 4 + (count * 5);.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>224</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>0</CodePrev>
+    <CodeCurrent>932957860</CodeCurrent>
+    <CodeNext>2803390995</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>55</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: properties[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>225</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>932957860</CodePrev>
+    <CodeCurrent>2803390995</CodeCurrent>
+    <CodeNext>125</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>56</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: properties[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>229</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>123</CodePrev>
+    <CodeCurrent>270314801</CodeCurrent>
+    <CodeNext>2162246807</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>57</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: properties[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>230</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>270314801</CodePrev>
+    <CodeCurrent>2162246807</CodeCurrent>
+    <CodeNext>245350191</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>58</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: properties[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>231</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>2162246807</CodePrev>
+    <CodeCurrent>245350191</CodeCurrent>
+    <CodeNext>3255012469</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>59</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: properties[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>232</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>245350191</CodePrev>
+    <CodeCurrent>3255012469</CodeCurrent>
+    <CodeNext>3255012461</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>60</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: properties[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>233</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>3255012469</CodePrev>
+    <CodeCurrent>3255012461</CodeCurrent>
+    <CodeNext>125</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>61</DefaultOrder>
+    <ErrorCode>V807</ErrorCode>
+    <Message>Decreased performance. Consider creating a reference to avoid using the 'slave.getHoldingRegisters(sv, 2)' expression repeatedly.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>213</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>0</CodePrev>
+    <CodeCurrent>550505767</CodeCurrent>
+    <CodeNext>0</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>5</Analyzer>
+    <LineExtension>213,216,219,222,225</LineExtension>
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>62</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: properties[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>249</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>123</CodePrev>
+    <CodeCurrent>1120803865</CodeCurrent>
+    <CodeNext>164217712</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>63</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: properties_old[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>249</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>123</CodePrev>
+    <CodeCurrent>1120803865</CodeCurrent>
+    <CodeNext>164217712</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>64</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: properties[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>250</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>1120803865</CodePrev>
+    <CodeCurrent>164217712</CodeCurrent>
+    <CodeNext>1643509812</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>65</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: properties_old[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>250</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>1120803865</CodePrev>
+    <CodeCurrent>164217712</CodeCurrent>
+    <CodeNext>1643509812</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>66</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: properties[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>251</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>164217712</CodePrev>
+    <CodeCurrent>1643509812</CodeCurrent>
+    <CodeNext>22432455</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>67</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: properties_old[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>251</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>164217712</CodePrev>
+    <CodeCurrent>1643509812</CodeCurrent>
+    <CodeNext>22432455</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>68</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: properties[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>252</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>1643509812</CodePrev>
+    <CodeCurrent>22432455</CodeCurrent>
+    <CodeNext>2158699778</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>69</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: properties_old[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>252</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>1643509812</CodePrev>
+    <CodeCurrent>22432455</CodeCurrent>
+    <CodeNext>2158699778</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>70</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: properties[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>253</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>22432455</CodePrev>
+    <CodeCurrent>2158699778</CodeCurrent>
+    <CodeNext>296215</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>71</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: properties_old[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>253</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>22432455</CodePrev>
+    <CodeCurrent>2158699778</CodeCurrent>
+    <CodeNext>296215</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>72</DefaultOrder>
+    <ErrorCode>V2005</ErrorCode>
+    <Message>C-style explicit type casting is utilized. Consider using: static_cast/const_cast/reinterpret_cast.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>291</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>0</CodePrev>
+    <CodeCurrent>1474855205</CodeCurrent>
+    <CodeNext>125</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>6</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>73</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: properties[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>309</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>123</CodePrev>
+    <CodeCurrent>67578242</CodeCurrent>
+    <CodeNext>123</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>74</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: properties[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>312</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>4503732</CodePrev>
+    <CodeCurrent>1137735614</CodeCurrent>
+    <CodeNext>0</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>75</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: devices[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>314</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>0</CodePrev>
+    <CodeCurrent>740307625</CodeCurrent>
+    <CodeNext>123</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>76</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: devices[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>316</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>123</CodePrev>
+    <CodeCurrent>2333978795</CodeCurrent>
+    <CodeNext>123</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>77</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: devices[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>318</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>123</CodePrev>
+    <CodeCurrent>1349068387</CodeCurrent>
+    <CodeNext>3154127590</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>78</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: properties[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>318</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>123</CodePrev>
+    <CodeCurrent>1349068387</CodeCurrent>
+    <CodeNext>3154127590</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>79</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: devices[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>319</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>1349068387</CodePrev>
+    <CodeCurrent>3154127590</CodeCurrent>
+    <CodeNext>995159506</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>80</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: properties[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>319</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>1349068387</CodePrev>
+    <CodeCurrent>3154127590</CodeCurrent>
+    <CodeNext>995159506</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>81</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: devices[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>320</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>3154127590</CodePrev>
+    <CodeCurrent>995159506</CodeCurrent>
+    <CodeNext>125</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>82</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: devices[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>324</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>123</CodePrev>
+    <CodeCurrent>71565521</CodeCurrent>
+    <CodeNext>33800422</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>83</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: devices[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>325</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>71565521</CodePrev>
+    <CodeCurrent>33800422</CodeCurrent>
+    <CodeNext>3154127590</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>84</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: properties[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>325</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>71565521</CodePrev>
+    <CodeCurrent>33800422</CodeCurrent>
+    <CodeNext>3154127590</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>85</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: devices[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>326</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>33800422</CodePrev>
+    <CodeCurrent>3154127590</CodeCurrent>
+    <CodeNext>995159506</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>86</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: properties[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>326</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>33800422</CodePrev>
+    <CodeCurrent>3154127590</CodeCurrent>
+    <CodeNext>995159506</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>87</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: devices[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>327</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>3154127590</CodePrev>
+    <CodeCurrent>995159506</CodeCurrent>
+    <CodeNext>125</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>88</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: devices[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>332</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>123</CodePrev>
+    <CodeCurrent>33800422</CodeCurrent>
+    <CodeNext>3154127590</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>89</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: properties[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>332</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>123</CodePrev>
+    <CodeCurrent>33800422</CodeCurrent>
+    <CodeNext>3154127590</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>90</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: devices[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>333</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>33800422</CodePrev>
+    <CodeCurrent>3154127590</CodeCurrent>
+    <CodeNext>995159506</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>91</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: properties[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>333</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>33800422</CodePrev>
+    <CodeCurrent>3154127590</CodeCurrent>
+    <CodeNext>995159506</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>92</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: devices[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>334</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>3154127590</CodePrev>
+    <CodeCurrent>995159506</CodeCurrent>
+    <CodeNext>125</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>93</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: properties[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>339</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>4614836</CodePrev>
+    <CodeCurrent>1137735614</CodeCurrent>
+    <CodeNext>0</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>94</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: devices[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>341</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>0</CodePrev>
+    <CodeCurrent>740307625</CodeCurrent>
+    <CodeNext>123</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>95</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: devices[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>343</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>123</CodePrev>
+    <CodeCurrent>2334089899</CodeCurrent>
+    <CodeNext>123</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>96</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: devices[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>345</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>123</CodePrev>
+    <CodeCurrent>1349068387</CodeCurrent>
+    <CodeNext>3154127590</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>97</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: properties[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>345</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>123</CodePrev>
+    <CodeCurrent>1349068387</CodeCurrent>
+    <CodeNext>3154127590</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>98</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: devices[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>346</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>1349068387</CodePrev>
+    <CodeCurrent>3154127590</CodeCurrent>
+    <CodeNext>995159506</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>99</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: properties[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>346</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>1349068387</CodePrev>
+    <CodeCurrent>3154127590</CodeCurrent>
+    <CodeNext>995159506</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>100</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: devices[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>347</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>3154127590</CodePrev>
+    <CodeCurrent>995159506</CodeCurrent>
+    <CodeNext>125</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>101</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: devices[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>351</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>123</CodePrev>
+    <CodeCurrent>71565521</CodeCurrent>
+    <CodeNext>33803310</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>102</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: devices[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>352</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>71565521</CodePrev>
+    <CodeCurrent>33803310</CodeCurrent>
+    <CodeNext>3154127590</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>103</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: properties[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>352</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>71565521</CodePrev>
+    <CodeCurrent>33803310</CodeCurrent>
+    <CodeNext>3154127590</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>104</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: devices[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>353</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>33803310</CodePrev>
+    <CodeCurrent>3154127590</CodeCurrent>
+    <CodeNext>995159506</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>105</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: properties[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>353</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>33803310</CodePrev>
+    <CodeCurrent>3154127590</CodeCurrent>
+    <CodeNext>995159506</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>106</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: devices[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>354</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>3154127590</CodePrev>
+    <CodeCurrent>995159506</CodeCurrent>
+    <CodeNext>125</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>107</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: devices[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>359</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>123</CodePrev>
+    <CodeCurrent>33803310</CodeCurrent>
+    <CodeNext>3154127590</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>108</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: properties[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>359</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>123</CodePrev>
+    <CodeCurrent>33803310</CodeCurrent>
+    <CodeNext>3154127590</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>109</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: devices[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>360</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>33803310</CodePrev>
+    <CodeCurrent>3154127590</CodeCurrent>
+    <CodeNext>995159506</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>110</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: properties[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>360</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>33803310</CodePrev>
+    <CodeCurrent>3154127590</CodeCurrent>
+    <CodeNext>995159506</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>111</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: devices[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>361</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>3154127590</CodePrev>
+    <CodeCurrent>995159506</CodeCurrent>
+    <CodeNext>125</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>112</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: properties[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>366</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>2332852</CodePrev>
+    <CodeCurrent>1137735614</CodeCurrent>
+    <CodeNext>0</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>113</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: devices[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>368</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>0</CodePrev>
+    <CodeCurrent>740307625</CodeCurrent>
+    <CodeNext>123</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>114</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: devices[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>370</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>123</CodePrev>
+    <CodeCurrent>1167006881</CodeCurrent>
+    <CodeNext>123</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>115</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: devices[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>372</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>123</CodePrev>
+    <CodeCurrent>1349068387</CodeCurrent>
+    <CodeNext>3154127590</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>116</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: properties[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>372</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>123</CodePrev>
+    <CodeCurrent>1349068387</CodeCurrent>
+    <CodeNext>3154127590</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>117</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: devices[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>373</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>1349068387</CodePrev>
+    <CodeCurrent>3154127590</CodeCurrent>
+    <CodeNext>995159506</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>118</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: properties[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>373</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>1349068387</CodePrev>
+    <CodeCurrent>3154127590</CodeCurrent>
+    <CodeNext>995159506</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>119</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: devices[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>374</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>3154127590</CodePrev>
+    <CodeCurrent>995159506</CodeCurrent>
+    <CodeNext>125</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>120</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: devices[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>378</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>123</CodePrev>
+    <CodeCurrent>71565521</CodeCurrent>
+    <CodeNext>1627513446</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>121</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: devices[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>379</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>71565521</CodePrev>
+    <CodeCurrent>1627513446</CodeCurrent>
+    <CodeNext>3154127590</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>122</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: properties[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>379</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>71565521</CodePrev>
+    <CodeCurrent>1627513446</CodeCurrent>
+    <CodeNext>3154127590</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>123</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: devices[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>380</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>1627513446</CodePrev>
+    <CodeCurrent>3154127590</CodeCurrent>
+    <CodeNext>995159506</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>124</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: properties[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>380</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>1627513446</CodePrev>
+    <CodeCurrent>3154127590</CodeCurrent>
+    <CodeNext>995159506</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>125</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: devices[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>381</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>3154127590</CodePrev>
+    <CodeCurrent>995159506</CodeCurrent>
+    <CodeNext>125</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>126</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: devices[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>386</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>123</CodePrev>
+    <CodeCurrent>1627513446</CodeCurrent>
+    <CodeNext>3154127590</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>127</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: properties[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>386</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>123</CodePrev>
+    <CodeCurrent>1627513446</CodeCurrent>
+    <CodeNext>3154127590</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>128</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: devices[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>387</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>1627513446</CodePrev>
+    <CodeCurrent>3154127590</CodeCurrent>
+    <CodeNext>995159506</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>129</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: properties[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>387</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>1627513446</CodePrev>
+    <CodeCurrent>3154127590</CodeCurrent>
+    <CodeNext>995159506</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>130</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: devices[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>388</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>3154127590</CodePrev>
+    <CodeCurrent>995159506</CodeCurrent>
+    <CodeNext>125</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>131</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: devices[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>395</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>123</CodePrev>
+    <CodeCurrent>71565521</CodeCurrent>
+    <CodeNext>4371835</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>3</Level>
+    <DefaultOrder>132</DefaultOrder>
+    <ErrorCode>V688</ErrorCode>
+    <Message>The 'deviceCount' function argument possesses the same name as one of the class members, which can result in a confusion.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>cyclecontroller.cpp</ShortFile>
+    <Line>404</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp</File>
+    <CodePrev>0</CodePrev>
+    <CodeCurrent>312809697</CodeCurrent>
+    <CodeNext>123</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>4</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>3</Level>
+    <DefaultOrder>133</DefaultOrder>
+    <ErrorCode>V2009</ErrorCode>
+    <Message>Consider rendering the 'prop' pointer as a constant one.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>abstactdevice.cpp</ShortFile>
+    <Line>72</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\abstactdevice.cpp</File>
+    <CodePrev>0</CodePrev>
+    <CodeCurrent>3789512475</CodeCurrent>
+    <CodeNext>123</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>6</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>134</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: events[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>abstactdevice.cpp</ShortFile>
+    <Line>121</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\abstactdevice.cpp</File>
+    <CodePrev>123</CodePrev>
+    <CodeCurrent>1337357697</CodeCurrent>
+    <CodeNext>125</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>135</DefaultOrder>
+    <ErrorCode>V108</ErrorCode>
+    <Message>Incorrect index type: events[not a memsize-type]. Use memsize type instead.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>abstactdevice.cpp</ShortFile>
+    <Line>147</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\abstactdevice.cpp</File>
+    <CodePrev>123</CodePrev>
+    <CodeCurrent>2666146100</CodeCurrent>
+    <CodeNext>344097</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>3</Level>
+    <DefaultOrder>136</DefaultOrder>
+    <ErrorCode>V126</ErrorCode>
+    <Message>Be advised that the size of the type 'long' varies between LLP64/LP64 data models.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>property.cpp</ShortFile>
+    <Line>28</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\property.cpp</File>
+    <CodePrev>0</CodePrev>
+    <CodeCurrent>1527400487</CodeCurrent>
+    <CodeNext>123</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>3</Level>
+    <DefaultOrder>137</DefaultOrder>
+    <ErrorCode>V126</ErrorCode>
+    <Message>Be advised that the size of the type 'long' varies between LLP64/LP64 data models.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>property.cpp</ShortFile>
+    <Line>34</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\property.cpp</File>
+    <CodePrev>0</CodePrev>
+    <CodeCurrent>172590558</CodeCurrent>
+    <CodeNext>123</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>3</Level>
+    <DefaultOrder>138</DefaultOrder>
+    <ErrorCode>V126</ErrorCode>
+    <Message>Be advised that the size of the type 'long' varies between LLP64/LP64 data models.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>property.cpp</ShortFile>
+    <Line>58</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\property.cpp</File>
+    <CodePrev>0</CodePrev>
+    <CodeCurrent>73671670</CodeCurrent>
+    <CodeNext>123</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>3</Level>
+    <DefaultOrder>139</DefaultOrder>
+    <ErrorCode>V126</ErrorCode>
+    <Message>Be advised that the size of the type 'long' varies between LLP64/LP64 data models.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>property.cpp</ShortFile>
+    <Line>63</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\property.cpp</File>
+    <CodePrev>0</CodePrev>
+    <CodeCurrent>2622422736</CodeCurrent>
+    <CodeNext>123</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>140</DefaultOrder>
+    <ErrorCode>V801</ErrorCode>
+    <Message>Decreased performance. It is better to redefine the second function argument as a reference. Consider replacing 'const .. value' with 'const .. &amp;value'.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>slavefactory.cpp</ShortFile>
+    <Line>48</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\slavefactory.cpp</File>
+    <CodePrev>0</CodePrev>
+    <CodeCurrent>4264591218</CodeCurrent>
+    <CodeNext>123</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>5</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>141</DefaultOrder>
+    <ErrorCode>V801</ErrorCode>
+    <Message>Decreased performance. It is better to redefine the second function argument as a reference. Consider replacing 'const .. value' with 'const .. &amp;value'.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>slavefactory.cpp</ShortFile>
+    <Line>58</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\slavefactory.cpp</File>
+    <CodePrev>125</CodePrev>
+    <CodeCurrent>1081869579</CodeCurrent>
+    <CodeNext>123</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>5</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>142</DefaultOrder>
+    <ErrorCode>V2005</ErrorCode>
+    <Message>C-style explicit type casting is utilized. Consider using: static_cast/const_cast/reinterpret_cast.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>slavefactory.cpp</ShortFile>
+    <Line>72</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\slavefactory.cpp</File>
+    <CodePrev>123</CodePrev>
+    <CodeCurrent>2814891445</CodeCurrent>
+    <CodeNext>834487</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>6</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>143</DefaultOrder>
+    <ErrorCode>V801</ErrorCode>
+    <Message>Decreased performance. It is better to redefine the second function argument as a reference. Consider replacing 'const .. value' with 'const .. &amp;value'.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>slavefactory.cpp</ShortFile>
+    <Line>68</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\slavefactory.cpp</File>
+    <CodePrev>125</CodePrev>
+    <CodeCurrent>903669206</CodeCurrent>
+    <CodeNext>123</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>5</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>3</Level>
+    <DefaultOrder>144</DefaultOrder>
+    <ErrorCode>V126</ErrorCode>
+    <Message>Be advised that the size of the type 'long' varies between LLP64/LP64 data models.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>slavefactory.cpp</ShortFile>
+    <Line>72</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\slavefactory.cpp</File>
+    <CodePrev>123</CodePrev>
+    <CodeCurrent>2814891445</CodeCurrent>
+    <CodeNext>834487</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>145</DefaultOrder>
+    <ErrorCode>V2005</ErrorCode>
+    <Message>C-style explicit type casting is utilized. Consider using: static_cast/const_cast/reinterpret_cast.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>slavefactory.cpp</ShortFile>
+    <Line>80</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\slavefactory.cpp</File>
+    <CodePrev>123</CodePrev>
+    <CodeCurrent>2814891437</CodeCurrent>
+    <CodeNext>834487</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>6</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>146</DefaultOrder>
+    <ErrorCode>V801</ErrorCode>
+    <Message>Decreased performance. It is better to redefine the second function argument as a reference. Consider replacing 'const .. value' with 'const .. &amp;value'.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>slavefactory.cpp</ShortFile>
+    <Line>76</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\slavefactory.cpp</File>
+    <CodePrev>125</CodePrev>
+    <CodeCurrent>130977624</CodeCurrent>
+    <CodeNext>123</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>5</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>3</Level>
+    <DefaultOrder>147</DefaultOrder>
+    <ErrorCode>V126</ErrorCode>
+    <Message>Be advised that the size of the type 'long' varies between LLP64/LP64 data models.</Message>
+    <Project>TMMiniOS</Project>
+    <ShortFile>slavefactory.cpp</ShortFile>
+    <Line>80</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>d:\projects\asu\icpdas\tmminios\tmminios\slavefactory.cpp</File>
+    <CodePrev>123</CodePrev>
+    <CodeCurrent>2814891437</CodeCurrent>
+    <CodeNext>834487</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>1</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+  </PVS-Studio_Analysis_Log>
+</NewDataSet>

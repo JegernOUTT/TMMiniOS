@@ -1,0 +1,45 @@
+﻿Построение начато 17.08.2015 11:47:25.
+     1>Проект "C:\Users\oit-sergei\documents\visual studio 2012\Projects\classLib\classLib\classLib.vcxproj" в узле 2 (целевые объекты Build).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\x86_amd64\CL.exe /c /Zi /nologo /W3 /WX- /Od /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Debug\\" /Fd"x64\Debug\vc110.pdb" /Gd /TP /errorReport:prompt AbstactDevice.cpp CycleController.cpp DeviceClasses.cpp EEpromSettings.cpp main.cpp Property.cpp PropertyClasses.cpp SlaveAddressHandler.cpp SlaveFactory.cpp TcpModbusEventsHandler.cpp UserCount.cpp UserInit.cpp UserLoopFun.cpp
+         UserLoopFun.cpp
+         UserInit.cpp
+         UserCount.cpp
+         TcpModbusEventsHandler.cpp
+         SlaveFactory.cpp
+         SlaveAddressHandler.cpp
+         PropertyClasses.cpp
+         Property.cpp
+         main.cpp
+     1>main.cpp(63): warning C4996: '_sleep': This function or variable has been superceded by newer library or operating system functionality. Consider using Sleep instead. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdlib.h(881): см. объявление "_sleep"
+         EEpromSettings.cpp
+         DeviceClasses.cpp
+     1>DeviceClasses.cpp(34): warning C4244: аргумент: преобразование "long double" в "float", возможна потеря данных
+     1>DeviceClasses.cpp(50): warning C4244: аргумент: преобразование "long double" в "float", возможна потеря данных
+     1>DeviceClasses.cpp(123): warning C4800: bool *: принудительно задано логическое значение "true" или "false" (предупреждение о производительности)
+         CycleController.cpp
+     1>CycleController.cpp(151): warning C4244: =: преобразование "unsigned long" в "unsigned short", возможна потеря данных
+     1>CycleController.cpp(183): warning C4101: sv: неиспользованная локальная переменная
+         AbstactDevice.cpp
+         Создание кода...
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\oit-sergei\documents\visual studio 2012\Projects\classLib\x64\Debug\classLib.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\oit-sergei\documents\visual studio 2012\Projects\classLib\x64\Debug\classLib.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\oit-sergei\documents\visual studio 2012\Projects\classLib\x64\Debug\classLib.lib" /MACHINE:X64 x64\Debug\AbstactDevice.obj
+         x64\Debug\CycleController.obj
+         x64\Debug\DeviceClasses.obj
+         x64\Debug\EEpromSettings.obj
+         x64\Debug\main.obj
+         x64\Debug\Property.obj
+         x64\Debug\PropertyClasses.obj
+         x64\Debug\SlaveAddressHandler.obj
+         x64\Debug\SlaveFactory.obj
+         x64\Debug\TcpModbusEventsHandler.obj
+         x64\Debug\UserCount.obj
+         x64\Debug\UserInit.obj
+         x64\Debug\UserLoopFun.obj
+         classLib.vcxproj -> C:\Users\oit-sergei\documents\visual studio 2012\Projects\classLib\x64\Debug\classLib.exe
+     1>Построение проекта "C:\Users\oit-sergei\documents\visual studio 2012\Projects\classLib\classLib\classLib.vcxproj" завершено (целевые объекты Build).
+
+Построение успешно завершено.
+
+Затраченное время: 00:00:05.20
