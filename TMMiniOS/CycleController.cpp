@@ -2,8 +2,8 @@
 
 #ifdef MVS_2012_32BIT 
 	extern __int64 GetTimeTicks(void);
+	extern int ModbusRTU_Master(int, int, int, int, int, int, int, int);
 #endif
-
 	    
 //сложность моего алгоритма меньше n^2
 unsigned long pow_2(int exp)
@@ -21,7 +21,8 @@ unsigned long pow_2(int exp)
 CycleController * CycleController::cycleController = NULL;
 
 CycleController::CycleController(void) : 
-	slave(SlaveFactory::getSlaveFactoryPointer())
+	slave(SlaveFactory::getSlaveFactoryPointer()), 
+	deque(Deque::getInstance(MAX_DEVICE_COUNT * MAX_DEVICE_COUNT))
 {
 	devices = new AbstractDevice * [MAX_DEVICE_COUNT];
 
@@ -46,6 +47,8 @@ CycleController::CycleController(void) :
 
 	writeProcess		= false_t;
 	readProcess			= true_t;
+	frameIsProcessed	= 0;
+	currentFrame		= NULL;
 }
 
 CycleController::~CycleController(void)
@@ -55,6 +58,7 @@ CycleController::~CycleController(void)
 		delete devices[i];
 		devices[i] = NULL;
 	}
+
 	delete [] devices;
 	devices = NULL;
 
@@ -68,6 +72,7 @@ CycleController & CycleController::getInstance()
 	{
 		cycleController = new CycleController();
 	}
+
 	return * cycleController;
 }
 
@@ -81,7 +86,6 @@ void CycleController::init()
 
 void CycleController::read()
 {
-	unsigned int err = 0;
 	readDeviceMask();
 	readProperties();
 	checkMask();
@@ -92,91 +96,17 @@ void CycleController::read()
 		constructNewDevices();
 	}
 
+	//Events for modbus devices
+	for (int i = 0; i < MAX_DEVICE_COUNT; ++i)
+	{
+		if (devices[i] != NULL && devices[i]->protocolType_t == MODBUS_PROTOCOL)
+		{
+			devices[i]->eventsProcess();
+		}
+	}
+
 	readNonModbusDevices();
-
-	if (devices[deviceCount] != NULL && devices[deviceCount]->protocolType_t == MODBUS_PROTOCOL)
-	{
-		if ((GetTimeTicks() - timeTick > WAIT_PERIOD) || workFlag)							
-		{
-			timeTick = GetTimeTicks();
-
-			if (readProcess)
-			{
-				err = devices[deviceCount]->processRead(devices[deviceCount]->properties[propertyCount]);
-				
-  				if (err < 500 || err > 503)
-				{
-					readProcess = false_t;
-					writeProcess = true_t;
-				}
-			}
-
-			if (writeProcess)
-			{
-				err = devices[deviceCount]->processWrite(devices[deviceCount]->properties[propertyCount]);
-
-				if (err < 500 || err > 503)
-				{
-					readProcess = true_t;
-					writeProcess = false_t;
-				}
-			}
-			
-			#ifdef MVS_2012_32BIT
-			std::cout << "Device: " << devices[deviceCount]->name << "  Property: " << devices[deviceCount]->properties[propertyCount]->name << "  Value: " 
-				<< devices[deviceCount]->properties[propertyCount]->getValueFloat() << std::endl;
-			#endif
-			
-			SlaveInformation sv(INPUT_REGISTERS, 1500);
-			uValue val(err);
-			slave.setInputRegisters(sv, val);
-
-			if (err >= 500 && err <= 503)
-			{
-				++attemptToLoad;
-				workFlag = 1;
-				if (attemptToLoad > ATTEMPTS_COUNT)
-				{
-					attemptToLoad = 0;
-					workFlag = 0;                    
-					next();
-				}
-			}
-			else
-			{
-				attemptToLoad = 0;
-				workFlag = 0;
-				next();
-			}
-		}
-	}
-	else
-	{
-		next();
-	}
-}
-
-void CycleController::next()
-{
-	if (devices[deviceCount] != NULL && deviceMask & (unsigned short)pow_2(deviceCount))
-	{
-		if (++propertyCount >= devices[deviceCount]->propertyCount)
-		{
-			propertyCount = 0;
-			++deviceCount;
-		}
-	}
-	else
-	{
-		propertyCount = 0;
-		++deviceCount;
-	}
-
-	if (deviceCount >= MAX_DEVICE_COUNT)
-	{
-		propertyCount = 0;
-		deviceCount = 0;
-	}
+	readModbusDevices();
 }
 
 void CycleController::propertiesToSlave()
@@ -363,6 +293,7 @@ void CycleController::readNonModbusDevices()
 					{
 						devices[count]->processRead(devices[count]->properties[i]);
 						err = devices[count]->processWrite(devices[count]->properties[i]);
+
 						SlaveInformation sv(INPUT_REGISTERS, 1005);
 						uValue val(err);
 						slave.setInputRegisters(sv, val);
@@ -372,6 +303,142 @@ void CycleController::readNonModbusDevices()
 
 		tmpMask >>= 1;
 		++count;
+	}
+}
+
+void CycleController::readModbusDevices() 
+{
+	if (deque.isEmpty())
+	{
+		for (int i = 0; i < MAX_DEVICE_COUNT; ++i)
+		{
+			if (devices[i] != NULL)
+			{
+				devices[i]->getTasksProperties();
+				devices[i]->getTasksEvents();
+			}
+		}
+	}
+
+	if (frameIsProcessed <= 0)
+	{
+		if (GetTimeTicks() - timeTick > WAIT_PERIOD)							
+		{
+			timeTick = GetTimeTicks();
+
+			currentFrame = deque.pop_front();
+
+			if (currentFrame->taskTypeParameter == WRITE_TASK)
+				nativeToRegisters();
+
+			frameIsProcessed = ModbusRTU_Master(
+				currentFrame->frame->comAddress, currentFrame->frame->modbusAddress, currentFrame->frame->functionCode,
+				currentFrame->frame->toAddr, currentFrame->frame->fromAddr, currentFrame->frame->registerCountToRead,
+				currentFrame->frame->timeout, currentFrame->frame->blockedMode
+				);
+		}
+	}
+	else if (frameIsProcessed >= 500 && frameIsProcessed <= 503)
+	{
+		if (currentFrame->taskTypeParameter == WRITE_TASK)
+			nativeToRegisters();
+
+		frameIsProcessed = ModbusRTU_Master(
+			currentFrame->frame->comAddress, currentFrame->frame->modbusAddress, currentFrame->frame->functionCode,
+			currentFrame->frame->toAddr, currentFrame->frame->fromAddr, currentFrame->frame->registerCountToRead,
+			currentFrame->frame->timeout, currentFrame->frame->blockedMode
+			);
+
+		if (frameIsProcessed == 0)
+		{
+			if (currentFrame->taskTypeParameter == READ_TASK)
+				nativeToRegisters();
+
+			for (int i = 0; i < MAX_DEVICE_COUNT; ++i)
+			{
+				if (devices[i] != NULL)
+					devices[i]->update();		
+			}
+
+			delete currentFrame->frame;
+			delete currentFrame;
+			currentFrame = NULL;
+		}
+	}
+	
+	SlaveInformation sv(INPUT_REGISTERS, 1500);
+	uValue val(frameIsProcessed);
+	slave.setInputRegisters(sv, val);
+}
+
+void CycleController::nativeToRegisters()
+{
+	/*
+		1 ==> Reads  several  DO from device, then puts to iMemory_DO.
+        2 ==> Reads  several  DI from device, then puts to iMemory_DI.
+        3 ==> Reads  several  AO from device, then puts to iMemory_AO.
+        4 ==> Reads  several  AI from device, then puts to iMemory_AI.
+        5 ==> Writes     one  DO from iMemory_DO to device. 
+        6 ==> Writes     one  AO from iMemory_AO to device.
+        15 ==> Writes several DO from iMemory_DO to device.
+        16 ==> Writes several AO from iMemory_AO to device.
+	*/
+	SlaveInformation sv(COILS, currentFrame->frame->toAddr);
+	uValue val;
+	int i = 0;
+	unsigned short * usVal = (unsigned short *) currentFrame->nativeValueAddr;
+
+	switch (currentFrame->frame->functionCode)
+	{
+	case 1:	
+		for (i = 0; i < currentFrame->frame->registerCountToRead; ++i)
+		{
+			usVal[i] = slave.getCoils(sv, 2).ulVal;
+			++sv.registerNumber;
+		}
+		break;
+
+	case 2:	
+		for (i = 0; i < currentFrame->frame->registerCountToRead; ++i)
+		{
+			usVal[i] = slave.getDisreteInput(sv, 2).ulVal;
+			++sv.registerNumber;
+		}
+		break;
+
+	case 3:	
+		for (i = 0; i < currentFrame->frame->registerCountToRead; ++i)
+		{
+			usVal[i] = slave.getHoldingRegisters(sv, 2).ulVal;
+			++sv.registerNumber;
+		}
+		break;
+
+	case 4: 
+		for (i = 0; i < currentFrame->frame->registerCountToRead; ++i)
+		{
+			usVal[i] = slave.getInputRegisters(sv, 2).ulVal;
+			++sv.registerNumber;
+		}					
+		break;
+
+	case 15: 
+		for (i = 0; i < currentFrame->frame->registerCountToRead; ++i)
+		{
+			val.ulVal =  usVal[i];
+			slave.setCoils(sv, val);
+			++sv.registerNumber;
+		}
+		break;
+
+	case 16:
+		for (i = 0; i < currentFrame->frame->registerCountToRead; ++i)
+		{
+			val.ulVal =  usVal[i];
+			slave.setHoldingRegisters(sv, val);
+			++sv.registerNumber;
+		}
+		break;
 	}
 }
 

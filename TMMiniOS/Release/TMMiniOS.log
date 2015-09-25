@@ -1,16 +1,23 @@
-﻿Построение начато 10.09.2015 12:35:45.
+﻿Построение начато 25.09.2015 10:11:30.
      1>Проект "D:\Projects\ASU\ICPDAS\TMMiniOS\TMMiniOS\TMMiniOS.vcxproj" в узле 2 (целевые объекты Build).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D MVS_2012_32BIT /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt AbstactDevice.cpp CycleController.cpp DeviceClasses.cpp EEpromSettings.cpp Event.cpp EventClasses.cpp Property.cpp PropertyClasses.cpp SlaveAddressHandler.cpp SlaveFactory.cpp TcpModbusEventsHandler.cpp Time.cpp UserInit.cpp UserLoopFun.cpp main.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"C:\Program Files (x86)\Visual Leak Detector\include" /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D MVS_2012_32BIT /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt AbstactDevice.cpp CycleController.cpp Deque.cpp DeviceClasses.cpp EEpromSettings.cpp Event.cpp EventClasses.cpp Property.cpp PropertyClasses.cpp SlaveAddressHandler.cpp SlaveFactory.cpp TcpModbusEventsHandler.cpp Time.cpp UserInit.cpp UserLoopFun.cpp main.cpp
          AbstactDevice.cpp
          CycleController.cpp
-     1>CycleController.cpp(100): warning C4244: =: преобразование "__int64" в "unsigned long", возможна потеря данных
-     1>CycleController.cpp(247): warning C4244: =: преобразование "unsigned long" в "unsigned short", возможна потеря данных
+     1>CycleController.cpp(192): warning C4244: =: преобразование "unsigned long" в "unsigned short", возможна потеря данных
+     1>CycleController.cpp(339): warning C4244: =: преобразование "__int64" в "unsigned long", возможна потеря данных
+     1>CycleController.cpp(472): warning C4244: =: преобразование "unsigned long" в "unsigned short", возможна потеря данных
+     1>CycleController.cpp(480): warning C4244: =: преобразование "unsigned long" в "unsigned short", возможна потеря данных
+     1>CycleController.cpp(488): warning C4244: =: преобразование "unsigned long" в "unsigned short", возможна потеря данных
+     1>CycleController.cpp(496): warning C4244: =: преобразование "unsigned long" в "unsigned short", возможна потеря данных
+         Deque.cpp
          DeviceClasses.cpp
-     1>DeviceClasses.cpp(43): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
-     1>DeviceClasses.cpp(58): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
-     1>DeviceClasses.cpp(262): warning C4244: =: преобразование "__int64" в "unsigned long", возможна потеря данных
-     1>DeviceClasses.cpp(313): warning C4244: =: преобразование "__int64" в "unsigned long", возможна потеря данных
+     1>DeviceClasses.cpp(50): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+     1>DeviceClasses.cpp(54): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+     1>DeviceClasses.cpp(256): warning C4244: =: преобразование "__int64" в "unsigned long", возможна потеря данных
+     1>DeviceClasses.cpp(307): warning C4244: =: преобразование "__int64" в "unsigned long", возможна потеря данных
+     1>DeviceClasses.cpp(558): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+     1>DeviceClasses.cpp(562): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
          EEpromSettings.cpp
          Event.cpp
          EventClasses.cpp
@@ -24,7 +31,8 @@
          UserLoopFun.cpp
          main.cpp
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Projects\ASU\ICPDAS\TMMiniOS\Release\TMMiniOS.exe" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\Projects\ASU\ICPDAS\TMMiniOS\Release\TMMiniOS.pdb" /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Projects\ASU\ICPDAS\TMMiniOS\Release\TMMiniOS.lib" /MACHINE:X86 /SAFESEH Release\AbstactDevice.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Projects\ASU\ICPDAS\TMMiniOS\Release\TMMiniOS.exe" /NOLOGO /LIBPATH:"C:\Program Files (x86)\Visual Leak Detector\lib\Win32" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\Projects\ASU\ICPDAS\TMMiniOS\Release\TMMiniOS.pdb" /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Projects\ASU\ICPDAS\TMMiniOS\Release\TMMiniOS.lib" /MACHINE:X86 /SAFESEH Release\Deque.obj
+         Release\AbstactDevice.obj
          Release\CycleController.obj
          Release\DeviceClasses.obj
          Release\EEpromSettings.obj
@@ -48,4 +56,4 @@
 
 Построение успешно завершено.
 
-Затраченное время: 00:00:04.17
+Затраченное время: 00:00:04.69

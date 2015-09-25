@@ -800,7 +800,7 @@ PUBLIC	??0?$allocator@D@std@@QAE@XZ			; std::allocator<char>::allocator<char>
 PUBLIC	?deallocate@?$allocator@D@std@@QAEXPADI@Z	; std::allocator<char>::deallocate
 PUBLIC	?allocate@?$allocator@D@std@@QAEPADI@Z		; std::allocator<char>::allocate
 PUBLIC	?max_size@?$allocator@D@std@@QBEIXZ		; std::allocator<char>::max_size
-PUBLIC	?max_size@?$allocator_traits@V?$allocator@D@std@@@std@@SAIABV?$allocator@D@2@@Z ; std::allocator_traits<std::allocator<char> >::max_size
+PUBLIC	?max_size@?$allocator_traits@V?$allocator@D@std@@@std@@SGIABV?$allocator@D@2@@Z ; std::allocator_traits<std::allocator<char> >::max_size
 PUBLIC	??0?$_Wrap_alloc@V?$allocator@D@std@@@std@@QAE@XZ ; std::_Wrap_alloc<std::allocator<char> >::_Wrap_alloc<std::allocator<char> >
 PUBLIC	?allocate@?$_Wrap_alloc@V?$allocator@D@std@@@std@@QAEPADI@Z ; std::_Wrap_alloc<std::allocator<char> >::allocate
 PUBLIC	?deallocate@?$_Wrap_alloc@V?$allocator@D@std@@@std@@QAEXPADI@Z ; std::_Wrap_alloc<std::allocator<char> >::deallocate
@@ -829,9 +829,9 @@ PUBLIC	?_Inside@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE
 PUBLIC	?_Tidy@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEX_NI@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::_Tidy
 PUBLIC	?_Xlen@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEXXZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::_Xlen
 PUBLIC	?_Xran@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEXXZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::_Xran
-PUBLIC	??$_Debug_pointer@D@std@@YAXPBDPB_WI@Z		; std::_Debug_pointer<char>
-PUBLIC	?generic_category@std@@YAABVerror_category@1@XZ	; std::generic_category
-PUBLIC	?system_category@std@@YAABVerror_category@1@XZ	; std::system_category
+PUBLIC	??$_Debug_pointer@D@std@@YGXPBDPB_WI@Z		; std::_Debug_pointer<char>
+PUBLIC	?generic_category@std@@YGABVerror_category@1@XZ	; std::generic_category
+PUBLIC	?system_category@std@@YGABVerror_category@1@XZ	; std::system_category
 PUBLIC	??0error_category@std@@QAE@XZ			; std::error_category::error_category
 PUBLIC	??1error_category@std@@UAE@XZ			; std::error_category::~error_category
 PUBLIC	?default_error_condition@error_category@std@@UBE?AVerror_condition@2@H@Z ; std::error_category::default_error_condition
@@ -873,25 +873,31 @@ PUBLIC	?getCountableMask@AbstractDevice@@QAEGXZ	; AbstractDevice::getCountableMa
 PUBLIC	?setCountableMask@AbstractDevice@@QAEXG@Z	; AbstractDevice::setCountableMask
 PUBLIC	?processRead@AbstractDevice@@QAEIPAVProperty@@@Z ; AbstractDevice::processRead
 PUBLIC	?processWrite@AbstractDevice@@QAEIPAVProperty@@@Z ; AbstractDevice::processWrite
-PUBLIC	?writeDataToSlave@AbstractDevice@@QAEXPAVProperty@@@Z ; AbstractDevice::writeDataToSlave
-PUBLIC	?logProperty@AbstractDevice@@QAEXPAVProperty@@@Z ; AbstractDevice::logProperty
+PUBLIC	?getVal@AbstractDevice@@UAEIPAVProperty@@@Z	; AbstractDevice::getVal
+PUBLIC	?setVal@AbstractDevice@@UAEIPAVProperty@@@Z	; AbstractDevice::setVal
+PUBLIC	?writeDataToSlave@AbstractDevice@@QAEXXZ	; AbstractDevice::writeDataToSlave
+PUBLIC	?logProperty@AbstractDevice@@QAEXXZ		; AbstractDevice::logProperty
+PUBLIC	?isOwnProperty@AbstractDevice@@QAE?AW4bool_t@@PAVProperty@@@Z ; AbstractDevice::isOwnProperty
+PUBLIC	?getTasksProperties@AbstractDevice@@UAEXXZ	; AbstractDevice::getTasksProperties
+PUBLIC	?getTasksEvents@AbstractDevice@@UAEXXZ		; AbstractDevice::getTasksEvents
+PUBLIC	?update@AbstractDevice@@UAEXXZ			; AbstractDevice::update
 PUBLIC	?eventsProcess@AbstractDevice@@QAEXXZ		; AbstractDevice::eventsProcess
 PUBLIC	?constructEvents@AbstractDevice@@QAEXXZ		; AbstractDevice::constructEvents
 PUBLIC	??_GAbstractDevice@@UAEPAXI@Z			; AbstractDevice::`scalar deleting destructor'
 PUBLIC	??$construct@PADAAPAD@?$_Wrap_alloc@V?$allocator@D@std@@@std@@QAEXPAPADAAPAD@Z ; std::_Wrap_alloc<std::allocator<char> >::construct<char *,char * &>
 PUBLIC	??$destroy@PAD@?$_Wrap_alloc@V?$allocator@D@std@@@std@@QAEXPAPAD@Z ; std::_Wrap_alloc<std::allocator<char> >::destroy<char *>
-PUBLIC	??$addressof@D@std@@YAPADAAD@Z			; std::addressof<char>
+PUBLIC	??$addressof@D@std@@YGPADAAD@Z			; std::addressof<char>
 PUBLIC	??0?$allocator@U_Container_proxy@std@@@std@@QAE@XZ ; std::allocator<std::_Container_proxy>::allocator<std::_Container_proxy>
 PUBLIC	?deallocate@?$allocator@U_Container_proxy@std@@@std@@QAEXPAU_Container_proxy@2@I@Z ; std::allocator<std::_Container_proxy>::deallocate
 PUBLIC	?allocate@?$allocator@U_Container_proxy@std@@@std@@QAEPAU_Container_proxy@2@I@Z ; std::allocator<std::_Container_proxy>::allocate
 PUBLIC	??$construct@U_Container_proxy@std@@U12@@?$allocator@U_Container_proxy@std@@@std@@QAEXPAU_Container_proxy@1@$$QAU21@@Z ; std::allocator<std::_Container_proxy>::construct<std::_Container_proxy,std::_Container_proxy>
 PUBLIC	??$destroy@U_Container_proxy@std@@@?$allocator@U_Container_proxy@std@@@std@@QAEXPAU_Container_proxy@1@@Z ; std::allocator<std::_Container_proxy>::destroy<std::_Container_proxy>
-PUBLIC	??$_Allocate@U_Container_proxy@std@@@std@@YAPAU_Container_proxy@0@IPAU10@@Z ; std::_Allocate<std::_Container_proxy>
-PUBLIC	??$_Allocate@D@std@@YAPADIPAD@Z			; std::_Allocate<char>
-PUBLIC	??$forward@AAPAD@std@@YAAAPADAAPAD@Z		; std::forward<char * &>
-PUBLIC	??$construct@PADAAPAD@?$allocator_traits@V?$allocator@D@std@@@std@@SAXAAV?$allocator@D@1@PAPADAAPAD@Z ; std::allocator_traits<std::allocator<char> >::construct<char *,char * &>
-PUBLIC	??$destroy@PAD@?$allocator_traits@V?$allocator@D@std@@@std@@SAXAAV?$allocator@D@1@PAPAD@Z ; std::allocator_traits<std::allocator<char> >::destroy<char *>
-PUBLIC	??$forward@U_Container_proxy@std@@@std@@YA$$QAU_Container_proxy@0@AAU10@@Z ; std::forward<std::_Container_proxy>
+PUBLIC	??$_Allocate@U_Container_proxy@std@@@std@@YGPAU_Container_proxy@0@IPAU10@@Z ; std::_Allocate<std::_Container_proxy>
+PUBLIC	??$_Allocate@D@std@@YGPADIPAD@Z			; std::_Allocate<char>
+PUBLIC	??$forward@AAPAD@std@@YGAAPADAAPAD@Z		; std::forward<char * &>
+PUBLIC	??$construct@PADAAPAD@?$allocator_traits@V?$allocator@D@std@@@std@@SGXAAV?$allocator@D@1@PAPADAAPAD@Z ; std::allocator_traits<std::allocator<char> >::construct<char *,char * &>
+PUBLIC	??$destroy@PAD@?$allocator_traits@V?$allocator@D@std@@@std@@SGXAAV?$allocator@D@1@PAPAD@Z ; std::allocator_traits<std::allocator<char> >::destroy<char *>
+PUBLIC	??$forward@U_Container_proxy@std@@@std@@YG$$QAU_Container_proxy@0@AAU10@@Z ; std::forward<std::_Container_proxy>
 PUBLIC	??$construct@PADAAPAD@?$allocator@D@std@@QAEXPAPADAAPAD@Z ; std::allocator<char>::construct<char *,char * &>
 PUBLIC	??$destroy@PAD@?$allocator@D@std@@QAEXPAPAD@Z	; std::allocator<char>::destroy<char *>
 PUBLIC	??_7error_category@std@@6B@			; std::error_category::`vftable'
@@ -966,11 +972,12 @@ EXTRN	??0SwitchOnSignalEvent@@QAE@PAVAbstractDevice@@@Z:PROC ; SwitchOnSignalEve
 EXTRN	?setValueFloat@Property@@QAEXM@Z:PROC		; Property::setValueFloat
 EXTRN	?setValueUnsignedLong@Property@@QAEXK@Z:PROC	; Property::setValueUnsignedLong
 EXTRN	?getNativeValue@Property@@QAEPAXXZ:PROC		; Property::getNativeValue
-EXTRN	?getSlaveFactoryPointer@SlaveFactory@@SAAAV1@XZ:PROC ; SlaveFactory::getSlaveFactoryPointer
+EXTRN	?getSlaveFactoryPointer@SlaveFactory@@SGAAV1@XZ:PROC ; SlaveFactory::getSlaveFactoryPointer
 EXTRN	?setDisreteInput@SlaveFactory@@QAEXUSlaveInformation@@ABTuValue@@@Z:PROC ; SlaveFactory::setDisreteInput
 EXTRN	?setCoils@SlaveFactory@@QAEXUSlaveInformation@@ABTuValue@@@Z:PROC ; SlaveFactory::setCoils
 EXTRN	?setInputRegisters@SlaveFactory@@QAEXUSlaveInformation@@ABTuValue@@@Z:PROC ; SlaveFactory::setInputRegisters
 EXTRN	?setHoldingRegisters@SlaveFactory@@QAEXUSlaveInformation@@ABTuValue@@@Z:PROC ; SlaveFactory::setHoldingRegisters
+EXTRN	?getInstance@Deque@@SGAAV1@J@Z:PROC		; Deque::getInstance
 EXTRN	@_RTC_CheckStackVars@8:PROC
 EXTRN	@__security_check_cookie@4:PROC
 EXTRN	__CxxThrowException@8:PROC
@@ -1234,8 +1241,11 @@ CONST	ENDS
 CONST	SEGMENT
 ??_7AbstractDevice@@6B@ DD FLAT:??_R4AbstractDevice@@6B@ ; AbstractDevice::`vftable'
 	DD	FLAT:??_EAbstractDevice@@UAEPAXI@Z
-	DD	FLAT:__purecall
-	DD	FLAT:__purecall
+	DD	FLAT:?getVal@AbstractDevice@@UAEIPAVProperty@@@Z
+	DD	FLAT:?setVal@AbstractDevice@@UAEIPAVProperty@@@Z
+	DD	FLAT:?getTasksProperties@AbstractDevice@@UAEXXZ
+	DD	FLAT:?getTasksEvents@AbstractDevice@@UAEXXZ
+	DD	FLAT:?update@AbstractDevice@@UAEXXZ
 CONST	ENDS
 ;	COMDAT ??_C@_06FHFOAHML@system?$AA@
 CONST	SEGMENT
@@ -1488,8 +1498,7 @@ __V0$ = 12						; size = 4
 	je	SHORT $LN3@construct
 	mov	ecx, DWORD PTR __V0$[ebp]
 	push	ecx
-	call	??$forward@AAPAD@std@@YAAAPADAAPAD@Z	; std::forward<char * &>
-	add	esp, 4
+	call	??$forward@AAPAD@std@@YGAAPADAAPAD@Z	; std::forward<char * &>
 	mov	edx, DWORD PTR $T3[ebp]
 	mov	eax, DWORD PTR [eax]
 	mov	DWORD PTR [edx], eax
@@ -1536,10 +1545,10 @@ __ehhandler$??$construct@PADAAPAD@?$allocator@D@std@@QAEXPAPADAAPAD@Z:
 text$x	ENDS
 ??$construct@PADAAPAD@?$allocator@D@std@@QAEXPAPADAAPAD@Z ENDP ; std::allocator<char>::construct<char *,char * &>
 ; Function compile flags: /Odtp /RTCsu /ZI
-;	COMDAT ??$forward@U_Container_proxy@std@@@std@@YA$$QAU_Container_proxy@0@AAU10@@Z
+;	COMDAT ??$forward@U_Container_proxy@std@@@std@@YG$$QAU_Container_proxy@0@AAU10@@Z
 _TEXT	SEGMENT
 __Arg$ = 8						; size = 4
-??$forward@U_Container_proxy@std@@@std@@YA$$QAU_Container_proxy@0@AAU10@@Z PROC ; std::forward<std::_Container_proxy>, COMDAT
+??$forward@U_Container_proxy@std@@@std@@YG$$QAU_Container_proxy@0@AAU10@@Z PROC ; std::forward<std::_Container_proxy>, COMDAT
 ; File c:\program files (x86)\microsoft visual studio 11.0\vc\include\type_traits
 ; Line 1775
 	push	ebp
@@ -1560,15 +1569,15 @@ __Arg$ = 8						; size = 4
 	pop	ebx
 	mov	esp, ebp
 	pop	ebp
-	ret	0
-??$forward@U_Container_proxy@std@@@std@@YA$$QAU_Container_proxy@0@AAU10@@Z ENDP ; std::forward<std::_Container_proxy>
+	ret	4
+??$forward@U_Container_proxy@std@@@std@@YG$$QAU_Container_proxy@0@AAU10@@Z ENDP ; std::forward<std::_Container_proxy>
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
-;	COMDAT ??$destroy@PAD@?$allocator_traits@V?$allocator@D@std@@@std@@SAXAAV?$allocator@D@1@PAPAD@Z
+;	COMDAT ??$destroy@PAD@?$allocator_traits@V?$allocator@D@std@@@std@@SGXAAV?$allocator@D@1@PAPAD@Z
 _TEXT	SEGMENT
 __Al$ = 8						; size = 4
 __Ptr$ = 12						; size = 4
-??$destroy@PAD@?$allocator_traits@V?$allocator@D@std@@@std@@SAXAAV?$allocator@D@1@PAPAD@Z PROC ; std::allocator_traits<std::allocator<char> >::destroy<char *>, COMDAT
+??$destroy@PAD@?$allocator_traits@V?$allocator@D@std@@@std@@SGXAAV?$allocator@D@1@PAPAD@Z PROC ; std::allocator_traits<std::allocator<char> >::destroy<char *>, COMDAT
 ; File c:\program files (x86)\microsoft visual studio 11.0\vc\include\xmemory0
 ; Line 755
 	push	ebp
@@ -1595,16 +1604,16 @@ __Ptr$ = 12						; size = 4
 	call	__RTC_CheckEsp
 	mov	esp, ebp
 	pop	ebp
-	ret	0
-??$destroy@PAD@?$allocator_traits@V?$allocator@D@std@@@std@@SAXAAV?$allocator@D@1@PAPAD@Z ENDP ; std::allocator_traits<std::allocator<char> >::destroy<char *>
+	ret	8
+??$destroy@PAD@?$allocator_traits@V?$allocator@D@std@@@std@@SGXAAV?$allocator@D@1@PAPAD@Z ENDP ; std::allocator_traits<std::allocator<char> >::destroy<char *>
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
-;	COMDAT ??$construct@PADAAPAD@?$allocator_traits@V?$allocator@D@std@@@std@@SAXAAV?$allocator@D@1@PAPADAAPAD@Z
+;	COMDAT ??$construct@PADAAPAD@?$allocator_traits@V?$allocator@D@std@@@std@@SGXAAV?$allocator@D@1@PAPADAAPAD@Z
 _TEXT	SEGMENT
 __Al$ = 8						; size = 4
 __Ptr$ = 12						; size = 4
 __V0$ = 16						; size = 4
-??$construct@PADAAPAD@?$allocator_traits@V?$allocator@D@std@@@std@@SAXAAV?$allocator@D@1@PAPADAAPAD@Z PROC ; std::allocator_traits<std::allocator<char> >::construct<char *,char * &>, COMDAT
+??$construct@PADAAPAD@?$allocator_traits@V?$allocator@D@std@@@std@@SGXAAV?$allocator@D@1@PAPADAAPAD@Z PROC ; std::allocator_traits<std::allocator<char> >::construct<char *,char * &>, COMDAT
 ; File c:\program files (x86)\microsoft visual studio 11.0\vc\include\xmemory0
 ; Line 751
 	push	ebp
@@ -1619,8 +1628,7 @@ __V0$ = 16						; size = 4
 	rep stosd
 	mov	eax, DWORD PTR __V0$[ebp]
 	push	eax
-	call	??$forward@AAPAD@std@@YAAAPADAAPAD@Z	; std::forward<char * &>
-	add	esp, 4
+	call	??$forward@AAPAD@std@@YGAAPADAAPAD@Z	; std::forward<char * &>
 	push	eax
 	mov	ecx, DWORD PTR __Ptr$[ebp]
 	push	ecx
@@ -1634,14 +1642,14 @@ __V0$ = 16						; size = 4
 	call	__RTC_CheckEsp
 	mov	esp, ebp
 	pop	ebp
-	ret	0
-??$construct@PADAAPAD@?$allocator_traits@V?$allocator@D@std@@@std@@SAXAAV?$allocator@D@1@PAPADAAPAD@Z ENDP ; std::allocator_traits<std::allocator<char> >::construct<char *,char * &>
+	ret	12					; 0000000cH
+??$construct@PADAAPAD@?$allocator_traits@V?$allocator@D@std@@@std@@SGXAAV?$allocator@D@1@PAPADAAPAD@Z ENDP ; std::allocator_traits<std::allocator<char> >::construct<char *,char * &>
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
-;	COMDAT ??$forward@AAPAD@std@@YAAAPADAAPAD@Z
+;	COMDAT ??$forward@AAPAD@std@@YGAAPADAAPAD@Z
 _TEXT	SEGMENT
 __Arg$ = 8						; size = 4
-??$forward@AAPAD@std@@YAAAPADAAPAD@Z PROC		; std::forward<char * &>, COMDAT
+??$forward@AAPAD@std@@YGAAPADAAPAD@Z PROC		; std::forward<char * &>, COMDAT
 ; File c:\program files (x86)\microsoft visual studio 11.0\vc\include\type_traits
 ; Line 1775
 	push	ebp
@@ -1662,8 +1670,8 @@ __Arg$ = 8						; size = 4
 	pop	ebx
 	mov	esp, ebp
 	pop	ebp
-	ret	0
-??$forward@AAPAD@std@@YAAAPADAAPAD@Z ENDP		; std::forward<char * &>
+	ret	4
+??$forward@AAPAD@std@@YGAAPADAAPAD@Z ENDP		; std::forward<char * &>
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ??__F?_System_object@?$_Error_objects@H@std@@2V_System_error_category@2@A@@YAXXZ
@@ -1843,12 +1851,12 @@ text$yc	SEGMENT
 ??__E?_Generic_object@?$_Error_objects@H@std@@2V_Generic_error_category@2@A@@YAXXZ ENDP ; `dynamic initializer for 'std::_Error_objects<int>::_Generic_object''
 text$yc	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
-;	COMDAT ??$_Allocate@D@std@@YAPADIPAD@Z
+;	COMDAT ??$_Allocate@D@std@@YGPADIPAD@Z
 _TEXT	SEGMENT
 __Ptr$ = -8						; size = 4
 __Count$ = 8						; size = 4
 ___formal$ = 12						; size = 4
-??$_Allocate@D@std@@YAPADIPAD@Z PROC			; std::_Allocate<char>, COMDAT
+??$_Allocate@D@std@@YGPADIPAD@Z PROC			; std::_Allocate<char>, COMDAT
 ; File c:\program files (x86)\microsoft visual studio 11.0\vc\include\xmemory0
 ; Line 22
 	push	ebp
@@ -1898,16 +1906,16 @@ $LN6@Allocate:
 	call	__RTC_CheckEsp
 	mov	esp, ebp
 	pop	ebp
-	ret	0
-??$_Allocate@D@std@@YAPADIPAD@Z ENDP			; std::_Allocate<char>
+	ret	8
+??$_Allocate@D@std@@YGPADIPAD@Z ENDP			; std::_Allocate<char>
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
-;	COMDAT ??$_Allocate@U_Container_proxy@std@@@std@@YAPAU_Container_proxy@0@IPAU10@@Z
+;	COMDAT ??$_Allocate@U_Container_proxy@std@@@std@@YGPAU_Container_proxy@0@IPAU10@@Z
 _TEXT	SEGMENT
 __Ptr$ = -8						; size = 4
 __Count$ = 8						; size = 4
 ___formal$ = 12						; size = 4
-??$_Allocate@U_Container_proxy@std@@@std@@YAPAU_Container_proxy@0@IPAU10@@Z PROC ; std::_Allocate<std::_Container_proxy>, COMDAT
+??$_Allocate@U_Container_proxy@std@@@std@@YGPAU_Container_proxy@0@IPAU10@@Z PROC ; std::_Allocate<std::_Container_proxy>, COMDAT
 ; File c:\program files (x86)\microsoft visual studio 11.0\vc\include\xmemory0
 ; Line 22
 	push	ebp
@@ -1958,8 +1966,8 @@ $LN6@Allocate:
 	call	__RTC_CheckEsp
 	mov	esp, ebp
 	pop	ebp
-	ret	0
-??$_Allocate@U_Container_proxy@std@@@std@@YAPAU_Container_proxy@0@IPAU10@@Z ENDP ; std::_Allocate<std::_Container_proxy>
+	ret	8
+??$_Allocate@U_Container_proxy@std@@@std@@YGPAU_Container_proxy@0@IPAU10@@Z ENDP ; std::_Allocate<std::_Container_proxy>
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ??$destroy@U_Container_proxy@std@@@?$allocator@U_Container_proxy@std@@@std@@QAEXPAU_Container_proxy@1@@Z
@@ -2039,8 +2047,7 @@ __V0$ = 12						; size = 4
 	je	SHORT $LN3@construct
 	mov	ecx, DWORD PTR __V0$[ebp]
 	push	ecx
-	call	??$forward@U_Container_proxy@std@@@std@@YA$$QAU_Container_proxy@0@AAU10@@Z ; std::forward<std::_Container_proxy>
-	add	esp, 4
+	call	??$forward@U_Container_proxy@std@@@std@@YG$$QAU_Container_proxy@0@AAU10@@Z ; std::forward<std::_Container_proxy>
 	mov	edx, DWORD PTR [eax]
 	mov	eax, DWORD PTR [eax+4]
 	mov	ecx, DWORD PTR $T3[ebp]
@@ -2114,8 +2121,7 @@ __Count$ = 8						; size = 4
 	push	0
 	mov	eax, DWORD PTR __Count$[ebp]
 	push	eax
-	call	??$_Allocate@U_Container_proxy@std@@@std@@YAPAU_Container_proxy@0@IPAU10@@Z ; std::_Allocate<std::_Container_proxy>
-	add	esp, 8
+	call	??$_Allocate@U_Container_proxy@std@@@std@@YGPAU_Container_proxy@0@IPAU10@@Z ; std::_Allocate<std::_Container_proxy>
 ; Line 592
 	pop	edi
 	pop	esi
@@ -2200,10 +2206,10 @@ _this$ = -8						; size = 4
 ??0?$allocator@U_Container_proxy@std@@@std@@QAE@XZ ENDP	; std::allocator<std::_Container_proxy>::allocator<std::_Container_proxy>
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
-;	COMDAT ??$addressof@D@std@@YAPADAAD@Z
+;	COMDAT ??$addressof@D@std@@YGPADAAD@Z
 _TEXT	SEGMENT
 __Val$ = 8						; size = 4
-??$addressof@D@std@@YAPADAAD@Z PROC			; std::addressof<char>, COMDAT
+??$addressof@D@std@@YGPADAAD@Z PROC			; std::addressof<char>, COMDAT
 ; File c:\program files (x86)\microsoft visual studio 11.0\vc\include\xstddef
 ; Line 85
 	push	ebp
@@ -2224,8 +2230,8 @@ __Val$ = 8						; size = 4
 	pop	ebx
 	mov	esp, ebp
 	pop	ebp
-	ret	0
-??$addressof@D@std@@YAPADAAD@Z ENDP			; std::addressof<char>
+	ret	4
+??$addressof@D@std@@YGPADAAD@Z ENDP			; std::addressof<char>
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ??$destroy@PAD@?$_Wrap_alloc@V?$allocator@D@std@@@std@@QAEXPAPAD@Z
@@ -2254,8 +2260,7 @@ __Ptr$ = 8						; size = 4
 	push	eax
 	mov	ecx, DWORD PTR _this$[ebp]
 	push	ecx
-	call	??$destroy@PAD@?$allocator_traits@V?$allocator@D@std@@@std@@SAXAAV?$allocator@D@1@PAPAD@Z ; std::allocator_traits<std::allocator<char> >::destroy<char *>
-	add	esp, 8
+	call	??$destroy@PAD@?$allocator_traits@V?$allocator@D@std@@@std@@SGXAAV?$allocator@D@1@PAPAD@Z ; std::allocator_traits<std::allocator<char> >::destroy<char *>
 ; Line 910
 	pop	edi
 	pop	esi
@@ -2293,15 +2298,13 @@ __V0$ = 12						; size = 4
 	mov	DWORD PTR _this$[ebp], ecx
 	mov	eax, DWORD PTR __V0$[ebp]
 	push	eax
-	call	??$forward@AAPAD@std@@YAAAPADAAPAD@Z	; std::forward<char * &>
-	add	esp, 4
+	call	??$forward@AAPAD@std@@YGAAPADAAPAD@Z	; std::forward<char * &>
 	push	eax
 	mov	ecx, DWORD PTR __Ptr$[ebp]
 	push	ecx
 	mov	edx, DWORD PTR _this$[ebp]
 	push	edx
-	call	??$construct@PADAAPAD@?$allocator_traits@V?$allocator@D@std@@@std@@SAXAAV?$allocator@D@1@PAPADAAPAD@Z ; std::allocator_traits<std::allocator<char> >::construct<char *,char * &>
-	add	esp, 12					; 0000000cH
+	call	??$construct@PADAAPAD@?$allocator_traits@V?$allocator@D@std@@@std@@SGXAAV?$allocator@D@1@PAPADAAPAD@Z ; std::allocator_traits<std::allocator<char> >::construct<char *,char * &>
 	pop	edi
 	pop	esi
 	pop	ebx
@@ -2373,7 +2376,7 @@ __$EHRec$ = -12						; size = 12
 ?constructEvents@AbstractDevice@@QAEXXZ PROC		; AbstractDevice::constructEvents, COMDAT
 ; _this$ = ecx
 ; File d:\projects\asu\icpdas\tmminios\tmminios\abstactdevice.cpp
-; Line 144
+; Line 149
 	push	ebp
 	mov	ebp, esp
 	push	-1
@@ -2396,13 +2399,13 @@ __$EHRec$ = -12						; size = 12
 	lea	eax, DWORD PTR __$EHRec$[ebp]
 	mov	DWORD PTR fs:0, eax
 	mov	DWORD PTR _this$[ebp], ecx
-; Line 145
+; Line 150
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	cx, WORD PTR [eax+6]
 	mov	WORD PTR _tmpMask$[ebp], cx
-; Line 146
+; Line 151
 	mov	DWORD PTR _count$[ebp], 0
-; Line 149
+; Line 154
 	mov	DWORD PTR _i$6[ebp], 0
 	jmp	SHORT $LN11@constructE
 $LN10@constructE:
@@ -2412,9 +2415,9 @@ $LN10@constructE:
 $LN11@constructE:
 	cmp	DWORD PTR _i$6[ebp], 16			; 00000010H
 	jge	SHORT $LN9@constructE
-; Line 151
+; Line 156
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+136]
+	mov	ecx, DWORD PTR [eax+144]
 	mov	edx, DWORD PTR _i$6[ebp]
 	mov	eax, DWORD PTR [ecx+edx*4]
 	mov	DWORD PTR $T3[ebp], eax
@@ -2436,37 +2439,37 @@ $LN11@constructE:
 $LN14@constructE:
 	mov	DWORD PTR tv76[ebp], 0
 $LN15@constructE:
-; Line 152
+; Line 157
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+136]
+	mov	ecx, DWORD PTR [eax+144]
 	mov	edx, DWORD PTR _i$6[ebp]
 	mov	DWORD PTR [ecx+edx*4], 0
-; Line 153
+; Line 158
 	jmp	SHORT $LN10@constructE
 $LN9@constructE:
-; Line 155
+; Line 160
 	mov	eax, DWORD PTR _this$[ebp]
 	movzx	ecx, WORD PTR [eax+6]
 	cmp	ecx, 16					; 00000010H
 	jg	$LN12@constructE
 $LN7@constructE:
-; Line 157
+; Line 162
 	movzx	eax, WORD PTR _tmpMask$[ebp]
 	test	eax, eax
 	jle	$LN12@constructE
-; Line 159
+; Line 164
 	movzx	eax, WORD PTR _tmpMask$[ebp]
 	and	eax, 1
 	je	SHORT $LN5@constructE
-; Line 161
+; Line 166
 	mov	eax, DWORD PTR _count$[ebp]
 	mov	DWORD PTR tv88[ebp], eax
 	cmp	DWORD PTR tv88[ebp], 0
 	je	SHORT $LN2@constructE
 	jmp	SHORT $LN5@constructE
 $LN2@constructE:
-; Line 163
-	push	16					; 00000010H
+; Line 168
+	push	20					; 00000014H
 	call	??2@YAPAXI@Z				; operator new
 	add	esp, 4
 	mov	DWORD PTR $T5[ebp], eax
@@ -2486,23 +2489,23 @@ $LN17@constructE:
 	mov	DWORD PTR $T4[ebp], ecx
 	mov	DWORD PTR __$EHRec$[ebp+8], -1
 	mov	edx, DWORD PTR _this$[ebp]
-	mov	eax, DWORD PTR [edx+136]
+	mov	eax, DWORD PTR [edx+144]
 	mov	ecx, DWORD PTR _count$[ebp]
 	mov	edx, DWORD PTR $T4[ebp]
 	mov	DWORD PTR [eax+ecx*4], edx
 $LN5@constructE:
-; Line 183
+; Line 188
 	mov	ax, WORD PTR _tmpMask$[ebp]
 	shr	ax, 1
 	mov	WORD PTR _tmpMask$[ebp], ax
-; Line 184
+; Line 189
 	mov	eax, DWORD PTR _count$[ebp]
 	add	eax, 1
 	mov	DWORD PTR _count$[ebp], eax
-; Line 185
+; Line 190
 	jmp	$LN7@constructE
 $LN12@constructE:
-; Line 187
+; Line 192
 	mov	ecx, DWORD PTR __$EHRec$[ebp]
 	mov	DWORD PTR fs:0, ecx
 	pop	ecx
@@ -2543,7 +2546,7 @@ _this$ = -8						; size = 4
 ?eventsProcess@AbstractDevice@@QAEXXZ PROC		; AbstractDevice::eventsProcess, COMDAT
 ; _this$ = ecx
 ; File d:\projects\asu\icpdas\tmminios\tmminios\abstactdevice.cpp
-; Line 128
+; Line 133
 	push	ebp
 	mov	ebp, esp
 	sub	esp, 228				; 000000e4H
@@ -2557,28 +2560,28 @@ _this$ = -8						; size = 4
 	rep stosd
 	pop	ecx
 	mov	DWORD PTR _this$[ebp], ecx
-; Line 129
+; Line 134
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	cx, WORD PTR [eax+6]
 	mov	WORD PTR _tmpMask$[ebp], cx
-; Line 130
+; Line 135
 	mov	DWORD PTR _count$[ebp], 0
 $LN3@eventsProc:
-; Line 132
+; Line 137
 	movzx	eax, WORD PTR _tmpMask$[ebp]
 	test	eax, eax
 	jle	SHORT $LN4@eventsProc
-; Line 134
+; Line 139
 	movzx	eax, WORD PTR _tmpMask$[ebp]
 	and	eax, 1
 	je	SHORT $LN1@eventsProc
-; Line 136
+; Line 141
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+136]
+	mov	ecx, DWORD PTR [eax+144]
 	mov	edx, DWORD PTR _count$[ebp]
 	mov	eax, DWORD PTR [ecx+edx*4]
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+136]
+	mov	edx, DWORD PTR [ecx+144]
 	mov	ecx, DWORD PTR _count$[ebp]
 	mov	eax, DWORD PTR [eax]
 	mov	esi, esp
@@ -2588,18 +2591,18 @@ $LN3@eventsProc:
 	cmp	esi, esp
 	call	__RTC_CheckEsp
 $LN1@eventsProc:
-; Line 138
+; Line 143
 	mov	ax, WORD PTR _tmpMask$[ebp]
 	shr	ax, 1
 	mov	WORD PTR _tmpMask$[ebp], ax
-; Line 139
+; Line 144
 	mov	eax, DWORD PTR _count$[ebp]
 	add	eax, 1
 	mov	DWORD PTR _count$[ebp], eax
-; Line 140
+; Line 145
 	jmp	SHORT $LN3@eventsProc
 $LN4@eventsProc:
-; Line 141
+; Line 146
 	pop	edi
 	pop	esi
 	pop	ebx
@@ -2612,14 +2615,13 @@ $LN4@eventsProc:
 ?eventsProcess@AbstractDevice@@QAEXXZ ENDP		; AbstractDevice::eventsProcess
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
-;	COMDAT ?logProperty@AbstractDevice@@QAEXPAVProperty@@@Z
+;	COMDAT ?update@AbstractDevice@@UAEXXZ
 _TEXT	SEGMENT
 _this$ = -8						; size = 4
-_prop$ = 8						; size = 4
-?logProperty@AbstractDevice@@QAEXPAVProperty@@@Z PROC	; AbstractDevice::logProperty, COMDAT
+?update@AbstractDevice@@UAEXXZ PROC			; AbstractDevice::update, COMDAT
 ; _this$ = ecx
 ; File d:\projects\asu\icpdas\tmminios\tmminios\abstactdevice.cpp
-; Line 103
+; Line 273
 	push	ebp
 	mov	ebp, esp
 	sub	esp, 204				; 000000ccH
@@ -2633,27 +2635,94 @@ _prop$ = 8						; size = 4
 	rep stosd
 	pop	ecx
 	mov	DWORD PTR _this$[ebp], ecx
-; Line 105
+; Line 274
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?writeDataToSlave@AbstractDevice@@QAEXXZ ; AbstractDevice::writeDataToSlave
+; Line 275
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?logProperty@AbstractDevice@@QAEXXZ	; AbstractDevice::logProperty
+; Line 276
+	pop	edi
+	pop	esi
+	pop	ebx
+	add	esp, 204				; 000000ccH
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+?update@AbstractDevice@@UAEXXZ ENDP			; AbstractDevice::update
+_TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ?getTasksEvents@AbstractDevice@@UAEXXZ
+_TEXT	SEGMENT
+_this$ = -8						; size = 4
+?getTasksEvents@AbstractDevice@@UAEXXZ PROC		; AbstractDevice::getTasksEvents, COMDAT
+; _this$ = ecx
+; File d:\projects\asu\icpdas\tmminios\tmminios\abstactdevice.cpp
+; Line 268
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 204				; 000000ccH
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-204]
+	mov	ecx, 51					; 00000033H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	DWORD PTR _this$[ebp], ecx
+; Line 270
 	pop	edi
 	pop	esi
 	pop	ebx
 	mov	esp, ebp
 	pop	ebp
-	ret	4
-?logProperty@AbstractDevice@@QAEXPAVProperty@@@Z ENDP	; AbstractDevice::logProperty
+	ret	0
+?getTasksEvents@AbstractDevice@@UAEXXZ ENDP		; AbstractDevice::getTasksEvents
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
-;	COMDAT ?writeDataToSlave@AbstractDevice@@QAEXPAVProperty@@@Z
+;	COMDAT ?getTasksProperties@AbstractDevice@@UAEXXZ
 _TEXT	SEGMENT
-tv140 = -216						; size = 8
-tv136 = -208						; size = 4
-tv76 = -208						; size = 4
 _this$ = -8						; size = 4
-_prop$ = 8						; size = 4
-?writeDataToSlave@AbstractDevice@@QAEXPAVProperty@@@Z PROC ; AbstractDevice::writeDataToSlave, COMDAT
+?getTasksProperties@AbstractDevice@@UAEXXZ PROC		; AbstractDevice::getTasksProperties, COMDAT
 ; _this$ = ecx
 ; File d:\projects\asu\icpdas\tmminios\tmminios\abstactdevice.cpp
-; Line 76
+; Line 263
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 204				; 000000ccH
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-204]
+	mov	ecx, 51					; 00000033H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	DWORD PTR _this$[ebp], ecx
+; Line 265
+	pop	edi
+	pop	esi
+	pop	ebx
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+?getTasksProperties@AbstractDevice@@UAEXXZ ENDP		; AbstractDevice::getTasksProperties
+_TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ?isOwnProperty@AbstractDevice@@QAE?AW4bool_t@@PAVProperty@@@Z
+_TEXT	SEGMENT
+_i$1 = -20						; size = 4
+_this$ = -8						; size = 4
+_property$ = 8						; size = 4
+?isOwnProperty@AbstractDevice@@QAE?AW4bool_t@@PAVProperty@@@Z PROC ; AbstractDevice::isOwnProperty, COMDAT
+; _this$ = ecx
+; File d:\projects\asu\icpdas\tmminios\tmminios\abstactdevice.cpp
+; Line 279
 	push	ebp
 	mov	ebp, esp
 	sub	esp, 216				; 000000d8H
@@ -2667,126 +2736,52 @@ _prop$ = 8						; size = 4
 	rep stosd
 	pop	ecx
 	mov	DWORD PTR _this$[ebp], ecx
-; Line 77
-	mov	eax, DWORD PTR _prop$[ebp]
-	cmp	DWORD PTR [eax+164], 0
-	je	SHORT $LN8@writeDataT
-; Line 79
-	mov	ecx, DWORD PTR _prop$[ebp]
-	call	?getNativeValue@Property@@QAEPAXXZ	; Property::getNativeValue
-	mov	eax, DWORD PTR [eax]
-	mov	DWORD PTR tv136[ebp], eax
-	cvtsi2sd xmm0, DWORD PTR tv136[ebp]
-	mov	ecx, DWORD PTR tv136[ebp]
-	shr	ecx, 31					; 0000001fH
-	addsd	xmm0, QWORD PTR __xmm@41f00000000000000000000000000000[ecx*8]
-	movsd	QWORD PTR tv140[ebp], xmm0
-	cvtsd2ss xmm0, QWORD PTR tv140[ebp]
-	divss	xmm0, DWORD PTR __real@41200000
-	push	ecx
-	movss	DWORD PTR [esp], xmm0
-	mov	ecx, DWORD PTR _prop$[ebp]
-	call	?setValueFloat@Property@@QAEXM@Z	; Property::setValueFloat
-$LN8@writeDataT:
-; Line 82
+; Line 280
+	mov	DWORD PTR _i$1[ebp], 0
+	jmp	SHORT $LN4@isOwnPrope
+$LN3@isOwnPrope:
+	mov	eax, DWORD PTR _i$1[ebp]
+	add	eax, 1
+	mov	DWORD PTR _i$1[ebp], eax
+$LN4@isOwnPrope:
 	mov	eax, DWORD PTR _this$[ebp]
-	cmp	DWORD PTR [eax+12], 0
-	je	$LN5@writeDataT
-; Line 84
-	mov	eax, DWORD PTR _prop$[ebp]
-	mov	ecx, DWORD PTR [eax+120]
-	mov	DWORD PTR tv76[ebp], ecx
-	cmp	DWORD PTR tv76[ebp], 4
-	ja	$LN5@writeDataT
-	mov	edx, DWORD PTR tv76[ebp]
-	jmp	DWORD PTR $LN11@writeDataT[edx*4]
-$LN4@writeDataT:
-; Line 87
-	mov	eax, DWORD PTR _prop$[ebp]
-	add	eax, 128				; 00000080H
-	push	eax
-	mov	ecx, DWORD PTR _prop$[ebp]
-	mov	edx, DWORD PTR [ecx+124]
-	push	edx
-	mov	eax, DWORD PTR [ecx+120]
-	push	eax
-	mov	ecx, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [ecx+12]
-	call	?setDisreteInput@SlaveFactory@@QAEXUSlaveInformation@@ABTuValue@@@Z ; SlaveFactory::setDisreteInput
-; Line 88
-	jmp	SHORT $LN5@writeDataT
-$LN3@writeDataT:
-; Line 90
-	mov	eax, DWORD PTR _prop$[ebp]
-	add	eax, 128				; 00000080H
-	push	eax
-	mov	ecx, DWORD PTR _prop$[ebp]
-	mov	edx, DWORD PTR [ecx+124]
-	push	edx
-	mov	eax, DWORD PTR [ecx+120]
-	push	eax
-	mov	ecx, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [ecx+12]
-	call	?setCoils@SlaveFactory@@QAEXUSlaveInformation@@ABTuValue@@@Z ; SlaveFactory::setCoils
-; Line 91
-	jmp	SHORT $LN5@writeDataT
-$LN2@writeDataT:
-; Line 93
-	mov	eax, DWORD PTR _prop$[ebp]
-	add	eax, 128				; 00000080H
-	push	eax
-	mov	ecx, DWORD PTR _prop$[ebp]
-	mov	edx, DWORD PTR [ecx+124]
-	push	edx
-	mov	eax, DWORD PTR [ecx+120]
-	push	eax
-	mov	ecx, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [ecx+12]
-	call	?setInputRegisters@SlaveFactory@@QAEXUSlaveInformation@@ABTuValue@@@Z ; SlaveFactory::setInputRegisters
-; Line 94
-	jmp	SHORT $LN5@writeDataT
-$LN1@writeDataT:
-; Line 96
-	mov	eax, DWORD PTR _prop$[ebp]
-	add	eax, 128				; 00000080H
-	push	eax
-	mov	ecx, DWORD PTR _prop$[ebp]
-	mov	edx, DWORD PTR [ecx+124]
-	push	edx
-	mov	eax, DWORD PTR [ecx+120]
-	push	eax
-	mov	ecx, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [ecx+12]
-	call	?setHoldingRegisters@SlaveFactory@@QAEXUSlaveInformation@@ABTuValue@@@Z ; SlaveFactory::setHoldingRegisters
-$LN5@writeDataT:
-; Line 100
+	movsx	ecx, WORD PTR [eax+132]
+	cmp	DWORD PTR _i$1[ebp], ecx
+	jge	SHORT $LN2@isOwnPrope
+; Line 282
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+140]
+	mov	edx, DWORD PTR _i$1[ebp]
+	mov	eax, DWORD PTR _property$[ebp]
+	cmp	eax, DWORD PTR [ecx+edx*4]
+	jne	SHORT $LN1@isOwnPrope
+; Line 283
+	mov	eax, 1
+	jmp	SHORT $LN5@isOwnPrope
+$LN1@isOwnPrope:
+; Line 284
+	jmp	SHORT $LN3@isOwnPrope
+$LN2@isOwnPrope:
+; Line 286
+	xor	eax, eax
+$LN5@isOwnPrope:
+; Line 287
 	pop	edi
 	pop	esi
 	pop	ebx
-	add	esp, 216				; 000000d8H
-	cmp	ebp, esp
-	call	__RTC_CheckEsp
 	mov	esp, ebp
 	pop	ebp
 	ret	4
-	npad	2
-$LN11@writeDataT:
-	DD	$LN4@writeDataT
-	DD	$LN3@writeDataT
-	DD	$LN5@writeDataT
-	DD	$LN2@writeDataT
-	DD	$LN1@writeDataT
-?writeDataToSlave@AbstractDevice@@QAEXPAVProperty@@@Z ENDP ; AbstractDevice::writeDataToSlave
+?isOwnProperty@AbstractDevice@@QAE?AW4bool_t@@PAVProperty@@@Z ENDP ; AbstractDevice::isOwnProperty
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
-;	COMDAT ?processWrite@AbstractDevice@@QAEIPAVProperty@@@Z
+;	COMDAT ?logProperty@AbstractDevice@@QAEXXZ
 _TEXT	SEGMENT
 _this$ = -8						; size = 4
-_prop$ = 8						; size = 4
-?processWrite@AbstractDevice@@QAEIPAVProperty@@@Z PROC	; AbstractDevice::processWrite, COMDAT
+?logProperty@AbstractDevice@@QAEXXZ PROC		; AbstractDevice::logProperty, COMDAT
 ; _this$ = ecx
 ; File d:\projects\asu\icpdas\tmminios\tmminios\abstactdevice.cpp
-; Line 120
+; Line 108
 	push	ebp
 	mov	ebp, esp
 	sub	esp, 204				; 000000ccH
@@ -2800,10 +2795,290 @@ _prop$ = 8						; size = 4
 	rep stosd
 	pop	ecx
 	mov	DWORD PTR _this$[ebp], ecx
-; Line 121
+; Line 110
+	pop	edi
+	pop	esi
+	pop	ebx
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+?logProperty@AbstractDevice@@QAEXXZ ENDP		; AbstractDevice::logProperty
+_TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ?writeDataToSlave@AbstractDevice@@QAEXXZ
+_TEXT	SEGMENT
+tv207 = -228						; size = 8
+tv203 = -220						; size = 4
+tv92 = -220						; size = 4
+_i$1 = -20						; size = 4
+_this$ = -8						; size = 4
+?writeDataToSlave@AbstractDevice@@QAEXXZ PROC		; AbstractDevice::writeDataToSlave, COMDAT
+; _this$ = ecx
+; File d:\projects\asu\icpdas\tmminios\tmminios\abstactdevice.cpp
+; Line 77
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 228				; 000000e4H
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-228]
+	mov	ecx, 57					; 00000039H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	DWORD PTR _this$[ebp], ecx
+; Line 78
+	mov	DWORD PTR _i$1[ebp], 0
+	jmp	SHORT $LN11@writeDataT
+$LN10@writeDataT:
+	mov	eax, DWORD PTR _i$1[ebp]
+	add	eax, 1
+	mov	DWORD PTR _i$1[ebp], eax
+$LN11@writeDataT:
+	mov	eax, DWORD PTR _this$[ebp]
+	movsx	ecx, WORD PTR [eax+132]
+	cmp	DWORD PTR _i$1[ebp], ecx
+	jge	$LN9@writeDataT
+; Line 80
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+140]
+	mov	edx, DWORD PTR _i$1[ebp]
+	mov	eax, DWORD PTR [ecx+edx*4]
+	cmp	DWORD PTR [eax+164], 0
+	je	SHORT $LN8@writeDataT
+; Line 82
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+140]
+	mov	edx, DWORD PTR _i$1[ebp]
+	mov	ecx, DWORD PTR [ecx+edx*4]
+	call	?getNativeValue@Property@@QAEPAXXZ	; Property::getNativeValue
+	mov	eax, DWORD PTR [eax]
+	mov	DWORD PTR tv203[ebp], eax
+	cvtsi2sd xmm0, DWORD PTR tv203[ebp]
+	mov	ecx, DWORD PTR tv203[ebp]
+	shr	ecx, 31					; 0000001fH
+	addsd	xmm0, QWORD PTR __xmm@41f00000000000000000000000000000[ecx*8]
+	movsd	QWORD PTR tv207[ebp], xmm0
+	cvtsd2ss xmm0, QWORD PTR tv207[ebp]
+	divss	xmm0, DWORD PTR __real@41200000
+	push	ecx
+	movss	DWORD PTR [esp], xmm0
+	mov	edx, DWORD PTR _this$[ebp]
+	mov	eax, DWORD PTR [edx+140]
+	mov	ecx, DWORD PTR _i$1[ebp]
+	mov	ecx, DWORD PTR [eax+ecx*4]
+	call	?setValueFloat@Property@@QAEXM@Z	; Property::setValueFloat
+$LN8@writeDataT:
+; Line 85
+	mov	eax, DWORD PTR _this$[ebp]
+	cmp	DWORD PTR [eax+12], 0
+	je	$LN5@writeDataT
+; Line 87
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+140]
+	mov	edx, DWORD PTR _i$1[ebp]
+	mov	eax, DWORD PTR [ecx+edx*4]
+	mov	ecx, DWORD PTR [eax+120]
+	mov	DWORD PTR tv92[ebp], ecx
+	cmp	DWORD PTR tv92[ebp], 4
+	ja	$LN5@writeDataT
+	mov	edx, DWORD PTR tv92[ebp]
+	jmp	DWORD PTR $LN14@writeDataT[edx*4]
+$LN4@writeDataT:
+; Line 90
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+140]
+	mov	edx, DWORD PTR _i$1[ebp]
+	mov	eax, DWORD PTR [ecx+edx*4]
+	add	eax, 128				; 00000080H
+	push	eax
+	mov	ecx, DWORD PTR _this$[ebp]
+	mov	edx, DWORD PTR [ecx+140]
+	mov	eax, DWORD PTR _i$1[ebp]
+	mov	ecx, DWORD PTR [edx+eax*4]
+	mov	edx, DWORD PTR [ecx+124]
+	push	edx
+	mov	eax, DWORD PTR [ecx+120]
+	push	eax
+	mov	ecx, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [ecx+12]
+	call	?setDisreteInput@SlaveFactory@@QAEXUSlaveInformation@@ABTuValue@@@Z ; SlaveFactory::setDisreteInput
+; Line 91
+	jmp	$LN5@writeDataT
+$LN3@writeDataT:
+; Line 93
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+140]
+	mov	edx, DWORD PTR _i$1[ebp]
+	mov	eax, DWORD PTR [ecx+edx*4]
+	add	eax, 128				; 00000080H
+	push	eax
+	mov	ecx, DWORD PTR _this$[ebp]
+	mov	edx, DWORD PTR [ecx+140]
+	mov	eax, DWORD PTR _i$1[ebp]
+	mov	ecx, DWORD PTR [edx+eax*4]
+	mov	edx, DWORD PTR [ecx+124]
+	push	edx
+	mov	eax, DWORD PTR [ecx+120]
+	push	eax
+	mov	ecx, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [ecx+12]
+	call	?setCoils@SlaveFactory@@QAEXUSlaveInformation@@ABTuValue@@@Z ; SlaveFactory::setCoils
+; Line 94
+	jmp	SHORT $LN5@writeDataT
+$LN2@writeDataT:
+; Line 96
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+140]
+	mov	edx, DWORD PTR _i$1[ebp]
+	mov	eax, DWORD PTR [ecx+edx*4]
+	add	eax, 128				; 00000080H
+	push	eax
+	mov	ecx, DWORD PTR _this$[ebp]
+	mov	edx, DWORD PTR [ecx+140]
+	mov	eax, DWORD PTR _i$1[ebp]
+	mov	ecx, DWORD PTR [edx+eax*4]
+	mov	edx, DWORD PTR [ecx+124]
+	push	edx
+	mov	eax, DWORD PTR [ecx+120]
+	push	eax
+	mov	ecx, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [ecx+12]
+	call	?setInputRegisters@SlaveFactory@@QAEXUSlaveInformation@@ABTuValue@@@Z ; SlaveFactory::setInputRegisters
+; Line 97
+	jmp	SHORT $LN5@writeDataT
+$LN1@writeDataT:
+; Line 99
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+140]
+	mov	edx, DWORD PTR _i$1[ebp]
+	mov	eax, DWORD PTR [ecx+edx*4]
+	add	eax, 128				; 00000080H
+	push	eax
+	mov	ecx, DWORD PTR _this$[ebp]
+	mov	edx, DWORD PTR [ecx+140]
+	mov	eax, DWORD PTR _i$1[ebp]
+	mov	ecx, DWORD PTR [edx+eax*4]
+	mov	edx, DWORD PTR [ecx+124]
+	push	edx
+	mov	eax, DWORD PTR [ecx+120]
+	push	eax
+	mov	ecx, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [ecx+12]
+	call	?setHoldingRegisters@SlaveFactory@@QAEXUSlaveInformation@@ABTuValue@@@Z ; SlaveFactory::setHoldingRegisters
+$LN5@writeDataT:
+; Line 103
+	jmp	$LN10@writeDataT
+$LN9@writeDataT:
+; Line 105
+	pop	edi
+	pop	esi
+	pop	ebx
+	add	esp, 228				; 000000e4H
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+	npad	3
+$LN14@writeDataT:
+	DD	$LN4@writeDataT
+	DD	$LN3@writeDataT
+	DD	$LN5@writeDataT
+	DD	$LN2@writeDataT
+	DD	$LN1@writeDataT
+?writeDataToSlave@AbstractDevice@@QAEXXZ ENDP		; AbstractDevice::writeDataToSlave
+_TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ?setVal@AbstractDevice@@UAEIPAVProperty@@@Z
+_TEXT	SEGMENT
+_this$ = -8						; size = 4
+___formal$ = 8						; size = 4
+?setVal@AbstractDevice@@UAEIPAVProperty@@@Z PROC	; AbstractDevice::setVal, COMDAT
+; _this$ = ecx
+; File d:\projects\asu\icpdas\tmminios\tmminios\model.h
+; Line 62
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 204				; 000000ccH
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-204]
+	mov	ecx, 51					; 00000033H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	DWORD PTR _this$[ebp], ecx
+	xor	eax, eax
+	pop	edi
+	pop	esi
+	pop	ebx
+	mov	esp, ebp
+	pop	ebp
+	ret	4
+?setVal@AbstractDevice@@UAEIPAVProperty@@@Z ENDP	; AbstractDevice::setVal
+_TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ?getVal@AbstractDevice@@UAEIPAVProperty@@@Z
+_TEXT	SEGMENT
+_this$ = -8						; size = 4
+___formal$ = 8						; size = 4
+?getVal@AbstractDevice@@UAEIPAVProperty@@@Z PROC	; AbstractDevice::getVal, COMDAT
+; _this$ = ecx
+; File d:\projects\asu\icpdas\tmminios\tmminios\model.h
+; Line 61
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 204				; 000000ccH
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-204]
+	mov	ecx, 51					; 00000033H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	DWORD PTR _this$[ebp], ecx
+	xor	eax, eax
+	pop	edi
+	pop	esi
+	pop	ebx
+	mov	esp, ebp
+	pop	ebp
+	ret	4
+?getVal@AbstractDevice@@UAEIPAVProperty@@@Z ENDP	; AbstractDevice::getVal
+_TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ?processWrite@AbstractDevice@@QAEIPAVProperty@@@Z
+_TEXT	SEGMENT
+_this$ = -8						; size = 4
+_prop$ = 8						; size = 4
+?processWrite@AbstractDevice@@QAEIPAVProperty@@@Z PROC	; AbstractDevice::processWrite, COMDAT
+; _this$ = ecx
+; File d:\projects\asu\icpdas\tmminios\tmminios\abstactdevice.cpp
+; Line 125
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 204				; 000000ccH
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-204]
+	mov	ecx, 51					; 00000033H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	DWORD PTR _this$[ebp], ecx
+; Line 126
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?eventsProcess@AbstractDevice@@QAEXXZ	; AbstractDevice::eventsProcess
-; Line 122
+; Line 127
 	mov	esi, esp
 	mov	eax, DWORD PTR _prop$[ebp]
 	push	eax
@@ -2816,10 +3091,10 @@ _prop$ = 8						; size = 4
 	call	__RTC_CheckEsp
 	mov	ecx, DWORD PTR _this$[ebp]
 	mov	DWORD PTR [ecx+20], eax
-; Line 124
+; Line 129
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	eax, DWORD PTR [eax+20]
-; Line 125
+; Line 130
 	pop	edi
 	pop	esi
 	pop	ebx
@@ -2839,7 +3114,7 @@ _prop$ = 8						; size = 4
 ?processRead@AbstractDevice@@QAEIPAVProperty@@@Z PROC	; AbstractDevice::processRead, COMDAT
 ; _this$ = ecx
 ; File d:\projects\asu\icpdas\tmminios\tmminios\abstactdevice.cpp
-; Line 108
+; Line 113
 	push	ebp
 	mov	ebp, esp
 	sub	esp, 204				; 000000ccH
@@ -2853,7 +3128,7 @@ _prop$ = 8						; size = 4
 	rep stosd
 	pop	ecx
 	mov	DWORD PTR _this$[ebp], ecx
-; Line 109
+; Line 114
 	mov	esi, esp
 	mov	eax, DWORD PTR _prop$[ebp]
 	push	eax
@@ -2866,30 +3141,26 @@ _prop$ = 8						; size = 4
 	call	__RTC_CheckEsp
 	mov	ecx, DWORD PTR _this$[ebp]
 	mov	DWORD PTR [ecx+16], eax
-; Line 110
+; Line 115
 	mov	eax, DWORD PTR _this$[ebp]
 	cmp	DWORD PTR [eax+16], 500			; 000001f4H
 	jb	SHORT $LN1@processRea
-; Line 111
+; Line 116
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	eax, DWORD PTR [eax+16]
 	jmp	SHORT $LN2@processRea
 $LN1@processRea:
-; Line 113
-	mov	eax, DWORD PTR _prop$[ebp]
-	push	eax
+; Line 118
 	mov	ecx, DWORD PTR _this$[ebp]
-	call	?writeDataToSlave@AbstractDevice@@QAEXPAVProperty@@@Z ; AbstractDevice::writeDataToSlave
-; Line 114
-	mov	eax, DWORD PTR _prop$[ebp]
-	push	eax
+	call	?writeDataToSlave@AbstractDevice@@QAEXXZ ; AbstractDevice::writeDataToSlave
+; Line 119
 	mov	ecx, DWORD PTR _this$[ebp]
-	call	?logProperty@AbstractDevice@@QAEXPAVProperty@@@Z ; AbstractDevice::logProperty
-; Line 116
+	call	?logProperty@AbstractDevice@@QAEXXZ	; AbstractDevice::logProperty
+; Line 121
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	eax, DWORD PTR [eax+16]
 $LN2@processRea:
-; Line 117
+; Line 122
 	pop	edi
 	pop	esi
 	pop	ebx
@@ -2914,7 +3185,7 @@ _countMask$ = 8						; size = 2
 ?setCountableMask@AbstractDevice@@QAEXG@Z PROC		; AbstractDevice::setCountableMask, COMDAT
 ; _this$ = ecx
 ; File d:\projects\asu\icpdas\tmminios\tmminios\abstactdevice.cpp
-; Line 209
+; Line 214
 	push	ebp
 	mov	ebp, esp
 	sub	esp, 316				; 0000013cH
@@ -2931,29 +3202,29 @@ _countMask$ = 8						; size = 2
 	xor	eax, ebp
 	mov	DWORD PTR __$ArrayPad$[ebp], eax
 	mov	DWORD PTR _this$[ebp], ecx
-; Line 210
+; Line 215
 	movzx	eax, WORD PTR _countMask$[ebp]
 	cmp	eax, 16					; 00000010H
 	jl	SHORT $LN11@setCountab
-; Line 212
+; Line 217
 	mov	eax, 16					; 00000010H
 	mov	ecx, DWORD PTR _this$[ebp]
 	mov	WORD PTR [ecx+8], ax
-; Line 214
+; Line 219
 	jmp	SHORT $LN10@setCountab
 $LN11@setCountab:
-; Line 216
+; Line 221
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	cx, WORD PTR _countMask$[ebp]
 	mov	WORD PTR [eax+8], cx
 $LN10@setCountab:
-; Line 219
+; Line 224
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	cx, WORD PTR [eax+8]
 	mov	WORD PTR _tmpCountMask$[ebp], cx
-; Line 220
+; Line 225
 	mov	DWORD PTR _count$[ebp], 0
-; Line 223
+; Line 228
 	push	64					; 00000040H
 	push	0
 	lea	eax, DWORD PTR _arrMask$[ebp]
@@ -2961,38 +3232,38 @@ $LN10@setCountab:
 	call	_memset
 	add	esp, 12					; 0000000cH
 $LN9@setCountab:
-; Line 225
+; Line 230
 	movzx	eax, WORD PTR _tmpCountMask$[ebp]
 	test	eax, eax
 	jle	SHORT $LN8@setCountab
-; Line 227
+; Line 232
 	movzx	eax, WORD PTR _tmpCountMask$[ebp]
 	and	eax, 1
 	je	SHORT $LN7@setCountab
-; Line 229
+; Line 234
 	mov	eax, DWORD PTR _count$[ebp]
 	mov	DWORD PTR _arrMask$[ebp+eax*4], 1
-; Line 231
+; Line 236
 	jmp	SHORT $LN6@setCountab
 $LN7@setCountab:
-; Line 233
+; Line 238
 	mov	eax, DWORD PTR _count$[ebp]
 	mov	DWORD PTR _arrMask$[ebp+eax*4], 0
 $LN6@setCountab:
-; Line 236
+; Line 241
 	mov	eax, DWORD PTR _count$[ebp]
 	add	eax, 1
 	mov	DWORD PTR _count$[ebp], eax
-; Line 237
+; Line 242
 	mov	ax, WORD PTR _tmpCountMask$[ebp]
 	shr	ax, 1
 	mov	WORD PTR _tmpCountMask$[ebp], ax
-; Line 238
+; Line 243
 	jmp	SHORT $LN9@setCountab
 $LN8@setCountab:
-; Line 239
+; Line 244
 	mov	DWORD PTR _count$[ebp], 0
-; Line 241
+; Line 246
 	mov	DWORD PTR _i$1[ebp], 0
 	jmp	SHORT $LN5@setCountab
 $LN4@setCountab:
@@ -3001,39 +3272,39 @@ $LN4@setCountab:
 	mov	DWORD PTR _i$1[ebp], eax
 $LN5@setCountab:
 	mov	eax, DWORD PTR _this$[ebp]
-	movsx	ecx, WORD PTR [eax+124]
+	movsx	ecx, WORD PTR [eax+132]
 	cmp	DWORD PTR _i$1[ebp], ecx
 	jge	SHORT $LN12@setCountab
-; Line 243
+; Line 248
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+132]
+	mov	ecx, DWORD PTR [eax+140]
 	mov	edx, DWORD PTR _i$1[ebp]
 	cmp	DWORD PTR [ecx+edx*4], 0
 	je	SHORT $LN2@setCountab
-; Line 244
+; Line 249
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+132]
+	mov	ecx, DWORD PTR [eax+140]
 	mov	edx, DWORD PTR _i$1[ebp]
 	mov	eax, DWORD PTR [ecx+edx*4]
 	cmp	DWORD PTR [eax+160], 1
 	jne	SHORT $LN2@setCountab
-; Line 246
+; Line 251
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+132]
+	mov	ecx, DWORD PTR [eax+140]
 	mov	edx, DWORD PTR _i$1[ebp]
 	mov	eax, DWORD PTR [ecx+edx*4]
 	mov	ecx, DWORD PTR _count$[ebp]
 	mov	edx, DWORD PTR _arrMask$[ebp+ecx*4]
 	mov	DWORD PTR [eax+164], edx
-; Line 247
+; Line 252
 	mov	eax, DWORD PTR _count$[ebp]
 	add	eax, 1
 	mov	DWORD PTR _count$[ebp], eax
 $LN2@setCountab:
-; Line 249
+; Line 254
 	jmp	SHORT $LN4@setCountab
 $LN12@setCountab:
-; Line 250
+; Line 255
 	push	edx
 	mov	ecx, ebp
 	push	eax
@@ -3053,7 +3324,7 @@ $LN12@setCountab:
 	mov	esp, ebp
 	pop	ebp
 	ret	4
-	npad	1
+	npad	2
 $LN16@setCountab:
 	DD	1
 	DD	$LN15@setCountab
@@ -3079,7 +3350,7 @@ _this$ = -8						; size = 4
 ?getCountableMask@AbstractDevice@@QAEGXZ PROC		; AbstractDevice::getCountableMask, COMDAT
 ; _this$ = ecx
 ; File d:\projects\asu\icpdas\tmminios\tmminios\abstactdevice.cpp
-; Line 253
+; Line 258
 	push	ebp
 	mov	ebp, esp
 	sub	esp, 204				; 000000ccH
@@ -3093,10 +3364,10 @@ _this$ = -8						; size = 4
 	rep stosd
 	pop	ecx
 	mov	DWORD PTR _this$[ebp], ecx
-; Line 254
+; Line 259
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	ax, WORD PTR [eax+8]
-; Line 255
+; Line 260
 	pop	edi
 	pop	esi
 	pop	ebx
@@ -3113,7 +3384,7 @@ _evMask$ = 8						; size = 2
 ?setEventMask@AbstractDevice@@QAEXG@Z PROC		; AbstractDevice::setEventMask, COMDAT
 ; _this$ = ecx
 ; File d:\projects\asu\icpdas\tmminios\tmminios\abstactdevice.cpp
-; Line 195
+; Line 200
 	push	ebp
 	mov	ebp, esp
 	sub	esp, 204				; 000000ccH
@@ -3127,25 +3398,25 @@ _evMask$ = 8						; size = 2
 	rep stosd
 	pop	ecx
 	mov	DWORD PTR _this$[ebp], ecx
-; Line 196
+; Line 201
 	movzx	eax, WORD PTR _evMask$[ebp]
 	cmp	eax, 16					; 00000010H
 	jl	SHORT $LN2@setEventMa
-; Line 198
+; Line 203
 	mov	eax, 16					; 00000010H
 	mov	WORD PTR _evMask$[ebp], ax
-; Line 200
+; Line 205
 	jmp	SHORT $LN1@setEventMa
 $LN2@setEventMa:
-; Line 202
+; Line 207
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	cx, WORD PTR _evMask$[ebp]
 	mov	WORD PTR [eax+6], cx
 $LN1@setEventMa:
-; Line 205
+; Line 210
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?constructEvents@AbstractDevice@@QAEXXZ	; AbstractDevice::constructEvents
-; Line 206
+; Line 211
 	pop	edi
 	pop	esi
 	pop	ebx
@@ -3164,7 +3435,7 @@ _this$ = -8						; size = 4
 ?getEventMask@AbstractDevice@@QAEGXZ PROC		; AbstractDevice::getEventMask, COMDAT
 ; _this$ = ecx
 ; File d:\projects\asu\icpdas\tmminios\tmminios\abstactdevice.cpp
-; Line 190
+; Line 195
 	push	ebp
 	mov	ebp, esp
 	sub	esp, 204				; 000000ccH
@@ -3178,10 +3449,10 @@ _this$ = -8						; size = 4
 	rep stosd
 	pop	ecx
 	mov	DWORD PTR _this$[ebp], ecx
-; Line 191
+; Line 196
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	ax, WORD PTR [eax+6]
-; Line 192
+; Line 197
 	pop	edi
 	pop	esi
 	pop	ebx
@@ -3198,7 +3469,7 @@ _val$ = 8						; size = 2
 ?setAddress@AbstractDevice@@QAEXG@Z PROC		; AbstractDevice::setAddress, COMDAT
 ; _this$ = ecx
 ; File d:\projects\asu\icpdas\tmminios\tmminios\abstactdevice.cpp
-; Line 71
+; Line 72
 	push	ebp
 	mov	ebp, esp
 	sub	esp, 204				; 000000ccH
@@ -3212,11 +3483,11 @@ _val$ = 8						; size = 2
 	rep stosd
 	pop	ecx
 	mov	DWORD PTR _this$[ebp], ecx
-; Line 72
+; Line 73
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	cx, WORD PTR _val$[ebp]
 	mov	WORD PTR [eax+4], cx
-; Line 73
+; Line 74
 	pop	edi
 	pop	esi
 	pop	ebx
@@ -3232,7 +3503,7 @@ _this$ = -8						; size = 4
 ?getAddress@AbstractDevice@@QAEGXZ PROC			; AbstractDevice::getAddress, COMDAT
 ; _this$ = ecx
 ; File d:\projects\asu\icpdas\tmminios\tmminios\abstactdevice.cpp
-; Line 66
+; Line 67
 	push	ebp
 	mov	ebp, esp
 	sub	esp, 204				; 000000ccH
@@ -3246,10 +3517,10 @@ _this$ = -8						; size = 4
 	rep stosd
 	pop	ecx
 	mov	DWORD PTR _this$[ebp], ecx
-; Line 67
+; Line 68
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	ax, WORD PTR [eax+4]
-; Line 68
+; Line 69
 	pop	edi
 	pop	esi
 	pop	ebx
@@ -3266,7 +3537,7 @@ _propId$ = 8						; size = 2
 ?deleteProperty@AbstractDevice@@QAEFF@Z PROC		; AbstractDevice::deleteProperty, COMDAT
 ; _this$ = ecx
 ; File d:\projects\asu\icpdas\tmminios\tmminios\abstactdevice.cpp
-; Line 55
+; Line 56
 	push	ebp
 	mov	ebp, esp
 	sub	esp, 204				; 000000ccH
@@ -3280,42 +3551,42 @@ _propId$ = 8						; size = 2
 	rep stosd
 	pop	ecx
 	mov	DWORD PTR _this$[ebp], ecx
-; Line 56
+; Line 57
 	movsx	eax, WORD PTR _propId$[ebp]
 	mov	ecx, DWORD PTR _this$[ebp]
-	movsx	edx, WORD PTR [ecx+124]
+	movsx	edx, WORD PTR [ecx+132]
 	cmp	eax, edx
 	jg	SHORT $LN2@deleteProp
-; Line 58
+; Line 59
 	mov	esi, esp
 	push	0
 	movsx	eax, WORD PTR _propId$[ebp]
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+132]
+	mov	edx, DWORD PTR [ecx+140]
 	mov	eax, DWORD PTR [edx+eax*4]
 	movsx	ecx, WORD PTR _propId$[ebp]
 	mov	edx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [edx+132]
+	mov	edx, DWORD PTR [edx+140]
 	mov	eax, DWORD PTR [eax]
 	mov	ecx, DWORD PTR [edx+ecx*4]
 	mov	edx, DWORD PTR [eax+4]
 	call	edx
 	cmp	esi, esp
 	call	__RTC_CheckEsp
-; Line 59
+; Line 60
 	movsx	eax, WORD PTR _propId$[ebp]
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+132]
+	mov	edx, DWORD PTR [ecx+140]
 	mov	DWORD PTR [edx+eax*4], 0
-; Line 60
+; Line 61
 	xor	eax, eax
 	jmp	SHORT $LN3@deleteProp
 	jmp	SHORT $LN3@deleteProp
 $LN2@deleteProp:
-; Line 62
+; Line 63
 	or	eax, -1
 $LN3@deleteProp:
-; Line 63
+; Line 64
 	pop	edi
 	pop	esi
 	pop	ebx
@@ -3336,7 +3607,7 @@ _propId$ = 12						; size = 2
 ?addProperty@AbstractDevice@@QAEFPAVProperty@@F@Z PROC	; AbstractDevice::addProperty, COMDAT
 ; _this$ = ecx
 ; File d:\projects\asu\icpdas\tmminios\tmminios\abstactdevice.cpp
-; Line 45
+; Line 46
 	push	ebp
 	mov	ebp, esp
 	sub	esp, 204				; 000000ccH
@@ -3350,27 +3621,27 @@ _propId$ = 12						; size = 2
 	rep stosd
 	pop	ecx
 	mov	DWORD PTR _this$[ebp], ecx
-; Line 46
+; Line 47
 	movsx	eax, WORD PTR _propId$[ebp]
 	mov	ecx, DWORD PTR _this$[ebp]
-	movsx	edx, WORD PTR [ecx+124]
+	movsx	edx, WORD PTR [ecx+132]
 	cmp	eax, edx
 	jg	SHORT $LN2@addPropert
-; Line 48
+; Line 49
 	movsx	eax, WORD PTR _propId$[ebp]
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+132]
+	mov	edx, DWORD PTR [ecx+140]
 	mov	ecx, DWORD PTR _propTmp$[ebp]
 	mov	DWORD PTR [edx+eax*4], ecx
-; Line 49
+; Line 50
 	xor	eax, eax
 	jmp	SHORT $LN3@addPropert
 	jmp	SHORT $LN3@addPropert
 $LN2@addPropert:
-; Line 51
+; Line 52
 	or	eax, -1
 $LN3@addPropert:
-; Line 52
+; Line 53
 	pop	edi
 	pop	esi
 	pop	ebx
@@ -3382,8 +3653,8 @@ _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ??1AbstractDevice@@UAE@XZ
 _TEXT	SEGMENT
-tv132 = -292						; size = 4
-tv88 = -292						; size = 4
+tv128 = -292						; size = 4
+tv84 = -292						; size = 4
 $T1 = -284						; size = 4
 $T2 = -272						; size = 4
 $T3 = -260						; size = 4
@@ -3395,7 +3666,7 @@ _this$ = -8						; size = 4
 ??1AbstractDevice@@UAE@XZ PROC				; AbstractDevice::~AbstractDevice, COMDAT
 ; _this$ = ecx
 ; File d:\projects\asu\icpdas\tmminios\tmminios\abstactdevice.cpp
-; Line 26
+; Line 27
 	push	ebp
 	mov	ebp, esp
 	sub	esp, 292				; 00000124H
@@ -3411,9 +3682,9 @@ _this$ = -8						; size = 4
 	mov	DWORD PTR _this$[ebp], ecx
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	DWORD PTR [eax], OFFSET ??_7AbstractDevice@@6B@
-; Line 27
-	mov	DWORD PTR _i$[ebp], 0
 ; Line 28
+	mov	DWORD PTR _i$[ebp], 0
+; Line 29
 	mov	DWORD PTR _i$[ebp], 0
 	jmp	SHORT $LN6@AbstractDe
 $LN5@AbstractDe:
@@ -3422,27 +3693,22 @@ $LN5@AbstractDe:
 	mov	DWORD PTR _i$[ebp], eax
 $LN6@AbstractDe:
 	mov	eax, DWORD PTR _this$[ebp]
-	movsx	ecx, WORD PTR [eax+124]
+	movsx	ecx, WORD PTR [eax+132]
 	cmp	DWORD PTR _i$[ebp], ecx
-	jge	$LN4@AbstractDe
-; Line 30
+	jge	SHORT $LN4@AbstractDe
+; Line 31
 	push	0
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+132]
+	mov	ecx, DWORD PTR [eax+140]
 	mov	edx, DWORD PTR _i$[ebp]
 	mov	ecx, DWORD PTR [ecx+edx*4]
 	call	?setValueUnsignedLong@Property@@QAEXK@Z	; Property::setValueUnsignedLong
-; Line 31
-	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+132]
-	mov	edx, DWORD PTR _i$[ebp]
-	mov	eax, DWORD PTR [ecx+edx*4]
-	push	eax
-	mov	ecx, DWORD PTR _this$[ebp]
-	call	?writeDataToSlave@AbstractDevice@@QAEXPAVProperty@@@Z ; AbstractDevice::writeDataToSlave
 ; Line 32
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?writeDataToSlave@AbstractDevice@@QAEXXZ ; AbstractDevice::writeDataToSlave
+; Line 33
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+132]
+	mov	ecx, DWORD PTR [eax+140]
 	mov	edx, DWORD PTR _i$[ebp]
 	mov	eax, DWORD PTR [ecx+edx*4]
 	mov	DWORD PTR $T2[ebp], eax
@@ -3459,15 +3725,15 @@ $LN6@AbstractDe:
 	call	edx
 	cmp	esi, esp
 	call	__RTC_CheckEsp
-	mov	DWORD PTR tv88[ebp], eax
+	mov	DWORD PTR tv84[ebp], eax
 	jmp	SHORT $LN10@AbstractDe
 $LN9@AbstractDe:
-	mov	DWORD PTR tv88[ebp], 0
+	mov	DWORD PTR tv84[ebp], 0
 $LN10@AbstractDe:
-; Line 33
+; Line 34
 	jmp	$LN5@AbstractDe
 $LN4@AbstractDe:
-; Line 35
+; Line 36
 	mov	DWORD PTR _i$[ebp], 0
 	jmp	SHORT $LN3@AbstractDe
 $LN2@AbstractDe:
@@ -3477,9 +3743,9 @@ $LN2@AbstractDe:
 $LN3@AbstractDe:
 	cmp	DWORD PTR _i$[ebp], 16			; 00000010H
 	jge	SHORT $LN1@AbstractDe
-; Line 37
+; Line 38
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+136]
+	mov	ecx, DWORD PTR [eax+144]
 	mov	edx, DWORD PTR _i$[ebp]
 	mov	eax, DWORD PTR [ecx+edx*4]
 	mov	DWORD PTR $T4[ebp], eax
@@ -3496,31 +3762,31 @@ $LN3@AbstractDe:
 	call	edx
 	cmp	esi, esp
 	call	__RTC_CheckEsp
-	mov	DWORD PTR tv132[ebp], eax
+	mov	DWORD PTR tv128[ebp], eax
 	jmp	SHORT $LN12@AbstractDe
 $LN11@AbstractDe:
-	mov	DWORD PTR tv132[ebp], 0
+	mov	DWORD PTR tv128[ebp], 0
 $LN12@AbstractDe:
-; Line 38
+; Line 39
 	jmp	SHORT $LN2@AbstractDe
 $LN1@AbstractDe:
-; Line 40
+; Line 41
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+132]
+	mov	ecx, DWORD PTR [eax+140]
 	mov	DWORD PTR $T5[ebp], ecx
 	mov	edx, DWORD PTR $T5[ebp]
 	push	edx
 	call	??_V@YAXPAX@Z				; operator delete[]
 	add	esp, 4
-; Line 41
+; Line 42
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+136]
+	mov	ecx, DWORD PTR [eax+144]
 	mov	DWORD PTR $T6[ebp], ecx
 	mov	edx, DWORD PTR $T6[ebp]
 	push	edx
 	call	??_V@YAXPAX@Z				; operator delete[]
 	add	esp, 4
-; Line 42
+; Line 43
 	pop	edi
 	pop	esi
 	pop	ebx
@@ -3545,7 +3811,7 @@ _evMask$ = 16						; size = 2
 ??0AbstractDevice@@IAE@FGG@Z PROC			; AbstractDevice::AbstractDevice, COMDAT
 ; _this$ = ecx
 ; File d:\projects\asu\icpdas\tmminios\tmminios\abstactdevice.cpp
-; Line 5
+; Line 6
 	push	ebp
 	mov	ebp, esp
 	sub	esp, 240				; 000000f0H
@@ -3561,18 +3827,22 @@ _evMask$ = 16						; size = 2
 	mov	DWORD PTR _this$[ebp], ecx
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	DWORD PTR [eax], OFFSET ??_7AbstractDevice@@6B@
-	call	?getSlaveFactoryPointer@SlaveFactory@@SAAAV1@XZ ; SlaveFactory::getSlaveFactoryPointer
+	call	?getSlaveFactoryPointer@SlaveFactory@@SGAAV1@XZ ; SlaveFactory::getSlaveFactoryPointer
 	mov	ecx, DWORD PTR _this$[ebp]
 	mov	DWORD PTR [ecx+12], eax
-; Line 6
+	push	256					; 00000100H
+	call	?getInstance@Deque@@SGAAV1@J@Z		; Deque::getInstance
+	mov	ecx, DWORD PTR _this$[ebp]
+	mov	DWORD PTR [ecx+24], eax
+; Line 7
 	push	64					; 00000040H
 	call	??_U@YAPAXI@Z				; operator new[]
 	add	esp, 4
 	mov	DWORD PTR $T1[ebp], eax
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	ecx, DWORD PTR $T1[ebp]
-	mov	DWORD PTR [eax+136], ecx
-; Line 7
+	mov	DWORD PTR [eax+144], ecx
+; Line 8
 	mov	DWORD PTR _i$3[ebp], 0
 	jmp	SHORT $LN3@AbstractDe
 $LN2@AbstractDe:
@@ -3582,44 +3852,44 @@ $LN2@AbstractDe:
 $LN3@AbstractDe:
 	cmp	DWORD PTR _i$3[ebp], 16			; 00000010H
 	jge	SHORT $LN1@AbstractDe
-; Line 9
+; Line 10
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+136]
+	mov	ecx, DWORD PTR [eax+144]
 	mov	edx, DWORD PTR _i$3[ebp]
 	mov	DWORD PTR [ecx+edx*4], 0
-; Line 10
+; Line 11
 	jmp	SHORT $LN2@AbstractDe
 $LN1@AbstractDe:
-; Line 12
-	mov	eax, DWORD PTR _this$[ebp]
-	mov	DWORD PTR [eax+128], 1
 ; Line 13
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	cx, WORD PTR _propCount$[ebp]
-	mov	WORD PTR [eax+124], cx
+	mov	DWORD PTR [eax+136], 1
 ; Line 14
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	cx, WORD PTR _propCount$[ebp]
+	mov	WORD PTR [eax+132], cx
+; Line 15
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	cx, WORD PTR _addrr$[ebp]
 	mov	WORD PTR [eax+4], cx
-; Line 15
+; Line 16
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	cx, WORD PTR _evMask$[ebp]
 	mov	WORD PTR [eax+6], cx
-; Line 16
+; Line 17
 	xor	eax, eax
 	mov	ecx, DWORD PTR _this$[ebp]
 	mov	WORD PTR [ecx+8], ax
-; Line 17
-	mov	eax, DWORD PTR _this$[ebp]
-	mov	DWORD PTR [eax+16], 0
 ; Line 18
 	mov	eax, DWORD PTR _this$[ebp]
+	mov	DWORD PTR [eax+16], 0
+; Line 19
+	mov	eax, DWORD PTR _this$[ebp]
 	mov	DWORD PTR [eax+20], 0
-; Line 20
+; Line 21
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?constructEvents@AbstractDevice@@QAEXXZ	; AbstractDevice::constructEvents
-; Line 21
-	call	?getSlaveFactoryPointer@SlaveFactory@@SAAAV1@XZ ; SlaveFactory::getSlaveFactoryPointer
+; Line 22
+	call	?getSlaveFactoryPointer@SlaveFactory@@SGAAV1@XZ ; SlaveFactory::getSlaveFactoryPointer
 	push	12000					; 00002ee0H
 	push	eax
 	mov	eax, DWORD PTR _this$[ebp]
@@ -3627,9 +3897,9 @@ $LN1@AbstractDe:
 	push	ecx
 	call	_memcpy
 	add	esp, 12					; 0000000cH
-; Line 22
+; Line 23
 	mov	eax, DWORD PTR _this$[ebp]
-	movsx	eax, WORD PTR [eax+124]
+	movsx	eax, WORD PTR [eax+132]
 	xor	ecx, ecx
 	mov	edx, 4
 	mul	edx
@@ -3642,8 +3912,8 @@ $LN1@AbstractDe:
 	mov	DWORD PTR $T2[ebp], eax
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	ecx, DWORD PTR $T2[ebp]
-	mov	DWORD PTR [eax+132], ecx
-; Line 23
+	mov	DWORD PTR [eax+140], ecx
+; Line 24
 	mov	eax, DWORD PTR _this$[ebp]
 	pop	edi
 	pop	esi
@@ -3764,7 +4034,7 @@ __Errval$ = 12						; size = 4
 	test	eax, eax
 	je	SHORT $LN2@default_er
 ; Line 643
-	call	?generic_category@std@@YAABVerror_category@1@XZ ; std::generic_category
+	call	?generic_category@std@@YGABVerror_category@1@XZ ; std::generic_category
 	push	eax
 	mov	eax, DWORD PTR __Errval$[ebp]
 	push	eax
@@ -3776,7 +4046,7 @@ __Errval$ = 12						; size = 4
 	jmp	SHORT $LN3@default_er
 $LN2@default_er:
 ; Line 645
-	call	?system_category@std@@YAABVerror_category@1@XZ ; std::system_category
+	call	?system_category@std@@YGABVerror_category@1@XZ ; std::system_category
 	push	eax
 	mov	eax, DWORD PTR __Errval$[ebp]
 	push	eax
@@ -4879,9 +5149,9 @@ _this$ = -8						; size = 4
 ??0error_category@std@@QAE@XZ ENDP			; std::error_category::error_category
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
-;	COMDAT ?system_category@std@@YAABVerror_category@1@XZ
+;	COMDAT ?system_category@std@@YGABVerror_category@1@XZ
 _TEXT	SEGMENT
-?system_category@std@@YAABVerror_category@1@XZ PROC	; std::system_category, COMDAT
+?system_category@std@@YGABVerror_category@1@XZ PROC	; std::system_category, COMDAT
 ; File c:\program files (x86)\microsoft visual studio 11.0\vc\include\system_error
 ; Line 679
 	push	ebp
@@ -4903,12 +5173,12 @@ _TEXT	SEGMENT
 	mov	esp, ebp
 	pop	ebp
 	ret	0
-?system_category@std@@YAABVerror_category@1@XZ ENDP	; std::system_category
+?system_category@std@@YGABVerror_category@1@XZ ENDP	; std::system_category
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
-;	COMDAT ?generic_category@std@@YAABVerror_category@1@XZ
+;	COMDAT ?generic_category@std@@YGABVerror_category@1@XZ
 _TEXT	SEGMENT
-?generic_category@std@@YAABVerror_category@1@XZ PROC	; std::generic_category, COMDAT
+?generic_category@std@@YGABVerror_category@1@XZ PROC	; std::generic_category, COMDAT
 ; File c:\program files (x86)\microsoft visual studio 11.0\vc\include\system_error
 ; Line 669
 	push	ebp
@@ -4930,15 +5200,15 @@ _TEXT	SEGMENT
 	mov	esp, ebp
 	pop	ebp
 	ret	0
-?generic_category@std@@YAABVerror_category@1@XZ ENDP	; std::generic_category
+?generic_category@std@@YGABVerror_category@1@XZ ENDP	; std::generic_category
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
-;	COMDAT ??$_Debug_pointer@D@std@@YAXPBDPB_WI@Z
+;	COMDAT ??$_Debug_pointer@D@std@@YGXPBDPB_WI@Z
 _TEXT	SEGMENT
 __First$ = 8						; size = 4
 __File$ = 12						; size = 4
 __Line$ = 16						; size = 4
-??$_Debug_pointer@D@std@@YAXPBDPB_WI@Z PROC		; std::_Debug_pointer<char>, COMDAT
+??$_Debug_pointer@D@std@@YGXPBDPB_WI@Z PROC		; std::_Debug_pointer<char>, COMDAT
 ; File c:\program files (x86)\microsoft visual studio 11.0\vc\include\xutility
 ; Line 610
 	push	ebp
@@ -4975,8 +5245,8 @@ $LN2@Debug_poin:
 	call	__RTC_CheckEsp
 	mov	esp, ebp
 	pop	ebp
-	ret	0
-??$_Debug_pointer@D@std@@YAXPBDPB_WI@Z ENDP		; std::_Debug_pointer<char>
+	ret	12					; 0000000cH
+??$_Debug_pointer@D@std@@YGXPBDPB_WI@Z ENDP		; std::_Debug_pointer<char>
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ?_Xran@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEXXZ
@@ -5116,8 +5386,7 @@ $LN4@Tidy:
 	push	eax
 	mov	ecx, DWORD PTR __Ptr$3[ebp]
 	push	ecx
-	call	??$addressof@D@std@@YAPADAAD@Z		; std::addressof<char>
-	add	esp, 4
+	call	??$addressof@D@std@@YGPADAAD@Z		; std::addressof<char>
 	push	eax
 	mov	edx, DWORD PTR _this$[ebp]
 	add	edx, 4
@@ -5878,8 +6147,7 @@ __Ptr$ = 8						; size = 4
 	push	OFFSET ??_C@_1IO@BLKJFPEG@?$AAc?$AA?3?$AA?2?$AAp?$AAr?$AAo?$AAg?$AAr?$AAa?$AAm?$AA?5?$AAf?$AAi?$AAl?$AAe?$AAs?$AA?5?$AA?$CI?$AAx?$AA8?$AA6?$AA?$CJ?$AA?2?$AAm?$AAi?$AAc?$AAr?$AAo?$AAs?$AAo?$AAf?$AAt@
 	mov	eax, DWORD PTR __Ptr$[ebp]
 	push	eax
-	call	??$_Debug_pointer@D@std@@YAXPBDPB_WI@Z	; std::_Debug_pointer<char>
-	add	esp, 12					; 0000000cH
+	call	??$_Debug_pointer@D@std@@YGXPBDPB_WI@Z	; std::_Debug_pointer<char>
 ; Line 1144
 	mov	eax, DWORD PTR __Ptr$[ebp]
 	push	eax
@@ -5933,8 +6201,7 @@ __Count$ = 12						; size = 4
 	push	OFFSET ??_C@_1IO@BLKJFPEG@?$AAc?$AA?3?$AA?2?$AAp?$AAr?$AAo?$AAg?$AAr?$AAa?$AAm?$AA?5?$AAf?$AAi?$AAl?$AAe?$AAs?$AA?5?$AA?$CI?$AAx?$AA8?$AA6?$AA?$CJ?$AA?2?$AAm?$AAi?$AAc?$AAr?$AAo?$AAs?$AAo?$AAf?$AAt@
 	mov	eax, DWORD PTR __Ptr$[ebp]
 	push	eax
-	call	??$_Debug_pointer@D@std@@YAXPBDPB_WI@Z	; std::_Debug_pointer<char>
-	add	esp, 12					; 0000000cH
+	call	??$_Debug_pointer@D@std@@YGXPBDPB_WI@Z	; std::_Debug_pointer<char>
 $LN3@assign:
 ; Line 1129
 	mov	eax, DWORD PTR __Ptr$[ebp]
@@ -6560,8 +6827,7 @@ _this$ = -8						; size = 4
 	mov	ecx, DWORD PTR _this$[ebp]
 	mov	edx, DWORD PTR [ecx+4]
 	push	edx
-	call	??$addressof@D@std@@YAPADAAD@Z		; std::addressof<char>
-	add	esp, 4
+	call	??$addressof@D@std@@YGPADAAD@Z		; std::addressof<char>
 	mov	DWORD PTR tv72[ebp], eax
 	jmp	SHORT $LN4@Myptr
 $LN3@Myptr:
@@ -6611,8 +6877,7 @@ _this$ = -8						; size = 4
 	mov	ecx, DWORD PTR _this$[ebp]
 	mov	edx, DWORD PTR [ecx+4]
 	push	edx
-	call	??$addressof@D@std@@YAPADAAD@Z		; std::addressof<char>
-	add	esp, 4
+	call	??$addressof@D@std@@YGPADAAD@Z		; std::addressof<char>
 	mov	DWORD PTR tv72[ebp], eax
 	jmp	SHORT $LN4@Myptr
 $LN3@Myptr:
@@ -6702,8 +6967,7 @@ _this$ = -8						; size = 4
 ; Line 914
 	mov	eax, DWORD PTR _this$[ebp]
 	push	eax
-	call	?max_size@?$allocator_traits@V?$allocator@D@std@@@std@@SAIABV?$allocator@D@2@@Z ; std::allocator_traits<std::allocator<char> >::max_size
-	add	esp, 4
+	call	?max_size@?$allocator_traits@V?$allocator@D@std@@@std@@SGIABV?$allocator@D@2@@Z ; std::allocator_traits<std::allocator<char> >::max_size
 ; Line 915
 	pop	edi
 	pop	esi
@@ -6834,10 +7098,10 @@ _this$ = -8						; size = 4
 ??0?$_Wrap_alloc@V?$allocator@D@std@@@std@@QAE@XZ ENDP	; std::_Wrap_alloc<std::allocator<char> >::_Wrap_alloc<std::allocator<char> >
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
-;	COMDAT ?max_size@?$allocator_traits@V?$allocator@D@std@@@std@@SAIABV?$allocator@D@2@@Z
+;	COMDAT ?max_size@?$allocator_traits@V?$allocator@D@std@@@std@@SGIABV?$allocator@D@2@@Z
 _TEXT	SEGMENT
 __Al$ = 8						; size = 4
-?max_size@?$allocator_traits@V?$allocator@D@std@@@std@@SAIABV?$allocator@D@2@@Z PROC ; std::allocator_traits<std::allocator<char> >::max_size, COMDAT
+?max_size@?$allocator_traits@V?$allocator@D@std@@@std@@SGIABV?$allocator@D@2@@Z PROC ; std::allocator_traits<std::allocator<char> >::max_size, COMDAT
 ; File c:\program files (x86)\microsoft visual studio 11.0\vc\include\xmemory0
 ; Line 761
 	push	ebp
@@ -6862,8 +7126,8 @@ __Al$ = 8						; size = 4
 	call	__RTC_CheckEsp
 	mov	esp, ebp
 	pop	ebp
-	ret	0
-?max_size@?$allocator_traits@V?$allocator@D@std@@@std@@SAIABV?$allocator@D@2@@Z ENDP ; std::allocator_traits<std::allocator<char> >::max_size
+	ret	4
+?max_size@?$allocator_traits@V?$allocator@D@std@@@std@@SGIABV?$allocator@D@2@@Z ENDP ; std::allocator_traits<std::allocator<char> >::max_size
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ?max_size@?$allocator@D@std@@QBEIXZ
@@ -6923,8 +7187,7 @@ __Count$ = 8						; size = 4
 	push	0
 	mov	eax, DWORD PTR __Count$[ebp]
 	push	eax
-	call	??$_Allocate@D@std@@YAPADIPAD@Z		; std::_Allocate<char>
-	add	esp, 8
+	call	??$_Allocate@D@std@@YGPADIPAD@Z		; std::_Allocate<char>
 ; Line 592
 	pop	edi
 	pop	esi

@@ -1,7 +1,8 @@
 #include "Model.h"
 
 AbstractDevice::AbstractDevice(short int propCount, unsigned short int addrr, unsigned short evMask) : 
-	slave(SlaveFactory::getSlaveFactoryPointer())
+	slave(SlaveFactory::getSlaveFactoryPointer()),
+	deque(Deque::getInstance(MAX_DEVICE_COUNT * MAX_DEVICE_COUNT))
 {
 	events = new Event * [MAX_DEVICE_COUNT]; // MAX_DEVICE_COUNT потому что max для unsigned short mask
 	for (int i = 0; i < MAX_DEVICE_COUNT; i++)
@@ -28,7 +29,7 @@ AbstractDevice::~AbstractDevice(void)
 	for (i = 0; i < propertyCount; i++)
 	{
 		properties[i]->setValueUnsignedLong(0);
-		writeDataToSlave(properties[i]);
+		writeDataToSlave();
 		delete properties[i];
 	}
 
@@ -72,51 +73,55 @@ void AbstractDevice::setAddress(unsigned short int val)
 	iAddress = val;
 }
 
-void AbstractDevice::writeDataToSlave(Property* prop)
+void AbstractDevice::writeDataToSlave()
 {
-	if (prop->isCountable)
+	for (int i = 0; i < propertyCount; ++i)
 	{
-		prop->setValueFloat((*(unsigned long *)prop->getNativeValue()) / 10.0f);
-	};
-
-	if (&slave != NULL)
-	{
-		switch (prop->slaveInformation.registerType)
+		if (properties[i]->isCountable)
 		{
-		case DISCRETE_INPUTS: 
-			slave.setDisreteInput(prop->slaveInformation, prop->value);
-			break;
-		case COILS: 
-			slave.setCoils(prop->slaveInformation, prop->value);
-			break;
-		case INPUT_REGISTERS: 
-			slave.setInputRegisters(prop->slaveInformation, prop->value);
-			break;
-		case HOLDING_REGISTERS: 
-			slave.setHoldingRegisters(prop->slaveInformation, prop->value);
-			break;
+			properties[i]->setValueFloat((* (unsigned long *) properties[i]->getNativeValue()) / 10.0f);
+		};
+
+		if (& slave != NULL)
+		{
+			switch (properties[i]->slaveInformation.registerType)
+			{
+			case DISCRETE_INPUTS: 
+				slave.setDisreteInput(properties[i]->slaveInformation, properties[i]->value);
+				break;
+			case COILS: 
+				slave.setCoils(properties[i]->slaveInformation, properties[i]->value);
+				break;
+			case INPUT_REGISTERS: 
+				slave.setInputRegisters(properties[i]->slaveInformation, properties[i]->value);
+				break;
+			case HOLDING_REGISTERS: 
+				slave.setHoldingRegisters(properties[i]->slaveInformation, properties[i]->value);
+				break;
+			}
 		}
 	}
+
 }
 
-void AbstractDevice::logProperty(Property* prop)
+void AbstractDevice::logProperty()
 {
 
 }
 
-unsigned int AbstractDevice::processRead(Property* prop)
+unsigned int AbstractDevice::processRead(Property * prop)
 {
 	readErrror = getVal(prop);
 	if (readErrror >= 500) 
 		return readErrror;
 
-	writeDataToSlave(prop);
-	logProperty(prop);
+	writeDataToSlave();
+	logProperty();
 
 	return readErrror;
 }
 
-unsigned int AbstractDevice::processWrite(Property* prop)
+unsigned int AbstractDevice::processWrite(Property * prop)
 {
 	eventsProcess();
 	writeErrror = setVal(prop);
@@ -252,4 +257,31 @@ void AbstractDevice::setCountableMask(unsigned short countMask)
 unsigned short AbstractDevice::getCountableMask()
 {
 	return bitCountable;
+}
+
+void AbstractDevice::getTasksProperties() 
+{
+
+}
+
+void AbstractDevice::getTasksEvents() 
+{
+
+}
+
+void AbstractDevice::update() 
+{
+	writeDataToSlave();
+	logProperty();	
+}
+
+bool_t AbstractDevice::isOwnProperty(Property * property)
+{
+	for (int i = 0; i < propertyCount; ++i)
+	{
+		if (property == properties[i])
+			return true_t;
+	}
+
+	return false_t;
 }

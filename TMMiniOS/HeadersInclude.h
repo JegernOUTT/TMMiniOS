@@ -2,7 +2,6 @@
 #define HEADERSINCLUDE_H
 
 #define	_CRT_SECURE_NO_WARNINGS
-//#define VC_1992_16BIT
 
 #ifdef VC_1992_16BIT
 	#include "lib/7188e.h"
@@ -29,10 +28,11 @@ const int	MODBUS_READ_ADDRESS =		900;
 #ifdef MVS_2012_32BIT
 const int	WAIT_PERIOD =				0;	
 #else VC_1992_16BIT
-const int	WAIT_PERIOD =				50;
+const int	WAIT_PERIOD =				200;
 #endif
 const int	MALLOC_NATIVE_VALUE_BYTES = 16;
 const int	REGISTER_MAX =				2000;
+#define POP_ERROR 0xD5555555
              
 typedef enum { false_t = 0, true_t = 1} bool_t;  
 typedef unsigned int size_t;
@@ -84,6 +84,12 @@ enum countType
 	NON_COUNTABLE_PROPERTY	= 2
 };
 
+enum taskType
+{
+	READ_TASK	= 50,
+	WRITE_TASK	= 51
+};
+
 struct SlaveInformation
 {
 	SlaveInformation(regType registType, long registNumber)
@@ -115,6 +121,32 @@ struct PropertiesStruct
 	unsigned short extra_1;
 	unsigned short extra_2;
 };
+
+struct ModbusRtuMasterFrame
+{
+	ModbusRtuMasterFrame (int com, int modbusAddr, int function, int to, int from, int howMuch, int tmout, int mode)
+	{
+		memset(this, 0, sizeof(* this));
+		comAddress = com;
+		modbusAddress = modbusAddr;
+		functionCode = function;
+		toAddr = to;
+		fromAddr = from;
+		registerCountToRead = howMuch;
+		timeout = tmout;
+		blockedMode = mode;
+	}
+	~ModbusRtuMasterFrame(){};
+
+	int comAddress;
+	int modbusAddress;
+	int functionCode;
+	int toAddr;
+	int fromAddr;
+	int registerCountToRead;
+	int timeout;
+	int blockedMode;
+} ;
 
 union uValue
 {

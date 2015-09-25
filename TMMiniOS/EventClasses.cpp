@@ -5,6 +5,7 @@ SwitchOnSignalEvent::SwitchOnSignalEvent(AbstractDevice * dev)
 	channelNumberFrom(1), channelNumberTo(2)
 {
 	device = dev;
+	lastVal = false_t;
 }
 
 SwitchOnSignalEvent::~SwitchOnSignalEvent(void)
@@ -34,19 +35,25 @@ void SwitchOnSignalEvent::process()
 			}
 		}
 
-		tmpPropCount = 0;
-		for (j = 0; j < device->propertyCount; j++)
+		if (value != lastVal)
 		{
-			if (device->properties[j]->propType == I7002_DISCRETE_OUTPUT_PROPERTY 
-				|| device->properties[j]->propType == X304_DISCRETE_OUTPUT_PROPERTY)
+			tmpPropCount = 0;
+			for (j = 0; j < device->propertyCount; j++)
 			{
-				++tmpPropCount;
-			}
+				if (device->properties[j]->propType == I7002_DISCRETE_OUTPUT_PROPERTY 
+					|| device->properties[j]->propType == X304_DISCRETE_OUTPUT_PROPERTY)
+				{
+					++tmpPropCount;
+				}
 
-			if (tmpPropCount == channelNumberTo)
-			{
-				device->properties[j]->setValueBool(value);
-			}
+				if (tmpPropCount == channelNumberTo)
+				{
+					device->properties[j]->setValueBool(value);
+				}
+			}			
+
+			lastVal = value;
+			device->getTasksEvents();
 		}
 	}
 } 

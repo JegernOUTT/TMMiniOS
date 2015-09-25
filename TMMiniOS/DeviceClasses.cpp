@@ -20,61 +20,47 @@ BskzhDevice::BskzhDevice(unsigned short int addrr, unsigned short evMask) :
 	properties[0] = new BskzhMass1Property();
 	properties[1] = new BskzhMass2Property();
 	properties[2] = new ErrorProperty();
+
+	nativeValue = malloc(sizeof(unsigned short) * 20);
+	memset(nativeValue, 0, sizeof(unsigned short) * 20);
 }
 
 BskzhDevice::~BskzhDevice(void)
 {
+	free(nativeValue);
 }
 
-unsigned int BskzhDevice::getVal(Property * prop)
+void BskzhDevice::getTasksProperties()		// Задать деку свойствами 
 {
-	if (prop->propType == BSKZH_MASS1_PROPERTY)
-	{
-		prop->readErr = ModbusRTU_Master(COM_PORT_2, getAddress(), 4, MODBUS_READ_ADDRESS - 1, 50, 3, 1000, 0);
-		
-		uValue regs[3];
-		SlaveInformation sv(INPUT_REGISTERS, MODBUS_READ_ADDRESS - 1);
-
-		regs[0] = slave.getInputRegisters(sv, sizeof(unsigned short));
-		sv.registerNumber += 1;
-		regs[1] = slave.getInputRegisters(sv, sizeof(unsigned short));
-		sv.registerNumber += 1;
-		regs[2] = slave.getInputRegisters(sv, sizeof(unsigned short));
-
-		prop->setValueFloat((float)((regs[0].lVal * 4294967296.0) + (regs[1].lVal * 65536.0) + regs[2].lVal) / 10000000.0);
-
-		//sv.registerNumber = MODBUS_READ_ADDRESS - 1;
-		//slave.registerClear(sv, 3);
-	}
-	else if (prop->propType == BSKZH_MASS2_PROPERTY)
-	{
-		prop->readErr = ModbusRTU_Master(COM_PORT_2, getAddress(), 4, MODBUS_READ_ADDRESS - 1, 59, 3, 1000, 0);
-
-		uValue regs[3];
-		SlaveInformation sv(INPUT_REGISTERS, MODBUS_READ_ADDRESS - 1);
-
-		regs[0] = slave.getInputRegisters(sv, sizeof(unsigned short));
-		sv.registerNumber += 1;
-		regs[1] = slave.getInputRegisters(sv, sizeof(unsigned short));
-		sv.registerNumber += 1;
-		regs[2] = slave.getInputRegisters(sv, sizeof(unsigned short));
-
-		prop->setValueFloat((float)((regs[0].lVal * 4294967296.0) + (regs[1].lVal * 65536.0) + regs[2].lVal) / 10000000.0);
-
-		//sv.registerNumber = MODBUS_READ_ADDRESS - 1;
-		//slave.registerClear(sv, 3);
-	}
-	else if (prop->propType == ERROR_PROPERTY)
-	{
-		prop->setValueUnsignedLong(readErrror);
-	}
-
-	return prop->readErr;
+	TaskFrame * frame = new TaskFrame(new ModbusRtuMasterFrame (COM_PORT_2, getAddress(), 4, MODBUS_READ_ADDRESS - 1, 50, 20, 1000, 0), 
+		nativeValue, READ_TASK);
+	deque.push_back(frame);
 }
 
-unsigned int BskzhDevice::setVal(Property * prop)
+void BskzhDevice::update()					//Из native value в slave modbus
 {
-	return 0;
+	for (int i = 0; i < propertyCount; ++i)
+	{
+		unsigned short * values = (unsigned short *) nativeValue;
+
+		for (int i = 0; i < propertyCount; ++i)
+		{
+			if (properties[i]->propType == BSKZH_MASS1_PROPERTY)
+			{
+				properties[i]->setValueFloat((float)((values[0] * 4294967296.0) + (values[1] * 65536.0) + values[2]) / 10000000.0);
+			}
+			else if (properties[i]->propType == BSKZH_MASS2_PROPERTY)
+			{
+				properties[i]->setValueFloat((float)((values[0 + 9] * 4294967296.0) + (values[1 + 9] * 65536.0) + values[2 + 9]) / 10000000.0);
+			}
+			else if (properties[i]->propType == ERROR_PROPERTY)
+			{
+				properties[i]->setValueUnsignedLong(readErrror);
+			}
+		}
+
+		AbstractDevice::update();
+	}
 }
 
 
@@ -367,79 +353,137 @@ I7002Device::I7002Device(unsigned short int addrr, unsigned short evMask) :
 	}
 
 	properties[13] = new ErrorProperty();
+
+	nativeValue = malloc(sizeof(unsigned short) * 14);
+	memset(nativeValue, 0, sizeof(unsigned short) * 14);
 }
 
 I7002Device::~I7002Device(void)
 {
-
+	free(nativeValue);
 }
 
-unsigned int I7002Device::getVal(Property* prop) 
+void I7002Device::getTasksProperties()		// Задать деку свойствами 
 {
-	if (prop->propType == I7002_DISCRETE_INPUT_PROPERTY)
+	unsigned short * usVal = (unsigned short *) nativeValue;
+	int propCount = 0, i = 0;
+
+	//Analog frame
+	TaskFrame * frame = new TaskFrame(new ModbusRtuMasterFrame (COM_PORT_2, getAddress(), 4, MODBUS_READ_ADDRESS - 1, 0, 4, 1000, 0), 
+		usVal, READ_TASK);
+	deque.push_back(frame);
+
+	//Discrete Output frame
+	usVal += 4;
+	frame = new TaskFrame(new ModbusRtuMasterFrame (COM_PORT_2, getAddress(), 2, MODBUS_READ_ADDRESS - 1, 0, 4, 1000, 0), 
+		usVal, READ_TASK);
+	deque.push_back(frame);
+
+	//Discrete Input frames
+	usVal += 4;
+	bool_t isPropCountable = false_t;
+	for (i = 0; i < propertyCount; ++i)
 	{
-		if (!prop->isCountable)
+		if (properties[i]->propType == I7002_DISCRETE_INPUT_PROPERTY)
+			if (properties[i]->isCountable)
+				isPropCountable = true_t;
+	}
+	
+	if (!isPropCountable)
+	{
+		frame = new TaskFrame(new ModbusRtuMasterFrame (COM_PORT_2, getAddress(), 1, MODBUS_READ_ADDRESS - 1, 32, 4, 1000, 0), 
+			usVal, READ_TASK);
+		deque.push_back(frame);
+	}
+	else
+	{
+		for (i = 0; i < propertyCount; ++i)
 		{
-			I7002DiscreteInputProperty * property = (I7002DiscreteInputProperty *) prop;
-			prop->readErr = ModbusRTU_Master(COM_PORT_2, getAddress(), 1, MODBUS_READ_ADDRESS - 1, 32 + property->iChannel, 1, 1000, 0);
-			SlaveInformation sv(COILS, MODBUS_READ_ADDRESS - 1);
+			if (properties[i]->propType == I7002_DISCRETE_INPUT_PROPERTY)
+			{
+				if (properties[i]->isCountable)
+				{
+					frame = new TaskFrame(new ModbusRtuMasterFrame (COM_PORT_2, getAddress(), 3, MODBUS_READ_ADDRESS - 1, 96 + propCount, 1, 1000, 0), 
+						usVal, READ_TASK);
+					deque.push_back(frame);
+				}
+				else
+				{
+					frame = new TaskFrame(new ModbusRtuMasterFrame (COM_PORT_2, getAddress(), 1, MODBUS_READ_ADDRESS - 1, 32 + propCount, 1, 1000, 0), 
+						usVal, READ_TASK);
+					deque.push_back(frame);					
+				}	
 
-			prop->setValueBool(slave.getCoils(sv, 2).bVal[0]);
-
-			//slave.registerClear(sv, 1);
+				usVal += 1;
+				++propCount;
+			}
 		}
-		else
-		{
-			I7002DiscreteInputProperty * property = (I7002DiscreteInputProperty *) prop;
-			prop->readErr = ModbusRTU_Master(COM_PORT_2, getAddress(), 3, MODBUS_READ_ADDRESS - 1, 96 + property->iChannel, 1, 1000, 0);
-			SlaveInformation sv(HOLDING_REGISTERS, MODBUS_READ_ADDRESS - 1);
-
-			* (unsigned long *)prop->getNativeValue() = slave.getHoldingRegisters(sv, 2).iVal[0];
-
-			//slave.registerClear(sv, 1);
-		}
 	}
-	else if (prop->propType == I7002_DISCRETE_OUTPUT_PROPERTY)
-	{
-		I7002DiscreteOutputProperty * property = (I7002DiscreteOutputProperty *) prop;
-		prop->readErr = ModbusRTU_Master(COM_PORT_2, getAddress(), 2, MODBUS_READ_ADDRESS - 1, 0 + property->iChannel, 1, 1000, 0);
-		SlaveInformation sv(DISCRETE_INPUTS, MODBUS_READ_ADDRESS - 1);
+}
 
-		prop->setValueBool(slave.getDisreteInput(sv, 2).bVal[0]);
-
-		//slave.registerClear(sv, 1);
-	}
-	else if (prop->propType == I7002_ANALOG_INPUT_PROPERTY)
-	{
-		I7002AnalogProperty * property = (I7002AnalogProperty *) prop;
-		prop->readErr = ModbusRTU_Master(COM_PORT_2, getAddress(), 4, MODBUS_READ_ADDRESS - 1, 0 + property->iChannel, 1, 1000, 0);
-		SlaveInformation sv(INPUT_REGISTERS, MODBUS_READ_ADDRESS - 1);
-
-		prop->setValueFloat(slave.getInputRegisters(sv, 2).iVal[0] / 1000.0f);
-		
-		//slave.registerClear(sv, 1);
-	}
-	else if (prop->propType == ERROR_PROPERTY)
-	{
-		prop->setValueUnsignedLong(prop->readErr);
-	}
-
-
-	return prop->readErr;
-} 
-
-unsigned int I7002Device::setVal(Property * prop)
+void I7002Device::getTasksEvents()
 {
-	if (prop->propType == I7002_DISCRETE_OUTPUT_PROPERTY)
-	{
-		I7002DiscreteOutputProperty * property = (I7002DiscreteOutputProperty *) prop;
-		SlaveInformation sv(COILS, MODBUS_READ_ADDRESS - 1);
-		slave.setCoils(sv, property->getValueBool());
-		prop->writeErr = ModbusRTU_Master(COM_PORT_2, getAddress(), 5, MODBUS_READ_ADDRESS - 1, 0 + property->iChannel, 1, 1000, 0);
-		//slave.registerClear(sv, 1);
-	}
+	//Discrete Output frame
+	TaskFrame * frame;
+	int i = 0;
+	unsigned short * usVal = (unsigned short *) nativeValue;
+	usVal += 4;
 
-	return prop->writeErr;
+	for (i = 0; i < propertyCount; ++i)
+	{
+		if (properties[i]->propType == I7002_DISCRETE_OUTPUT_PROPERTY)
+		{
+			* usVal = properties[i]->getValueUnsignedLong();
+			usVal += 1;
+		}
+	}
+	usVal -= 4;
+
+	frame = new TaskFrame(new ModbusRtuMasterFrame (COM_PORT_2, getAddress(), 15, MODBUS_READ_ADDRESS - 1, 0, 4, 1000, 0), 
+		usVal, WRITE_TASK);
+	deque.push_front(frame);	
+}
+
+void I7002Device::update()					//Из native value в slave modbus
+{
+	for (int i = 0; i < propertyCount; ++i)
+	{
+		unsigned short * values = (unsigned short *) nativeValue;
+		int analogCount = 0, discreteInputCount = 0, discreteOutputCount = 0;
+
+		for (int i = 0; i < propertyCount; ++i)
+		{
+			if (properties[i]->propType == I7002_ANALOG_INPUT_PROPERTY)
+			{
+				short * val = (short *) (values + analogCount);
+				properties[i]->setValueFloat(* val / 1000.0f);
+				++analogCount;
+			}
+			else if (properties[i]->propType == I7002_DISCRETE_OUTPUT_PROPERTY)
+			{
+				properties[i]->setValueInt(values[4 + discreteOutputCount]);
+				++discreteOutputCount;
+			}
+			else if (properties[i]->propType == I7002_DISCRETE_INPUT_PROPERTY)
+			{
+				if (properties[i]->isCountable)
+				{
+					* (unsigned long *)properties[i]->getNativeValue() = values[8 + discreteInputCount];
+				}
+				else
+				{
+					properties[i]->setValueInt(values[8 + discreteInputCount]);
+				}
+				++discreteInputCount;
+			}
+			else if (properties[i]->propType == ERROR_PROPERTY)
+			{
+				properties[i]->setValueUnsignedLong(readErrror);
+			}
+		}
+
+		AbstractDevice::update();
+	}
 }
 
 
@@ -457,48 +501,90 @@ I7041Device::I7041Device(unsigned short int addrr, unsigned short evMask) :
 	}
 
 	properties[14] = new ErrorProperty();
+
+	nativeValue = malloc(sizeof(unsigned short) * 15);
+	memset(nativeValue, 0, sizeof(unsigned short) * 15);
 }
 
 I7041Device::~I7041Device(void)
 {
-
+	free(nativeValue);
 }
 
-unsigned int I7041Device::getVal(Property* prop) 
+void I7041Device::getTasksProperties()		// Задать деку свойствами 
 {
-	if (prop->propType == I7041_DISCRETE_INPUT_PROPERTY)
+	unsigned short * usVal = (unsigned short *) nativeValue;
+	int propCount = 0;
+	TaskFrame * frame;
+
+	//Discrete Input frames
+	bool_t isPropCountable = false_t;
+	for (int i = 0; i < propertyCount; ++i)
 	{
-		if (!prop->isCountable)
+		if (properties[i]->propType == I7041_DISCRETE_INPUT_PROPERTY)
+			if (properties[i]->isCountable)
+				isPropCountable = true_t;
+	}
+	
+	if (!isPropCountable)
+	{
+		frame = new TaskFrame(new ModbusRtuMasterFrame (COM_PORT_2, getAddress(), 1, MODBUS_READ_ADDRESS - 1, 32, 14, 1000, 0), 
+			usVal, READ_TASK);
+		deque.push_back(frame);
+	}
+	else
+	{
+		for (int i = 0; i < propertyCount; ++i)
 		{
-			I7041DiscreteProperty * property = (I7041DiscreteProperty *) prop;
-			prop->readErr = ModbusRTU_Master(COM_PORT_2, getAddress(), 1, MODBUS_READ_ADDRESS - 1, 32 + property->iChannel, 1, 1000, 0);
-			SlaveInformation sv(COILS, MODBUS_READ_ADDRESS - 1);
+			if (properties[i]->propType == I7041_DISCRETE_INPUT_PROPERTY)
+			{
+				if (properties[i]->isCountable)
+				{
+					frame = new TaskFrame(new ModbusRtuMasterFrame (COM_PORT_2, getAddress(), 4, MODBUS_READ_ADDRESS - 1, 0 + propCount, 1, 1000, 0), 
+						usVal, READ_TASK);
+					deque.push_back(frame);
+				}
+				else
+				{
+					frame = new TaskFrame(new ModbusRtuMasterFrame (COM_PORT_2, getAddress(), 1, MODBUS_READ_ADDRESS - 1, 32 + propCount, 14, 1000, 0), 
+						usVal, READ_TASK);
+					deque.push_back(frame);					
+				}	
 
-			prop->setValueBool(slave.getCoils(sv, 2).bVal[0]);
-
-			//slave.registerClear(sv, 1);
-		}
-		else
-		{
-			I7041DiscreteProperty * property = (I7041DiscreteProperty *) prop;
-			prop->readErr = ModbusRTU_Master(COM_PORT_2, getAddress(), 4, MODBUS_READ_ADDRESS - 1, 0 + property->iChannel, 1, 1000, 0);
-			SlaveInformation sv(INPUT_REGISTERS, MODBUS_READ_ADDRESS - 1);
-
-			* (unsigned long *)prop->getNativeValue() = slave.getInputRegisters(sv, 2).iVal[0];
-			
-			//slave.registerClear(sv, 1);
+				usVal += 1;
+				++propCount;
+			}
 		}
 	}
-	else if (prop->propType == ERROR_PROPERTY)
-	{
-		prop->setValueUnsignedLong(prop->readErr);
-	}
-
-	return prop->readErr;
-} 
-
-unsigned int I7041Device::setVal(Property * prop)
-{
-	return 0;
 }
 
+void I7041Device::update()					//Из native value в slave modbus
+{
+	for (int i = 0; i < propertyCount; ++i)
+	{
+		unsigned short * values = (unsigned short *) nativeValue;
+		int discreteInputCount = 0;
+
+		for (int i = 0; i < propertyCount; ++i)
+		{
+			if (properties[i]->propType == I7041_DISCRETE_INPUT_PROPERTY)
+			{
+				if (properties[i]->isCountable)
+				{
+					* (unsigned long *)properties[i]->getNativeValue() = values[discreteInputCount];
+				}
+				else
+				{
+					properties[i]->setValueInt(values[discreteInputCount]);
+				}
+				++discreteInputCount;
+			}
+			else if (properties[i]->propType == ERROR_PROPERTY)
+			{
+				properties[i]->setValueUnsignedLong(readErrror);
+			}
+		}
+
+		AbstractDevice::update();
+	}
+}

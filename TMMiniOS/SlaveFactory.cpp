@@ -1,6 +1,6 @@
 #include "Model.h"
 
-SlaveFactory* SlaveFactory::slaveFactoryPointer = NULL;
+SlaveFactory * SlaveFactory::slaveFactoryPointer = NULL;
 
 SlaveFactory::SlaveFactory(void)
 {

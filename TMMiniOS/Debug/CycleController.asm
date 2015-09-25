@@ -150,7 +150,6 @@ PUBLIC	?max_exponent10@?$numeric_limits@M@std@@2HB	; std::numeric_limits<float>:
 PUBLIC	?min_exponent@?$numeric_limits@M@std@@2HB	; std::numeric_limits<float>::min_exponent
 PUBLIC	?value@?$integral_constant@I$0A@@std@@2IB	; std::integral_constant<unsigned int,0>::value
 PUBLIC	?min_exponent10@?$numeric_limits@M@std@@2HB	; std::numeric_limits<float>::min_exponent10
-PUBLIC	?cycleController@CycleController@@0PAV1@A	; CycleController::cycleController
 PUBLIC	?digits@?$numeric_limits@N@std@@2HB		; std::numeric_limits<double>::digits
 PUBLIC	?digits10@?$numeric_limits@N@std@@2HB		; std::numeric_limits<double>::digits10
 PUBLIC	?max_digits10@?$numeric_limits@N@std@@2HB	; std::numeric_limits<double>::max_digits10
@@ -158,6 +157,7 @@ PUBLIC	?max_exponent@?$numeric_limits@N@std@@2HB	; std::numeric_limits<double>::
 PUBLIC	?max_exponent10@?$numeric_limits@N@std@@2HB	; std::numeric_limits<double>::max_exponent10
 PUBLIC	?min_exponent@?$numeric_limits@N@std@@2HB	; std::numeric_limits<double>::min_exponent
 PUBLIC	?min_exponent10@?$numeric_limits@N@std@@2HB	; std::numeric_limits<double>::min_exponent10
+PUBLIC	?cycleController@CycleController@@0PAV1@A	; CycleController::cycleController
 PUBLIC	?digits@?$numeric_limits@O@std@@2HB		; std::numeric_limits<long double>::digits
 PUBLIC	?digits10@?$numeric_limits@O@std@@2HB		; std::numeric_limits<long double>::digits10
 PUBLIC	?max_digits10@?$numeric_limits@O@std@@2HB	; std::numeric_limits<long double>::max_digits10
@@ -800,14 +800,12 @@ PUBLIC	?length@?$char_traits@D@std@@SAIPBD@Z		; std::char_traits<char>::length
 PUBLIC	?copy@?$char_traits@D@std@@SAPADPADPBDI@Z	; std::char_traits<char>::copy
 PUBLIC	?move@?$char_traits@D@std@@SAPADPADPBDI@Z	; std::char_traits<char>::move
 PUBLIC	?assign@?$char_traits@D@std@@SAXAADABD@Z	; std::char_traits<char>::assign
-PUBLIC	?eq_int_type@?$char_traits@D@std@@SA_NABH0@Z	; std::char_traits<char>::eq_int_type
-PUBLIC	?eof@?$char_traits@D@std@@SAHXZ			; std::char_traits<char>::eof
 PUBLIC	??0_Container_proxy@std@@QAE@XZ			; std::_Container_proxy::_Container_proxy
 PUBLIC	??0?$allocator@D@std@@QAE@XZ			; std::allocator<char>::allocator<char>
 PUBLIC	?deallocate@?$allocator@D@std@@QAEXPADI@Z	; std::allocator<char>::deallocate
 PUBLIC	?allocate@?$allocator@D@std@@QAEPADI@Z		; std::allocator<char>::allocate
 PUBLIC	?max_size@?$allocator@D@std@@QBEIXZ		; std::allocator<char>::max_size
-PUBLIC	?max_size@?$allocator_traits@V?$allocator@D@std@@@std@@SAIABV?$allocator@D@2@@Z ; std::allocator_traits<std::allocator<char> >::max_size
+PUBLIC	?max_size@?$allocator_traits@V?$allocator@D@std@@@std@@SGIABV?$allocator@D@2@@Z ; std::allocator_traits<std::allocator<char> >::max_size
 PUBLIC	??0?$_Wrap_alloc@V?$allocator@D@std@@@std@@QAE@XZ ; std::_Wrap_alloc<std::allocator<char> >::_Wrap_alloc<std::allocator<char> >
 PUBLIC	?allocate@?$_Wrap_alloc@V?$allocator@D@std@@@std@@QAEPADI@Z ; std::_Wrap_alloc<std::allocator<char> >::allocate
 PUBLIC	?deallocate@?$_Wrap_alloc@V?$allocator@D@std@@@std@@QAEXPADI@Z ; std::_Wrap_alloc<std::allocator<char> >::deallocate
@@ -836,9 +834,9 @@ PUBLIC	?_Inside@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE
 PUBLIC	?_Tidy@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEX_NI@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::_Tidy
 PUBLIC	?_Xlen@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEXXZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::_Xlen
 PUBLIC	?_Xran@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEXXZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::_Xran
-PUBLIC	??$_Debug_pointer@D@std@@YAXPBDPB_WI@Z		; std::_Debug_pointer<char>
-PUBLIC	?generic_category@std@@YAABVerror_category@1@XZ	; std::generic_category
-PUBLIC	?system_category@std@@YAABVerror_category@1@XZ	; std::system_category
+PUBLIC	??$_Debug_pointer@D@std@@YGXPBDPB_WI@Z		; std::_Debug_pointer<char>
+PUBLIC	?generic_category@std@@YGABVerror_category@1@XZ	; std::generic_category
+PUBLIC	?system_category@std@@YGABVerror_category@1@XZ	; std::system_category
 PUBLIC	??0error_category@std@@QAE@XZ			; std::error_category::error_category
 PUBLIC	??1error_category@std@@UAE@XZ			; std::error_category::~error_category
 PUBLIC	?default_error_condition@error_category@std@@UBE?AVerror_condition@2@H@Z ; std::error_category::default_error_condition
@@ -871,42 +869,41 @@ PUBLIC	??_G_System_error_category@std@@UAEPAXI@Z	; std::_System_error_category::
 PUBLIC	??0SlaveInformation@@QAE@W4regType@@J@Z		; SlaveInformation::SlaveInformation
 PUBLIC	??0PropertiesStruct@@QAE@FFFFF@Z		; PropertiesStruct::PropertiesStruct
 PUBLIC	??_FPropertiesStruct@@QAEXXZ			; PropertiesStruct::`default constructor closure'
+PUBLIC	??1ModbusRtuMasterFrame@@QAE@XZ			; ModbusRtuMasterFrame::~ModbusRtuMasterFrame
+PUBLIC	??_GModbusRtuMasterFrame@@QAEPAXI@Z		; ModbusRtuMasterFrame::`scalar deleting destructor'
 PUBLIC	??0uValue@@QAE@K@Z				; uValue::uValue
 PUBLIC	?readDeviceMask@CycleController@@AAEXXZ		; CycleController::readDeviceMask
 PUBLIC	?readProperties@CycleController@@AAEXXZ		; CycleController::readProperties
 PUBLIC	?isPropertyNew@CycleController@@AAE?AW4bool_t@@XZ ; CycleController::isPropertyNew
 PUBLIC	?checkMask@CycleController@@AAEXXZ		; CycleController::checkMask
 PUBLIC	?propertiesToSlave@CycleController@@AAEXXZ	; CycleController::propertiesToSlave
-PUBLIC	?next@CycleController@@AAEXXZ			; CycleController::next
 PUBLIC	?readNonModbusDevices@CycleController@@AAEXXZ	; CycleController::readNonModbusDevices
+PUBLIC	?readModbusDevices@CycleController@@AAEXXZ	; CycleController::readModbusDevices
+PUBLIC	?nativeToRegisters@CycleController@@AAEXXZ	; CycleController::nativeToRegisters
 PUBLIC	?constructNewDevices@CycleController@@AAEXXZ	; CycleController::constructNewDevices
 PUBLIC	??0CycleController@@AAE@XZ			; CycleController::CycleController
 PUBLIC	??1CycleController@@AAE@XZ			; CycleController::~CycleController
-PUBLIC	?getInstance@CycleController@@SAAAV1@XZ		; CycleController::getInstance
+PUBLIC	?getInstance@CycleController@@SGAAV1@XZ		; CycleController::getInstance
 PUBLIC	?init@CycleController@@QAEXXZ			; CycleController::init
 PUBLIC	?read@CycleController@@QAEXXZ			; CycleController::read
 PUBLIC	?getDevices@CycleController@@QAEPAPAVAbstractDevice@@AAG@Z ; CycleController::getDevices
-PUBLIC	?pow_2@@YAKH@Z					; pow_2
-PUBLIC	??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z ; std::operator<<<std::char_traits<char> >
-PUBLIC	??0_Sentry_base@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@AAV12@@Z ; std::basic_ostream<char,std::char_traits<char> >::_Sentry_base::_Sentry_base
-PUBLIC	??1_Sentry_base@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@XZ ; std::basic_ostream<char,std::char_traits<char> >::_Sentry_base::~_Sentry_base
-PUBLIC	??0sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@AAV12@@Z ; std::basic_ostream<char,std::char_traits<char> >::sentry::sentry
-PUBLIC	??1sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@XZ ; std::basic_ostream<char,std::char_traits<char> >::sentry::~sentry
-PUBLIC	??Bsentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QBEPQ?$_Bool_struct@V?$basic_ostream@DU?$char_traits@D@std@@@std@@@2@HXZ ; std::basic_ostream<char,std::char_traits<char> >::sentry::operator int std::_Bool_struct<std::basic_ostream<char,std::char_traits<char> > >::*
+PUBLIC	??1TaskFrame@@QAE@XZ				; TaskFrame::~TaskFrame
+PUBLIC	??_GTaskFrame@@QAEPAXI@Z			; TaskFrame::`scalar deleting destructor'
+PUBLIC	?pow_2@@YGKH@Z					; pow_2
 PUBLIC	??$construct@PADAAPAD@?$_Wrap_alloc@V?$allocator@D@std@@@std@@QAEXPAPADAAPAD@Z ; std::_Wrap_alloc<std::allocator<char> >::construct<char *,char * &>
 PUBLIC	??$destroy@PAD@?$_Wrap_alloc@V?$allocator@D@std@@@std@@QAEXPAPAD@Z ; std::_Wrap_alloc<std::allocator<char> >::destroy<char *>
-PUBLIC	??$addressof@D@std@@YAPADAAD@Z			; std::addressof<char>
+PUBLIC	??$addressof@D@std@@YGPADAAD@Z			; std::addressof<char>
 PUBLIC	??0?$allocator@U_Container_proxy@std@@@std@@QAE@XZ ; std::allocator<std::_Container_proxy>::allocator<std::_Container_proxy>
 PUBLIC	?deallocate@?$allocator@U_Container_proxy@std@@@std@@QAEXPAU_Container_proxy@2@I@Z ; std::allocator<std::_Container_proxy>::deallocate
 PUBLIC	?allocate@?$allocator@U_Container_proxy@std@@@std@@QAEPAU_Container_proxy@2@I@Z ; std::allocator<std::_Container_proxy>::allocate
 PUBLIC	??$construct@U_Container_proxy@std@@U12@@?$allocator@U_Container_proxy@std@@@std@@QAEXPAU_Container_proxy@1@$$QAU21@@Z ; std::allocator<std::_Container_proxy>::construct<std::_Container_proxy,std::_Container_proxy>
 PUBLIC	??$destroy@U_Container_proxy@std@@@?$allocator@U_Container_proxy@std@@@std@@QAEXPAU_Container_proxy@1@@Z ; std::allocator<std::_Container_proxy>::destroy<std::_Container_proxy>
-PUBLIC	??$_Allocate@U_Container_proxy@std@@@std@@YAPAU_Container_proxy@0@IPAU10@@Z ; std::_Allocate<std::_Container_proxy>
-PUBLIC	??$_Allocate@D@std@@YAPADIPAD@Z			; std::_Allocate<char>
-PUBLIC	??$forward@AAPAD@std@@YAAAPADAAPAD@Z		; std::forward<char * &>
-PUBLIC	??$construct@PADAAPAD@?$allocator_traits@V?$allocator@D@std@@@std@@SAXAAV?$allocator@D@1@PAPADAAPAD@Z ; std::allocator_traits<std::allocator<char> >::construct<char *,char * &>
-PUBLIC	??$destroy@PAD@?$allocator_traits@V?$allocator@D@std@@@std@@SAXAAV?$allocator@D@1@PAPAD@Z ; std::allocator_traits<std::allocator<char> >::destroy<char *>
-PUBLIC	??$forward@U_Container_proxy@std@@@std@@YA$$QAU_Container_proxy@0@AAU10@@Z ; std::forward<std::_Container_proxy>
+PUBLIC	??$_Allocate@U_Container_proxy@std@@@std@@YGPAU_Container_proxy@0@IPAU10@@Z ; std::_Allocate<std::_Container_proxy>
+PUBLIC	??$_Allocate@D@std@@YGPADIPAD@Z			; std::_Allocate<char>
+PUBLIC	??$forward@AAPAD@std@@YGAAPADAAPAD@Z		; std::forward<char * &>
+PUBLIC	??$construct@PADAAPAD@?$allocator_traits@V?$allocator@D@std@@@std@@SGXAAV?$allocator@D@1@PAPADAAPAD@Z ; std::allocator_traits<std::allocator<char> >::construct<char *,char * &>
+PUBLIC	??$destroy@PAD@?$allocator_traits@V?$allocator@D@std@@@std@@SGXAAV?$allocator@D@1@PAPAD@Z ; std::allocator_traits<std::allocator<char> >::destroy<char *>
+PUBLIC	??$forward@U_Container_proxy@std@@@std@@YG$$QAU_Container_proxy@0@AAU10@@Z ; std::forward<std::_Container_proxy>
 PUBLIC	??$construct@PADAAPAD@?$allocator@D@std@@QAEXPAPADAAPAD@Z ; std::allocator<char>::construct<char *,char * &>
 PUBLIC	??$destroy@PAD@?$allocator@D@std@@QAEXPAPAD@Z	; std::allocator<char>::destroy<char *>
 PUBLIC	??_7error_category@std@@6B@			; std::error_category::`vftable'
@@ -921,9 +918,6 @@ PUBLIC	??_C@_06FHFOAHML@system?$AA@			; `string'
 PUBLIC	?_Generic_object@?$_Error_objects@H@std@@2V_Generic_error_category@2@A ; std::_Error_objects<int>::_Generic_object
 PUBLIC	?_Iostream_object@?$_Error_objects@H@std@@2V_Iostream_error_category@2@A ; std::_Error_objects<int>::_Iostream_object
 PUBLIC	?_System_object@?$_Error_objects@H@std@@2V_System_error_category@2@A ; std::_Error_objects<int>::_System_object
-PUBLIC	??_C@_09JBNFEIKB@?5?5Value?3?5?$AA@		; `string'
-PUBLIC	??_C@_0N@MHDFFMGB@?5?5Property?3?5?$AA@		; `string'
-PUBLIC	??_C@_08MMNCOCEO@Device?3?5?$AA@		; `string'
 PUBLIC	??_C@_1IO@BLKJFPEG@?$AAc?$AA?3?$AA?2?$AAp?$AAr?$AAo?$AAg?$AAr?$AAa?$AAm?$AA?5?$AAf?$AAi?$AAl?$AAe?$AAs?$AA?5?$AA?$CI?$AAx?$AA8?$AA6?$AA?$CJ?$AA?2?$AAm?$AAi?$AAc?$AAr?$AAo?$AAs?$AAo?$AAf?$AAt@ ; `string'
 PUBLIC	??_C@_0BI@CFPLBAOH@invalid?5string?5position?$AA@ ; `string'
 PUBLIC	??_C@_0BA@JFNIOLAK@string?5too?5long?$AA@	; `string'
@@ -956,7 +950,6 @@ EXTRN	_memcpy:PROC
 EXTRN	_memset:PROC
 EXTRN	_strlen:PROC
 EXTRN	__imp__memmove:PROC
-EXTRN	__imp_?uncaught_exception@std@@YA_NXZ:PROC
 EXTRN	??_V@YAXPAX@Z:PROC				; operator delete[]
 EXTRN	??_U@YAPAXI@Z:PROC				; operator new[]
 EXTRN	__imp_?_Debug_message@std@@YAXPB_W0I@Z:PROC
@@ -972,39 +965,32 @@ EXTRN	__imp_?_Winerror_map@std@@YAPBDH@Z:PROC
 EXTRN	??_E_Generic_error_category@std@@UAEPAXI@Z:PROC	; std::_Generic_error_category::`vector deleting destructor'
 EXTRN	??_E_Iostream_error_category@std@@UAEPAXI@Z:PROC ; std::_Iostream_error_category::`vector deleting destructor'
 EXTRN	??_E_System_error_category@std@@UAEPAXI@Z:PROC	; std::_System_error_category::`vector deleting destructor'
-EXTRN	__imp_?good@ios_base@std@@QBE_NXZ:PROC
-EXTRN	__imp_?flags@ios_base@std@@QBEHXZ:PROC
-EXTRN	__imp_?width@ios_base@std@@QBE_JXZ:PROC
-EXTRN	__imp_?width@ios_base@std@@QAE_J_J@Z:PROC
-EXTRN	__imp_?sputc@?$basic_streambuf@DU?$char_traits@D@std@@@std@@QAEHD@Z:PROC
-EXTRN	__imp_?sputn@?$basic_streambuf@DU?$char_traits@D@std@@@std@@QAE_JPBD_J@Z:PROC
-EXTRN	__imp_?setstate@?$basic_ios@DU?$char_traits@D@std@@@std@@QAEXH_N@Z:PROC
-EXTRN	__imp_?tie@?$basic_ios@DU?$char_traits@D@std@@@std@@QBEPAV?$basic_ostream@DU?$char_traits@D@std@@@2@XZ:PROC
-EXTRN	__imp_?rdbuf@?$basic_ios@DU?$char_traits@D@std@@@std@@QBEPAV?$basic_streambuf@DU?$char_traits@D@std@@@2@XZ:PROC
-EXTRN	__imp_?fill@?$basic_ios@DU?$char_traits@D@std@@@std@@QBEDXZ:PROC
-EXTRN	__imp_?_Osfx@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEXXZ:PROC
-EXTRN	__imp_??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEAAV01@P6AAAV01@AAV01@@Z@Z:PROC
-EXTRN	__imp_??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEAAV01@M@Z:PROC
-EXTRN	__imp_?flush@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEAAV12@XZ:PROC
-EXTRN	__imp_?endl@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@1@AAV21@@Z:PROC
 EXTRN	?setAddress@AbstractDevice@@QAEXG@Z:PROC	; AbstractDevice::setAddress
 EXTRN	?setEventMask@AbstractDevice@@QAEXG@Z:PROC	; AbstractDevice::setEventMask
 EXTRN	?setCountableMask@AbstractDevice@@QAEXG@Z:PROC	; AbstractDevice::setCountableMask
 EXTRN	?processRead@AbstractDevice@@QAEIPAVProperty@@@Z:PROC ; AbstractDevice::processRead
 EXTRN	?processWrite@AbstractDevice@@QAEIPAVProperty@@@Z:PROC ; AbstractDevice::processWrite
+EXTRN	?eventsProcess@AbstractDevice@@QAEXXZ:PROC	; AbstractDevice::eventsProcess
 EXTRN	??0BskzhDevice@@QAE@GG@Z:PROC			; BskzhDevice::BskzhDevice
 EXTRN	??0X304Device@@QAE@GG@Z:PROC			; X304Device::X304Device
 EXTRN	??0I7002Device@@QAE@GG@Z:PROC			; I7002Device::I7002Device
 EXTRN	??0I7041Device@@QAE@GG@Z:PROC			; I7041Device::I7041Device
-EXTRN	?saveToEeprom@EEpromSettings@@SAXPBUPropertiesStruct@@G@Z:PROC ; EEpromSettings::saveToEeprom
-EXTRN	?loadFromEeprom@EEpromSettings@@SAPAUPropertiesStruct@@PAG@Z:PROC ; EEpromSettings::loadFromEeprom
-EXTRN	?getValueFloat@Property@@QAEMXZ:PROC		; Property::getValueFloat
-EXTRN	?setSlaveInformation@SlaveAddressHandler@@SAXPAVAbstractDevice@@USlaveInformation@@@Z:PROC ; SlaveAddressHandler::setSlaveInformation
-EXTRN	?getSlaveFactoryPointer@SlaveFactory@@SAAAV1@XZ:PROC ; SlaveFactory::getSlaveFactoryPointer
+EXTRN	?saveToEeprom@EEpromSettings@@SGXPBUPropertiesStruct@@G@Z:PROC ; EEpromSettings::saveToEeprom
+EXTRN	?loadFromEeprom@EEpromSettings@@SGPAUPropertiesStruct@@PAG@Z:PROC ; EEpromSettings::loadFromEeprom
+EXTRN	?setSlaveInformation@SlaveAddressHandler@@SGXPAVAbstractDevice@@USlaveInformation@@@Z:PROC ; SlaveAddressHandler::setSlaveInformation
+EXTRN	?getSlaveFactoryPointer@SlaveFactory@@SGAAV1@XZ:PROC ; SlaveFactory::getSlaveFactoryPointer
+EXTRN	?setCoils@SlaveFactory@@QAEXUSlaveInformation@@ABTuValue@@@Z:PROC ; SlaveFactory::setCoils
 EXTRN	?setInputRegisters@SlaveFactory@@QAEXUSlaveInformation@@ABTuValue@@@Z:PROC ; SlaveFactory::setInputRegisters
 EXTRN	?setHoldingRegisters@SlaveFactory@@QAEXUSlaveInformation@@ABTuValue@@@Z:PROC ; SlaveFactory::setHoldingRegisters
+EXTRN	?getDisreteInput@SlaveFactory@@QAE?ATuValue@@USlaveInformation@@I@Z:PROC ; SlaveFactory::getDisreteInput
+EXTRN	?getCoils@SlaveFactory@@QAE?ATuValue@@USlaveInformation@@I@Z:PROC ; SlaveFactory::getCoils
+EXTRN	?getInputRegisters@SlaveFactory@@QAE?ATuValue@@USlaveInformation@@I@Z:PROC ; SlaveFactory::getInputRegisters
 EXTRN	?getHoldingRegisters@SlaveFactory@@QAE?ATuValue@@USlaveInformation@@I@Z:PROC ; SlaveFactory::getHoldingRegisters
-EXTRN	?GetTimeTicks@@YA_JXZ:PROC			; GetTimeTicks
+EXTRN	?isEmpty@Deque@@QAE?AW4bool_t@@XZ:PROC		; Deque::isEmpty
+EXTRN	?pop_front@Deque@@QAEPAVTaskFrame@@XZ:PROC	; Deque::pop_front
+EXTRN	?getInstance@Deque@@SGAAV1@J@Z:PROC		; Deque::getInstance
+EXTRN	?GetTimeTicks@@YG_JXZ:PROC			; GetTimeTicks
+EXTRN	?ModbusRTU_Master@@YGHHHHHHHHH@Z:PROC		; ModbusRTU_Master
 EXTRN	@_RTC_CheckStackVars@8:PROC
 EXTRN	@__security_check_cookie@4:PROC
 EXTRN	__CxxThrowException@8:PROC
@@ -1013,9 +999,7 @@ EXTRN	__RTC_InitBase:PROC
 EXTRN	__RTC_Shutdown:PROC
 EXTRN	___CxxFrameHandler3:PROC
 EXTRN	??_7type_info@@6B@:QWORD			; type_info::`vftable'
-EXTRN	__imp_?cout@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A:BYTE
 EXTRN	___security_cookie:DWORD
-EXTRN	__fltused:DWORD
 _BSS	SEGMENT
 _piecewise_construct DB 01H DUP (?)
 	ALIGN	4
@@ -1222,18 +1206,6 @@ CONST	SEGMENT
 	DB	'u', 00H, 'd', 00H, 'e', 00H, '\', 00H, 'x', 00H, 's', 00H, 't'
 	DB	00H, 'r', 00H, 'i', 00H, 'n', 00H, 'g', 00H, 00H, 00H ; `string'
 CONST	ENDS
-;	COMDAT ??_C@_08MMNCOCEO@Device?3?5?$AA@
-CONST	SEGMENT
-??_C@_08MMNCOCEO@Device?3?5?$AA@ DB 'Device: ', 00H	; `string'
-CONST	ENDS
-;	COMDAT ??_C@_0N@MHDFFMGB@?5?5Property?3?5?$AA@
-CONST	SEGMENT
-??_C@_0N@MHDFFMGB@?5?5Property?3?5?$AA@ DB '  Property: ', 00H ; `string'
-CONST	ENDS
-;	COMDAT ??_C@_09JBNFEIKB@?5?5Value?3?5?$AA@
-CONST	SEGMENT
-??_C@_09JBNFEIKB@?5?5Value?3?5?$AA@ DB '  Value: ', 00H	; `string'
-CONST	ENDS
 ;	COMDAT ??_C@_06FHFOAHML@system?$AA@
 CONST	SEGMENT
 ??_C@_06FHFOAHML@system?$AA@ DB 'system', 00H		; `string'
@@ -1321,49 +1293,11 @@ __ehfuncinfo$??$construct@U_Container_proxy@std@@U12@@?$allocator@U_Container_pr
 xdata$x	ENDS
 ;	COMDAT xdata$x
 xdata$x	SEGMENT
-__unwindtable$??0sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@AAV12@@Z DD 0ffffffffH
-	DD	FLAT:__unwindfunclet$??0sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@AAV12@@Z$0
-__ehfuncinfo$??0sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@AAV12@@Z DD 019930522H
+__unwindtable$?getInstance@CycleController@@SGAAV1@XZ DD 0ffffffffH
+	DD	FLAT:__unwindfunclet$?getInstance@CycleController@@SGAAV1@XZ$0
+__ehfuncinfo$?getInstance@CycleController@@SGAAV1@XZ DD 019930522H
 	DD	01H
-	DD	FLAT:__unwindtable$??0sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@AAV12@@Z
-	DD	2 DUP(00H)
-	DD	2 DUP(00H)
-	DD	00H
-	DD	01H
-xdata$x	ENDS
-;	COMDAT xdata$x
-xdata$x	SEGMENT
-__catchsym$??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z$3 DD 040H
-	DD	00H
-	DD	00H
-	DD	FLAT:__catch$??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z$0
-__tryblocktable$??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z DD 01H
-	DD	01H
-	DD	02H
-	DD	01H
-	DD	FLAT:__catchsym$??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z$3
-__unwindtable$??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z DD 0ffffffffH
-	DD	FLAT:__unwindfunclet$??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z$2
-	DD	00H
-	DD	00H
-	DD	00H
-	DD	00H
-__ehfuncinfo$??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z DD 019930522H
-	DD	03H
-	DD	FLAT:__unwindtable$??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z
-	DD	01H
-	DD	FLAT:__tryblocktable$??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z
-	DD	2 DUP(00H)
-	DD	00H
-	DD	01H
-xdata$x	ENDS
-;	COMDAT xdata$x
-xdata$x	SEGMENT
-__unwindtable$?getInstance@CycleController@@SAAAV1@XZ DD 0ffffffffH
-	DD	FLAT:__unwindfunclet$?getInstance@CycleController@@SAAAV1@XZ$0
-__ehfuncinfo$?getInstance@CycleController@@SAAAV1@XZ DD 019930522H
-	DD	01H
-	DD	FLAT:__unwindtable$?getInstance@CycleController@@SAAAV1@XZ
+	DD	FLAT:__unwindtable$?getInstance@CycleController@@SGAAV1@XZ
 	DD	2 DUP(00H)
 	DD	2 DUP(00H)
 	DD	00H
@@ -1561,8 +1495,7 @@ __V0$ = 12						; size = 4
 	je	SHORT $LN3@construct
 	mov	ecx, DWORD PTR __V0$[ebp]
 	push	ecx
-	call	??$forward@AAPAD@std@@YAAAPADAAPAD@Z	; std::forward<char * &>
-	add	esp, 4
+	call	??$forward@AAPAD@std@@YGAAPADAAPAD@Z	; std::forward<char * &>
 	mov	edx, DWORD PTR $T3[ebp]
 	mov	eax, DWORD PTR [eax]
 	mov	DWORD PTR [edx], eax
@@ -1609,10 +1542,10 @@ __ehhandler$??$construct@PADAAPAD@?$allocator@D@std@@QAEXPAPADAAPAD@Z:
 text$x	ENDS
 ??$construct@PADAAPAD@?$allocator@D@std@@QAEXPAPADAAPAD@Z ENDP ; std::allocator<char>::construct<char *,char * &>
 ; Function compile flags: /Odtp /RTCsu /ZI
-;	COMDAT ??$forward@U_Container_proxy@std@@@std@@YA$$QAU_Container_proxy@0@AAU10@@Z
+;	COMDAT ??$forward@U_Container_proxy@std@@@std@@YG$$QAU_Container_proxy@0@AAU10@@Z
 _TEXT	SEGMENT
 __Arg$ = 8						; size = 4
-??$forward@U_Container_proxy@std@@@std@@YA$$QAU_Container_proxy@0@AAU10@@Z PROC ; std::forward<std::_Container_proxy>, COMDAT
+??$forward@U_Container_proxy@std@@@std@@YG$$QAU_Container_proxy@0@AAU10@@Z PROC ; std::forward<std::_Container_proxy>, COMDAT
 ; File c:\program files (x86)\microsoft visual studio 11.0\vc\include\type_traits
 ; Line 1775
 	push	ebp
@@ -1633,15 +1566,15 @@ __Arg$ = 8						; size = 4
 	pop	ebx
 	mov	esp, ebp
 	pop	ebp
-	ret	0
-??$forward@U_Container_proxy@std@@@std@@YA$$QAU_Container_proxy@0@AAU10@@Z ENDP ; std::forward<std::_Container_proxy>
+	ret	4
+??$forward@U_Container_proxy@std@@@std@@YG$$QAU_Container_proxy@0@AAU10@@Z ENDP ; std::forward<std::_Container_proxy>
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
-;	COMDAT ??$destroy@PAD@?$allocator_traits@V?$allocator@D@std@@@std@@SAXAAV?$allocator@D@1@PAPAD@Z
+;	COMDAT ??$destroy@PAD@?$allocator_traits@V?$allocator@D@std@@@std@@SGXAAV?$allocator@D@1@PAPAD@Z
 _TEXT	SEGMENT
 __Al$ = 8						; size = 4
 __Ptr$ = 12						; size = 4
-??$destroy@PAD@?$allocator_traits@V?$allocator@D@std@@@std@@SAXAAV?$allocator@D@1@PAPAD@Z PROC ; std::allocator_traits<std::allocator<char> >::destroy<char *>, COMDAT
+??$destroy@PAD@?$allocator_traits@V?$allocator@D@std@@@std@@SGXAAV?$allocator@D@1@PAPAD@Z PROC ; std::allocator_traits<std::allocator<char> >::destroy<char *>, COMDAT
 ; File c:\program files (x86)\microsoft visual studio 11.0\vc\include\xmemory0
 ; Line 755
 	push	ebp
@@ -1668,16 +1601,16 @@ __Ptr$ = 12						; size = 4
 	call	__RTC_CheckEsp
 	mov	esp, ebp
 	pop	ebp
-	ret	0
-??$destroy@PAD@?$allocator_traits@V?$allocator@D@std@@@std@@SAXAAV?$allocator@D@1@PAPAD@Z ENDP ; std::allocator_traits<std::allocator<char> >::destroy<char *>
+	ret	8
+??$destroy@PAD@?$allocator_traits@V?$allocator@D@std@@@std@@SGXAAV?$allocator@D@1@PAPAD@Z ENDP ; std::allocator_traits<std::allocator<char> >::destroy<char *>
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
-;	COMDAT ??$construct@PADAAPAD@?$allocator_traits@V?$allocator@D@std@@@std@@SAXAAV?$allocator@D@1@PAPADAAPAD@Z
+;	COMDAT ??$construct@PADAAPAD@?$allocator_traits@V?$allocator@D@std@@@std@@SGXAAV?$allocator@D@1@PAPADAAPAD@Z
 _TEXT	SEGMENT
 __Al$ = 8						; size = 4
 __Ptr$ = 12						; size = 4
 __V0$ = 16						; size = 4
-??$construct@PADAAPAD@?$allocator_traits@V?$allocator@D@std@@@std@@SAXAAV?$allocator@D@1@PAPADAAPAD@Z PROC ; std::allocator_traits<std::allocator<char> >::construct<char *,char * &>, COMDAT
+??$construct@PADAAPAD@?$allocator_traits@V?$allocator@D@std@@@std@@SGXAAV?$allocator@D@1@PAPADAAPAD@Z PROC ; std::allocator_traits<std::allocator<char> >::construct<char *,char * &>, COMDAT
 ; File c:\program files (x86)\microsoft visual studio 11.0\vc\include\xmemory0
 ; Line 751
 	push	ebp
@@ -1692,8 +1625,7 @@ __V0$ = 16						; size = 4
 	rep stosd
 	mov	eax, DWORD PTR __V0$[ebp]
 	push	eax
-	call	??$forward@AAPAD@std@@YAAAPADAAPAD@Z	; std::forward<char * &>
-	add	esp, 4
+	call	??$forward@AAPAD@std@@YGAAPADAAPAD@Z	; std::forward<char * &>
 	push	eax
 	mov	ecx, DWORD PTR __Ptr$[ebp]
 	push	ecx
@@ -1707,14 +1639,14 @@ __V0$ = 16						; size = 4
 	call	__RTC_CheckEsp
 	mov	esp, ebp
 	pop	ebp
-	ret	0
-??$construct@PADAAPAD@?$allocator_traits@V?$allocator@D@std@@@std@@SAXAAV?$allocator@D@1@PAPADAAPAD@Z ENDP ; std::allocator_traits<std::allocator<char> >::construct<char *,char * &>
+	ret	12					; 0000000cH
+??$construct@PADAAPAD@?$allocator_traits@V?$allocator@D@std@@@std@@SGXAAV?$allocator@D@1@PAPADAAPAD@Z ENDP ; std::allocator_traits<std::allocator<char> >::construct<char *,char * &>
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
-;	COMDAT ??$forward@AAPAD@std@@YAAAPADAAPAD@Z
+;	COMDAT ??$forward@AAPAD@std@@YGAAPADAAPAD@Z
 _TEXT	SEGMENT
 __Arg$ = 8						; size = 4
-??$forward@AAPAD@std@@YAAAPADAAPAD@Z PROC		; std::forward<char * &>, COMDAT
+??$forward@AAPAD@std@@YGAAPADAAPAD@Z PROC		; std::forward<char * &>, COMDAT
 ; File c:\program files (x86)\microsoft visual studio 11.0\vc\include\type_traits
 ; Line 1775
 	push	ebp
@@ -1735,8 +1667,8 @@ __Arg$ = 8						; size = 4
 	pop	ebx
 	mov	esp, ebp
 	pop	ebp
-	ret	0
-??$forward@AAPAD@std@@YAAAPADAAPAD@Z ENDP		; std::forward<char * &>
+	ret	4
+??$forward@AAPAD@std@@YGAAPADAAPAD@Z ENDP		; std::forward<char * &>
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ??__F?_System_object@?$_Error_objects@H@std@@2V_System_error_category@2@A@@YAXXZ
@@ -1916,12 +1848,12 @@ text$yc	SEGMENT
 ??__E?_Generic_object@?$_Error_objects@H@std@@2V_Generic_error_category@2@A@@YAXXZ ENDP ; `dynamic initializer for 'std::_Error_objects<int>::_Generic_object''
 text$yc	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
-;	COMDAT ??$_Allocate@D@std@@YAPADIPAD@Z
+;	COMDAT ??$_Allocate@D@std@@YGPADIPAD@Z
 _TEXT	SEGMENT
 __Ptr$ = -8						; size = 4
 __Count$ = 8						; size = 4
 ___formal$ = 12						; size = 4
-??$_Allocate@D@std@@YAPADIPAD@Z PROC			; std::_Allocate<char>, COMDAT
+??$_Allocate@D@std@@YGPADIPAD@Z PROC			; std::_Allocate<char>, COMDAT
 ; File c:\program files (x86)\microsoft visual studio 11.0\vc\include\xmemory0
 ; Line 22
 	push	ebp
@@ -1971,16 +1903,16 @@ $LN6@Allocate:
 	call	__RTC_CheckEsp
 	mov	esp, ebp
 	pop	ebp
-	ret	0
-??$_Allocate@D@std@@YAPADIPAD@Z ENDP			; std::_Allocate<char>
+	ret	8
+??$_Allocate@D@std@@YGPADIPAD@Z ENDP			; std::_Allocate<char>
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
-;	COMDAT ??$_Allocate@U_Container_proxy@std@@@std@@YAPAU_Container_proxy@0@IPAU10@@Z
+;	COMDAT ??$_Allocate@U_Container_proxy@std@@@std@@YGPAU_Container_proxy@0@IPAU10@@Z
 _TEXT	SEGMENT
 __Ptr$ = -8						; size = 4
 __Count$ = 8						; size = 4
 ___formal$ = 12						; size = 4
-??$_Allocate@U_Container_proxy@std@@@std@@YAPAU_Container_proxy@0@IPAU10@@Z PROC ; std::_Allocate<std::_Container_proxy>, COMDAT
+??$_Allocate@U_Container_proxy@std@@@std@@YGPAU_Container_proxy@0@IPAU10@@Z PROC ; std::_Allocate<std::_Container_proxy>, COMDAT
 ; File c:\program files (x86)\microsoft visual studio 11.0\vc\include\xmemory0
 ; Line 22
 	push	ebp
@@ -2031,8 +1963,8 @@ $LN6@Allocate:
 	call	__RTC_CheckEsp
 	mov	esp, ebp
 	pop	ebp
-	ret	0
-??$_Allocate@U_Container_proxy@std@@@std@@YAPAU_Container_proxy@0@IPAU10@@Z ENDP ; std::_Allocate<std::_Container_proxy>
+	ret	8
+??$_Allocate@U_Container_proxy@std@@@std@@YGPAU_Container_proxy@0@IPAU10@@Z ENDP ; std::_Allocate<std::_Container_proxy>
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ??$destroy@U_Container_proxy@std@@@?$allocator@U_Container_proxy@std@@@std@@QAEXPAU_Container_proxy@1@@Z
@@ -2112,8 +2044,7 @@ __V0$ = 12						; size = 4
 	je	SHORT $LN3@construct
 	mov	ecx, DWORD PTR __V0$[ebp]
 	push	ecx
-	call	??$forward@U_Container_proxy@std@@@std@@YA$$QAU_Container_proxy@0@AAU10@@Z ; std::forward<std::_Container_proxy>
-	add	esp, 4
+	call	??$forward@U_Container_proxy@std@@@std@@YG$$QAU_Container_proxy@0@AAU10@@Z ; std::forward<std::_Container_proxy>
 	mov	edx, DWORD PTR [eax]
 	mov	eax, DWORD PTR [eax+4]
 	mov	ecx, DWORD PTR $T3[ebp]
@@ -2187,8 +2118,7 @@ __Count$ = 8						; size = 4
 	push	0
 	mov	eax, DWORD PTR __Count$[ebp]
 	push	eax
-	call	??$_Allocate@U_Container_proxy@std@@@std@@YAPAU_Container_proxy@0@IPAU10@@Z ; std::_Allocate<std::_Container_proxy>
-	add	esp, 8
+	call	??$_Allocate@U_Container_proxy@std@@@std@@YGPAU_Container_proxy@0@IPAU10@@Z ; std::_Allocate<std::_Container_proxy>
 ; Line 592
 	pop	edi
 	pop	esi
@@ -2273,10 +2203,10 @@ _this$ = -8						; size = 4
 ??0?$allocator@U_Container_proxy@std@@@std@@QAE@XZ ENDP	; std::allocator<std::_Container_proxy>::allocator<std::_Container_proxy>
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
-;	COMDAT ??$addressof@D@std@@YAPADAAD@Z
+;	COMDAT ??$addressof@D@std@@YGPADAAD@Z
 _TEXT	SEGMENT
 __Val$ = 8						; size = 4
-??$addressof@D@std@@YAPADAAD@Z PROC			; std::addressof<char>, COMDAT
+??$addressof@D@std@@YGPADAAD@Z PROC			; std::addressof<char>, COMDAT
 ; File c:\program files (x86)\microsoft visual studio 11.0\vc\include\xstddef
 ; Line 85
 	push	ebp
@@ -2297,8 +2227,8 @@ __Val$ = 8						; size = 4
 	pop	ebx
 	mov	esp, ebp
 	pop	ebp
-	ret	0
-??$addressof@D@std@@YAPADAAD@Z ENDP			; std::addressof<char>
+	ret	4
+??$addressof@D@std@@YGPADAAD@Z ENDP			; std::addressof<char>
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ??$destroy@PAD@?$_Wrap_alloc@V?$allocator@D@std@@@std@@QAEXPAPAD@Z
@@ -2327,8 +2257,7 @@ __Ptr$ = 8						; size = 4
 	push	eax
 	mov	ecx, DWORD PTR _this$[ebp]
 	push	ecx
-	call	??$destroy@PAD@?$allocator_traits@V?$allocator@D@std@@@std@@SAXAAV?$allocator@D@1@PAPAD@Z ; std::allocator_traits<std::allocator<char> >::destroy<char *>
-	add	esp, 8
+	call	??$destroy@PAD@?$allocator_traits@V?$allocator@D@std@@@std@@SGXAAV?$allocator@D@1@PAPAD@Z ; std::allocator_traits<std::allocator<char> >::destroy<char *>
 ; Line 910
 	pop	edi
 	pop	esi
@@ -2366,15 +2295,13 @@ __V0$ = 12						; size = 4
 	mov	DWORD PTR _this$[ebp], ecx
 	mov	eax, DWORD PTR __V0$[ebp]
 	push	eax
-	call	??$forward@AAPAD@std@@YAAAPADAAPAD@Z	; std::forward<char * &>
-	add	esp, 4
+	call	??$forward@AAPAD@std@@YGAAPADAAPAD@Z	; std::forward<char * &>
 	push	eax
 	mov	ecx, DWORD PTR __Ptr$[ebp]
 	push	ecx
 	mov	edx, DWORD PTR _this$[ebp]
 	push	edx
-	call	??$construct@PADAAPAD@?$allocator_traits@V?$allocator@D@std@@@std@@SAXAAV?$allocator@D@1@PAPADAAPAD@Z ; std::allocator_traits<std::allocator<char> >::construct<char *,char * &>
-	add	esp, 12					; 0000000cH
+	call	??$construct@PADAAPAD@?$allocator_traits@V?$allocator@D@std@@@std@@SGXAAV?$allocator@D@1@PAPADAAPAD@Z ; std::allocator_traits<std::allocator<char> >::construct<char *,char * &>
 	pop	edi
 	pop	esi
 	pop	ebx
@@ -2387,807 +2314,12 @@ __V0$ = 12						; size = 4
 ??$construct@PADAAPAD@?$_Wrap_alloc@V?$allocator@D@std@@@std@@QAEXPAPADAAPAD@Z ENDP ; std::_Wrap_alloc<std::allocator<char> >::construct<char *,char * &>
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
-;	COMDAT ??Bsentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QBEPQ?$_Bool_struct@V?$basic_ostream@DU?$char_traits@D@std@@@std@@@2@HXZ
-_TEXT	SEGMENT
-tv67 = -208						; size = 4
-_this$ = -8						; size = 4
-??Bsentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QBEPQ?$_Bool_struct@V?$basic_ostream@DU?$char_traits@D@std@@@std@@@2@HXZ PROC ; std::basic_ostream<char,std::char_traits<char> >::sentry::operator int std::_Bool_struct<std::basic_ostream<char,std::char_traits<char> > >::*, COMDAT
-; _this$ = ecx
-; File c:\program files (x86)\microsoft visual studio 11.0\vc\include\ostream
-; Line 146
-	push	ebp
-	mov	ebp, esp
-	sub	esp, 208				; 000000d0H
-	push	ebx
-	push	esi
-	push	edi
-	push	ecx
-	lea	edi, DWORD PTR [ebp-208]
-	mov	ecx, 52					; 00000034H
-	mov	eax, -858993460				; ccccccccH
-	rep stosd
-	pop	ecx
-	mov	DWORD PTR _this$[ebp], ecx
-; Line 147
-	mov	eax, DWORD PTR _this$[ebp]
-	movzx	ecx, BYTE PTR [eax+4]
-	test	ecx, ecx
-	je	SHORT $LN3@
-	mov	DWORD PTR tv67[ebp], 0
-	jmp	SHORT $LN4@
-$LN3@:
-	mov	DWORD PTR tv67[ebp], -1
-$LN4@:
-	mov	eax, DWORD PTR tv67[ebp]
-; Line 148
-	pop	edi
-	pop	esi
-	pop	ebx
-	mov	esp, ebp
-	pop	ebp
-	ret	0
-??Bsentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QBEPQ?$_Bool_struct@V?$basic_ostream@DU?$char_traits@D@std@@@std@@@2@HXZ ENDP ; std::basic_ostream<char,std::char_traits<char> >::sentry::operator int std::_Bool_struct<std::basic_ostream<char,std::char_traits<char> > >::*
-_TEXT	ENDS
-; Function compile flags: /Odtp /RTCsu /ZI
-;	COMDAT ??1sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@XZ
-_TEXT	SEGMENT
-_this$ = -8						; size = 4
-??1sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@XZ PROC ; std::basic_ostream<char,std::char_traits<char> >::sentry::~sentry, COMDAT
-; _this$ = ecx
-; File c:\program files (x86)\microsoft visual studio 11.0\vc\include\ostream
-; Line 133
-	push	ebp
-	mov	ebp, esp
-	sub	esp, 204				; 000000ccH
-	push	ebx
-	push	esi
-	push	edi
-	push	ecx
-	lea	edi, DWORD PTR [ebp-204]
-	mov	ecx, 51					; 00000033H
-	mov	eax, -858993460				; ccccccccH
-	rep stosd
-	pop	ecx
-	mov	DWORD PTR _this$[ebp], ecx
-; Line 135
-	mov	esi, esp
-	call	DWORD PTR __imp_?uncaught_exception@std@@YA_NXZ
-	cmp	esi, esp
-	call	__RTC_CheckEsp
-	movzx	eax, al
-	test	eax, eax
-	jne	SHORT $LN2@sentry
-; Line 136
-	mov	esi, esp
-	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax]
-	call	DWORD PTR __imp_?_Osfx@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEXXZ
-	cmp	esi, esp
-	call	__RTC_CheckEsp
-$LN2@sentry:
-; Line 141
-	mov	ecx, DWORD PTR _this$[ebp]
-	call	??1_Sentry_base@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@XZ ; std::basic_ostream<char,std::char_traits<char> >::_Sentry_base::~_Sentry_base
-	pop	edi
-	pop	esi
-	pop	ebx
-	add	esp, 204				; 000000ccH
-	cmp	ebp, esp
-	call	__RTC_CheckEsp
-	mov	esp, ebp
-	pop	ebp
-	ret	0
-??1sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@XZ ENDP ; std::basic_ostream<char,std::char_traits<char> >::sentry::~sentry
-_TEXT	ENDS
-; Function compile flags: /Odtp /RTCsu /ZI
-;	COMDAT ??0sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@AAV12@@Z
-_TEXT	SEGMENT
-_this$ = -20						; size = 4
-__$EHRec$ = -12						; size = 12
-__Ostr$ = 8						; size = 4
-??0sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@AAV12@@Z PROC ; std::basic_ostream<char,std::char_traits<char> >::sentry::sentry, COMDAT
-; _this$ = ecx
-; File c:\program files (x86)\microsoft visual studio 11.0\vc\include\ostream
-; Line 126
-	push	ebp
-	mov	ebp, esp
-	push	-1
-	push	__ehhandler$??0sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@AAV12@@Z
-	mov	eax, DWORD PTR fs:0
-	push	eax
-	sub	esp, 204				; 000000ccH
-	push	ebx
-	push	esi
-	push	edi
-	push	ecx
-	lea	edi, DWORD PTR [ebp-216]
-	mov	ecx, 51					; 00000033H
-	mov	eax, -858993460				; ccccccccH
-	rep stosd
-	pop	ecx
-	mov	eax, DWORD PTR ___security_cookie
-	xor	eax, ebp
-	push	eax
-	lea	eax, DWORD PTR __$EHRec$[ebp]
-	mov	DWORD PTR fs:0, eax
-	mov	DWORD PTR _this$[ebp], ecx
-	mov	eax, DWORD PTR __Ostr$[ebp]
-	push	eax
-	mov	ecx, DWORD PTR _this$[ebp]
-	call	??0_Sentry_base@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@AAV12@@Z ; std::basic_ostream<char,std::char_traits<char> >::_Sentry_base::_Sentry_base
-	mov	DWORD PTR __$EHRec$[ebp+8], 0
-; Line 127
-	mov	eax, DWORD PTR __Ostr$[ebp]
-	mov	ecx, DWORD PTR [eax]
-	mov	edx, DWORD PTR __Ostr$[ebp]
-	add	edx, DWORD PTR [ecx+4]
-	mov	esi, esp
-	mov	ecx, edx
-	call	DWORD PTR __imp_?good@ios_base@std@@QBE_NXZ
-	cmp	esi, esp
-	call	__RTC_CheckEsp
-	movzx	eax, al
-	test	eax, eax
-	je	SHORT $LN1@sentry
-	mov	eax, DWORD PTR __Ostr$[ebp]
-	mov	ecx, DWORD PTR [eax]
-	mov	edx, DWORD PTR __Ostr$[ebp]
-	add	edx, DWORD PTR [ecx+4]
-	mov	esi, esp
-	mov	ecx, edx
-	call	DWORD PTR __imp_?tie@?$basic_ios@DU?$char_traits@D@std@@@std@@QBEPAV?$basic_ostream@DU?$char_traits@D@std@@@2@XZ
-	cmp	esi, esp
-	call	__RTC_CheckEsp
-	test	eax, eax
-	je	SHORT $LN1@sentry
-; Line 128
-	mov	eax, DWORD PTR __Ostr$[ebp]
-	mov	ecx, DWORD PTR [eax]
-	mov	edx, DWORD PTR __Ostr$[ebp]
-	add	edx, DWORD PTR [ecx+4]
-	mov	esi, esp
-	mov	ecx, edx
-	call	DWORD PTR __imp_?tie@?$basic_ios@DU?$char_traits@D@std@@@std@@QBEPAV?$basic_ostream@DU?$char_traits@D@std@@@2@XZ
-	cmp	esi, esp
-	call	__RTC_CheckEsp
-	mov	esi, esp
-	mov	ecx, eax
-	call	DWORD PTR __imp_?flush@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEAAV12@XZ
-	cmp	esi, esp
-	call	__RTC_CheckEsp
-$LN1@sentry:
-; Line 129
-	mov	eax, DWORD PTR __Ostr$[ebp]
-	mov	ecx, DWORD PTR [eax]
-	mov	edx, DWORD PTR __Ostr$[ebp]
-	add	edx, DWORD PTR [ecx+4]
-	mov	esi, esp
-	mov	ecx, edx
-	call	DWORD PTR __imp_?good@ios_base@std@@QBE_NXZ
-	cmp	esi, esp
-	call	__RTC_CheckEsp
-	mov	ecx, DWORD PTR _this$[ebp]
-	mov	BYTE PTR [ecx+4], al
-; Line 130
-	mov	DWORD PTR __$EHRec$[ebp+8], -1
-	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR __$EHRec$[ebp]
-	mov	DWORD PTR fs:0, ecx
-	pop	ecx
-	pop	edi
-	pop	esi
-	pop	ebx
-	add	esp, 216				; 000000d8H
-	cmp	ebp, esp
-	call	__RTC_CheckEsp
-	mov	esp, ebp
-	pop	ebp
-	ret	4
-_TEXT	ENDS
-;	COMDAT text$x
-text$x	SEGMENT
-__unwindfunclet$??0sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@AAV12@@Z$0:
-	mov	ecx, DWORD PTR _this$[ebp]
-	jmp	??1_Sentry_base@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@XZ ; std::basic_ostream<char,std::char_traits<char> >::_Sentry_base::~_Sentry_base
-__ehhandler$??0sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@AAV12@@Z:
-	mov	edx, DWORD PTR [esp+8]
-	lea	eax, DWORD PTR [edx+12]
-	mov	ecx, DWORD PTR [edx-220]
-	xor	ecx, eax
-	call	@__security_check_cookie@4
-	mov	eax, OFFSET __ehfuncinfo$??0sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@AAV12@@Z
-	jmp	___CxxFrameHandler3
-text$x	ENDS
-??0sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@AAV12@@Z ENDP ; std::basic_ostream<char,std::char_traits<char> >::sentry::sentry
-; Function compile flags: /Odtp /RTCsu /ZI
-;	COMDAT ??1_Sentry_base@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@XZ
-_TEXT	SEGMENT
-tv92 = -212						; size = 4
-tv86 = -208						; size = 4
-tv72 = -208						; size = 4
-_this$ = -8						; size = 4
-??1_Sentry_base@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@XZ PROC ; std::basic_ostream<char,std::char_traits<char> >::_Sentry_base::~_Sentry_base, COMDAT
-; _this$ = ecx
-; File c:\program files (x86)\microsoft visual studio 11.0\vc\include\ostream
-; Line 109
-	push	ebp
-	mov	ebp, esp
-	sub	esp, 212				; 000000d4H
-	push	ebx
-	push	esi
-	push	edi
-	push	ecx
-	lea	edi, DWORD PTR [ebp-212]
-	mov	ecx, 53					; 00000035H
-	mov	eax, -858993460				; ccccccccH
-	rep stosd
-	pop	ecx
-	mov	DWORD PTR _this$[ebp], ecx
-; Line 110
-	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax]
-	mov	DWORD PTR tv72[ebp], ecx
-	mov	edx, DWORD PTR tv72[ebp]
-	mov	eax, DWORD PTR [edx]
-	mov	ecx, DWORD PTR tv72[ebp]
-	add	ecx, DWORD PTR [eax+4]
-	mov	esi, esp
-	call	DWORD PTR __imp_?rdbuf@?$basic_ios@DU?$char_traits@D@std@@@std@@QBEPAV?$basic_streambuf@DU?$char_traits@D@std@@@2@XZ
-	cmp	esi, esp
-	call	__RTC_CheckEsp
-	test	eax, eax
-	je	SHORT $LN2@Sentry_bas
-; Line 111
-	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax]
-	mov	DWORD PTR tv86[ebp], ecx
-	mov	edx, DWORD PTR tv86[ebp]
-	mov	eax, DWORD PTR [edx]
-	mov	ecx, DWORD PTR tv86[ebp]
-	add	ecx, DWORD PTR [eax+4]
-	mov	esi, esp
-	call	DWORD PTR __imp_?rdbuf@?$basic_ios@DU?$char_traits@D@std@@@std@@QBEPAV?$basic_streambuf@DU?$char_traits@D@std@@@2@XZ
-	cmp	esi, esp
-	call	__RTC_CheckEsp
-	mov	DWORD PTR tv92[ebp], eax
-	mov	ecx, DWORD PTR tv92[ebp]
-	mov	edx, DWORD PTR [ecx]
-	mov	esi, esp
-	mov	ecx, DWORD PTR tv92[ebp]
-	mov	eax, DWORD PTR [edx+8]
-	call	eax
-	cmp	esi, esp
-	call	__RTC_CheckEsp
-$LN2@Sentry_bas:
-; Line 112
-	pop	edi
-	pop	esi
-	pop	ebx
-	add	esp, 212				; 000000d4H
-	cmp	ebp, esp
-	call	__RTC_CheckEsp
-	mov	esp, ebp
-	pop	ebp
-	ret	0
-??1_Sentry_base@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@XZ ENDP ; std::basic_ostream<char,std::char_traits<char> >::_Sentry_base::~_Sentry_base
-_TEXT	ENDS
-; Function compile flags: /Odtp /RTCsu /ZI
-;	COMDAT ??0_Sentry_base@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@AAV12@@Z
-_TEXT	SEGMENT
-tv93 = -212						; size = 4
-tv87 = -208						; size = 4
-tv73 = -208						; size = 4
-_this$ = -8						; size = 4
-__Ostr$ = 8						; size = 4
-??0_Sentry_base@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@AAV12@@Z PROC ; std::basic_ostream<char,std::char_traits<char> >::_Sentry_base::_Sentry_base, COMDAT
-; _this$ = ecx
-; File c:\program files (x86)\microsoft visual studio 11.0\vc\include\ostream
-; Line 103
-	push	ebp
-	mov	ebp, esp
-	sub	esp, 212				; 000000d4H
-	push	ebx
-	push	esi
-	push	edi
-	push	ecx
-	lea	edi, DWORD PTR [ebp-212]
-	mov	ecx, 53					; 00000035H
-	mov	eax, -858993460				; ccccccccH
-	rep stosd
-	pop	ecx
-	mov	DWORD PTR _this$[ebp], ecx
-	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR __Ostr$[ebp]
-	mov	DWORD PTR [eax], ecx
-; Line 104
-	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax]
-	mov	DWORD PTR tv73[ebp], ecx
-	mov	edx, DWORD PTR tv73[ebp]
-	mov	eax, DWORD PTR [edx]
-	mov	ecx, DWORD PTR tv73[ebp]
-	add	ecx, DWORD PTR [eax+4]
-	mov	esi, esp
-	call	DWORD PTR __imp_?rdbuf@?$basic_ios@DU?$char_traits@D@std@@@std@@QBEPAV?$basic_streambuf@DU?$char_traits@D@std@@@2@XZ
-	cmp	esi, esp
-	call	__RTC_CheckEsp
-	test	eax, eax
-	je	SHORT $LN2@Sentry_bas
-; Line 105
-	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax]
-	mov	DWORD PTR tv87[ebp], ecx
-	mov	edx, DWORD PTR tv87[ebp]
-	mov	eax, DWORD PTR [edx]
-	mov	ecx, DWORD PTR tv87[ebp]
-	add	ecx, DWORD PTR [eax+4]
-	mov	esi, esp
-	call	DWORD PTR __imp_?rdbuf@?$basic_ios@DU?$char_traits@D@std@@@std@@QBEPAV?$basic_streambuf@DU?$char_traits@D@std@@@2@XZ
-	cmp	esi, esp
-	call	__RTC_CheckEsp
-	mov	DWORD PTR tv93[ebp], eax
-	mov	ecx, DWORD PTR tv93[ebp]
-	mov	edx, DWORD PTR [ecx]
-	mov	esi, esp
-	mov	ecx, DWORD PTR tv93[ebp]
-	mov	eax, DWORD PTR [edx+4]
-	call	eax
-	cmp	esi, esp
-	call	__RTC_CheckEsp
-$LN2@Sentry_bas:
-; Line 106
-	mov	eax, DWORD PTR _this$[ebp]
-	pop	edi
-	pop	esi
-	pop	ebx
-	add	esp, 212				; 000000d4H
-	cmp	ebp, esp
-	call	__RTC_CheckEsp
-	mov	esp, ebp
-	pop	ebp
-	ret	4
-??0_Sentry_base@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@AAV12@@Z ENDP ; std::basic_ostream<char,std::char_traits<char> >::_Sentry_base::_Sentry_base
-_TEXT	ENDS
-; Function compile flags: /Odtp /RTCsu /ZI
-;	COMDAT ??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z
-_TEXT	SEGMENT
-tv135 = -352						; size = 8
-tv341 = -344						; size = 8
-tv289 = -340						; size = 4
-tv286 = -340						; size = 8
-tv284 = -340						; size = 4
-tv327 = -336						; size = 8
-tv288 = -336						; size = 4
-tv283 = -336						; size = 4
-tv285 = -332						; size = 4
-tv137 = -332						; size = 4
-tv287 = -329						; size = 1
-tv282 = -329						; size = 1
-$T2 = -324						; size = 4
-$T3 = -312						; size = 4
-$T4 = -300						; size = 4
-$T5 = -288						; size = 4
-$T6 = -276						; size = 4
-__Ok$ = -72						; size = 8
-__Pad$ = -56						; size = 8
-__Count$ = -40						; size = 8
-__State$ = -24						; size = 4
-__$EHRec$ = -16						; size = 16
-__Ostr$ = 8						; size = 4
-__Val$ = 12						; size = 4
-??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z PROC ; std::operator<<<std::char_traits<char> >, COMDAT
-; File c:\program files (x86)\microsoft visual studio 11.0\vc\include\ostream
-; Line 783
-	push	ebp
-	mov	ebp, esp
-	push	-1
-	push	__ehhandler$??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z
-	mov	eax, DWORD PTR fs:0
-	push	eax
-	push	ecx
-	sub	esp, 336				; 00000150H
-	push	ebx
-	push	esi
-	push	edi
-	lea	edi, DWORD PTR [ebp-352]
-	mov	ecx, 84					; 00000054H
-	mov	eax, -858993460				; ccccccccH
-	rep stosd
-	mov	eax, DWORD PTR ___security_cookie
-	xor	eax, ebp
-	push	eax
-	lea	eax, DWORD PTR __$EHRec$[ebp+4]
-	mov	DWORD PTR fs:0, eax
-	mov	DWORD PTR __$EHRec$[ebp], esp
-; Line 786
-	mov	DWORD PTR __State$[ebp], 0
-; Line 787
-	mov	eax, DWORD PTR __Val$[ebp]
-	push	eax
-	call	?length@?$char_traits@D@std@@SAIPBD@Z	; std::char_traits<char>::length
-	add	esp, 4
-	xor	ecx, ecx
-	mov	DWORD PTR __Count$[ebp], eax
-	mov	DWORD PTR __Count$[ebp+4], ecx
-; Line 789
-	mov	eax, DWORD PTR __Ostr$[ebp]
-	mov	ecx, DWORD PTR [eax]
-	mov	edx, DWORD PTR __Ostr$[ebp]
-	add	edx, DWORD PTR [ecx+4]
-	mov	esi, esp
-	mov	ecx, edx
-	call	DWORD PTR __imp_?width@ios_base@std@@QBE_JXZ
-	cmp	esi, esp
-	call	__RTC_CheckEsp
-	mov	DWORD PTR tv327[ebp], eax
-	mov	DWORD PTR tv327[ebp+4], edx
-	cmp	DWORD PTR tv327[ebp+4], 0
-	jl	SHORT $LN17@operator
-	jg	SHORT $LN24@operator
-	cmp	DWORD PTR tv327[ebp], 0
-	jbe	SHORT $LN17@operator
-$LN24@operator:
-	mov	eax, DWORD PTR __Ostr$[ebp]
-	mov	ecx, DWORD PTR [eax]
-	mov	edx, DWORD PTR __Ostr$[ebp]
-	add	edx, DWORD PTR [ecx+4]
-	mov	esi, esp
-	mov	ecx, edx
-	call	DWORD PTR __imp_?width@ios_base@std@@QBE_JXZ
-	cmp	esi, esp
-	call	__RTC_CheckEsp
-	mov	DWORD PTR tv341[ebp], eax
-	mov	DWORD PTR tv341[ebp+4], edx
-	mov	eax, DWORD PTR tv341[ebp+4]
-	cmp	eax, DWORD PTR __Count$[ebp+4]
-	jl	SHORT $LN17@operator
-	jg	SHORT $LN25@operator
-	mov	ecx, DWORD PTR tv341[ebp]
-	cmp	ecx, DWORD PTR __Count$[ebp]
-	jbe	SHORT $LN17@operator
-$LN25@operator:
-	mov	edx, DWORD PTR __Ostr$[ebp]
-	mov	eax, DWORD PTR [edx]
-	mov	ecx, DWORD PTR __Ostr$[ebp]
-	add	ecx, DWORD PTR [eax+4]
-	mov	esi, esp
-	call	DWORD PTR __imp_?width@ios_base@std@@QBE_JXZ
-	cmp	esi, esp
-	call	__RTC_CheckEsp
-	sub	eax, DWORD PTR __Count$[ebp]
-	sbb	edx, DWORD PTR __Count$[ebp+4]
-	mov	DWORD PTR tv135[ebp], eax
-	mov	DWORD PTR tv135[ebp+4], edx
-	jmp	SHORT $LN18@operator
-$LN17@operator:
-	xorpd	xmm0, xmm0
-	movlpd	QWORD PTR tv135[ebp], xmm0
-$LN18@operator:
-	mov	ecx, DWORD PTR tv135[ebp]
-	mov	DWORD PTR __Pad$[ebp], ecx
-	mov	edx, DWORD PTR tv135[ebp+4]
-	mov	DWORD PTR __Pad$[ebp+4], edx
-; Line 790
-	mov	eax, DWORD PTR __Ostr$[ebp]
-	push	eax
-	lea	ecx, DWORD PTR __Ok$[ebp]
-	call	??0sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@AAV12@@Z ; std::basic_ostream<char,std::char_traits<char> >::sentry::sentry
-	mov	DWORD PTR __$EHRec$[ebp+12], 0
-; Line 792
-	lea	ecx, DWORD PTR __Ok$[ebp]
-	call	??Bsentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QBEPQ?$_Bool_struct@V?$basic_ostream@DU?$char_traits@D@std@@@std@@@2@HXZ ; std::basic_ostream<char,std::char_traits<char> >::sentry::operator int std::_Bool_struct<std::basic_ostream<char,std::char_traits<char> > >::*
-	cmp	eax, -1
-	jne	SHORT $LN14@operator
-; Line 793
-	mov	eax, DWORD PTR __State$[ebp]
-	or	eax, 4
-	mov	DWORD PTR __State$[ebp], eax
-; Line 794
-	jmp	$LN13@operator
-$LN14@operator:
-; Line 796
-	mov	BYTE PTR __$EHRec$[ebp+12], 1
-; Line 797
-	mov	eax, DWORD PTR __Ostr$[ebp]
-	mov	ecx, DWORD PTR [eax]
-	mov	edx, DWORD PTR __Ostr$[ebp]
-	add	edx, DWORD PTR [ecx+4]
-	mov	esi, esp
-	mov	ecx, edx
-	call	DWORD PTR __imp_?flags@ios_base@std@@QBEHXZ
-	cmp	esi, esp
-	call	__RTC_CheckEsp
-	mov	DWORD PTR tv137[ebp], eax
-	mov	eax, DWORD PTR tv137[ebp]
-	and	eax, 448				; 000001c0H
-	cmp	eax, 64					; 00000040H
-	je	$LN11@operator
-; Line 798
-	jmp	SHORT $LN10@operator
-$LN9@operator:
-	mov	eax, DWORD PTR __Pad$[ebp]
-	sub	eax, 1
-	mov	ecx, DWORD PTR __Pad$[ebp+4]
-	sbb	ecx, 0
-	mov	DWORD PTR __Pad$[ebp], eax
-	mov	DWORD PTR __Pad$[ebp+4], ecx
-$LN10@operator:
-	cmp	DWORD PTR __Pad$[ebp+4], 0
-	jl	$LN11@operator
-	jg	SHORT $LN26@operator
-	cmp	DWORD PTR __Pad$[ebp], 0
-	jbe	$LN11@operator
-$LN26@operator:
-; Line 800
-	mov	eax, DWORD PTR __Ostr$[ebp]
-	mov	ecx, DWORD PTR [eax]
-	mov	edx, DWORD PTR __Ostr$[ebp]
-	add	edx, DWORD PTR [ecx+4]
-	mov	esi, esp
-	mov	ecx, edx
-	call	DWORD PTR __imp_?fill@?$basic_ios@DU?$char_traits@D@std@@@std@@QBEDXZ
-	cmp	esi, esp
-	call	__RTC_CheckEsp
-	mov	BYTE PTR tv282[ebp], al
-	mov	eax, DWORD PTR __Ostr$[ebp]
-	mov	ecx, DWORD PTR [eax]
-	mov	edx, DWORD PTR __Ostr$[ebp]
-	add	edx, DWORD PTR [ecx+4]
-	mov	esi, esp
-	mov	ecx, edx
-	call	DWORD PTR __imp_?rdbuf@?$basic_ios@DU?$char_traits@D@std@@@std@@QBEPAV?$basic_streambuf@DU?$char_traits@D@std@@@2@XZ
-	cmp	esi, esp
-	call	__RTC_CheckEsp
-	mov	DWORD PTR tv283[ebp], eax
-	mov	esi, esp
-	movzx	eax, BYTE PTR tv282[ebp]
-	push	eax
-	mov	ecx, DWORD PTR tv283[ebp]
-	call	DWORD PTR __imp_?sputc@?$basic_streambuf@DU?$char_traits@D@std@@@std@@QAEHD@Z
-	cmp	esi, esp
-	call	__RTC_CheckEsp
-	mov	DWORD PTR tv284[ebp], eax
-	mov	ecx, DWORD PTR tv284[ebp]
-	mov	DWORD PTR $T2[ebp], ecx
-	call	?eof@?$char_traits@D@std@@SAHXZ		; std::char_traits<char>::eof
-	mov	DWORD PTR $T3[ebp], eax
-	lea	edx, DWORD PTR $T2[ebp]
-	push	edx
-	lea	eax, DWORD PTR $T3[ebp]
-	push	eax
-	call	?eq_int_type@?$char_traits@D@std@@SA_NABH0@Z ; std::char_traits<char>::eq_int_type
-	add	esp, 8
-	movzx	ecx, al
-	test	ecx, ecx
-	je	SHORT $LN7@operator
-; Line 802
-	mov	eax, DWORD PTR __State$[ebp]
-	or	eax, 4
-	mov	DWORD PTR __State$[ebp], eax
-; Line 803
-	jmp	SHORT $LN11@operator
-$LN7@operator:
-; Line 806
-	jmp	$LN9@operator
-$LN11@operator:
-; Line 807
-	cmp	DWORD PTR __State$[ebp], 0
-	jne	SHORT $LN6@operator
-	mov	eax, DWORD PTR __Ostr$[ebp]
-	mov	ecx, DWORD PTR [eax]
-	mov	edx, DWORD PTR __Ostr$[ebp]
-	add	edx, DWORD PTR [ecx+4]
-	mov	esi, esp
-	mov	ecx, edx
-	call	DWORD PTR __imp_?rdbuf@?$basic_ios@DU?$char_traits@D@std@@@std@@QBEPAV?$basic_streambuf@DU?$char_traits@D@std@@@2@XZ
-	cmp	esi, esp
-	call	__RTC_CheckEsp
-	mov	DWORD PTR tv285[ebp], eax
-	mov	esi, esp
-	mov	eax, DWORD PTR __Count$[ebp+4]
-	push	eax
-	mov	ecx, DWORD PTR __Count$[ebp]
-	push	ecx
-	mov	edx, DWORD PTR __Val$[ebp]
-	push	edx
-	mov	ecx, DWORD PTR tv285[ebp]
-	call	DWORD PTR __imp_?sputn@?$basic_streambuf@DU?$char_traits@D@std@@@std@@QAE_JPBD_J@Z
-	cmp	esi, esp
-	call	__RTC_CheckEsp
-	mov	DWORD PTR tv286[ebp], eax
-	mov	DWORD PTR tv286[ebp+4], edx
-	mov	eax, DWORD PTR tv286[ebp]
-	cmp	eax, DWORD PTR __Count$[ebp]
-	jne	SHORT $LN27@operator
-	mov	ecx, DWORD PTR tv286[ebp+4]
-	cmp	ecx, DWORD PTR __Count$[ebp+4]
-	je	SHORT $LN6@operator
-$LN27@operator:
-; Line 808
-	mov	eax, DWORD PTR __State$[ebp]
-	or	eax, 4
-	mov	DWORD PTR __State$[ebp], eax
-$LN6@operator:
-; Line 810
-	cmp	DWORD PTR __State$[ebp], 0
-	jne	$LN5@operator
-; Line 811
-	jmp	SHORT $LN4@operator
-$LN3@operator:
-	mov	eax, DWORD PTR __Pad$[ebp]
-	sub	eax, 1
-	mov	ecx, DWORD PTR __Pad$[ebp+4]
-	sbb	ecx, 0
-	mov	DWORD PTR __Pad$[ebp], eax
-	mov	DWORD PTR __Pad$[ebp+4], ecx
-$LN4@operator:
-	cmp	DWORD PTR __Pad$[ebp+4], 0
-	jl	$LN5@operator
-	jg	SHORT $LN28@operator
-	cmp	DWORD PTR __Pad$[ebp], 0
-	jbe	$LN5@operator
-$LN28@operator:
-; Line 813
-	mov	eax, DWORD PTR __Ostr$[ebp]
-	mov	ecx, DWORD PTR [eax]
-	mov	edx, DWORD PTR __Ostr$[ebp]
-	add	edx, DWORD PTR [ecx+4]
-	mov	esi, esp
-	mov	ecx, edx
-	call	DWORD PTR __imp_?fill@?$basic_ios@DU?$char_traits@D@std@@@std@@QBEDXZ
-	cmp	esi, esp
-	call	__RTC_CheckEsp
-	mov	BYTE PTR tv287[ebp], al
-	mov	eax, DWORD PTR __Ostr$[ebp]
-	mov	ecx, DWORD PTR [eax]
-	mov	edx, DWORD PTR __Ostr$[ebp]
-	add	edx, DWORD PTR [ecx+4]
-	mov	esi, esp
-	mov	ecx, edx
-	call	DWORD PTR __imp_?rdbuf@?$basic_ios@DU?$char_traits@D@std@@@std@@QBEPAV?$basic_streambuf@DU?$char_traits@D@std@@@2@XZ
-	cmp	esi, esp
-	call	__RTC_CheckEsp
-	mov	DWORD PTR tv288[ebp], eax
-	mov	esi, esp
-	movzx	eax, BYTE PTR tv287[ebp]
-	push	eax
-	mov	ecx, DWORD PTR tv288[ebp]
-	call	DWORD PTR __imp_?sputc@?$basic_streambuf@DU?$char_traits@D@std@@@std@@QAEHD@Z
-	cmp	esi, esp
-	call	__RTC_CheckEsp
-	mov	DWORD PTR tv289[ebp], eax
-	mov	ecx, DWORD PTR tv289[ebp]
-	mov	DWORD PTR $T4[ebp], ecx
-	call	?eof@?$char_traits@D@std@@SAHXZ		; std::char_traits<char>::eof
-	mov	DWORD PTR $T5[ebp], eax
-	lea	edx, DWORD PTR $T4[ebp]
-	push	edx
-	lea	eax, DWORD PTR $T5[ebp]
-	push	eax
-	call	?eq_int_type@?$char_traits@D@std@@SA_NABH0@Z ; std::char_traits<char>::eq_int_type
-	add	esp, 8
-	movzx	ecx, al
-	test	ecx, ecx
-	je	SHORT $LN1@operator
-; Line 815
-	mov	eax, DWORD PTR __State$[ebp]
-	or	eax, 4
-	mov	DWORD PTR __State$[ebp], eax
-; Line 816
-	jmp	SHORT $LN5@operator
-$LN1@operator:
-; Line 817
-	jmp	$LN3@operator
-$LN5@operator:
-; Line 818
-	mov	esi, esp
-	push	0
-	push	0
-	mov	eax, DWORD PTR __Ostr$[ebp]
-	mov	ecx, DWORD PTR [eax]
-	mov	edx, DWORD PTR __Ostr$[ebp]
-	add	edx, DWORD PTR [ecx+4]
-	mov	ecx, edx
-	call	DWORD PTR __imp_?width@ios_base@std@@QAE_J_J@Z
-	cmp	esi, esp
-	call	__RTC_CheckEsp
-	jmp	SHORT $LN19@operator
-__catch$??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z$0:
-; Line 819
-	mov	esi, esp
-	push	1
-	push	4
-	mov	eax, DWORD PTR __Ostr$[ebp]
-	mov	ecx, DWORD PTR [eax]
-	mov	edx, DWORD PTR __Ostr$[ebp]
-	add	edx, DWORD PTR [ecx+4]
-	mov	ecx, edx
-	call	DWORD PTR __imp_?setstate@?$basic_ios@DU?$char_traits@D@std@@@std@@QAEXH_N@Z
-	cmp	esi, esp
-	call	__RTC_CheckEsp
-	mov	eax, $LN23@operator
-	ret	0
-$LN19@operator:
-	mov	DWORD PTR __$EHRec$[ebp+12], 0
-	jmp	SHORT $LN13@operator
-$LN23@operator:
-	mov	DWORD PTR __$EHRec$[ebp+12], 0
-$LN13@operator:
-; Line 822
-	mov	esi, esp
-	push	0
-	mov	eax, DWORD PTR __State$[ebp]
-	push	eax
-	mov	ecx, DWORD PTR __Ostr$[ebp]
-	mov	edx, DWORD PTR [ecx]
-	mov	ecx, DWORD PTR __Ostr$[ebp]
-	add	ecx, DWORD PTR [edx+4]
-	call	DWORD PTR __imp_?setstate@?$basic_ios@DU?$char_traits@D@std@@@std@@QAEXH_N@Z
-	cmp	esi, esp
-	call	__RTC_CheckEsp
-; Line 823
-	mov	eax, DWORD PTR __Ostr$[ebp]
-	mov	DWORD PTR $T6[ebp], eax
-	mov	DWORD PTR __$EHRec$[ebp+12], -1
-	lea	ecx, DWORD PTR __Ok$[ebp]
-	call	??1sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@XZ ; std::basic_ostream<char,std::char_traits<char> >::sentry::~sentry
-	mov	eax, DWORD PTR $T6[ebp]
-; Line 824
-	push	edx
-	mov	ecx, ebp
-	push	eax
-	lea	edx, DWORD PTR $LN32@operator
-	call	@_RTC_CheckStackVars@8
-	pop	eax
-	pop	edx
-	mov	ecx, DWORD PTR __$EHRec$[ebp+4]
-	mov	DWORD PTR fs:0, ecx
-	pop	ecx
-	pop	edi
-	pop	esi
-	pop	ebx
-	add	esp, 352				; 00000160H
-	cmp	ebp, esp
-	call	__RTC_CheckEsp
-	mov	esp, ebp
-	pop	ebp
-	ret	0
-	npad	2
-$LN32@operator:
-	DD	1
-	DD	$LN31@operator
-$LN31@operator:
-	DD	-72					; ffffffb8H
-	DD	8
-	DD	$LN29@operator
-$LN29@operator:
-	DB	95					; 0000005fH
-	DB	79					; 0000004fH
-	DB	107					; 0000006bH
-	DB	0
-_TEXT	ENDS
-;	COMDAT text$x
-text$x	SEGMENT
-__unwindfunclet$??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z$2:
-	lea	ecx, DWORD PTR __Ok$[ebp]
-	jmp	??1sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@XZ ; std::basic_ostream<char,std::char_traits<char> >::sentry::~sentry
-__ehhandler$??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z:
-	mov	edx, DWORD PTR [esp+8]
-	lea	eax, DWORD PTR [edx+12]
-	mov	ecx, DWORD PTR [edx-356]
-	xor	ecx, eax
-	call	@__security_check_cookie@4
-	mov	eax, OFFSET __ehfuncinfo$??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z
-	jmp	___CxxFrameHandler3
-text$x	ENDS
-??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z ENDP ; std::operator<<<std::char_traits<char> >
-; Function compile flags: /Odtp /RTCsu /ZI
-;	COMDAT ?pow_2@@YAKH@Z
+;	COMDAT ?pow_2@@YGKH@Z
 _TEXT	SEGMENT
 _i$1 = -20						; size = 4
 _result$ = -8						; size = 4
 _exp$ = 8						; size = 4
-?pow_2@@YAKH@Z PROC					; pow_2, COMDAT
+?pow_2@@YGKH@Z PROC					; pow_2, COMDAT
 ; File d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp
 ; Line 10
 	push	ebp
@@ -3228,18 +2360,16 @@ $LN1@pow_2:
 	pop	ebx
 	mov	esp, ebp
 	pop	ebp
-	ret	0
-?pow_2@@YAKH@Z ENDP					; pow_2
+	ret	4
+?pow_2@@YGKH@Z ENDP					; pow_2
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
-;	COMDAT ?getDevices@CycleController@@QAEPAPAVAbstractDevice@@AAG@Z
+;	COMDAT ??_GTaskFrame@@QAEPAXI@Z
 _TEXT	SEGMENT
 _this$ = -8						; size = 4
-_devCount$ = 8						; size = 4
-?getDevices@CycleController@@QAEPAPAVAbstractDevice@@AAG@Z PROC ; CycleController::getDevices, COMDAT
+___flags$ = 8						; size = 4
+??_GTaskFrame@@QAEPAXI@Z PROC				; TaskFrame::`scalar deleting destructor', COMDAT
 ; _this$ = ecx
-; File d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp
-; Line 526
 	push	ebp
 	mov	ebp, esp
 	sub	esp, 204				; 000000ccH
@@ -3253,15 +2383,88 @@ _devCount$ = 8						; size = 4
 	rep stosd
 	pop	ecx
 	mov	DWORD PTR _this$[ebp], ecx
-; Line 527
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	??1TaskFrame@@QAE@XZ			; TaskFrame::~TaskFrame
+	mov	eax, DWORD PTR ___flags$[ebp]
+	and	eax, 1
+	je	SHORT $LN1@scalar
+	mov	eax, DWORD PTR _this$[ebp]
+	push	eax
+	call	??3@YAXPAX@Z				; operator delete
+	add	esp, 4
+$LN1@scalar:
+	mov	eax, DWORD PTR _this$[ebp]
+	pop	edi
+	pop	esi
+	pop	ebx
+	add	esp, 204				; 000000ccH
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	4
+??_GTaskFrame@@QAEPAXI@Z ENDP				; TaskFrame::`scalar deleting destructor'
+_TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ??1TaskFrame@@QAE@XZ
+_TEXT	SEGMENT
+_this$ = -8						; size = 4
+??1TaskFrame@@QAE@XZ PROC				; TaskFrame::~TaskFrame, COMDAT
+; _this$ = ecx
+; File d:\projects\asu\icpdas\tmminios\tmminios\model.h
+; Line 555
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 204				; 000000ccH
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-204]
+	mov	ecx, 51					; 00000033H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	DWORD PTR _this$[ebp], ecx
+	pop	edi
+	pop	esi
+	pop	ebx
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+??1TaskFrame@@QAE@XZ ENDP				; TaskFrame::~TaskFrame
+_TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ?getDevices@CycleController@@QAEPAPAVAbstractDevice@@AAG@Z
+_TEXT	SEGMENT
+_this$ = -8						; size = 4
+_devCount$ = 8						; size = 4
+?getDevices@CycleController@@QAEPAPAVAbstractDevice@@AAG@Z PROC ; CycleController::getDevices, COMDAT
+; _this$ = ecx
+; File d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp
+; Line 591
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 204				; 000000ccH
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-204]
+	mov	ecx, 51					; 00000033H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	DWORD PTR _this$[ebp], ecx
+; Line 592
 	mov	eax, DWORD PTR _devCount$[ebp]
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	dx, WORD PTR [ecx]
+	mov	dx, WORD PTR [ecx+12]
 	mov	WORD PTR [eax], dx
-; Line 528
+; Line 593
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	eax, DWORD PTR [eax+16]
-; Line 529
+	mov	eax, DWORD PTR [eax+28]
+; Line 594
 	pop	edi
 	pop	esi
 	pop	ebx
@@ -3273,340 +2476,99 @@ _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ?read@CycleController@@QAEXXZ
 _TEXT	SEGMENT
-tv307 = -268						; size = 8
-_val$1 = -64						; size = 16
-_sv$2 = -40						; size = 8
-_err$ = -24						; size = 4
-_this$ = -12						; size = 4
-__$ArrayPad$ = -4					; size = 4
+_i$1 = -20						; size = 4
+_this$ = -8						; size = 4
 ?read@CycleController@@QAEXXZ PROC			; CycleController::read, COMDAT
 ; _this$ = ecx
 ; File d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp
-; Line 83
+; Line 86
 	push	ebp
 	mov	ebp, esp
-	sub	esp, 268				; 0000010cH
+	sub	esp, 216				; 000000d8H
 	push	ebx
 	push	esi
 	push	edi
 	push	ecx
-	lea	edi, DWORD PTR [ebp-268]
-	mov	ecx, 67					; 00000043H
+	lea	edi, DWORD PTR [ebp-216]
+	mov	ecx, 54					; 00000036H
 	mov	eax, -858993460				; ccccccccH
 	rep stosd
 	pop	ecx
-	mov	eax, DWORD PTR ___security_cookie
-	xor	eax, ebp
-	mov	DWORD PTR __$ArrayPad$[ebp], eax
 	mov	DWORD PTR _this$[ebp], ecx
-; Line 84
-	mov	DWORD PTR _err$[ebp], 0
-; Line 85
-	mov	ecx, DWORD PTR _this$[ebp]
-	call	?readDeviceMask@CycleController@@AAEXXZ	; CycleController::readDeviceMask
-; Line 86
-	mov	ecx, DWORD PTR _this$[ebp]
-	call	?readProperties@CycleController@@AAEXXZ	; CycleController::readProperties
 ; Line 87
 	mov	ecx, DWORD PTR _this$[ebp]
-	call	?checkMask@CycleController@@AAEXXZ	; CycleController::checkMask
+	call	?readDeviceMask@CycleController@@AAEXXZ	; CycleController::readDeviceMask
+; Line 88
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?readProperties@CycleController@@AAEXXZ	; CycleController::readProperties
 ; Line 89
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?checkMask@CycleController@@AAEXXZ	; CycleController::checkMask
+; Line 91
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?isPropertyNew@CycleController@@AAE?AW4bool_t@@XZ ; CycleController::isPropertyNew
 	test	eax, eax
-	je	SHORT $LN14@read
-; Line 91
+	je	SHORT $LN5@read
+; Line 93
 	mov	eax, DWORD PTR _this$[ebp]
-	movzx	ecx, WORD PTR [eax]
+	movzx	ecx, WORD PTR [eax+12]
 	push	ecx
 	mov	edx, DWORD PTR _this$[ebp]
-	mov	eax, DWORD PTR [edx+4]
+	mov	eax, DWORD PTR [edx+16]
 	push	eax
-	call	?saveToEeprom@EEpromSettings@@SAXPBUPropertiesStruct@@G@Z ; EEpromSettings::saveToEeprom
-	add	esp, 8
-; Line 92
+	call	?saveToEeprom@EEpromSettings@@SGXPBUPropertiesStruct@@G@Z ; EEpromSettings::saveToEeprom
+; Line 94
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?constructNewDevices@CycleController@@AAEXXZ ; CycleController::constructNewDevices
-$LN14@read:
-; Line 95
+$LN5@read:
+; Line 98
+	mov	DWORD PTR _i$1[ebp], 0
+	jmp	SHORT $LN4@read
+$LN3@read:
+	mov	eax, DWORD PTR _i$1[ebp]
+	add	eax, 1
+	mov	DWORD PTR _i$1[ebp], eax
+$LN4@read:
+	cmp	DWORD PTR _i$1[ebp], 16			; 00000010H
+	jge	SHORT $LN2@read
+; Line 100
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+28]
+	mov	edx, DWORD PTR _i$1[ebp]
+	cmp	DWORD PTR [ecx+edx*4], 0
+	je	SHORT $LN1@read
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+28]
+	mov	edx, DWORD PTR _i$1[ebp]
+	mov	eax, DWORD PTR [ecx+edx*4]
+	cmp	DWORD PTR [eax+136], 1
+	jne	SHORT $LN1@read
+; Line 102
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+28]
+	mov	edx, DWORD PTR _i$1[ebp]
+	mov	ecx, DWORD PTR [ecx+edx*4]
+	call	?eventsProcess@AbstractDevice@@QAEXXZ	; AbstractDevice::eventsProcess
+$LN1@read:
+; Line 104
+	jmp	SHORT $LN3@read
+$LN2@read:
+; Line 106
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?readNonModbusDevices@CycleController@@AAEXXZ ; CycleController::readNonModbusDevices
-; Line 97
-	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+20]
-	mov	edx, DWORD PTR _this$[ebp]
-	mov	eax, DWORD PTR [edx+16]
-	cmp	DWORD PTR [eax+ecx*4], 0
-	je	$LN13@read
-	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+20]
-	mov	edx, DWORD PTR _this$[ebp]
-	mov	eax, DWORD PTR [edx+16]
-	mov	ecx, DWORD PTR [eax+ecx*4]
-	cmp	DWORD PTR [ecx+128], 1
-	jne	$LN13@read
-; Line 99
-	call	?GetTimeTicks@@YA_JXZ			; GetTimeTicks
-	mov	ecx, DWORD PTR _this$[ebp]
-	xor	esi, esi
-	sub	eax, DWORD PTR [ecx+28]
-	sbb	edx, esi
-	mov	DWORD PTR tv307[ebp], eax
-	mov	DWORD PTR tv307[ebp+4], edx
-	cmp	DWORD PTR tv307[ebp+4], 0
-	jg	SHORT $LN11@read
-	jl	SHORT $LN17@read
-	cmp	DWORD PTR tv307[ebp], 0
-	ja	SHORT $LN11@read
-$LN17@read:
-	mov	eax, DWORD PTR _this$[ebp]
-	cmp	DWORD PTR [eax+36], 0
-	je	$LN2@read
-$LN11@read:
-; Line 101
-	call	?GetTimeTicks@@YA_JXZ			; GetTimeTicks
-	mov	ecx, DWORD PTR _this$[ebp]
-	mov	DWORD PTR [ecx+28], eax
-; Line 103
-	mov	eax, DWORD PTR _this$[ebp]
-	cmp	DWORD PTR [eax+44], 0
-	je	SHORT $LN9@read
-; Line 105
-	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+20]
-	mov	edx, DWORD PTR _this$[ebp]
-	mov	eax, DWORD PTR [edx+16]
-	mov	ecx, DWORD PTR [eax+ecx*4]
-	mov	edx, DWORD PTR _this$[ebp]
-	mov	eax, DWORD PTR [edx+24]
-	mov	ecx, DWORD PTR [ecx+132]
-	mov	edx, DWORD PTR [ecx+eax*4]
-	push	edx
-	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+20]
-	mov	edx, DWORD PTR _this$[ebp]
-	mov	eax, DWORD PTR [edx+16]
-	mov	ecx, DWORD PTR [eax+ecx*4]
-	call	?processRead@AbstractDevice@@QAEIPAVProperty@@@Z ; AbstractDevice::processRead
-	mov	DWORD PTR _err$[ebp], eax
 ; Line 107
-	cmp	DWORD PTR _err$[ebp], 500		; 000001f4H
-	jb	SHORT $LN8@read
-	cmp	DWORD PTR _err$[ebp], 503		; 000001f7H
-	jbe	SHORT $LN9@read
-$LN8@read:
-; Line 109
-	mov	eax, DWORD PTR _this$[ebp]
-	mov	DWORD PTR [eax+44], 0
-; Line 110
-	mov	eax, DWORD PTR _this$[ebp]
-	mov	DWORD PTR [eax+40], 1
-$LN9@read:
-; Line 114
-	mov	eax, DWORD PTR _this$[ebp]
-	cmp	DWORD PTR [eax+40], 0
-	je	SHORT $LN6@read
-; Line 116
-	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+20]
-	mov	edx, DWORD PTR _this$[ebp]
-	mov	eax, DWORD PTR [edx+16]
-	mov	ecx, DWORD PTR [eax+ecx*4]
-	mov	edx, DWORD PTR _this$[ebp]
-	mov	eax, DWORD PTR [edx+24]
-	mov	ecx, DWORD PTR [ecx+132]
-	mov	edx, DWORD PTR [ecx+eax*4]
-	push	edx
-	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+20]
-	mov	edx, DWORD PTR _this$[ebp]
-	mov	eax, DWORD PTR [edx+16]
-	mov	ecx, DWORD PTR [eax+ecx*4]
-	call	?processWrite@AbstractDevice@@QAEIPAVProperty@@@Z ; AbstractDevice::processWrite
-	mov	DWORD PTR _err$[ebp], eax
-; Line 118
-	cmp	DWORD PTR _err$[ebp], 500		; 000001f4H
-	jb	SHORT $LN5@read
-	cmp	DWORD PTR _err$[ebp], 503		; 000001f7H
-	jbe	SHORT $LN6@read
-$LN5@read:
-; Line 120
-	mov	eax, DWORD PTR _this$[ebp]
-	mov	DWORD PTR [eax+44], 1
-; Line 121
-	mov	eax, DWORD PTR _this$[ebp]
-	mov	DWORD PTR [eax+40], 0
-$LN6@read:
-; Line 127
-	mov	esi, esp
-	mov	eax, DWORD PTR __imp_?endl@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@1@AAV21@@Z
-	push	eax
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+20]
-	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+16]
-	mov	edx, DWORD PTR [ecx+edx*4]
-	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+24]
-	mov	edx, DWORD PTR [edx+132]
-	mov	ecx, DWORD PTR [edx+ecx*4]
-	call	?getValueFloat@Property@@QAEMXZ		; Property::getValueFloat
-	mov	edi, esp
-	push	ecx
-	fstp	DWORD PTR [esp]
-	push	OFFSET ??_C@_09JBNFEIKB@?5?5Value?3?5?$AA@
-	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+20]
-	mov	edx, DWORD PTR _this$[ebp]
-	mov	eax, DWORD PTR [edx+16]
-	mov	ecx, DWORD PTR [eax+ecx*4]
-	mov	edx, DWORD PTR _this$[ebp]
-	mov	eax, DWORD PTR [edx+24]
-	mov	ecx, DWORD PTR [ecx+132]
-	mov	edx, DWORD PTR [ecx+eax*4]
-	add	edx, 8
-	push	edx
-	push	OFFSET ??_C@_0N@MHDFFMGB@?5?5Property?3?5?$AA@
-	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+20]
-	mov	edx, DWORD PTR _this$[ebp]
-	mov	eax, DWORD PTR [edx+16]
-	mov	ecx, DWORD PTR [eax+ecx*4]
-	add	ecx, 24					; 00000018H
-	push	ecx
-	push	OFFSET ??_C@_08MMNCOCEO@Device?3?5?$AA@
-	mov	edx, DWORD PTR __imp_?cout@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A
-	push	edx
-	call	??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z ; std::operator<<<std::char_traits<char> >
-	add	esp, 8
-	push	eax
-	call	??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z ; std::operator<<<std::char_traits<char> >
-	add	esp, 8
-	push	eax
-	call	??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z ; std::operator<<<std::char_traits<char> >
-	add	esp, 8
-	push	eax
-	call	??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z ; std::operator<<<std::char_traits<char> >
-	add	esp, 8
-	push	eax
-	call	??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z ; std::operator<<<std::char_traits<char> >
-	add	esp, 8
-	mov	ecx, eax
-	call	DWORD PTR __imp_??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEAAV01@M@Z
-	cmp	edi, esp
-	call	__RTC_CheckEsp
-	mov	ecx, eax
-	call	DWORD PTR __imp_??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEAAV01@P6AAAV01@AAV01@@Z@Z
-	cmp	esi, esp
-	call	__RTC_CheckEsp
-; Line 130
-	push	1500					; 000005dcH
-	push	3
-	lea	ecx, DWORD PTR _sv$2[ebp]
-	call	??0SlaveInformation@@QAE@W4regType@@J@Z	; SlaveInformation::SlaveInformation
-; Line 131
-	mov	eax, DWORD PTR _err$[ebp]
-	push	eax
-	lea	ecx, DWORD PTR _val$1[ebp]
-	call	??0uValue@@QAE@K@Z			; uValue::uValue
-; Line 132
-	lea	eax, DWORD PTR _val$1[ebp]
-	push	eax
-	mov	ecx, DWORD PTR _sv$2[ebp+4]
-	push	ecx
-	mov	edx, DWORD PTR _sv$2[ebp]
-	push	edx
-	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+12]
-	call	?setInputRegisters@SlaveFactory@@QAEXUSlaveInformation@@ABTuValue@@@Z ; SlaveFactory::setInputRegisters
-; Line 134
-	cmp	DWORD PTR _err$[ebp], 500		; 000001f4H
-	jb	SHORT $LN4@read
-	cmp	DWORD PTR _err$[ebp], 503		; 000001f7H
-	ja	SHORT $LN4@read
-; Line 136
-	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+32]
-	add	ecx, 1
-	mov	edx, DWORD PTR _this$[ebp]
-	mov	DWORD PTR [edx+32], ecx
-; Line 137
-	mov	eax, DWORD PTR _this$[ebp]
-	mov	DWORD PTR [eax+36], 1
-; Line 138
-	mov	eax, DWORD PTR _this$[ebp]
-	cmp	DWORD PTR [eax+32], 1500		; 000005dcH
-	jbe	SHORT $LN3@read
-; Line 140
-	mov	eax, DWORD PTR _this$[ebp]
-	mov	DWORD PTR [eax+32], 0
-; Line 141
-	mov	eax, DWORD PTR _this$[ebp]
-	mov	DWORD PTR [eax+36], 0
-; Line 142
-	mov	ecx, DWORD PTR _this$[ebp]
-	call	?next@CycleController@@AAEXXZ		; CycleController::next
-$LN3@read:
-; Line 145
-	jmp	SHORT $LN2@read
-$LN4@read:
-; Line 147
-	mov	eax, DWORD PTR _this$[ebp]
-	mov	DWORD PTR [eax+32], 0
-; Line 148
-	mov	eax, DWORD PTR _this$[ebp]
-	mov	DWORD PTR [eax+36], 0
-; Line 149
-	mov	ecx, DWORD PTR _this$[ebp]
-	call	?next@CycleController@@AAEXXZ		; CycleController::next
-$LN2@read:
-; Line 153
-	jmp	SHORT $LN1@read
-$LN13@read:
-; Line 155
-	mov	ecx, DWORD PTR _this$[ebp]
-	call	?next@CycleController@@AAEXXZ		; CycleController::next
-$LN1@read:
-; Line 157
-	push	edx
-	mov	ecx, ebp
-	push	eax
-	lea	edx, DWORD PTR $LN21@read
-	call	@_RTC_CheckStackVars@8
-	pop	eax
-	pop	edx
+	call	?readModbusDevices@CycleController@@AAEXXZ ; CycleController::readModbusDevices
+; Line 108
 	pop	edi
 	pop	esi
 	pop	ebx
-	mov	ecx, DWORD PTR __$ArrayPad$[ebp]
-	xor	ecx, ebp
-	call	@__security_check_cookie@4
-	add	esp, 268				; 0000010cH
+	add	esp, 216				; 000000d8H
 	cmp	ebp, esp
 	call	__RTC_CheckEsp
 	mov	esp, ebp
 	pop	ebp
 	ret	0
-	npad	1
-$LN21@read:
-	DD	2
-	DD	$LN20@read
-$LN20@read:
-	DD	-40					; ffffffd8H
-	DD	8
-	DD	$LN18@read
-	DD	-64					; ffffffc0H
-	DD	16					; 00000010H
-	DD	$LN19@read
-$LN19@read:
-	DB	118					; 00000076H
-	DB	97					; 00000061H
-	DB	108					; 0000006cH
-	DB	0
-$LN18@read:
-	DB	115					; 00000073H
-	DB	118					; 00000076H
-	DB	0
 ?read@CycleController@@QAEXXZ ENDP			; CycleController::read
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
@@ -3617,7 +2579,7 @@ _this$ = -8						; size = 4
 ?init@CycleController@@QAEXXZ PROC			; CycleController::init, COMDAT
 ; _this$ = ecx
 ; File d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp
-; Line 75
+; Line 78
 	push	ebp
 	mov	ebp, esp
 	sub	esp, 220				; 000000dcH
@@ -3631,22 +2593,22 @@ _this$ = -8						; size = 4
 	rep stosd
 	pop	ecx
 	mov	DWORD PTR _this$[ebp], ecx
-; Line 76
+; Line 79
 	push	0
 	push	3
 	lea	ecx, DWORD PTR _sv$[ebp]
 	call	??0SlaveInformation@@QAE@W4regType@@J@Z	; SlaveInformation::SlaveInformation
-; Line 78
+; Line 81
 	mov	eax, DWORD PTR _this$[ebp]
+	add	eax, 12					; 0000000cH
 	push	eax
-	call	?loadFromEeprom@EEpromSettings@@SAPAUPropertiesStruct@@PAG@Z ; EEpromSettings::loadFromEeprom
-	add	esp, 4
+	call	?loadFromEeprom@EEpromSettings@@SGPAUPropertiesStruct@@PAG@Z ; EEpromSettings::loadFromEeprom
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	DWORD PTR [ecx+4], eax
-; Line 79
+	mov	DWORD PTR [ecx+16], eax
+; Line 82
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?propertiesToSlave@CycleController@@AAEXXZ ; CycleController::propertiesToSlave
-; Line 80
+; Line 83
 	push	edx
 	mov	ecx, ebp
 	push	eax
@@ -3678,19 +2640,19 @@ $LN3@init:
 ?init@CycleController@@QAEXXZ ENDP			; CycleController::init
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
-;	COMDAT ?getInstance@CycleController@@SAAAV1@XZ
+;	COMDAT ?getInstance@CycleController@@SGAAV1@XZ
 _TEXT	SEGMENT
 tv72 = -232						; size = 4
 $T2 = -224						; size = 4
 $T3 = -212						; size = 4
 __$EHRec$ = -12						; size = 12
-?getInstance@CycleController@@SAAAV1@XZ PROC		; CycleController::getInstance, COMDAT
+?getInstance@CycleController@@SGAAV1@XZ PROC		; CycleController::getInstance, COMDAT
 ; File d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp
-; Line 66
+; Line 69
 	push	ebp
 	mov	ebp, esp
 	push	-1
-	push	__ehhandler$?getInstance@CycleController@@SAAAV1@XZ
+	push	__ehhandler$?getInstance@CycleController@@SGAAV1@XZ
 	mov	eax, DWORD PTR fs:0
 	push	eax
 	sub	esp, 220				; 000000dcH
@@ -3706,11 +2668,11 @@ __$EHRec$ = -12						; size = 12
 	push	eax
 	lea	eax, DWORD PTR __$EHRec$[ebp]
 	mov	DWORD PTR fs:0, eax
-; Line 67
+; Line 70
 	cmp	DWORD PTR ?cycleController@CycleController@@0PAV1@A, 0 ; CycleController::cycleController
 	jne	SHORT $LN1@getInstanc
-; Line 69
-	push	48					; 00000030H
+; Line 72
+	push	60					; 0000003cH
 	call	??2@YAPAXI@Z				; operator new
 	add	esp, 4
 	mov	DWORD PTR $T3[ebp], eax
@@ -3730,9 +2692,9 @@ $LN5@getInstanc:
 	mov	ecx, DWORD PTR $T2[ebp]
 	mov	DWORD PTR ?cycleController@CycleController@@0PAV1@A, ecx ; CycleController::cycleController
 $LN1@getInstanc:
-; Line 71
+; Line 74
 	mov	eax, DWORD PTR ?cycleController@CycleController@@0PAV1@A ; CycleController::cycleController
-; Line 72
+; Line 75
 	mov	ecx, DWORD PTR __$EHRec$[ebp]
 	mov	DWORD PTR fs:0, ecx
 	pop	ecx
@@ -3748,22 +2710,22 @@ $LN1@getInstanc:
 _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
-__unwindfunclet$?getInstance@CycleController@@SAAAV1@XZ$0:
+__unwindfunclet$?getInstance@CycleController@@SGAAV1@XZ$0:
 	mov	eax, DWORD PTR $T3[ebp]
 	push	eax
 	call	??3@YAXPAX@Z				; operator delete
 	pop	ecx
 	ret	0
-__ehhandler$?getInstance@CycleController@@SAAAV1@XZ:
+__ehhandler$?getInstance@CycleController@@SGAAV1@XZ:
 	mov	edx, DWORD PTR [esp+8]
 	lea	eax, DWORD PTR [edx+12]
 	mov	ecx, DWORD PTR [edx-236]
 	xor	ecx, eax
 	call	@__security_check_cookie@4
-	mov	eax, OFFSET __ehfuncinfo$?getInstance@CycleController@@SAAAV1@XZ
+	mov	eax, OFFSET __ehfuncinfo$?getInstance@CycleController@@SGAAV1@XZ
 	jmp	___CxxFrameHandler3
 text$x	ENDS
-?getInstance@CycleController@@SAAAV1@XZ ENDP		; CycleController::getInstance
+?getInstance@CycleController@@SGAAV1@XZ ENDP		; CycleController::getInstance
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ??1CycleController@@AAE@XZ
 _TEXT	SEGMENT
@@ -3777,7 +2739,7 @@ _this$ = -8						; size = 4
 ??1CycleController@@AAE@XZ PROC				; CycleController::~CycleController, COMDAT
 ; _this$ = ecx
 ; File d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp
-; Line 52
+; Line 55
 	push	ebp
 	mov	ebp, esp
 	sub	esp, 268				; 0000010cH
@@ -3791,7 +2753,7 @@ _this$ = -8						; size = 4
 	rep stosd
 	pop	ecx
 	mov	DWORD PTR _this$[ebp], ecx
-; Line 53
+; Line 56
 	mov	DWORD PTR _i$5[ebp], 0
 	jmp	SHORT $LN3@CycleContr
 $LN2@CycleContr:
@@ -3801,9 +2763,9 @@ $LN2@CycleContr:
 $LN3@CycleContr:
 	cmp	DWORD PTR _i$5[ebp], 16			; 00000010H
 	jge	SHORT $LN1@CycleContr
-; Line 55
+; Line 58
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+16]
+	mov	ecx, DWORD PTR [eax+28]
 	mov	edx, DWORD PTR _i$5[ebp]
 	mov	eax, DWORD PTR [ecx+edx*4]
 	mov	DWORD PTR $T2[ebp], eax
@@ -3825,37 +2787,37 @@ $LN3@CycleContr:
 $LN6@CycleContr:
 	mov	DWORD PTR tv75[ebp], 0
 $LN7@CycleContr:
-; Line 56
+; Line 59
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+16]
+	mov	ecx, DWORD PTR [eax+28]
 	mov	edx, DWORD PTR _i$5[ebp]
 	mov	DWORD PTR [ecx+edx*4], 0
-; Line 57
+; Line 60
 	jmp	SHORT $LN2@CycleContr
 $LN1@CycleContr:
-; Line 58
+; Line 61
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+16]
+	mov	ecx, DWORD PTR [eax+28]
 	mov	DWORD PTR $T3[ebp], ecx
 	mov	edx, DWORD PTR $T3[ebp]
 	push	edx
 	call	??_V@YAXPAX@Z				; operator delete[]
 	add	esp, 4
-; Line 59
+; Line 62
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	DWORD PTR [eax+16], 0
-; Line 61
+	mov	DWORD PTR [eax+28], 0
+; Line 64
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+4]
+	mov	ecx, DWORD PTR [eax+16]
 	mov	DWORD PTR $T4[ebp], ecx
 	mov	edx, DWORD PTR $T4[ebp]
 	push	edx
 	call	??_V@YAXPAX@Z				; operator delete[]
 	add	esp, 4
-; Line 62
+; Line 65
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	DWORD PTR [eax+4], 0
-; Line 63
+	mov	DWORD PTR [eax+16], 0
+; Line 66
 	pop	edi
 	pop	esi
 	pop	ebx
@@ -3870,7 +2832,7 @@ _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ??0CycleController@@AAE@XZ
 _TEXT	SEGMENT
-tv85 = -268						; size = 4
+tv88 = -268						; size = 4
 $T2 = -260						; size = 4
 $T3 = -248						; size = 4
 $T4 = -236						; size = 4
@@ -3880,7 +2842,7 @@ __$EHRec$ = -12						; size = 12
 ??0CycleController@@AAE@XZ PROC				; CycleController::CycleController, COMDAT
 ; _this$ = ecx
 ; File d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp
-; Line 25
+; Line 26
 	push	ebp
 	mov	ebp, esp
 	push	-1
@@ -3903,18 +2865,22 @@ __$EHRec$ = -12						; size = 12
 	lea	eax, DWORD PTR __$EHRec$[ebp]
 	mov	DWORD PTR fs:0, eax
 	mov	DWORD PTR _this$[ebp], ecx
-	call	?getSlaveFactoryPointer@SlaveFactory@@SAAAV1@XZ ; SlaveFactory::getSlaveFactoryPointer
+	push	256					; 00000100H
+	call	?getInstance@Deque@@SGAAV1@J@Z		; Deque::getInstance
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	DWORD PTR [ecx+12], eax
-; Line 26
+	mov	DWORD PTR [ecx], eax
+	call	?getSlaveFactoryPointer@SlaveFactory@@SGAAV1@XZ ; SlaveFactory::getSlaveFactoryPointer
+	mov	ecx, DWORD PTR _this$[ebp]
+	mov	DWORD PTR [ecx+24], eax
+; Line 27
 	push	64					; 00000040H
 	call	??_U@YAPAXI@Z				; operator new[]
 	add	esp, 4
 	mov	DWORD PTR $T2[ebp], eax
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	ecx, DWORD PTR $T2[ebp]
-	mov	DWORD PTR [eax+16], ecx
-; Line 28
+	mov	DWORD PTR [eax+28], ecx
+; Line 29
 	mov	DWORD PTR _i$5[ebp], 0
 	jmp	SHORT $LN3@CycleContr
 $LN2@CycleContr:
@@ -3924,18 +2890,18 @@ $LN2@CycleContr:
 $LN3@CycleContr:
 	cmp	DWORD PTR _i$5[ebp], 16			; 00000010H
 	jge	SHORT $LN1@CycleContr
-; Line 30
+; Line 31
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+16]
+	mov	ecx, DWORD PTR [eax+28]
 	mov	edx, DWORD PTR _i$5[ebp]
 	mov	DWORD PTR [ecx+edx*4], 0
-; Line 31
+; Line 32
 	jmp	SHORT $LN2@CycleContr
 $LN1@CycleContr:
-; Line 33
+; Line 34
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	DWORD PTR [eax+4], 0
-; Line 35
+	mov	DWORD PTR [eax+16], 0
+; Line 36
 	push	160					; 000000a0H
 	call	??_U@YAPAXI@Z				; operator new[]
 	add	esp, 4
@@ -3950,55 +2916,61 @@ $LN1@CycleContr:
 	push	eax
 	call	??_H@YGXPAXIHP6EPAX0@Z@Z
 	mov	ecx, DWORD PTR $T4[ebp]
-	mov	DWORD PTR tv85[ebp], ecx
+	mov	DWORD PTR tv88[ebp], ecx
 	jmp	SHORT $LN7@CycleContr
 $LN6@CycleContr:
-	mov	DWORD PTR tv85[ebp], 0
+	mov	DWORD PTR tv88[ebp], 0
 $LN7@CycleContr:
-	mov	edx, DWORD PTR tv85[ebp]
+	mov	edx, DWORD PTR tv88[ebp]
 	mov	DWORD PTR $T3[ebp], edx
 	mov	DWORD PTR __$EHRec$[ebp+8], -1
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	ecx, DWORD PTR $T3[ebp]
-	mov	DWORD PTR [eax+8], ecx
-; Line 36
+	mov	DWORD PTR [eax+20], ecx
+; Line 37
 	push	160					; 000000a0H
 	push	0
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+8]
+	mov	ecx, DWORD PTR [eax+20]
 	push	ecx
 	call	_memset
 	add	esp, 12					; 0000000cH
-; Line 38
-	xor	eax, eax
-	mov	ecx, DWORD PTR _this$[ebp]
-	mov	WORD PTR [ecx], ax
 ; Line 39
 	xor	eax, eax
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	WORD PTR [ecx+2], ax
-; Line 41
-	mov	eax, DWORD PTR _this$[ebp]
-	mov	DWORD PTR [eax+20], 0
+	mov	WORD PTR [ecx+12], ax
+; Line 40
+	xor	eax, eax
+	mov	ecx, DWORD PTR _this$[ebp]
+	mov	WORD PTR [ecx+14], ax
 ; Line 42
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	DWORD PTR [eax+24], 0
+	mov	DWORD PTR [eax+32], 0
 ; Line 43
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	DWORD PTR [eax+28], 0
+	mov	DWORD PTR [eax+36], 0
 ; Line 44
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	DWORD PTR [eax+32], 0
+	mov	DWORD PTR [eax+40], 0
 ; Line 45
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	DWORD PTR [eax+36], 0
-; Line 47
+	mov	DWORD PTR [eax+44], 0
+; Line 46
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	DWORD PTR [eax+40], 0
+	mov	DWORD PTR [eax+48], 0
 ; Line 48
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	DWORD PTR [eax+44], 1
+	mov	DWORD PTR [eax+52], 0
 ; Line 49
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	DWORD PTR [eax+56], 1
+; Line 50
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	DWORD PTR [eax+4], 0
+; Line 51
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	DWORD PTR [eax+8], 0
+; Line 52
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	ecx, DWORD PTR __$EHRec$[ebp]
 	mov	DWORD PTR fs:0, ecx
@@ -4081,7 +3053,7 @@ __$EHRec$ = -12						; size = 12
 ?constructNewDevices@CycleController@@AAEXXZ PROC	; CycleController::constructNewDevices, COMDAT
 ; _this$ = ecx
 ; File d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp
-; Line 381
+; Line 446
 	push	ebp
 	mov	ebp, esp
 	push	-1
@@ -4104,12 +3076,12 @@ __$EHRec$ = -12						; size = 12
 	lea	eax, DWORD PTR __$EHRec$[ebp]
 	mov	DWORD PTR fs:0, eax
 	mov	DWORD PTR _this$[ebp], ecx
-; Line 382
+; Line 447
 	push	0
 	push	3
 	lea	ecx, DWORD PTR _slaveInformation$[ebp]
 	call	??0SlaveInformation@@QAE@W4regType@@J@Z	; SlaveInformation::SlaveInformation
-; Line 384
+; Line 449
 	mov	DWORD PTR _i$28[ebp], 0
 	jmp	SHORT $LN27@constructN
 $LN26@constructN:
@@ -4119,21 +3091,20 @@ $LN26@constructN:
 $LN27@constructN:
 	cmp	DWORD PTR _i$28[ebp], 16		; 00000010H
 	jge	$LN28@constructN
-; Line 386
+; Line 451
 	mov	eax, DWORD PTR _this$[ebp]
-	movzx	esi, WORD PTR [eax]
+	movzx	esi, WORD PTR [eax+12]
 	mov	ecx, DWORD PTR _i$28[ebp]
 	push	ecx
-	call	?pow_2@@YAKH@Z				; pow_2
-	add	esp, 4
+	call	?pow_2@@YGKH@Z				; pow_2
 	movzx	edx, ax
 	and	esi, edx
 	je	$LN24@constructN
-; Line 388
+; Line 453
 	mov	eax, DWORD PTR _i$28[ebp]
 	imul	eax, 10					; 0000000aH
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+4]
+	mov	edx, DWORD PTR [ecx+16]
 	movsx	eax, WORD PTR [edx+eax]
 	mov	DWORD PTR tv82[ebp], eax
 	mov	ecx, DWORD PTR tv82[ebp]
@@ -4144,80 +3115,79 @@ $LN27@constructN:
 	mov	edx, DWORD PTR tv82[ebp]
 	jmp	DWORD PTR $LN68@constructN[edx*4]
 $LN21@constructN:
-; Line 391
+; Line 456
 	mov	eax, DWORD PTR _i$28[ebp]
 	imul	eax, 10					; 0000000aH
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+4]
+	mov	edx, DWORD PTR [ecx+16]
 	movsx	eax, WORD PTR [edx+eax+4]
 	mov	DWORD PTR _slaveInformation$[ebp+4], eax
-; Line 393
+; Line 458
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+16]
+	mov	ecx, DWORD PTR [eax+28]
 	mov	edx, DWORD PTR _i$28[ebp]
 	cmp	DWORD PTR [ecx+edx*4], 0
 	je	$LN20@constructN
-; Line 395
+; Line 460
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+16]
+	mov	ecx, DWORD PTR [eax+28]
 	mov	edx, DWORD PTR _i$28[ebp]
 	mov	eax, DWORD PTR [ecx+edx*4]
-	cmp	DWORD PTR [eax+140], 1
+	cmp	DWORD PTR [eax+148], 1
 	jne	$LN19@constructN
-; Line 397
+; Line 462
 	mov	eax, DWORD PTR _i$28[ebp]
 	imul	eax, 10					; 0000000aH
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+4]
+	mov	edx, DWORD PTR [ecx+16]
 	movzx	eax, WORD PTR [edx+eax+2]
 	push	eax
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+16]
+	mov	edx, DWORD PTR [ecx+28]
 	mov	eax, DWORD PTR _i$28[ebp]
 	mov	ecx, DWORD PTR [edx+eax*4]
 	call	?setAddress@AbstractDevice@@QAEXG@Z	; AbstractDevice::setAddress
-; Line 398
+; Line 463
 	mov	eax, DWORD PTR _i$28[ebp]
 	imul	eax, 10					; 0000000aH
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+4]
+	mov	edx, DWORD PTR [ecx+16]
 	movzx	eax, WORD PTR [edx+eax+6]
 	push	eax
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+16]
+	mov	edx, DWORD PTR [ecx+28]
 	mov	eax, DWORD PTR _i$28[ebp]
 	mov	ecx, DWORD PTR [edx+eax*4]
 	call	?setCountableMask@AbstractDevice@@QAEXG@Z ; AbstractDevice::setCountableMask
-; Line 399
+; Line 464
 	mov	eax, DWORD PTR _i$28[ebp]
 	imul	eax, 10					; 0000000aH
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+4]
+	mov	edx, DWORD PTR [ecx+16]
 	movzx	eax, WORD PTR [edx+eax+8]
 	push	eax
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+16]
+	mov	edx, DWORD PTR [ecx+28]
 	mov	eax, DWORD PTR _i$28[ebp]
 	mov	ecx, DWORD PTR [edx+eax*4]
 	call	?setEventMask@AbstractDevice@@QAEXG@Z	; AbstractDevice::setEventMask
-; Line 400
+; Line 465
 	mov	eax, DWORD PTR _slaveInformation$[ebp+4]
 	push	eax
 	mov	ecx, DWORD PTR _slaveInformation$[ebp]
 	push	ecx
 	mov	edx, DWORD PTR _this$[ebp]
-	mov	eax, DWORD PTR [edx+16]
+	mov	eax, DWORD PTR [edx+28]
 	mov	ecx, DWORD PTR _i$28[ebp]
 	mov	edx, DWORD PTR [eax+ecx*4]
 	push	edx
-	call	?setSlaveInformation@SlaveAddressHandler@@SAXPAVAbstractDevice@@USlaveInformation@@@Z ; SlaveAddressHandler::setSlaveInformation
-	add	esp, 12					; 0000000cH
-; Line 402
+	call	?setSlaveInformation@SlaveAddressHandler@@SGXPAVAbstractDevice@@USlaveInformation@@@Z ; SlaveAddressHandler::setSlaveInformation
+; Line 467
 	jmp	$LN18@constructN
 $LN19@constructN:
-; Line 404
+; Line 469
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+16]
+	mov	ecx, DWORD PTR [eax+28]
 	mov	edx, DWORD PTR _i$28[ebp]
 	mov	eax, DWORD PTR [ecx+edx*4]
 	mov	DWORD PTR $T3[ebp], eax
@@ -4239,8 +3209,8 @@ $LN19@constructN:
 $LN30@constructN:
 	mov	DWORD PTR tv170[ebp], 0
 $LN31@constructN:
-; Line 405
-	push	144					; 00000090H
+; Line 470
+	push	152					; 00000098H
 	call	??2@YAPAXI@Z				; operator new
 	add	esp, 4
 	mov	DWORD PTR $T5[ebp], eax
@@ -4250,13 +3220,13 @@ $LN31@constructN:
 	mov	eax, DWORD PTR _i$28[ebp]
 	imul	eax, 10					; 0000000aH
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+4]
+	mov	edx, DWORD PTR [ecx+16]
 	movzx	eax, WORD PTR [edx+eax+8]
 	push	eax
 	mov	ecx, DWORD PTR _i$28[ebp]
 	imul	ecx, 10					; 0000000aH
 	mov	edx, DWORD PTR _this$[ebp]
-	mov	eax, DWORD PTR [edx+4]
+	mov	eax, DWORD PTR [edx+16]
 	movzx	ecx, WORD PTR [eax+ecx+2]
 	push	ecx
 	mov	ecx, DWORD PTR $T5[ebp]
@@ -4270,40 +3240,39 @@ $LN33@constructN:
 	mov	DWORD PTR $T4[ebp], edx
 	mov	DWORD PTR __$EHRec$[ebp+8], -1
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+16]
+	mov	ecx, DWORD PTR [eax+28]
 	mov	edx, DWORD PTR _i$28[ebp]
 	mov	eax, DWORD PTR $T4[ebp]
 	mov	DWORD PTR [ecx+edx*4], eax
-; Line 406
+; Line 471
 	mov	eax, DWORD PTR _i$28[ebp]
 	imul	eax, 10					; 0000000aH
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+4]
+	mov	edx, DWORD PTR [ecx+16]
 	movzx	eax, WORD PTR [edx+eax+6]
 	push	eax
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+16]
+	mov	edx, DWORD PTR [ecx+28]
 	mov	eax, DWORD PTR _i$28[ebp]
 	mov	ecx, DWORD PTR [edx+eax*4]
 	call	?setCountableMask@AbstractDevice@@QAEXG@Z ; AbstractDevice::setCountableMask
-; Line 407
+; Line 472
 	mov	eax, DWORD PTR _slaveInformation$[ebp+4]
 	push	eax
 	mov	ecx, DWORD PTR _slaveInformation$[ebp]
 	push	ecx
 	mov	edx, DWORD PTR _this$[ebp]
-	mov	eax, DWORD PTR [edx+16]
+	mov	eax, DWORD PTR [edx+28]
 	mov	ecx, DWORD PTR _i$28[ebp]
 	mov	edx, DWORD PTR [eax+ecx*4]
 	push	edx
-	call	?setSlaveInformation@SlaveAddressHandler@@SAXPAVAbstractDevice@@USlaveInformation@@@Z ; SlaveAddressHandler::setSlaveInformation
-	add	esp, 12					; 0000000cH
+	call	?setSlaveInformation@SlaveAddressHandler@@SGXPAVAbstractDevice@@USlaveInformation@@@Z ; SlaveAddressHandler::setSlaveInformation
 $LN18@constructN:
-; Line 410
+; Line 475
 	jmp	$LN17@constructN
 $LN20@constructN:
-; Line 412
-	push	144					; 00000090H
+; Line 477
+	push	152					; 00000098H
 	call	??2@YAPAXI@Z				; operator new
 	add	esp, 4
 	mov	DWORD PTR $T7[ebp], eax
@@ -4313,13 +3282,13 @@ $LN20@constructN:
 	mov	eax, DWORD PTR _i$28[ebp]
 	imul	eax, 10					; 0000000aH
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+4]
+	mov	edx, DWORD PTR [ecx+16]
 	movzx	eax, WORD PTR [edx+eax+8]
 	push	eax
 	mov	ecx, DWORD PTR _i$28[ebp]
 	imul	ecx, 10					; 0000000aH
 	mov	edx, DWORD PTR _this$[ebp]
-	mov	eax, DWORD PTR [edx+4]
+	mov	eax, DWORD PTR [edx+16]
 	movzx	ecx, WORD PTR [eax+ecx+2]
 	push	ecx
 	mov	ecx, DWORD PTR $T7[ebp]
@@ -4333,112 +3302,110 @@ $LN35@constructN:
 	mov	DWORD PTR $T6[ebp], edx
 	mov	DWORD PTR __$EHRec$[ebp+8], -1
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+16]
+	mov	ecx, DWORD PTR [eax+28]
 	mov	edx, DWORD PTR _i$28[ebp]
 	mov	eax, DWORD PTR $T6[ebp]
 	mov	DWORD PTR [ecx+edx*4], eax
-; Line 413
+; Line 478
 	mov	eax, DWORD PTR _i$28[ebp]
 	imul	eax, 10					; 0000000aH
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+4]
+	mov	edx, DWORD PTR [ecx+16]
 	movzx	eax, WORD PTR [edx+eax+6]
 	push	eax
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+16]
+	mov	edx, DWORD PTR [ecx+28]
 	mov	eax, DWORD PTR _i$28[ebp]
 	mov	ecx, DWORD PTR [edx+eax*4]
 	call	?setCountableMask@AbstractDevice@@QAEXG@Z ; AbstractDevice::setCountableMask
-; Line 414
+; Line 479
 	mov	eax, DWORD PTR _slaveInformation$[ebp+4]
 	push	eax
 	mov	ecx, DWORD PTR _slaveInformation$[ebp]
 	push	ecx
 	mov	edx, DWORD PTR _this$[ebp]
-	mov	eax, DWORD PTR [edx+16]
+	mov	eax, DWORD PTR [edx+28]
 	mov	ecx, DWORD PTR _i$28[ebp]
 	mov	edx, DWORD PTR [eax+ecx*4]
 	push	edx
-	call	?setSlaveInformation@SlaveAddressHandler@@SAXPAVAbstractDevice@@USlaveInformation@@@Z ; SlaveAddressHandler::setSlaveInformation
-	add	esp, 12					; 0000000cH
+	call	?setSlaveInformation@SlaveAddressHandler@@SGXPAVAbstractDevice@@USlaveInformation@@@Z ; SlaveAddressHandler::setSlaveInformation
 $LN17@constructN:
-; Line 416
+; Line 481
 	jmp	$LN22@constructN
 $LN16@constructN:
-; Line 419
+; Line 484
 	mov	eax, DWORD PTR _i$28[ebp]
 	imul	eax, 10					; 0000000aH
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+4]
+	mov	edx, DWORD PTR [ecx+16]
 	movsx	eax, WORD PTR [edx+eax+4]
 	mov	DWORD PTR _slaveInformation$[ebp+4], eax
-; Line 421
+; Line 486
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+16]
+	mov	ecx, DWORD PTR [eax+28]
 	mov	edx, DWORD PTR _i$28[ebp]
 	cmp	DWORD PTR [ecx+edx*4], 0
 	je	$LN15@constructN
-; Line 423
+; Line 488
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+16]
+	mov	ecx, DWORD PTR [eax+28]
 	mov	edx, DWORD PTR _i$28[ebp]
 	mov	eax, DWORD PTR [ecx+edx*4]
-	cmp	DWORD PTR [eax+140], 2
+	cmp	DWORD PTR [eax+148], 2
 	jne	$LN14@constructN
-; Line 425
+; Line 490
 	mov	eax, DWORD PTR _i$28[ebp]
 	imul	eax, 10					; 0000000aH
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+4]
+	mov	edx, DWORD PTR [ecx+16]
 	movzx	eax, WORD PTR [edx+eax+2]
 	push	eax
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+16]
+	mov	edx, DWORD PTR [ecx+28]
 	mov	eax, DWORD PTR _i$28[ebp]
 	mov	ecx, DWORD PTR [edx+eax*4]
 	call	?setAddress@AbstractDevice@@QAEXG@Z	; AbstractDevice::setAddress
-; Line 426
+; Line 491
 	mov	eax, DWORD PTR _i$28[ebp]
 	imul	eax, 10					; 0000000aH
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+4]
+	mov	edx, DWORD PTR [ecx+16]
 	movzx	eax, WORD PTR [edx+eax+6]
 	push	eax
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+16]
+	mov	edx, DWORD PTR [ecx+28]
 	mov	eax, DWORD PTR _i$28[ebp]
 	mov	ecx, DWORD PTR [edx+eax*4]
 	call	?setCountableMask@AbstractDevice@@QAEXG@Z ; AbstractDevice::setCountableMask
-; Line 427
+; Line 492
 	mov	eax, DWORD PTR _i$28[ebp]
 	imul	eax, 10					; 0000000aH
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+4]
+	mov	edx, DWORD PTR [ecx+16]
 	movzx	eax, WORD PTR [edx+eax+8]
 	push	eax
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+16]
+	mov	edx, DWORD PTR [ecx+28]
 	mov	eax, DWORD PTR _i$28[ebp]
 	mov	ecx, DWORD PTR [edx+eax*4]
 	call	?setEventMask@AbstractDevice@@QAEXG@Z	; AbstractDevice::setEventMask
-; Line 428
+; Line 493
 	mov	eax, DWORD PTR _slaveInformation$[ebp+4]
 	push	eax
 	mov	ecx, DWORD PTR _slaveInformation$[ebp]
 	push	ecx
 	mov	edx, DWORD PTR _this$[ebp]
-	mov	eax, DWORD PTR [edx+16]
+	mov	eax, DWORD PTR [edx+28]
 	mov	ecx, DWORD PTR _i$28[ebp]
 	mov	edx, DWORD PTR [eax+ecx*4]
 	push	edx
-	call	?setSlaveInformation@SlaveAddressHandler@@SAXPAVAbstractDevice@@USlaveInformation@@@Z ; SlaveAddressHandler::setSlaveInformation
-	add	esp, 12					; 0000000cH
-; Line 430
+	call	?setSlaveInformation@SlaveAddressHandler@@SGXPAVAbstractDevice@@USlaveInformation@@@Z ; SlaveAddressHandler::setSlaveInformation
+; Line 495
 	jmp	$LN13@constructN
 $LN14@constructN:
-; Line 432
+; Line 497
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+16]
+	mov	ecx, DWORD PTR [eax+28]
 	mov	edx, DWORD PTR _i$28[ebp]
 	mov	eax, DWORD PTR [ecx+edx*4]
 	mov	DWORD PTR $T9[ebp], eax
@@ -4460,8 +3427,8 @@ $LN14@constructN:
 $LN36@constructN:
 	mov	DWORD PTR tv302[ebp], 0
 $LN37@constructN:
-; Line 433
-	push	144					; 00000090H
+; Line 498
+	push	152					; 00000098H
 	call	??2@YAPAXI@Z				; operator new
 	add	esp, 4
 	mov	DWORD PTR $T11[ebp], eax
@@ -4471,13 +3438,13 @@ $LN37@constructN:
 	mov	eax, DWORD PTR _i$28[ebp]
 	imul	eax, 10					; 0000000aH
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+4]
+	mov	edx, DWORD PTR [ecx+16]
 	movzx	eax, WORD PTR [edx+eax+8]
 	push	eax
 	mov	ecx, DWORD PTR _i$28[ebp]
 	imul	ecx, 10					; 0000000aH
 	mov	edx, DWORD PTR _this$[ebp]
-	mov	eax, DWORD PTR [edx+4]
+	mov	eax, DWORD PTR [edx+16]
 	movzx	ecx, WORD PTR [eax+ecx+2]
 	push	ecx
 	mov	ecx, DWORD PTR $T11[ebp]
@@ -4491,40 +3458,39 @@ $LN39@constructN:
 	mov	DWORD PTR $T10[ebp], edx
 	mov	DWORD PTR __$EHRec$[ebp+8], -1
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+16]
+	mov	ecx, DWORD PTR [eax+28]
 	mov	edx, DWORD PTR _i$28[ebp]
 	mov	eax, DWORD PTR $T10[ebp]
 	mov	DWORD PTR [ecx+edx*4], eax
-; Line 434
+; Line 499
 	mov	eax, DWORD PTR _i$28[ebp]
 	imul	eax, 10					; 0000000aH
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+4]
+	mov	edx, DWORD PTR [ecx+16]
 	movzx	eax, WORD PTR [edx+eax+6]
 	push	eax
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+16]
+	mov	edx, DWORD PTR [ecx+28]
 	mov	eax, DWORD PTR _i$28[ebp]
 	mov	ecx, DWORD PTR [edx+eax*4]
 	call	?setCountableMask@AbstractDevice@@QAEXG@Z ; AbstractDevice::setCountableMask
-; Line 435
+; Line 500
 	mov	eax, DWORD PTR _slaveInformation$[ebp+4]
 	push	eax
 	mov	ecx, DWORD PTR _slaveInformation$[ebp]
 	push	ecx
 	mov	edx, DWORD PTR _this$[ebp]
-	mov	eax, DWORD PTR [edx+16]
+	mov	eax, DWORD PTR [edx+28]
 	mov	ecx, DWORD PTR _i$28[ebp]
 	mov	edx, DWORD PTR [eax+ecx*4]
 	push	edx
-	call	?setSlaveInformation@SlaveAddressHandler@@SAXPAVAbstractDevice@@USlaveInformation@@@Z ; SlaveAddressHandler::setSlaveInformation
-	add	esp, 12					; 0000000cH
+	call	?setSlaveInformation@SlaveAddressHandler@@SGXPAVAbstractDevice@@USlaveInformation@@@Z ; SlaveAddressHandler::setSlaveInformation
 $LN13@constructN:
-; Line 438
+; Line 503
 	jmp	$LN12@constructN
 $LN15@constructN:
-; Line 440
-	push	144					; 00000090H
+; Line 505
+	push	152					; 00000098H
 	call	??2@YAPAXI@Z				; operator new
 	add	esp, 4
 	mov	DWORD PTR $T13[ebp], eax
@@ -4534,13 +3500,13 @@ $LN15@constructN:
 	mov	eax, DWORD PTR _i$28[ebp]
 	imul	eax, 10					; 0000000aH
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+4]
+	mov	edx, DWORD PTR [ecx+16]
 	movzx	eax, WORD PTR [edx+eax+8]
 	push	eax
 	mov	ecx, DWORD PTR _i$28[ebp]
 	imul	ecx, 10					; 0000000aH
 	mov	edx, DWORD PTR _this$[ebp]
-	mov	eax, DWORD PTR [edx+4]
+	mov	eax, DWORD PTR [edx+16]
 	movzx	ecx, WORD PTR [eax+ecx+2]
 	push	ecx
 	mov	ecx, DWORD PTR $T13[ebp]
@@ -4554,112 +3520,110 @@ $LN41@constructN:
 	mov	DWORD PTR $T12[ebp], edx
 	mov	DWORD PTR __$EHRec$[ebp+8], -1
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+16]
+	mov	ecx, DWORD PTR [eax+28]
 	mov	edx, DWORD PTR _i$28[ebp]
 	mov	eax, DWORD PTR $T12[ebp]
 	mov	DWORD PTR [ecx+edx*4], eax
-; Line 441
+; Line 506
 	mov	eax, DWORD PTR _i$28[ebp]
 	imul	eax, 10					; 0000000aH
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+4]
+	mov	edx, DWORD PTR [ecx+16]
 	movzx	eax, WORD PTR [edx+eax+6]
 	push	eax
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+16]
+	mov	edx, DWORD PTR [ecx+28]
 	mov	eax, DWORD PTR _i$28[ebp]
 	mov	ecx, DWORD PTR [edx+eax*4]
 	call	?setCountableMask@AbstractDevice@@QAEXG@Z ; AbstractDevice::setCountableMask
-; Line 442
+; Line 507
 	mov	eax, DWORD PTR _slaveInformation$[ebp+4]
 	push	eax
 	mov	ecx, DWORD PTR _slaveInformation$[ebp]
 	push	ecx
 	mov	edx, DWORD PTR _this$[ebp]
-	mov	eax, DWORD PTR [edx+16]
+	mov	eax, DWORD PTR [edx+28]
 	mov	ecx, DWORD PTR _i$28[ebp]
 	mov	edx, DWORD PTR [eax+ecx*4]
 	push	edx
-	call	?setSlaveInformation@SlaveAddressHandler@@SAXPAVAbstractDevice@@USlaveInformation@@@Z ; SlaveAddressHandler::setSlaveInformation
-	add	esp, 12					; 0000000cH
+	call	?setSlaveInformation@SlaveAddressHandler@@SGXPAVAbstractDevice@@USlaveInformation@@@Z ; SlaveAddressHandler::setSlaveInformation
 $LN12@constructN:
-; Line 444
+; Line 509
 	jmp	$LN22@constructN
 $LN11@constructN:
-; Line 447
+; Line 512
 	mov	eax, DWORD PTR _i$28[ebp]
 	imul	eax, 10					; 0000000aH
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+4]
+	mov	edx, DWORD PTR [ecx+16]
 	movsx	eax, WORD PTR [edx+eax+4]
 	mov	DWORD PTR _slaveInformation$[ebp+4], eax
-; Line 449
+; Line 514
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+16]
+	mov	ecx, DWORD PTR [eax+28]
 	mov	edx, DWORD PTR _i$28[ebp]
 	cmp	DWORD PTR [ecx+edx*4], 0
 	je	$LN10@constructN
-; Line 451
+; Line 516
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+16]
+	mov	ecx, DWORD PTR [eax+28]
 	mov	edx, DWORD PTR _i$28[ebp]
 	mov	eax, DWORD PTR [ecx+edx*4]
-	cmp	DWORD PTR [eax+140], 4
+	cmp	DWORD PTR [eax+148], 4
 	jne	$LN9@constructN
-; Line 453
+; Line 518
 	mov	eax, DWORD PTR _i$28[ebp]
 	imul	eax, 10					; 0000000aH
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+4]
+	mov	edx, DWORD PTR [ecx+16]
 	movzx	eax, WORD PTR [edx+eax+2]
 	push	eax
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+16]
+	mov	edx, DWORD PTR [ecx+28]
 	mov	eax, DWORD PTR _i$28[ebp]
 	mov	ecx, DWORD PTR [edx+eax*4]
 	call	?setAddress@AbstractDevice@@QAEXG@Z	; AbstractDevice::setAddress
-; Line 454
+; Line 519
 	mov	eax, DWORD PTR _i$28[ebp]
 	imul	eax, 10					; 0000000aH
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+4]
+	mov	edx, DWORD PTR [ecx+16]
 	movzx	eax, WORD PTR [edx+eax+6]
 	push	eax
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+16]
+	mov	edx, DWORD PTR [ecx+28]
 	mov	eax, DWORD PTR _i$28[ebp]
 	mov	ecx, DWORD PTR [edx+eax*4]
 	call	?setCountableMask@AbstractDevice@@QAEXG@Z ; AbstractDevice::setCountableMask
-; Line 455
+; Line 520
 	mov	eax, DWORD PTR _i$28[ebp]
 	imul	eax, 10					; 0000000aH
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+4]
+	mov	edx, DWORD PTR [ecx+16]
 	movzx	eax, WORD PTR [edx+eax+8]
 	push	eax
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+16]
+	mov	edx, DWORD PTR [ecx+28]
 	mov	eax, DWORD PTR _i$28[ebp]
 	mov	ecx, DWORD PTR [edx+eax*4]
 	call	?setEventMask@AbstractDevice@@QAEXG@Z	; AbstractDevice::setEventMask
-; Line 456
+; Line 521
 	mov	eax, DWORD PTR _slaveInformation$[ebp+4]
 	push	eax
 	mov	ecx, DWORD PTR _slaveInformation$[ebp]
 	push	ecx
 	mov	edx, DWORD PTR _this$[ebp]
-	mov	eax, DWORD PTR [edx+16]
+	mov	eax, DWORD PTR [edx+28]
 	mov	ecx, DWORD PTR _i$28[ebp]
 	mov	edx, DWORD PTR [eax+ecx*4]
 	push	edx
-	call	?setSlaveInformation@SlaveAddressHandler@@SAXPAVAbstractDevice@@USlaveInformation@@@Z ; SlaveAddressHandler::setSlaveInformation
-	add	esp, 12					; 0000000cH
-; Line 458
+	call	?setSlaveInformation@SlaveAddressHandler@@SGXPAVAbstractDevice@@USlaveInformation@@@Z ; SlaveAddressHandler::setSlaveInformation
+; Line 523
 	jmp	$LN8@constructN
 $LN9@constructN:
-; Line 460
+; Line 525
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+16]
+	mov	ecx, DWORD PTR [eax+28]
 	mov	edx, DWORD PTR _i$28[ebp]
 	mov	eax, DWORD PTR [ecx+edx*4]
 	mov	DWORD PTR $T15[ebp], eax
@@ -4681,8 +3645,8 @@ $LN9@constructN:
 $LN42@constructN:
 	mov	DWORD PTR tv434[ebp], 0
 $LN43@constructN:
-; Line 461
-	push	144					; 00000090H
+; Line 526
+	push	152					; 00000098H
 	call	??2@YAPAXI@Z				; operator new
 	add	esp, 4
 	mov	DWORD PTR $T17[ebp], eax
@@ -4692,13 +3656,13 @@ $LN43@constructN:
 	mov	eax, DWORD PTR _i$28[ebp]
 	imul	eax, 10					; 0000000aH
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+4]
+	mov	edx, DWORD PTR [ecx+16]
 	movzx	eax, WORD PTR [edx+eax+8]
 	push	eax
 	mov	ecx, DWORD PTR _i$28[ebp]
 	imul	ecx, 10					; 0000000aH
 	mov	edx, DWORD PTR _this$[ebp]
-	mov	eax, DWORD PTR [edx+4]
+	mov	eax, DWORD PTR [edx+16]
 	movzx	ecx, WORD PTR [eax+ecx+2]
 	push	ecx
 	mov	ecx, DWORD PTR $T17[ebp]
@@ -4712,40 +3676,39 @@ $LN45@constructN:
 	mov	DWORD PTR $T16[ebp], edx
 	mov	DWORD PTR __$EHRec$[ebp+8], -1
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+16]
+	mov	ecx, DWORD PTR [eax+28]
 	mov	edx, DWORD PTR _i$28[ebp]
 	mov	eax, DWORD PTR $T16[ebp]
 	mov	DWORD PTR [ecx+edx*4], eax
-; Line 462
+; Line 527
 	mov	eax, DWORD PTR _i$28[ebp]
 	imul	eax, 10					; 0000000aH
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+4]
+	mov	edx, DWORD PTR [ecx+16]
 	movzx	eax, WORD PTR [edx+eax+6]
 	push	eax
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+16]
+	mov	edx, DWORD PTR [ecx+28]
 	mov	eax, DWORD PTR _i$28[ebp]
 	mov	ecx, DWORD PTR [edx+eax*4]
 	call	?setCountableMask@AbstractDevice@@QAEXG@Z ; AbstractDevice::setCountableMask
-; Line 463
+; Line 528
 	mov	eax, DWORD PTR _slaveInformation$[ebp+4]
 	push	eax
 	mov	ecx, DWORD PTR _slaveInformation$[ebp]
 	push	ecx
 	mov	edx, DWORD PTR _this$[ebp]
-	mov	eax, DWORD PTR [edx+16]
+	mov	eax, DWORD PTR [edx+28]
 	mov	ecx, DWORD PTR _i$28[ebp]
 	mov	edx, DWORD PTR [eax+ecx*4]
 	push	edx
-	call	?setSlaveInformation@SlaveAddressHandler@@SAXPAVAbstractDevice@@USlaveInformation@@@Z ; SlaveAddressHandler::setSlaveInformation
-	add	esp, 12					; 0000000cH
+	call	?setSlaveInformation@SlaveAddressHandler@@SGXPAVAbstractDevice@@USlaveInformation@@@Z ; SlaveAddressHandler::setSlaveInformation
 $LN8@constructN:
-; Line 466
+; Line 531
 	jmp	$LN7@constructN
 $LN10@constructN:
-; Line 468
-	push	144					; 00000090H
+; Line 533
+	push	152					; 00000098H
 	call	??2@YAPAXI@Z				; operator new
 	add	esp, 4
 	mov	DWORD PTR $T19[ebp], eax
@@ -4755,13 +3718,13 @@ $LN10@constructN:
 	mov	eax, DWORD PTR _i$28[ebp]
 	imul	eax, 10					; 0000000aH
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+4]
+	mov	edx, DWORD PTR [ecx+16]
 	movzx	eax, WORD PTR [edx+eax+8]
 	push	eax
 	mov	ecx, DWORD PTR _i$28[ebp]
 	imul	ecx, 10					; 0000000aH
 	mov	edx, DWORD PTR _this$[ebp]
-	mov	eax, DWORD PTR [edx+4]
+	mov	eax, DWORD PTR [edx+16]
 	movzx	ecx, WORD PTR [eax+ecx+2]
 	push	ecx
 	mov	ecx, DWORD PTR $T19[ebp]
@@ -4775,112 +3738,110 @@ $LN47@constructN:
 	mov	DWORD PTR $T18[ebp], edx
 	mov	DWORD PTR __$EHRec$[ebp+8], -1
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+16]
+	mov	ecx, DWORD PTR [eax+28]
 	mov	edx, DWORD PTR _i$28[ebp]
 	mov	eax, DWORD PTR $T18[ebp]
 	mov	DWORD PTR [ecx+edx*4], eax
-; Line 469
+; Line 534
 	mov	eax, DWORD PTR _i$28[ebp]
 	imul	eax, 10					; 0000000aH
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+4]
+	mov	edx, DWORD PTR [ecx+16]
 	movzx	eax, WORD PTR [edx+eax+6]
 	push	eax
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+16]
+	mov	edx, DWORD PTR [ecx+28]
 	mov	eax, DWORD PTR _i$28[ebp]
 	mov	ecx, DWORD PTR [edx+eax*4]
 	call	?setCountableMask@AbstractDevice@@QAEXG@Z ; AbstractDevice::setCountableMask
-; Line 470
+; Line 535
 	mov	eax, DWORD PTR _slaveInformation$[ebp+4]
 	push	eax
 	mov	ecx, DWORD PTR _slaveInformation$[ebp]
 	push	ecx
 	mov	edx, DWORD PTR _this$[ebp]
-	mov	eax, DWORD PTR [edx+16]
+	mov	eax, DWORD PTR [edx+28]
 	mov	ecx, DWORD PTR _i$28[ebp]
 	mov	edx, DWORD PTR [eax+ecx*4]
 	push	edx
-	call	?setSlaveInformation@SlaveAddressHandler@@SAXPAVAbstractDevice@@USlaveInformation@@@Z ; SlaveAddressHandler::setSlaveInformation
-	add	esp, 12					; 0000000cH
+	call	?setSlaveInformation@SlaveAddressHandler@@SGXPAVAbstractDevice@@USlaveInformation@@@Z ; SlaveAddressHandler::setSlaveInformation
 $LN7@constructN:
-; Line 472
+; Line 537
 	jmp	$LN22@constructN
 $LN6@constructN:
-; Line 475
+; Line 540
 	mov	eax, DWORD PTR _i$28[ebp]
 	imul	eax, 10					; 0000000aH
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+4]
+	mov	edx, DWORD PTR [ecx+16]
 	movsx	eax, WORD PTR [edx+eax+4]
 	mov	DWORD PTR _slaveInformation$[ebp+4], eax
-; Line 477
+; Line 542
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+16]
+	mov	ecx, DWORD PTR [eax+28]
 	mov	edx, DWORD PTR _i$28[ebp]
 	cmp	DWORD PTR [ecx+edx*4], 0
 	je	$LN5@constructN
-; Line 479
+; Line 544
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+16]
+	mov	ecx, DWORD PTR [eax+28]
 	mov	edx, DWORD PTR _i$28[ebp]
 	mov	eax, DWORD PTR [ecx+edx*4]
-	cmp	DWORD PTR [eax+140], 3
+	cmp	DWORD PTR [eax+148], 3
 	jne	$LN4@constructN
-; Line 481
+; Line 546
 	mov	eax, DWORD PTR _i$28[ebp]
 	imul	eax, 10					; 0000000aH
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+4]
+	mov	edx, DWORD PTR [ecx+16]
 	movzx	eax, WORD PTR [edx+eax+2]
 	push	eax
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+16]
+	mov	edx, DWORD PTR [ecx+28]
 	mov	eax, DWORD PTR _i$28[ebp]
 	mov	ecx, DWORD PTR [edx+eax*4]
 	call	?setAddress@AbstractDevice@@QAEXG@Z	; AbstractDevice::setAddress
-; Line 482
+; Line 547
 	mov	eax, DWORD PTR _i$28[ebp]
 	imul	eax, 10					; 0000000aH
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+4]
+	mov	edx, DWORD PTR [ecx+16]
 	movzx	eax, WORD PTR [edx+eax+6]
 	push	eax
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+16]
+	mov	edx, DWORD PTR [ecx+28]
 	mov	eax, DWORD PTR _i$28[ebp]
 	mov	ecx, DWORD PTR [edx+eax*4]
 	call	?setCountableMask@AbstractDevice@@QAEXG@Z ; AbstractDevice::setCountableMask
-; Line 483
+; Line 548
 	mov	eax, DWORD PTR _i$28[ebp]
 	imul	eax, 10					; 0000000aH
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+4]
+	mov	edx, DWORD PTR [ecx+16]
 	movzx	eax, WORD PTR [edx+eax+8]
 	push	eax
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+16]
+	mov	edx, DWORD PTR [ecx+28]
 	mov	eax, DWORD PTR _i$28[ebp]
 	mov	ecx, DWORD PTR [edx+eax*4]
 	call	?setEventMask@AbstractDevice@@QAEXG@Z	; AbstractDevice::setEventMask
-; Line 484
+; Line 549
 	mov	eax, DWORD PTR _slaveInformation$[ebp+4]
 	push	eax
 	mov	ecx, DWORD PTR _slaveInformation$[ebp]
 	push	ecx
 	mov	edx, DWORD PTR _this$[ebp]
-	mov	eax, DWORD PTR [edx+16]
+	mov	eax, DWORD PTR [edx+28]
 	mov	ecx, DWORD PTR _i$28[ebp]
 	mov	edx, DWORD PTR [eax+ecx*4]
 	push	edx
-	call	?setSlaveInformation@SlaveAddressHandler@@SAXPAVAbstractDevice@@USlaveInformation@@@Z ; SlaveAddressHandler::setSlaveInformation
-	add	esp, 12					; 0000000cH
-; Line 486
+	call	?setSlaveInformation@SlaveAddressHandler@@SGXPAVAbstractDevice@@USlaveInformation@@@Z ; SlaveAddressHandler::setSlaveInformation
+; Line 551
 	jmp	$LN3@constructN
 $LN4@constructN:
-; Line 488
+; Line 553
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+16]
+	mov	ecx, DWORD PTR [eax+28]
 	mov	edx, DWORD PTR _i$28[ebp]
 	mov	eax, DWORD PTR [ecx+edx*4]
 	mov	DWORD PTR $T21[ebp], eax
@@ -4902,8 +3863,8 @@ $LN4@constructN:
 $LN48@constructN:
 	mov	DWORD PTR tv566[ebp], 0
 $LN49@constructN:
-; Line 489
-	push	148					; 00000094H
+; Line 554
+	push	156					; 0000009cH
 	call	??2@YAPAXI@Z				; operator new
 	add	esp, 4
 	mov	DWORD PTR $T23[ebp], eax
@@ -4913,13 +3874,13 @@ $LN49@constructN:
 	mov	eax, DWORD PTR _i$28[ebp]
 	imul	eax, 10					; 0000000aH
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+4]
+	mov	edx, DWORD PTR [ecx+16]
 	movzx	eax, WORD PTR [edx+eax+8]
 	push	eax
 	mov	ecx, DWORD PTR _i$28[ebp]
 	imul	ecx, 10					; 0000000aH
 	mov	edx, DWORD PTR _this$[ebp]
-	mov	eax, DWORD PTR [edx+4]
+	mov	eax, DWORD PTR [edx+16]
 	movzx	ecx, WORD PTR [eax+ecx+2]
 	push	ecx
 	mov	ecx, DWORD PTR $T23[ebp]
@@ -4933,40 +3894,39 @@ $LN51@constructN:
 	mov	DWORD PTR $T22[ebp], edx
 	mov	DWORD PTR __$EHRec$[ebp+8], -1
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+16]
+	mov	ecx, DWORD PTR [eax+28]
 	mov	edx, DWORD PTR _i$28[ebp]
 	mov	eax, DWORD PTR $T22[ebp]
 	mov	DWORD PTR [ecx+edx*4], eax
-; Line 490
+; Line 555
 	mov	eax, DWORD PTR _i$28[ebp]
 	imul	eax, 10					; 0000000aH
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+4]
+	mov	edx, DWORD PTR [ecx+16]
 	movzx	eax, WORD PTR [edx+eax+6]
 	push	eax
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+16]
+	mov	edx, DWORD PTR [ecx+28]
 	mov	eax, DWORD PTR _i$28[ebp]
 	mov	ecx, DWORD PTR [edx+eax*4]
 	call	?setCountableMask@AbstractDevice@@QAEXG@Z ; AbstractDevice::setCountableMask
-; Line 491
+; Line 556
 	mov	eax, DWORD PTR _slaveInformation$[ebp+4]
 	push	eax
 	mov	ecx, DWORD PTR _slaveInformation$[ebp]
 	push	ecx
 	mov	edx, DWORD PTR _this$[ebp]
-	mov	eax, DWORD PTR [edx+16]
+	mov	eax, DWORD PTR [edx+28]
 	mov	ecx, DWORD PTR _i$28[ebp]
 	mov	edx, DWORD PTR [eax+ecx*4]
 	push	edx
-	call	?setSlaveInformation@SlaveAddressHandler@@SAXPAVAbstractDevice@@USlaveInformation@@@Z ; SlaveAddressHandler::setSlaveInformation
-	add	esp, 12					; 0000000cH
+	call	?setSlaveInformation@SlaveAddressHandler@@SGXPAVAbstractDevice@@USlaveInformation@@@Z ; SlaveAddressHandler::setSlaveInformation
 $LN3@constructN:
-; Line 494
+; Line 559
 	jmp	$LN22@constructN
 $LN5@constructN:
-; Line 496
-	push	148					; 00000094H
+; Line 561
+	push	156					; 0000009cH
 	call	??2@YAPAXI@Z				; operator new
 	add	esp, 4
 	mov	DWORD PTR $T25[ebp], eax
@@ -4976,13 +3936,13 @@ $LN5@constructN:
 	mov	eax, DWORD PTR _i$28[ebp]
 	imul	eax, 10					; 0000000aH
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+4]
+	mov	edx, DWORD PTR [ecx+16]
 	movzx	eax, WORD PTR [edx+eax+8]
 	push	eax
 	mov	ecx, DWORD PTR _i$28[ebp]
 	imul	ecx, 10					; 0000000aH
 	mov	edx, DWORD PTR _this$[ebp]
-	mov	eax, DWORD PTR [edx+4]
+	mov	eax, DWORD PTR [edx+16]
 	movzx	ecx, WORD PTR [eax+ecx+2]
 	push	ecx
 	mov	ecx, DWORD PTR $T25[ebp]
@@ -4996,41 +3956,40 @@ $LN53@constructN:
 	mov	DWORD PTR $T24[ebp], edx
 	mov	DWORD PTR __$EHRec$[ebp+8], -1
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+16]
+	mov	ecx, DWORD PTR [eax+28]
 	mov	edx, DWORD PTR _i$28[ebp]
 	mov	eax, DWORD PTR $T24[ebp]
 	mov	DWORD PTR [ecx+edx*4], eax
-; Line 497
+; Line 562
 	mov	eax, DWORD PTR _i$28[ebp]
 	imul	eax, 10					; 0000000aH
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+4]
+	mov	edx, DWORD PTR [ecx+16]
 	movzx	eax, WORD PTR [edx+eax+6]
 	push	eax
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+16]
+	mov	edx, DWORD PTR [ecx+28]
 	mov	eax, DWORD PTR _i$28[ebp]
 	mov	ecx, DWORD PTR [edx+eax*4]
 	call	?setCountableMask@AbstractDevice@@QAEXG@Z ; AbstractDevice::setCountableMask
-; Line 498
+; Line 563
 	mov	eax, DWORD PTR _slaveInformation$[ebp+4]
 	push	eax
 	mov	ecx, DWORD PTR _slaveInformation$[ebp]
 	push	ecx
 	mov	edx, DWORD PTR _this$[ebp]
-	mov	eax, DWORD PTR [edx+16]
+	mov	eax, DWORD PTR [edx+28]
 	mov	ecx, DWORD PTR _i$28[ebp]
 	mov	edx, DWORD PTR [eax+ecx*4]
 	push	edx
-	call	?setSlaveInformation@SlaveAddressHandler@@SAXPAVAbstractDevice@@USlaveInformation@@@Z ; SlaveAddressHandler::setSlaveInformation
-	add	esp, 12					; 0000000cH
+	call	?setSlaveInformation@SlaveAddressHandler@@SGXPAVAbstractDevice@@USlaveInformation@@@Z ; SlaveAddressHandler::setSlaveInformation
 $LN22@constructN:
-; Line 504
+; Line 569
 	jmp	SHORT $LN1@constructN
 $LN24@constructN:
-; Line 506
+; Line 571
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+16]
+	mov	ecx, DWORD PTR [eax+28]
 	mov	edx, DWORD PTR _i$28[ebp]
 	mov	eax, DWORD PTR [ecx+edx*4]
 	mov	DWORD PTR $T27[ebp], eax
@@ -5052,22 +4011,22 @@ $LN24@constructN:
 $LN54@constructN:
 	mov	DWORD PTR tv654[ebp], 0
 $LN55@constructN:
-; Line 507
+; Line 572
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+16]
+	mov	ecx, DWORD PTR [eax+28]
 	mov	edx, DWORD PTR _i$28[ebp]
 	mov	DWORD PTR [ecx+edx*4], 0
-; Line 508
+; Line 573
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	DWORD PTR [eax+20], 0
-; Line 509
+	mov	DWORD PTR [eax+32], 0
+; Line 574
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	DWORD PTR [eax+24], 0
+	mov	DWORD PTR [eax+36], 0
 $LN1@constructN:
-; Line 511
+; Line 576
 	jmp	$LN26@constructN
 $LN28@constructN:
-; Line 512
+; Line 577
 	push	edx
 	mov	ecx, ebp
 	push	eax
@@ -5087,7 +4046,6 @@ $LN28@constructN:
 	mov	esp, ebp
 	pop	ebp
 	ret	0
-	npad	2
 $LN67@constructN:
 	DD	1
 	DD	$LN66@constructN
@@ -5181,6 +4139,758 @@ __ehhandler$?constructNewDevices@CycleController@@AAEXXZ:
 text$x	ENDS
 ?constructNewDevices@CycleController@@AAEXXZ ENDP	; CycleController::constructNewDevices
 ; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ?nativeToRegisters@CycleController@@AAEXXZ
+_TEXT	SEGMENT
+tv77 = -372						; size = 4
+$T1 = -364						; size = 16
+$T2 = -340						; size = 16
+$T3 = -316						; size = 16
+$T4 = -292						; size = 16
+_usVal$ = -76						; size = 4
+_i$ = -64						; size = 4
+_val$ = -52						; size = 16
+_sv$ = -28						; size = 8
+_this$ = -12						; size = 4
+__$ArrayPad$ = -4					; size = 4
+?nativeToRegisters@CycleController@@AAEXXZ PROC		; CycleController::nativeToRegisters, COMDAT
+; _this$ = ecx
+; File d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp
+; Line 373
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 372				; 00000174H
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-372]
+	mov	ecx, 93					; 0000005dH
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	eax, DWORD PTR ___security_cookie
+	xor	eax, ebp
+	mov	DWORD PTR __$ArrayPad$[ebp], eax
+	mov	DWORD PTR _this$[ebp], ecx
+; Line 384
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+8]
+	mov	edx, DWORD PTR [ecx]
+	mov	eax, DWORD PTR [edx+12]
+	push	eax
+	push	1
+	lea	ecx, DWORD PTR _sv$[ebp]
+	call	??0SlaveInformation@@QAE@W4regType@@J@Z	; SlaveInformation::SlaveInformation
+; Line 385
+	push	0
+	lea	ecx, DWORD PTR _val$[ebp]
+	call	??0uValue@@QAE@K@Z			; uValue::uValue
+; Line 386
+	mov	DWORD PTR _i$[ebp], 0
+; Line 387
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+8]
+	mov	edx, DWORD PTR [ecx+4]
+	mov	DWORD PTR _usVal$[ebp], edx
+; Line 389
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+8]
+	mov	edx, DWORD PTR [ecx]
+	mov	eax, DWORD PTR [edx+8]
+	mov	DWORD PTR tv77[ebp], eax
+	mov	ecx, DWORD PTR tv77[ebp]
+	sub	ecx, 1
+	mov	DWORD PTR tv77[ebp], ecx
+	cmp	DWORD PTR tv77[ebp], 15			; 0000000fH
+	ja	$LN27@nativeToRe
+	mov	edx, DWORD PTR tv77[ebp]
+	movzx	eax, BYTE PTR $LN29@nativeToRe[edx]
+	jmp	DWORD PTR $LN34@nativeToRe[eax*4]
+$LN24@nativeToRe:
+; Line 392
+	mov	DWORD PTR _i$[ebp], 0
+	jmp	SHORT $LN23@nativeToRe
+$LN22@nativeToRe:
+	mov	eax, DWORD PTR _i$[ebp]
+	add	eax, 1
+	mov	DWORD PTR _i$[ebp], eax
+$LN23@nativeToRe:
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+8]
+	mov	edx, DWORD PTR [ecx]
+	mov	eax, DWORD PTR _i$[ebp]
+	cmp	eax, DWORD PTR [edx+20]
+	jge	SHORT $LN21@nativeToRe
+; Line 394
+	push	2
+	mov	eax, DWORD PTR _sv$[ebp+4]
+	push	eax
+	mov	ecx, DWORD PTR _sv$[ebp]
+	push	ecx
+	lea	edx, DWORD PTR $T1[ebp]
+	push	edx
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+24]
+	call	?getCoils@SlaveFactory@@QAE?ATuValue@@USlaveInformation@@I@Z ; SlaveFactory::getCoils
+	mov	ecx, DWORD PTR _i$[ebp]
+	mov	edx, DWORD PTR _usVal$[ebp]
+	mov	ax, WORD PTR [eax]
+	mov	WORD PTR [edx+ecx*2], ax
+; Line 395
+	mov	eax, DWORD PTR _sv$[ebp+4]
+	add	eax, 1
+	mov	DWORD PTR _sv$[ebp+4], eax
+; Line 396
+	jmp	SHORT $LN22@nativeToRe
+$LN21@nativeToRe:
+; Line 397
+	jmp	$LN27@nativeToRe
+$LN20@nativeToRe:
+; Line 400
+	mov	DWORD PTR _i$[ebp], 0
+	jmp	SHORT $LN19@nativeToRe
+$LN18@nativeToRe:
+	mov	eax, DWORD PTR _i$[ebp]
+	add	eax, 1
+	mov	DWORD PTR _i$[ebp], eax
+$LN19@nativeToRe:
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+8]
+	mov	edx, DWORD PTR [ecx]
+	mov	eax, DWORD PTR _i$[ebp]
+	cmp	eax, DWORD PTR [edx+20]
+	jge	SHORT $LN17@nativeToRe
+; Line 402
+	push	2
+	mov	eax, DWORD PTR _sv$[ebp+4]
+	push	eax
+	mov	ecx, DWORD PTR _sv$[ebp]
+	push	ecx
+	lea	edx, DWORD PTR $T2[ebp]
+	push	edx
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+24]
+	call	?getDisreteInput@SlaveFactory@@QAE?ATuValue@@USlaveInformation@@I@Z ; SlaveFactory::getDisreteInput
+	mov	ecx, DWORD PTR _i$[ebp]
+	mov	edx, DWORD PTR _usVal$[ebp]
+	mov	ax, WORD PTR [eax]
+	mov	WORD PTR [edx+ecx*2], ax
+; Line 403
+	mov	eax, DWORD PTR _sv$[ebp+4]
+	add	eax, 1
+	mov	DWORD PTR _sv$[ebp+4], eax
+; Line 404
+	jmp	SHORT $LN18@nativeToRe
+$LN17@nativeToRe:
+; Line 405
+	jmp	$LN27@nativeToRe
+$LN16@nativeToRe:
+; Line 408
+	mov	DWORD PTR _i$[ebp], 0
+	jmp	SHORT $LN15@nativeToRe
+$LN14@nativeToRe:
+	mov	eax, DWORD PTR _i$[ebp]
+	add	eax, 1
+	mov	DWORD PTR _i$[ebp], eax
+$LN15@nativeToRe:
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+8]
+	mov	edx, DWORD PTR [ecx]
+	mov	eax, DWORD PTR _i$[ebp]
+	cmp	eax, DWORD PTR [edx+20]
+	jge	SHORT $LN13@nativeToRe
+; Line 410
+	push	2
+	mov	eax, DWORD PTR _sv$[ebp+4]
+	push	eax
+	mov	ecx, DWORD PTR _sv$[ebp]
+	push	ecx
+	lea	edx, DWORD PTR $T3[ebp]
+	push	edx
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+24]
+	call	?getHoldingRegisters@SlaveFactory@@QAE?ATuValue@@USlaveInformation@@I@Z ; SlaveFactory::getHoldingRegisters
+	mov	ecx, DWORD PTR _i$[ebp]
+	mov	edx, DWORD PTR _usVal$[ebp]
+	mov	ax, WORD PTR [eax]
+	mov	WORD PTR [edx+ecx*2], ax
+; Line 411
+	mov	eax, DWORD PTR _sv$[ebp+4]
+	add	eax, 1
+	mov	DWORD PTR _sv$[ebp+4], eax
+; Line 412
+	jmp	SHORT $LN14@nativeToRe
+$LN13@nativeToRe:
+; Line 413
+	jmp	$LN27@nativeToRe
+$LN12@nativeToRe:
+; Line 416
+	mov	DWORD PTR _i$[ebp], 0
+	jmp	SHORT $LN11@nativeToRe
+$LN10@nativeToRe:
+	mov	eax, DWORD PTR _i$[ebp]
+	add	eax, 1
+	mov	DWORD PTR _i$[ebp], eax
+$LN11@nativeToRe:
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+8]
+	mov	edx, DWORD PTR [ecx]
+	mov	eax, DWORD PTR _i$[ebp]
+	cmp	eax, DWORD PTR [edx+20]
+	jge	SHORT $LN9@nativeToRe
+; Line 418
+	push	2
+	mov	eax, DWORD PTR _sv$[ebp+4]
+	push	eax
+	mov	ecx, DWORD PTR _sv$[ebp]
+	push	ecx
+	lea	edx, DWORD PTR $T4[ebp]
+	push	edx
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+24]
+	call	?getInputRegisters@SlaveFactory@@QAE?ATuValue@@USlaveInformation@@I@Z ; SlaveFactory::getInputRegisters
+	mov	ecx, DWORD PTR _i$[ebp]
+	mov	edx, DWORD PTR _usVal$[ebp]
+	mov	ax, WORD PTR [eax]
+	mov	WORD PTR [edx+ecx*2], ax
+; Line 419
+	mov	eax, DWORD PTR _sv$[ebp+4]
+	add	eax, 1
+	mov	DWORD PTR _sv$[ebp+4], eax
+; Line 420
+	jmp	SHORT $LN10@nativeToRe
+$LN9@nativeToRe:
+; Line 421
+	jmp	$LN27@nativeToRe
+$LN8@nativeToRe:
+; Line 424
+	mov	DWORD PTR _i$[ebp], 0
+	jmp	SHORT $LN7@nativeToRe
+$LN6@nativeToRe:
+	mov	eax, DWORD PTR _i$[ebp]
+	add	eax, 1
+	mov	DWORD PTR _i$[ebp], eax
+$LN7@nativeToRe:
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+8]
+	mov	edx, DWORD PTR [ecx]
+	mov	eax, DWORD PTR _i$[ebp]
+	cmp	eax, DWORD PTR [edx+20]
+	jge	SHORT $LN5@nativeToRe
+; Line 426
+	mov	eax, DWORD PTR _i$[ebp]
+	mov	ecx, DWORD PTR _usVal$[ebp]
+	movzx	edx, WORD PTR [ecx+eax*2]
+	mov	DWORD PTR _val$[ebp], edx
+; Line 427
+	lea	eax, DWORD PTR _val$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _sv$[ebp+4]
+	push	ecx
+	mov	edx, DWORD PTR _sv$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+24]
+	call	?setCoils@SlaveFactory@@QAEXUSlaveInformation@@ABTuValue@@@Z ; SlaveFactory::setCoils
+; Line 428
+	mov	eax, DWORD PTR _sv$[ebp+4]
+	add	eax, 1
+	mov	DWORD PTR _sv$[ebp+4], eax
+; Line 429
+	jmp	SHORT $LN6@nativeToRe
+$LN5@nativeToRe:
+; Line 430
+	jmp	SHORT $LN27@nativeToRe
+$LN4@nativeToRe:
+; Line 433
+	mov	DWORD PTR _i$[ebp], 0
+	jmp	SHORT $LN3@nativeToRe
+$LN2@nativeToRe:
+	mov	eax, DWORD PTR _i$[ebp]
+	add	eax, 1
+	mov	DWORD PTR _i$[ebp], eax
+$LN3@nativeToRe:
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+8]
+	mov	edx, DWORD PTR [ecx]
+	mov	eax, DWORD PTR _i$[ebp]
+	cmp	eax, DWORD PTR [edx+20]
+	jge	SHORT $LN27@nativeToRe
+; Line 435
+	mov	eax, DWORD PTR _i$[ebp]
+	mov	ecx, DWORD PTR _usVal$[ebp]
+	movzx	edx, WORD PTR [ecx+eax*2]
+	mov	DWORD PTR _val$[ebp], edx
+; Line 436
+	lea	eax, DWORD PTR _val$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _sv$[ebp+4]
+	push	ecx
+	mov	edx, DWORD PTR _sv$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+24]
+	call	?setHoldingRegisters@SlaveFactory@@QAEXUSlaveInformation@@ABTuValue@@@Z ; SlaveFactory::setHoldingRegisters
+; Line 437
+	mov	eax, DWORD PTR _sv$[ebp+4]
+	add	eax, 1
+	mov	DWORD PTR _sv$[ebp+4], eax
+; Line 438
+	jmp	SHORT $LN2@nativeToRe
+$LN27@nativeToRe:
+; Line 441
+	push	edx
+	mov	ecx, ebp
+	push	eax
+	lea	edx, DWORD PTR $LN33@nativeToRe
+	call	@_RTC_CheckStackVars@8
+	pop	eax
+	pop	edx
+	pop	edi
+	pop	esi
+	pop	ebx
+	mov	ecx, DWORD PTR __$ArrayPad$[ebp]
+	xor	ecx, ebp
+	call	@__security_check_cookie@4
+	add	esp, 372				; 00000174H
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+$LN33@nativeToRe:
+	DD	2
+	DD	$LN32@nativeToRe
+$LN32@nativeToRe:
+	DD	-28					; ffffffe4H
+	DD	8
+	DD	$LN30@nativeToRe
+	DD	-52					; ffffffccH
+	DD	16					; 00000010H
+	DD	$LN31@nativeToRe
+$LN31@nativeToRe:
+	DB	118					; 00000076H
+	DB	97					; 00000061H
+	DB	108					; 0000006cH
+	DB	0
+$LN30@nativeToRe:
+	DB	115					; 00000073H
+	DB	118					; 00000076H
+	DB	0
+	npad	1
+$LN34@nativeToRe:
+	DD	$LN24@nativeToRe
+	DD	$LN20@nativeToRe
+	DD	$LN16@nativeToRe
+	DD	$LN12@nativeToRe
+	DD	$LN8@nativeToRe
+	DD	$LN4@nativeToRe
+	DD	$LN27@nativeToRe
+$LN29@nativeToRe:
+	DB	0
+	DB	1
+	DB	2
+	DB	3
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	6
+	DB	4
+	DB	5
+?nativeToRegisters@CycleController@@AAEXXZ ENDP		; CycleController::nativeToRegisters
+_TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ?readModbusDevices@CycleController@@AAEXXZ
+_TEXT	SEGMENT
+tv347 = -328						; size = 8
+tv257 = -324						; size = 4
+tv251 = -324						; size = 4
+$T1 = -316						; size = 4
+$T2 = -304						; size = 4
+$T3 = -292						; size = 4
+$T4 = -280						; size = 4
+_val$ = -76						; size = 16
+_sv$ = -52						; size = 8
+_i$5 = -36						; size = 4
+_i$6 = -24						; size = 4
+_this$ = -12						; size = 4
+__$ArrayPad$ = -4					; size = 4
+?readModbusDevices@CycleController@@AAEXXZ PROC		; CycleController::readModbusDevices, COMDAT
+; _this$ = ecx
+; File d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp
+; Line 308
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 328				; 00000148H
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-328]
+	mov	ecx, 82					; 00000052H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	eax, DWORD PTR ___security_cookie
+	xor	eax, ebp
+	mov	DWORD PTR __$ArrayPad$[ebp], eax
+	mov	DWORD PTR _this$[ebp], ecx
+; Line 309
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax]
+	call	?isEmpty@Deque@@QAE?AW4bool_t@@XZ	; Deque::isEmpty
+	test	eax, eax
+	je	SHORT $LN17@readModbus
+; Line 311
+	mov	DWORD PTR _i$6[ebp], 0
+	jmp	SHORT $LN16@readModbus
+$LN15@readModbus:
+	mov	eax, DWORD PTR _i$6[ebp]
+	add	eax, 1
+	mov	DWORD PTR _i$6[ebp], eax
+$LN16@readModbus:
+	cmp	DWORD PTR _i$6[ebp], 16			; 00000010H
+	jge	SHORT $LN17@readModbus
+; Line 313
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+28]
+	mov	edx, DWORD PTR _i$6[ebp]
+	cmp	DWORD PTR [ecx+edx*4], 0
+	je	SHORT $LN13@readModbus
+; Line 315
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+28]
+	mov	edx, DWORD PTR _i$6[ebp]
+	mov	eax, DWORD PTR [ecx+edx*4]
+	mov	ecx, DWORD PTR _this$[ebp]
+	mov	edx, DWORD PTR [ecx+28]
+	mov	ecx, DWORD PTR _i$6[ebp]
+	mov	eax, DWORD PTR [eax]
+	mov	esi, esp
+	mov	ecx, DWORD PTR [edx+ecx*4]
+	mov	edx, DWORD PTR [eax+12]
+	call	edx
+	cmp	esi, esp
+	call	__RTC_CheckEsp
+; Line 316
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+28]
+	mov	edx, DWORD PTR _i$6[ebp]
+	mov	eax, DWORD PTR [ecx+edx*4]
+	mov	ecx, DWORD PTR _this$[ebp]
+	mov	edx, DWORD PTR [ecx+28]
+	mov	ecx, DWORD PTR _i$6[ebp]
+	mov	eax, DWORD PTR [eax]
+	mov	esi, esp
+	mov	ecx, DWORD PTR [edx+ecx*4]
+	mov	edx, DWORD PTR [eax+16]
+	call	edx
+	cmp	esi, esp
+	call	__RTC_CheckEsp
+$LN13@readModbus:
+; Line 318
+	jmp	SHORT $LN15@readModbus
+$LN17@readModbus:
+; Line 321
+	mov	eax, DWORD PTR _this$[ebp]
+	cmp	DWORD PTR [eax+4], 0
+	jg	$LN12@readModbus
+; Line 323
+	call	?GetTimeTicks@@YG_JXZ			; GetTimeTicks
+	mov	ecx, DWORD PTR _this$[ebp]
+	xor	esi, esi
+	sub	eax, DWORD PTR [ecx+40]
+	sbb	edx, esi
+	mov	DWORD PTR tv347[ebp], eax
+	mov	DWORD PTR tv347[ebp+4], edx
+	cmp	DWORD PTR tv347[ebp+4], 0
+	jl	$LN11@readModbus
+	jg	SHORT $LN24@readModbus
+	cmp	DWORD PTR tv347[ebp], 0
+	jbe	$LN11@readModbus
+$LN24@readModbus:
+; Line 325
+	call	?GetTimeTicks@@YG_JXZ			; GetTimeTicks
+	mov	ecx, DWORD PTR _this$[ebp]
+	mov	DWORD PTR [ecx+40], eax
+; Line 327
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax]
+	call	?pop_front@Deque@@QAEPAVTaskFrame@@XZ	; Deque::pop_front
+	mov	ecx, DWORD PTR _this$[ebp]
+	mov	DWORD PTR [ecx+8], eax
+; Line 329
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+8]
+	cmp	DWORD PTR [ecx+8], 51			; 00000033H
+	jne	SHORT $LN10@readModbus
+; Line 330
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?nativeToRegisters@CycleController@@AAEXXZ ; CycleController::nativeToRegisters
+$LN10@readModbus:
+; Line 336
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+8]
+	mov	edx, DWORD PTR [ecx]
+	mov	eax, DWORD PTR [edx+28]
+	push	eax
+	mov	ecx, DWORD PTR _this$[ebp]
+	mov	edx, DWORD PTR [ecx+8]
+	mov	eax, DWORD PTR [edx]
+	mov	ecx, DWORD PTR [eax+24]
+	push	ecx
+	mov	edx, DWORD PTR _this$[ebp]
+	mov	eax, DWORD PTR [edx+8]
+	mov	ecx, DWORD PTR [eax]
+	mov	edx, DWORD PTR [ecx+20]
+	push	edx
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+8]
+	mov	edx, DWORD PTR [ecx]
+	mov	eax, DWORD PTR [edx+16]
+	push	eax
+	mov	ecx, DWORD PTR _this$[ebp]
+	mov	edx, DWORD PTR [ecx+8]
+	mov	eax, DWORD PTR [edx]
+	mov	ecx, DWORD PTR [eax+12]
+	push	ecx
+	mov	edx, DWORD PTR _this$[ebp]
+	mov	eax, DWORD PTR [edx+8]
+	mov	ecx, DWORD PTR [eax]
+	mov	edx, DWORD PTR [ecx+8]
+	push	edx
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+8]
+	mov	edx, DWORD PTR [ecx]
+	mov	eax, DWORD PTR [edx+4]
+	push	eax
+	mov	ecx, DWORD PTR _this$[ebp]
+	mov	edx, DWORD PTR [ecx+8]
+	mov	eax, DWORD PTR [edx]
+	mov	ecx, DWORD PTR [eax]
+	push	ecx
+	call	?ModbusRTU_Master@@YGHHHHHHHHH@Z	; ModbusRTU_Master
+	mov	edx, DWORD PTR _this$[ebp]
+	mov	DWORD PTR [edx+4], eax
+$LN11@readModbus:
+; Line 338
+	jmp	$LN9@readModbus
+$LN12@readModbus:
+; Line 339
+	mov	eax, DWORD PTR _this$[ebp]
+	cmp	DWORD PTR [eax+4], 500			; 000001f4H
+	jl	$LN9@readModbus
+	mov	eax, DWORD PTR _this$[ebp]
+	cmp	DWORD PTR [eax+4], 503			; 000001f7H
+	jg	$LN9@readModbus
+; Line 341
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+8]
+	cmp	DWORD PTR [ecx+8], 51			; 00000033H
+	jne	SHORT $LN7@readModbus
+; Line 342
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?nativeToRegisters@CycleController@@AAEXXZ ; CycleController::nativeToRegisters
+$LN7@readModbus:
+; Line 348
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+8]
+	mov	edx, DWORD PTR [ecx]
+	mov	eax, DWORD PTR [edx+28]
+	push	eax
+	mov	ecx, DWORD PTR _this$[ebp]
+	mov	edx, DWORD PTR [ecx+8]
+	mov	eax, DWORD PTR [edx]
+	mov	ecx, DWORD PTR [eax+24]
+	push	ecx
+	mov	edx, DWORD PTR _this$[ebp]
+	mov	eax, DWORD PTR [edx+8]
+	mov	ecx, DWORD PTR [eax]
+	mov	edx, DWORD PTR [ecx+20]
+	push	edx
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+8]
+	mov	edx, DWORD PTR [ecx]
+	mov	eax, DWORD PTR [edx+16]
+	push	eax
+	mov	ecx, DWORD PTR _this$[ebp]
+	mov	edx, DWORD PTR [ecx+8]
+	mov	eax, DWORD PTR [edx]
+	mov	ecx, DWORD PTR [eax+12]
+	push	ecx
+	mov	edx, DWORD PTR _this$[ebp]
+	mov	eax, DWORD PTR [edx+8]
+	mov	ecx, DWORD PTR [eax]
+	mov	edx, DWORD PTR [ecx+8]
+	push	edx
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+8]
+	mov	edx, DWORD PTR [ecx]
+	mov	eax, DWORD PTR [edx+4]
+	push	eax
+	mov	ecx, DWORD PTR _this$[ebp]
+	mov	edx, DWORD PTR [ecx+8]
+	mov	eax, DWORD PTR [edx]
+	mov	ecx, DWORD PTR [eax]
+	push	ecx
+	call	?ModbusRTU_Master@@YGHHHHHHHHH@Z	; ModbusRTU_Master
+	mov	edx, DWORD PTR _this$[ebp]
+	mov	DWORD PTR [edx+4], eax
+; Line 350
+	mov	eax, DWORD PTR _this$[ebp]
+	cmp	DWORD PTR [eax+4], 0
+	jne	$LN9@readModbus
+; Line 352
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+8]
+	cmp	DWORD PTR [ecx+8], 50			; 00000032H
+	jne	SHORT $LN5@readModbus
+; Line 353
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?nativeToRegisters@CycleController@@AAEXXZ ; CycleController::nativeToRegisters
+$LN5@readModbus:
+; Line 355
+	mov	DWORD PTR _i$5[ebp], 0
+	jmp	SHORT $LN4@readModbus
+$LN3@readModbus:
+	mov	eax, DWORD PTR _i$5[ebp]
+	add	eax, 1
+	mov	DWORD PTR _i$5[ebp], eax
+$LN4@readModbus:
+	cmp	DWORD PTR _i$5[ebp], 16			; 00000010H
+	jge	SHORT $LN2@readModbus
+; Line 357
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+28]
+	mov	edx, DWORD PTR _i$5[ebp]
+	cmp	DWORD PTR [ecx+edx*4], 0
+	je	SHORT $LN1@readModbus
+; Line 358
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+28]
+	mov	edx, DWORD PTR _i$5[ebp]
+	mov	eax, DWORD PTR [ecx+edx*4]
+	mov	ecx, DWORD PTR _this$[ebp]
+	mov	edx, DWORD PTR [ecx+28]
+	mov	ecx, DWORD PTR _i$5[ebp]
+	mov	eax, DWORD PTR [eax]
+	mov	esi, esp
+	mov	ecx, DWORD PTR [edx+ecx*4]
+	mov	edx, DWORD PTR [eax+20]
+	call	edx
+	cmp	esi, esp
+	call	__RTC_CheckEsp
+$LN1@readModbus:
+; Line 359
+	jmp	SHORT $LN3@readModbus
+$LN2@readModbus:
+; Line 361
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+8]
+	mov	edx, DWORD PTR [ecx]
+	mov	DWORD PTR $T2[ebp], edx
+	mov	eax, DWORD PTR $T2[ebp]
+	mov	DWORD PTR $T1[ebp], eax
+	cmp	DWORD PTR $T1[ebp], 0
+	je	SHORT $LN20@readModbus
+	push	1
+	mov	ecx, DWORD PTR $T1[ebp]
+	call	??_GModbusRtuMasterFrame@@QAEPAXI@Z
+	mov	DWORD PTR tv251[ebp], eax
+	jmp	SHORT $LN21@readModbus
+$LN20@readModbus:
+	mov	DWORD PTR tv251[ebp], 0
+$LN21@readModbus:
+; Line 362
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+8]
+	mov	DWORD PTR $T4[ebp], ecx
+	mov	edx, DWORD PTR $T4[ebp]
+	mov	DWORD PTR $T3[ebp], edx
+	cmp	DWORD PTR $T3[ebp], 0
+	je	SHORT $LN22@readModbus
+	push	1
+	mov	ecx, DWORD PTR $T3[ebp]
+	call	??_GTaskFrame@@QAEPAXI@Z
+	mov	DWORD PTR tv257[ebp], eax
+	jmp	SHORT $LN23@readModbus
+$LN22@readModbus:
+	mov	DWORD PTR tv257[ebp], 0
+$LN23@readModbus:
+; Line 363
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	DWORD PTR [eax+8], 0
+$LN9@readModbus:
+; Line 367
+	push	1500					; 000005dcH
+	push	3
+	lea	ecx, DWORD PTR _sv$[ebp]
+	call	??0SlaveInformation@@QAE@W4regType@@J@Z	; SlaveInformation::SlaveInformation
+; Line 368
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+4]
+	push	ecx
+	lea	ecx, DWORD PTR _val$[ebp]
+	call	??0uValue@@QAE@K@Z			; uValue::uValue
+; Line 369
+	lea	eax, DWORD PTR _val$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _sv$[ebp+4]
+	push	ecx
+	mov	edx, DWORD PTR _sv$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+24]
+	call	?setInputRegisters@SlaveFactory@@QAEXUSlaveInformation@@ABTuValue@@@Z ; SlaveFactory::setInputRegisters
+; Line 370
+	push	edx
+	mov	ecx, ebp
+	push	eax
+	lea	edx, DWORD PTR $LN28@readModbus
+	call	@_RTC_CheckStackVars@8
+	pop	eax
+	pop	edx
+	pop	edi
+	pop	esi
+	pop	ebx
+	mov	ecx, DWORD PTR __$ArrayPad$[ebp]
+	xor	ecx, ebp
+	call	@__security_check_cookie@4
+	add	esp, 328				; 00000148H
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+	npad	2
+$LN28@readModbus:
+	DD	2
+	DD	$LN27@readModbus
+$LN27@readModbus:
+	DD	-52					; ffffffccH
+	DD	8
+	DD	$LN25@readModbus
+	DD	-76					; ffffffb4H
+	DD	16					; 00000010H
+	DD	$LN26@readModbus
+$LN26@readModbus:
+	DB	118					; 00000076H
+	DB	97					; 00000061H
+	DB	108					; 0000006cH
+	DB	0
+$LN25@readModbus:
+	DB	115					; 00000073H
+	DB	118					; 00000076H
+	DB	0
+?readModbusDevices@CycleController@@AAEXXZ ENDP		; CycleController::readModbusDevices
+_TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ?readNonModbusDevices@CycleController@@AAEXXZ
 _TEXT	SEGMENT
 _val$1 = -100						; size = 16
@@ -5194,7 +4904,7 @@ __$ArrayPad$ = -4					; size = 4
 ?readNonModbusDevices@CycleController@@AAEXXZ PROC	; CycleController::readNonModbusDevices, COMDAT
 ; _this$ = ecx
 ; File d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp
-; Line 350
+; Line 278
 	push	ebp
 	mov	ebp, esp
 	sub	esp, 296				; 00000128H
@@ -5211,38 +4921,38 @@ __$ArrayPad$ = -4					; size = 4
 	xor	eax, ebp
 	mov	DWORD PTR __$ArrayPad$[ebp], eax
 	mov	DWORD PTR _this$[ebp], ecx
-; Line 351
+; Line 279
 	xor	eax, eax
 	mov	WORD PTR _err$[ebp], ax
-; Line 352
+; Line 280
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	cx, WORD PTR [eax]
+	mov	cx, WORD PTR [eax+12]
 	mov	WORD PTR _tmpMask$[ebp], cx
-; Line 353
+; Line 281
 	mov	DWORD PTR _count$[ebp], 0
 $LN8@readNonMod:
-; Line 355
+; Line 283
 	movzx	eax, WORD PTR _tmpMask$[ebp]
 	test	eax, eax
 	jle	$LN9@readNonMod
-; Line 357
+; Line 285
 	movzx	eax, WORD PTR _tmpMask$[ebp]
 	and	eax, 1
 	je	$LN6@readNonMod
-; Line 359
+; Line 287
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+16]
+	mov	ecx, DWORD PTR [eax+28]
 	mov	edx, DWORD PTR _count$[ebp]
 	cmp	DWORD PTR [ecx+edx*4], 0
 	je	$LN6@readNonMod
-; Line 360
+; Line 288
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+16]
+	mov	ecx, DWORD PTR [eax+28]
 	mov	edx, DWORD PTR _count$[ebp]
 	mov	eax, DWORD PTR [ecx+edx*4]
-	cmp	DWORD PTR [eax+128], 1
+	cmp	DWORD PTR [eax+136], 1
 	je	$LN6@readNonMod
-; Line 362
+; Line 290
 	mov	DWORD PTR _i$3[ebp], 0
 	jmp	SHORT $LN3@readNonMod
 $LN2@readNonMod:
@@ -5251,52 +4961,52 @@ $LN2@readNonMod:
 	mov	DWORD PTR _i$3[ebp], eax
 $LN3@readNonMod:
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+16]
+	mov	ecx, DWORD PTR [eax+28]
 	mov	edx, DWORD PTR _count$[ebp]
 	mov	eax, DWORD PTR [ecx+edx*4]
-	movsx	ecx, WORD PTR [eax+124]
+	movsx	ecx, WORD PTR [eax+132]
 	cmp	DWORD PTR _i$3[ebp], ecx
 	jge	$LN6@readNonMod
-; Line 364
+; Line 292
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+16]
+	mov	ecx, DWORD PTR [eax+28]
 	mov	edx, DWORD PTR _count$[ebp]
 	mov	eax, DWORD PTR [ecx+edx*4]
-	mov	ecx, DWORD PTR [eax+132]
+	mov	ecx, DWORD PTR [eax+140]
 	mov	edx, DWORD PTR _i$3[ebp]
 	mov	eax, DWORD PTR [ecx+edx*4]
 	push	eax
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+16]
+	mov	edx, DWORD PTR [ecx+28]
 	mov	eax, DWORD PTR _count$[ebp]
 	mov	ecx, DWORD PTR [edx+eax*4]
 	call	?processRead@AbstractDevice@@QAEIPAVProperty@@@Z ; AbstractDevice::processRead
-; Line 365
+; Line 293
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+16]
+	mov	ecx, DWORD PTR [eax+28]
 	mov	edx, DWORD PTR _count$[ebp]
 	mov	eax, DWORD PTR [ecx+edx*4]
-	mov	ecx, DWORD PTR [eax+132]
+	mov	ecx, DWORD PTR [eax+140]
 	mov	edx, DWORD PTR _i$3[ebp]
 	mov	eax, DWORD PTR [ecx+edx*4]
 	push	eax
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+16]
+	mov	edx, DWORD PTR [ecx+28]
 	mov	eax, DWORD PTR _count$[ebp]
 	mov	ecx, DWORD PTR [edx+eax*4]
 	call	?processWrite@AbstractDevice@@QAEIPAVProperty@@@Z ; AbstractDevice::processWrite
 	mov	WORD PTR _err$[ebp], ax
-; Line 366
+; Line 295
 	push	1005					; 000003edH
 	push	3
 	lea	ecx, DWORD PTR _sv$2[ebp]
 	call	??0SlaveInformation@@QAE@W4regType@@J@Z	; SlaveInformation::SlaveInformation
-; Line 367
+; Line 296
 	movzx	eax, WORD PTR _err$[ebp]
 	push	eax
 	lea	ecx, DWORD PTR _val$1[ebp]
 	call	??0uValue@@QAE@K@Z			; uValue::uValue
-; Line 368
+; Line 297
 	lea	eax, DWORD PTR _val$1[ebp]
 	push	eax
 	mov	ecx, DWORD PTR _sv$2[ebp+4]
@@ -5304,23 +5014,23 @@ $LN3@readNonMod:
 	mov	edx, DWORD PTR _sv$2[ebp]
 	push	edx
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+12]
+	mov	ecx, DWORD PTR [eax+24]
 	call	?setInputRegisters@SlaveFactory@@QAEXUSlaveInformation@@ABTuValue@@@Z ; SlaveFactory::setInputRegisters
-; Line 369
+; Line 298
 	jmp	$LN2@readNonMod
 $LN6@readNonMod:
-; Line 373
+; Line 302
 	mov	ax, WORD PTR _tmpMask$[ebp]
 	shr	ax, 1
 	mov	WORD PTR _tmpMask$[ebp], ax
-; Line 374
+; Line 303
 	mov	eax, DWORD PTR _count$[ebp]
 	add	eax, 1
 	mov	DWORD PTR _count$[ebp], eax
-; Line 375
+; Line 304
 	jmp	$LN8@readNonMod
 $LN9@readNonMod:
-; Line 376
+; Line 305
 	push	edx
 	mov	ecx, ebp
 	push	eax
@@ -5362,107 +5072,6 @@ $LN11@readNonMod:
 ?readNonModbusDevices@CycleController@@AAEXXZ ENDP	; CycleController::readNonModbusDevices
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
-;	COMDAT ?next@CycleController@@AAEXXZ
-_TEXT	SEGMENT
-tv81 = -208						; size = 4
-_this$ = -8						; size = 4
-?next@CycleController@@AAEXXZ PROC			; CycleController::next, COMDAT
-; _this$ = ecx
-; File d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp
-; Line 160
-	push	ebp
-	mov	ebp, esp
-	sub	esp, 208				; 000000d0H
-	push	ebx
-	push	esi
-	push	edi
-	push	ecx
-	lea	edi, DWORD PTR [ebp-208]
-	mov	ecx, 52					; 00000034H
-	mov	eax, -858993460				; ccccccccH
-	rep stosd
-	pop	ecx
-	mov	DWORD PTR _this$[ebp], ecx
-; Line 161
-	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+20]
-	mov	edx, DWORD PTR _this$[ebp]
-	mov	eax, DWORD PTR [edx+16]
-	cmp	DWORD PTR [eax+ecx*4], 0
-	je	SHORT $LN4@next
-	mov	eax, DWORD PTR _this$[ebp]
-	movzx	esi, WORD PTR [eax]
-	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+20]
-	push	edx
-	call	?pow_2@@YAKH@Z				; pow_2
-	add	esp, 4
-	movzx	eax, ax
-	and	esi, eax
-	je	SHORT $LN4@next
-; Line 163
-	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+24]
-	add	ecx, 1
-	mov	DWORD PTR tv81[ebp], ecx
-	mov	edx, DWORD PTR _this$[ebp]
-	mov	eax, DWORD PTR tv81[ebp]
-	mov	DWORD PTR [edx+24], eax
-	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+20]
-	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+16]
-	mov	edx, DWORD PTR [ecx+edx*4]
-	movsx	eax, WORD PTR [edx+124]
-	cmp	DWORD PTR tv81[ebp], eax
-	jl	SHORT $LN3@next
-; Line 165
-	mov	eax, DWORD PTR _this$[ebp]
-	mov	DWORD PTR [eax+24], 0
-; Line 166
-	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+20]
-	add	ecx, 1
-	mov	edx, DWORD PTR _this$[ebp]
-	mov	DWORD PTR [edx+20], ecx
-$LN3@next:
-; Line 169
-	jmp	SHORT $LN2@next
-$LN4@next:
-; Line 171
-	mov	eax, DWORD PTR _this$[ebp]
-	mov	DWORD PTR [eax+24], 0
-; Line 172
-	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+20]
-	add	ecx, 1
-	mov	edx, DWORD PTR _this$[ebp]
-	mov	DWORD PTR [edx+20], ecx
-$LN2@next:
-; Line 175
-	mov	eax, DWORD PTR _this$[ebp]
-	cmp	DWORD PTR [eax+20], 16			; 00000010H
-	jl	SHORT $LN5@next
-; Line 177
-	mov	eax, DWORD PTR _this$[ebp]
-	mov	DWORD PTR [eax+24], 0
-; Line 178
-	mov	eax, DWORD PTR _this$[ebp]
-	mov	DWORD PTR [eax+20], 0
-$LN5@next:
-; Line 180
-	pop	edi
-	pop	esi
-	pop	ebx
-	add	esp, 208				; 000000d0H
-	cmp	ebp, esp
-	call	__RTC_CheckEsp
-	mov	esp, ebp
-	pop	ebp
-	ret	0
-?next@CycleController@@AAEXXZ ENDP			; CycleController::next
-_TEXT	ENDS
-; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ?propertiesToSlave@CycleController@@AAEXXZ
 _TEXT	SEGMENT
 _val$1 = -156						; size = 16
@@ -5478,7 +5087,7 @@ __$ArrayPad$ = -4					; size = 4
 ?propertiesToSlave@CycleController@@AAEXXZ PROC		; CycleController::propertiesToSlave, COMDAT
 ; _this$ = ecx
 ; File d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp
-; Line 183
+; Line 111
 	push	ebp
 	mov	ebp, esp
 	sub	esp, 352				; 00000160H
@@ -5495,28 +5104,28 @@ __$ArrayPad$ = -4					; size = 4
 	xor	eax, ebp
 	mov	DWORD PTR __$ArrayPad$[ebp], eax
 	mov	DWORD PTR _this$[ebp], ecx
-; Line 184
+; Line 112
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	cx, WORD PTR [eax]
+	mov	cx, WORD PTR [eax+12]
 	mov	WORD PTR _tmpMask$[ebp], cx
-; Line 185
+; Line 113
 	mov	DWORD PTR _count$[ebp], 0
-; Line 187
+; Line 115
 	movzx	eax, WORD PTR _tmpMask$[ebp]
 	test	eax, eax
 	jle	SHORT $LN4@properties
-; Line 189
+; Line 117
 	push	1000					; 000003e8H
 	push	4
 	lea	ecx, DWORD PTR _maskInformation$6[ebp]
 	call	??0SlaveInformation@@QAE@W4regType@@J@Z	; SlaveInformation::SlaveInformation
-; Line 190
+; Line 118
 	mov	eax, DWORD PTR _this$[ebp]
-	movzx	ecx, WORD PTR [eax]
+	movzx	ecx, WORD PTR [eax+12]
 	push	ecx
 	lea	ecx, DWORD PTR _val$5[ebp]
 	call	??0uValue@@QAE@K@Z			; uValue::uValue
-; Line 191
+; Line 119
 	lea	eax, DWORD PTR _val$5[ebp]
 	push	eax
 	mov	ecx, DWORD PTR _maskInformation$6[ebp+4]
@@ -5524,38 +5133,38 @@ __$ArrayPad$ = -4					; size = 4
 	mov	edx, DWORD PTR _maskInformation$6[ebp]
 	push	edx
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+12]
+	mov	ecx, DWORD PTR [eax+24]
 	call	?setHoldingRegisters@SlaveFactory@@QAEXUSlaveInformation@@ABTuValue@@@Z ; SlaveFactory::setHoldingRegisters
 $LN4@properties:
-; Line 194
+; Line 122
 	movzx	eax, WORD PTR _tmpMask$[ebp]
 	test	eax, eax
 	jle	$LN6@properties
-; Line 196
+; Line 124
 	movzx	eax, WORD PTR _tmpMask$[ebp]
 	and	eax, 1
 	je	$LN2@properties
-; Line 198
+; Line 126
 	mov	eax, DWORD PTR _count$[ebp]
 	imul	eax, 5
 	push	eax
 	push	4
 	lea	ecx, DWORD PTR _sv$4[ebp]
 	call	??0SlaveInformation@@QAE@W4regType@@J@Z	; SlaveInformation::SlaveInformation
-; Line 199
+; Line 127
 	push	0
 	lea	ecx, DWORD PTR _val$3[ebp]
 	call	??0uValue@@QAE@K@Z			; uValue::uValue
-; Line 201
+; Line 129
 	mov	eax, DWORD PTR _count$[ebp]
 	imul	eax, 10					; 0000000aH
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+4]
+	mov	edx, DWORD PTR [ecx+16]
 	mov	ecx, 2
 	imul	ecx, 0
 	mov	dx, WORD PTR [edx+eax]
 	mov	WORD PTR _val$3[ebp+ecx], dx
-; Line 202
+; Line 130
 	lea	eax, DWORD PTR _val$3[ebp]
 	push	eax
 	mov	ecx, DWORD PTR _sv$4[ebp+4]
@@ -5563,23 +5172,23 @@ $LN4@properties:
 	mov	edx, DWORD PTR _sv$4[ebp]
 	push	edx
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+12]
+	mov	ecx, DWORD PTR [eax+24]
 	call	?setHoldingRegisters@SlaveFactory@@QAEXUSlaveInformation@@ABTuValue@@@Z ; SlaveFactory::setHoldingRegisters
-; Line 204
+; Line 132
 	mov	eax, DWORD PTR _count$[ebp]
 	imul	eax, 10					; 0000000aH
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+4]
+	mov	edx, DWORD PTR [ecx+16]
 	mov	ecx, 2
 	imul	ecx, 0
 	mov	dx, WORD PTR [edx+eax+2]
 	mov	WORD PTR _val$3[ebp+ecx], dx
-; Line 205
+; Line 133
 	mov	eax, DWORD PTR _count$[ebp]
 	imul	eax, 5
 	add	eax, 1
 	mov	DWORD PTR _sv$4[ebp+4], eax
-; Line 206
+; Line 134
 	lea	eax, DWORD PTR _val$3[ebp]
 	push	eax
 	mov	ecx, DWORD PTR _sv$4[ebp+4]
@@ -5587,23 +5196,23 @@ $LN4@properties:
 	mov	edx, DWORD PTR _sv$4[ebp]
 	push	edx
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+12]
+	mov	ecx, DWORD PTR [eax+24]
 	call	?setHoldingRegisters@SlaveFactory@@QAEXUSlaveInformation@@ABTuValue@@@Z ; SlaveFactory::setHoldingRegisters
-; Line 208
+; Line 136
 	mov	eax, DWORD PTR _count$[ebp]
 	imul	eax, 10					; 0000000aH
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+4]
+	mov	edx, DWORD PTR [ecx+16]
 	mov	ecx, 2
 	imul	ecx, 0
 	mov	dx, WORD PTR [edx+eax+4]
 	mov	WORD PTR _val$3[ebp+ecx], dx
-; Line 209
+; Line 137
 	mov	eax, DWORD PTR _count$[ebp]
 	imul	eax, 5
 	add	eax, 2
 	mov	DWORD PTR _sv$4[ebp+4], eax
-; Line 210
+; Line 138
 	lea	eax, DWORD PTR _val$3[ebp]
 	push	eax
 	mov	ecx, DWORD PTR _sv$4[ebp+4]
@@ -5611,23 +5220,23 @@ $LN4@properties:
 	mov	edx, DWORD PTR _sv$4[ebp]
 	push	edx
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+12]
+	mov	ecx, DWORD PTR [eax+24]
 	call	?setHoldingRegisters@SlaveFactory@@QAEXUSlaveInformation@@ABTuValue@@@Z ; SlaveFactory::setHoldingRegisters
-; Line 212
+; Line 140
 	mov	eax, DWORD PTR _count$[ebp]
 	imul	eax, 10					; 0000000aH
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+4]
+	mov	edx, DWORD PTR [ecx+16]
 	mov	ecx, 2
 	imul	ecx, 0
 	mov	dx, WORD PTR [edx+eax+6]
 	mov	WORD PTR _val$3[ebp+ecx], dx
-; Line 213
+; Line 141
 	mov	eax, DWORD PTR _count$[ebp]
 	imul	eax, 5
 	add	eax, 3
 	mov	DWORD PTR _sv$4[ebp+4], eax
-; Line 214
+; Line 142
 	lea	eax, DWORD PTR _val$3[ebp]
 	push	eax
 	mov	ecx, DWORD PTR _sv$4[ebp+4]
@@ -5635,23 +5244,23 @@ $LN4@properties:
 	mov	edx, DWORD PTR _sv$4[ebp]
 	push	edx
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+12]
+	mov	ecx, DWORD PTR [eax+24]
 	call	?setHoldingRegisters@SlaveFactory@@QAEXUSlaveInformation@@ABTuValue@@@Z ; SlaveFactory::setHoldingRegisters
-; Line 216
+; Line 144
 	mov	eax, DWORD PTR _count$[ebp]
 	imul	eax, 10					; 0000000aH
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+4]
+	mov	edx, DWORD PTR [ecx+16]
 	mov	ecx, 2
 	imul	ecx, 0
 	mov	dx, WORD PTR [edx+eax+8]
 	mov	WORD PTR _val$3[ebp+ecx], dx
-; Line 217
+; Line 145
 	mov	eax, DWORD PTR _count$[ebp]
 	imul	eax, 5
 	add	eax, 4
 	mov	DWORD PTR _sv$4[ebp+4], eax
-; Line 218
+; Line 146
 	lea	eax, DWORD PTR _val$3[ebp]
 	push	eax
 	mov	ecx, DWORD PTR _sv$4[ebp+4]
@@ -5659,23 +5268,23 @@ $LN4@properties:
 	mov	edx, DWORD PTR _sv$4[ebp]
 	push	edx
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+12]
+	mov	ecx, DWORD PTR [eax+24]
 	call	?setHoldingRegisters@SlaveFactory@@QAEXUSlaveInformation@@ABTuValue@@@Z ; SlaveFactory::setHoldingRegisters
-; Line 220
+; Line 148
 	jmp	$LN1@properties
 $LN2@properties:
-; Line 222
+; Line 150
 	mov	eax, DWORD PTR _count$[ebp]
 	imul	eax, 5
 	push	eax
 	push	4
 	lea	ecx, DWORD PTR _sv$2[ebp]
 	call	??0SlaveInformation@@QAE@W4regType@@J@Z	; SlaveInformation::SlaveInformation
-; Line 223
+; Line 151
 	push	0
 	lea	ecx, DWORD PTR _val$1[ebp]
 	call	??0uValue@@QAE@K@Z			; uValue::uValue
-; Line 225
+; Line 153
 	lea	eax, DWORD PTR _val$1[ebp]
 	push	eax
 	mov	ecx, DWORD PTR _sv$2[ebp+4]
@@ -5683,14 +5292,14 @@ $LN2@properties:
 	mov	edx, DWORD PTR _sv$2[ebp]
 	push	edx
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+12]
+	mov	ecx, DWORD PTR [eax+24]
 	call	?setHoldingRegisters@SlaveFactory@@QAEXUSlaveInformation@@ABTuValue@@@Z ; SlaveFactory::setHoldingRegisters
-; Line 227
+; Line 155
 	mov	eax, DWORD PTR _count$[ebp]
 	imul	eax, 5
 	add	eax, 1
 	mov	DWORD PTR _sv$2[ebp+4], eax
-; Line 228
+; Line 156
 	lea	eax, DWORD PTR _val$1[ebp]
 	push	eax
 	mov	ecx, DWORD PTR _sv$2[ebp+4]
@@ -5698,14 +5307,14 @@ $LN2@properties:
 	mov	edx, DWORD PTR _sv$2[ebp]
 	push	edx
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+12]
+	mov	ecx, DWORD PTR [eax+24]
 	call	?setHoldingRegisters@SlaveFactory@@QAEXUSlaveInformation@@ABTuValue@@@Z ; SlaveFactory::setHoldingRegisters
-; Line 230
+; Line 158
 	mov	eax, DWORD PTR _count$[ebp]
 	imul	eax, 5
 	add	eax, 2
 	mov	DWORD PTR _sv$2[ebp+4], eax
-; Line 231
+; Line 159
 	lea	eax, DWORD PTR _val$1[ebp]
 	push	eax
 	mov	ecx, DWORD PTR _sv$2[ebp+4]
@@ -5713,14 +5322,14 @@ $LN2@properties:
 	mov	edx, DWORD PTR _sv$2[ebp]
 	push	edx
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+12]
+	mov	ecx, DWORD PTR [eax+24]
 	call	?setHoldingRegisters@SlaveFactory@@QAEXUSlaveInformation@@ABTuValue@@@Z ; SlaveFactory::setHoldingRegisters
-; Line 233
+; Line 161
 	mov	eax, DWORD PTR _count$[ebp]
 	imul	eax, 5
 	add	eax, 3
 	mov	DWORD PTR _sv$2[ebp+4], eax
-; Line 234
+; Line 162
 	lea	eax, DWORD PTR _val$1[ebp]
 	push	eax
 	mov	ecx, DWORD PTR _sv$2[ebp+4]
@@ -5728,14 +5337,14 @@ $LN2@properties:
 	mov	edx, DWORD PTR _sv$2[ebp]
 	push	edx
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+12]
+	mov	ecx, DWORD PTR [eax+24]
 	call	?setHoldingRegisters@SlaveFactory@@QAEXUSlaveInformation@@ABTuValue@@@Z ; SlaveFactory::setHoldingRegisters
-; Line 236
+; Line 164
 	mov	eax, DWORD PTR _count$[ebp]
 	imul	eax, 5
 	add	eax, 4
 	mov	DWORD PTR _sv$2[ebp+4], eax
-; Line 237
+; Line 165
 	lea	eax, DWORD PTR _val$1[ebp]
 	push	eax
 	mov	ecx, DWORD PTR _sv$2[ebp+4]
@@ -5743,21 +5352,21 @@ $LN2@properties:
 	mov	edx, DWORD PTR _sv$2[ebp]
 	push	edx
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+12]
+	mov	ecx, DWORD PTR [eax+24]
 	call	?setHoldingRegisters@SlaveFactory@@QAEXUSlaveInformation@@ABTuValue@@@Z ; SlaveFactory::setHoldingRegisters
 $LN1@properties:
-; Line 240
+; Line 168
 	mov	ax, WORD PTR _tmpMask$[ebp]
 	shr	ax, 1
 	mov	WORD PTR _tmpMask$[ebp], ax
-; Line 241
+; Line 169
 	mov	eax, DWORD PTR _count$[ebp]
 	add	eax, 1
 	mov	DWORD PTR _count$[ebp], eax
-; Line 242
+; Line 170
 	jmp	$LN4@properties
 $LN6@properties:
-; Line 243
+; Line 171
 	push	edx
 	mov	ecx, ebp
 	push	eax
@@ -5777,7 +5386,6 @@ $LN6@properties:
 	mov	esp, ebp
 	pop	ebp
 	ret	0
-	npad	2
 $LN15@properties:
 	DD	6
 	DD	$LN14@properties
@@ -5850,7 +5458,7 @@ _this$ = -8						; size = 4
 ?checkMask@CycleController@@AAEXXZ PROC			; CycleController::checkMask, COMDAT
 ; _this$ = ecx
 ; File d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp
-; Line 328
+; Line 256
 	push	ebp
 	mov	ebp, esp
 	sub	esp, 216				; 000000d8H
@@ -5864,7 +5472,7 @@ _this$ = -8						; size = 4
 	rep stosd
 	pop	ecx
 	mov	DWORD PTR _this$[ebp], ecx
-; Line 329
+; Line 257
 	mov	DWORD PTR _i$1[ebp], 0
 	jmp	SHORT $LN6@checkMask
 $LN5@checkMask:
@@ -5874,122 +5482,119 @@ $LN5@checkMask:
 $LN6@checkMask:
 	cmp	DWORD PTR _i$1[ebp], 16			; 00000010H
 	jge	$LN7@checkMask
-; Line 336
+; Line 264
 	mov	eax, DWORD PTR _i$1[ebp]
 	imul	eax, 10					; 0000000aH
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+4]
+	mov	edx, DWORD PTR [ecx+16]
 	movsx	eax, WORD PTR [edx+eax]
 	test	eax, eax
 	jle	$LN2@checkMask
 	mov	eax, DWORD PTR _i$1[ebp]
 	imul	eax, 10					; 0000000aH
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+4]
+	mov	edx, DWORD PTR [ecx+16]
 	movsx	eax, WORD PTR [edx+eax]
 	cmp	eax, 16					; 00000010H
 	jg	$LN2@checkMask
 	mov	eax, DWORD PTR _i$1[ebp]
 	imul	eax, 10					; 0000000aH
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+4]
+	mov	edx, DWORD PTR [ecx+16]
 	movsx	eax, WORD PTR [edx+eax+2]
 	test	eax, eax
-	jl	$LN2@checkMask
+	jl	SHORT $LN2@checkMask
 	mov	eax, DWORD PTR _i$1[ebp]
 	imul	eax, 10					; 0000000aH
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+4]
+	mov	edx, DWORD PTR [ecx+16]
 	movsx	eax, WORD PTR [edx+eax+2]
 	cmp	eax, 255				; 000000ffH
 	jg	SHORT $LN2@checkMask
 	mov	eax, DWORD PTR _i$1[ebp]
 	imul	eax, 10					; 0000000aH
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+4]
+	mov	edx, DWORD PTR [ecx+16]
 	movsx	eax, WORD PTR [edx+eax+4]
 	test	eax, eax
 	jl	SHORT $LN2@checkMask
 	mov	eax, DWORD PTR _i$1[ebp]
 	imul	eax, 10					; 0000000aH
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+4]
+	mov	edx, DWORD PTR [ecx+16]
 	movsx	eax, WORD PTR [edx+eax+4]
 	cmp	eax, 900				; 00000384H
 	jg	SHORT $LN2@checkMask
 	mov	eax, DWORD PTR _i$1[ebp]
 	imul	eax, 10					; 0000000aH
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+4]
+	mov	edx, DWORD PTR [ecx+16]
 	movzx	esi, WORD PTR [edx+eax+6]
 	push	16					; 00000010H
-	call	?pow_2@@YAKH@Z				; pow_2
-	add	esp, 4
+	call	?pow_2@@YGKH@Z				; pow_2
 	cmp	esi, eax
 	ja	SHORT $LN2@checkMask
 	mov	eax, DWORD PTR _i$1[ebp]
 	imul	eax, 10					; 0000000aH
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+4]
+	mov	edx, DWORD PTR [ecx+16]
 	movzx	esi, WORD PTR [edx+eax+8]
 	push	16					; 00000010H
-	call	?pow_2@@YAKH@Z				; pow_2
-	add	esp, 4
+	call	?pow_2@@YGKH@Z				; pow_2
 	cmp	esi, eax
 	jbe	SHORT $LN3@checkMask
 $LN2@checkMask:
-; Line 338
+; Line 266
 	mov	eax, DWORD PTR _i$1[ebp]
 	imul	eax, 10					; 0000000aH
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+4]
+	mov	edx, DWORD PTR [ecx+16]
 	xor	ecx, ecx
 	mov	WORD PTR [edx+eax], cx
-; Line 339
+; Line 267
 	mov	eax, DWORD PTR _i$1[ebp]
 	imul	eax, 10					; 0000000aH
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+4]
+	mov	edx, DWORD PTR [ecx+16]
 	xor	ecx, ecx
 	mov	WORD PTR [edx+eax+2], cx
-; Line 340
+; Line 268
 	mov	eax, DWORD PTR _i$1[ebp]
 	imul	eax, 10					; 0000000aH
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+4]
+	mov	edx, DWORD PTR [ecx+16]
 	xor	ecx, ecx
 	mov	WORD PTR [edx+eax+4], cx
-; Line 341
+; Line 269
 	mov	eax, DWORD PTR _i$1[ebp]
 	imul	eax, 10					; 0000000aH
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+4]
+	mov	edx, DWORD PTR [ecx+16]
 	xor	ecx, ecx
 	mov	WORD PTR [edx+eax+6], cx
-; Line 342
+; Line 270
 	mov	eax, DWORD PTR _i$1[ebp]
 	imul	eax, 10					; 0000000aH
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+4]
+	mov	edx, DWORD PTR [ecx+16]
 	xor	ecx, ecx
 	mov	WORD PTR [edx+eax+8], cx
-; Line 344
+; Line 272
 	mov	eax, DWORD PTR _i$1[ebp]
 	push	eax
-	call	?pow_2@@YAKH@Z				; pow_2
-	add	esp, 4
+	call	?pow_2@@YGKH@Z				; pow_2
 	movzx	ecx, ax
 	not	ecx
 	mov	edx, DWORD PTR _this$[ebp]
-	movzx	eax, WORD PTR [edx]
+	movzx	eax, WORD PTR [edx+12]
 	and	eax, ecx
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	WORD PTR [ecx], ax
+	mov	WORD PTR [ecx+12], ax
 $LN3@checkMask:
-; Line 346
+; Line 274
 	jmp	$LN5@checkMask
 $LN7@checkMask:
-; Line 347
+; Line 275
 	pop	edi
 	pop	esi
 	pop	ebx
@@ -6012,7 +5617,7 @@ _this$ = -8						; size = 4
 ?isPropertyNew@CycleController@@AAE?AW4bool_t@@XZ PROC	; CycleController::isPropertyNew, COMDAT
 ; _this$ = ecx
 ; File d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp
-; Line 292
+; Line 220
 	push	ebp
 	mov	ebp, esp
 	sub	esp, 252				; 000000fcH
@@ -6026,105 +5631,105 @@ _this$ = -8						; size = 4
 	rep stosd
 	pop	ecx
 	mov	DWORD PTR _this$[ebp], ecx
-; Line 293
+; Line 221
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	cx, WORD PTR [eax]
+	mov	cx, WORD PTR [eax+12]
 	mov	WORD PTR _tmpMask$[ebp], cx
-; Line 294
+; Line 222
 	mov	DWORD PTR _count$[ebp], 0
-; Line 295
+; Line 223
 	mov	DWORD PTR _isNew$[ebp], 0
 $LN8@isProperty:
-; Line 297
+; Line 225
 	movzx	eax, WORD PTR _tmpMask$[ebp]
 	test	eax, eax
 	jle	$LN7@isProperty
-; Line 304
+; Line 232
 	mov	eax, DWORD PTR _this$[ebp]
-	movzx	ecx, WORD PTR [eax]
+	movzx	ecx, WORD PTR [eax+12]
 	mov	edx, DWORD PTR _this$[ebp]
-	movzx	eax, WORD PTR [edx+2]
+	movzx	eax, WORD PTR [edx+14]
 	cmp	ecx, eax
 	jne	$LN5@isProperty
 	mov	eax, DWORD PTR _count$[ebp]
 	imul	eax, 10					; 0000000aH
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+4]
+	mov	edx, DWORD PTR [ecx+16]
 	movsx	eax, WORD PTR [edx+eax]
 	mov	ecx, DWORD PTR _count$[ebp]
 	imul	ecx, 10					; 0000000aH
 	mov	edx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [edx+8]
+	mov	edx, DWORD PTR [edx+20]
 	movsx	ecx, WORD PTR [edx+ecx]
 	cmp	eax, ecx
 	jne	$LN5@isProperty
 	mov	eax, DWORD PTR _count$[ebp]
 	imul	eax, 10					; 0000000aH
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+4]
+	mov	edx, DWORD PTR [ecx+16]
 	movsx	eax, WORD PTR [edx+eax+2]
 	mov	ecx, DWORD PTR _count$[ebp]
 	imul	ecx, 10					; 0000000aH
 	mov	edx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [edx+8]
+	mov	edx, DWORD PTR [edx+20]
 	movsx	ecx, WORD PTR [edx+ecx+2]
 	cmp	eax, ecx
 	jne	SHORT $LN5@isProperty
 	mov	eax, DWORD PTR _count$[ebp]
 	imul	eax, 10					; 0000000aH
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+4]
+	mov	edx, DWORD PTR [ecx+16]
 	movsx	eax, WORD PTR [edx+eax+4]
 	mov	ecx, DWORD PTR _count$[ebp]
 	imul	ecx, 10					; 0000000aH
 	mov	edx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [edx+8]
+	mov	edx, DWORD PTR [edx+20]
 	movsx	ecx, WORD PTR [edx+ecx+4]
 	cmp	eax, ecx
 	jne	SHORT $LN5@isProperty
 	mov	eax, DWORD PTR _count$[ebp]
 	imul	eax, 10					; 0000000aH
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+4]
+	mov	edx, DWORD PTR [ecx+16]
 	movzx	eax, WORD PTR [edx+eax+6]
 	mov	ecx, DWORD PTR _count$[ebp]
 	imul	ecx, 10					; 0000000aH
 	mov	edx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [edx+8]
+	mov	edx, DWORD PTR [edx+20]
 	movzx	ecx, WORD PTR [edx+ecx+6]
 	cmp	eax, ecx
 	jne	SHORT $LN5@isProperty
 	mov	eax, DWORD PTR _count$[ebp]
 	imul	eax, 10					; 0000000aH
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+4]
+	mov	edx, DWORD PTR [ecx+16]
 	movzx	eax, WORD PTR [edx+eax+8]
 	mov	ecx, DWORD PTR _count$[ebp]
 	imul	ecx, 10					; 0000000aH
 	mov	edx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [edx+8]
+	mov	edx, DWORD PTR [edx+20]
 	movzx	ecx, WORD PTR [edx+ecx+8]
 	cmp	eax, ecx
 	je	SHORT $LN6@isProperty
 $LN5@isProperty:
-; Line 305
+; Line 233
 	mov	DWORD PTR _isNew$[ebp], 1
 $LN6@isProperty:
-; Line 307
+; Line 235
 	mov	ax, WORD PTR _tmpMask$[ebp]
 	shr	ax, 1
 	mov	WORD PTR _tmpMask$[ebp], ax
-; Line 308
+; Line 236
 	mov	eax, DWORD PTR _count$[ebp]
 	add	eax, 1
 	mov	DWORD PTR _count$[ebp], eax
-; Line 309
+; Line 237
 	jmp	$LN8@isProperty
 $LN7@isProperty:
-; Line 311
+; Line 239
 	cmp	DWORD PTR _isNew$[ebp], 0
 	je	$LN4@isProperty
-; Line 313
+; Line 241
 	mov	DWORD PTR _i$1[ebp], 0
 	jmp	SHORT $LN3@isProperty
 $LN2@isProperty:
@@ -6134,72 +5739,72 @@ $LN2@isProperty:
 $LN3@isProperty:
 	cmp	DWORD PTR _i$1[ebp], 16			; 00000010H
 	jge	$LN4@isProperty
-; Line 315
+; Line 243
 	mov	eax, DWORD PTR _i$1[ebp]
 	imul	eax, 10					; 0000000aH
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+4]
+	mov	edx, DWORD PTR [ecx+16]
 	mov	ecx, DWORD PTR _i$1[ebp]
 	imul	ecx, 10					; 0000000aH
 	mov	esi, DWORD PTR _this$[ebp]
-	mov	esi, DWORD PTR [esi+8]
+	mov	esi, DWORD PTR [esi+20]
 	mov	dx, WORD PTR [edx+eax]
 	mov	WORD PTR [esi+ecx], dx
-; Line 316
+; Line 244
 	mov	eax, DWORD PTR _i$1[ebp]
 	imul	eax, 10					; 0000000aH
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+4]
+	mov	edx, DWORD PTR [ecx+16]
 	mov	ecx, DWORD PTR _i$1[ebp]
 	imul	ecx, 10					; 0000000aH
 	mov	esi, DWORD PTR _this$[ebp]
-	mov	esi, DWORD PTR [esi+8]
+	mov	esi, DWORD PTR [esi+20]
 	mov	dx, WORD PTR [edx+eax+4]
 	mov	WORD PTR [esi+ecx+4], dx
-; Line 317
+; Line 245
 	mov	eax, DWORD PTR _i$1[ebp]
 	imul	eax, 10					; 0000000aH
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+4]
+	mov	edx, DWORD PTR [ecx+16]
 	mov	ecx, DWORD PTR _i$1[ebp]
 	imul	ecx, 10					; 0000000aH
 	mov	esi, DWORD PTR _this$[ebp]
-	mov	esi, DWORD PTR [esi+8]
+	mov	esi, DWORD PTR [esi+20]
 	mov	dx, WORD PTR [edx+eax+2]
 	mov	WORD PTR [esi+ecx+2], dx
-; Line 318
+; Line 246
 	mov	eax, DWORD PTR _i$1[ebp]
 	imul	eax, 10					; 0000000aH
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+4]
+	mov	edx, DWORD PTR [ecx+16]
 	mov	ecx, DWORD PTR _i$1[ebp]
 	imul	ecx, 10					; 0000000aH
 	mov	esi, DWORD PTR _this$[ebp]
-	mov	esi, DWORD PTR [esi+8]
+	mov	esi, DWORD PTR [esi+20]
 	mov	dx, WORD PTR [edx+eax+6]
 	mov	WORD PTR [esi+ecx+6], dx
-; Line 319
+; Line 247
 	mov	eax, DWORD PTR _i$1[ebp]
 	imul	eax, 10					; 0000000aH
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+4]
+	mov	edx, DWORD PTR [ecx+16]
 	mov	ecx, DWORD PTR _i$1[ebp]
 	imul	ecx, 10					; 0000000aH
 	mov	esi, DWORD PTR _this$[ebp]
-	mov	esi, DWORD PTR [esi+8]
+	mov	esi, DWORD PTR [esi+20]
 	mov	dx, WORD PTR [edx+eax+8]
 	mov	WORD PTR [esi+ecx+8], dx
-; Line 320
+; Line 248
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	dx, WORD PTR [ecx]
-	mov	WORD PTR [eax+2], dx
-; Line 321
+	mov	dx, WORD PTR [ecx+12]
+	mov	WORD PTR [eax+14], dx
+; Line 249
 	jmp	$LN2@isProperty
 $LN4@isProperty:
-; Line 324
+; Line 252
 	mov	eax, DWORD PTR _isNew$[ebp]
-; Line 325
+; Line 253
 	pop	edi
 	pop	esi
 	pop	ebx
@@ -6224,7 +5829,7 @@ __$ArrayPad$ = -4					; size = 4
 ?readProperties@CycleController@@AAEXXZ PROC		; CycleController::readProperties, COMDAT
 ; _this$ = ecx
 ; File d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp
-; Line 253
+; Line 181
 	push	ebp
 	mov	ebp, esp
 	sub	esp, 368				; 00000170H
@@ -6241,29 +5846,29 @@ __$ArrayPad$ = -4					; size = 4
 	xor	eax, ebp
 	mov	DWORD PTR __$ArrayPad$[ebp], eax
 	mov	DWORD PTR _this$[ebp], ecx
-; Line 254
+; Line 182
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	cx, WORD PTR [eax]
+	mov	cx, WORD PTR [eax+12]
 	mov	WORD PTR _tmpMask$[ebp], cx
-; Line 255
+; Line 183
 	mov	DWORD PTR _count$[ebp], 0
 $LN4@readProper:
-; Line 257
+; Line 185
 	movzx	eax, WORD PTR _tmpMask$[ebp]
 	test	eax, eax
 	jle	$LN5@readProper
-; Line 259
+; Line 187
 	movzx	eax, WORD PTR _tmpMask$[ebp]
 	and	eax, 1
 	je	$LN2@readProper
-; Line 261
+; Line 189
 	mov	eax, DWORD PTR _count$[ebp]
 	imul	eax, 5
 	push	eax
 	push	4
 	lea	ecx, DWORD PTR _sv$6[ebp]
 	call	??0SlaveInformation@@QAE@W4regType@@J@Z	; SlaveInformation::SlaveInformation
-; Line 263
+; Line 191
 	push	2
 	mov	eax, DWORD PTR _sv$6[ebp+4]
 	push	eax
@@ -6272,22 +5877,22 @@ $LN4@readProper:
 	lea	edx, DWORD PTR $T1[ebp]
 	push	edx
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+12]
+	mov	ecx, DWORD PTR [eax+24]
 	call	?getHoldingRegisters@SlaveFactory@@QAE?ATuValue@@USlaveInformation@@I@Z ; SlaveFactory::getHoldingRegisters
 	mov	ecx, 2
 	imul	ecx, 0
 	mov	edx, DWORD PTR _count$[ebp]
 	imul	edx, 10					; 0000000aH
 	mov	esi, DWORD PTR _this$[ebp]
-	mov	esi, DWORD PTR [esi+4]
+	mov	esi, DWORD PTR [esi+16]
 	mov	ax, WORD PTR [eax+ecx]
 	mov	WORD PTR [esi+edx], ax
-; Line 265
+; Line 193
 	mov	eax, DWORD PTR _count$[ebp]
 	imul	eax, 5
 	add	eax, 1
 	mov	DWORD PTR _sv$6[ebp+4], eax
-; Line 266
+; Line 194
 	push	2
 	mov	eax, DWORD PTR _sv$6[ebp+4]
 	push	eax
@@ -6296,22 +5901,22 @@ $LN4@readProper:
 	lea	edx, DWORD PTR $T2[ebp]
 	push	edx
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+12]
+	mov	ecx, DWORD PTR [eax+24]
 	call	?getHoldingRegisters@SlaveFactory@@QAE?ATuValue@@USlaveInformation@@I@Z ; SlaveFactory::getHoldingRegisters
 	mov	ecx, 2
 	imul	ecx, 0
 	mov	edx, DWORD PTR _count$[ebp]
 	imul	edx, 10					; 0000000aH
 	mov	esi, DWORD PTR _this$[ebp]
-	mov	esi, DWORD PTR [esi+4]
+	mov	esi, DWORD PTR [esi+16]
 	mov	ax, WORD PTR [eax+ecx]
 	mov	WORD PTR [esi+edx+2], ax
-; Line 268
+; Line 196
 	mov	eax, DWORD PTR _count$[ebp]
 	imul	eax, 5
 	add	eax, 2
 	mov	DWORD PTR _sv$6[ebp+4], eax
-; Line 269
+; Line 197
 	push	2
 	mov	eax, DWORD PTR _sv$6[ebp+4]
 	push	eax
@@ -6320,22 +5925,22 @@ $LN4@readProper:
 	lea	edx, DWORD PTR $T3[ebp]
 	push	edx
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+12]
+	mov	ecx, DWORD PTR [eax+24]
 	call	?getHoldingRegisters@SlaveFactory@@QAE?ATuValue@@USlaveInformation@@I@Z ; SlaveFactory::getHoldingRegisters
 	mov	ecx, 2
 	imul	ecx, 0
 	mov	edx, DWORD PTR _count$[ebp]
 	imul	edx, 10					; 0000000aH
 	mov	esi, DWORD PTR _this$[ebp]
-	mov	esi, DWORD PTR [esi+4]
+	mov	esi, DWORD PTR [esi+16]
 	mov	ax, WORD PTR [eax+ecx]
 	mov	WORD PTR [esi+edx+4], ax
-; Line 271
+; Line 199
 	mov	eax, DWORD PTR _count$[ebp]
 	imul	eax, 5
 	add	eax, 3
 	mov	DWORD PTR _sv$6[ebp+4], eax
-; Line 272
+; Line 200
 	push	2
 	mov	eax, DWORD PTR _sv$6[ebp+4]
 	push	eax
@@ -6344,22 +5949,22 @@ $LN4@readProper:
 	lea	edx, DWORD PTR $T4[ebp]
 	push	edx
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+12]
+	mov	ecx, DWORD PTR [eax+24]
 	call	?getHoldingRegisters@SlaveFactory@@QAE?ATuValue@@USlaveInformation@@I@Z ; SlaveFactory::getHoldingRegisters
 	mov	ecx, 2
 	imul	ecx, 0
 	mov	edx, DWORD PTR _count$[ebp]
 	imul	edx, 10					; 0000000aH
 	mov	esi, DWORD PTR _this$[ebp]
-	mov	esi, DWORD PTR [esi+4]
+	mov	esi, DWORD PTR [esi+16]
 	mov	ax, WORD PTR [eax+ecx]
 	mov	WORD PTR [esi+edx+6], ax
-; Line 274
+; Line 202
 	mov	eax, DWORD PTR _count$[ebp]
 	imul	eax, 5
 	add	eax, 4
 	mov	DWORD PTR _sv$6[ebp+4], eax
-; Line 275
+; Line 203
 	push	2
 	mov	eax, DWORD PTR _sv$6[ebp+4]
 	push	eax
@@ -6368,67 +5973,67 @@ $LN4@readProper:
 	lea	edx, DWORD PTR $T5[ebp]
 	push	edx
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+12]
+	mov	ecx, DWORD PTR [eax+24]
 	call	?getHoldingRegisters@SlaveFactory@@QAE?ATuValue@@USlaveInformation@@I@Z ; SlaveFactory::getHoldingRegisters
 	mov	ecx, 2
 	imul	ecx, 0
 	mov	edx, DWORD PTR _count$[ebp]
 	imul	edx, 10					; 0000000aH
 	mov	esi, DWORD PTR _this$[ebp]
-	mov	esi, DWORD PTR [esi+4]
+	mov	esi, DWORD PTR [esi+16]
 	mov	ax, WORD PTR [eax+ecx]
 	mov	WORD PTR [esi+edx+8], ax
-; Line 277
+; Line 205
 	jmp	SHORT $LN1@readProper
 $LN2@readProper:
-; Line 279
+; Line 207
 	mov	eax, DWORD PTR _count$[ebp]
 	imul	eax, 10					; 0000000aH
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+4]
+	mov	edx, DWORD PTR [ecx+16]
 	xor	ecx, ecx
 	mov	WORD PTR [edx+eax], cx
-; Line 280
+; Line 208
 	mov	eax, DWORD PTR _count$[ebp]
 	imul	eax, 10					; 0000000aH
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+4]
+	mov	edx, DWORD PTR [ecx+16]
 	xor	ecx, ecx
 	mov	WORD PTR [edx+eax+2], cx
-; Line 281
+; Line 209
 	mov	eax, DWORD PTR _count$[ebp]
 	imul	eax, 10					; 0000000aH
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+4]
+	mov	edx, DWORD PTR [ecx+16]
 	xor	ecx, ecx
 	mov	WORD PTR [edx+eax+4], cx
-; Line 282
+; Line 210
 	mov	eax, DWORD PTR _count$[ebp]
 	imul	eax, 10					; 0000000aH
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+4]
+	mov	edx, DWORD PTR [ecx+16]
 	xor	ecx, ecx
 	mov	WORD PTR [edx+eax+6], cx
-; Line 283
+; Line 211
 	mov	eax, DWORD PTR _count$[ebp]
 	imul	eax, 10					; 0000000aH
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+4]
+	mov	edx, DWORD PTR [ecx+16]
 	xor	ecx, ecx
 	mov	WORD PTR [edx+eax+8], cx
 $LN1@readProper:
-; Line 286
+; Line 214
 	mov	ax, WORD PTR _tmpMask$[ebp]
 	shr	ax, 1
 	mov	WORD PTR _tmpMask$[ebp], ax
-; Line 287
+; Line 215
 	mov	eax, DWORD PTR _count$[ebp]
 	add	eax, 1
 	mov	DWORD PTR _count$[ebp], eax
-; Line 288
+; Line 216
 	jmp	$LN4@readProper
 $LN5@readProper:
-; Line 289
+; Line 217
 	push	edx
 	mov	ecx, ebp
 	push	eax
@@ -6448,6 +6053,7 @@ $LN5@readProper:
 	mov	esp, ebp
 	pop	ebp
 	ret	0
+	npad	3
 $LN9@readProper:
 	DD	1
 	DD	$LN8@readProper
@@ -6471,7 +6077,7 @@ __$ArrayPad$ = -4					; size = 4
 ?readDeviceMask@CycleController@@AAEXXZ PROC		; CycleController::readDeviceMask, COMDAT
 ; _this$ = ecx
 ; File d:\projects\asu\icpdas\tmminios\tmminios\cyclecontroller.cpp
-; Line 246
+; Line 174
 	push	ebp
 	mov	ebp, esp
 	sub	esp, 248				; 000000f8H
@@ -6488,12 +6094,12 @@ __$ArrayPad$ = -4					; size = 4
 	xor	eax, ebp
 	mov	DWORD PTR __$ArrayPad$[ebp], eax
 	mov	DWORD PTR _this$[ebp], ecx
-; Line 247
+; Line 175
 	push	1000					; 000003e8H
 	push	4
 	lea	ecx, DWORD PTR _maskInformation$[ebp]
 	call	??0SlaveInformation@@QAE@W4regType@@J@Z	; SlaveInformation::SlaveInformation
-; Line 249
+; Line 177
 	push	2
 	mov	eax, DWORD PTR _maskInformation$[ebp+4]
 	push	eax
@@ -6502,12 +6108,12 @@ __$ArrayPad$ = -4					; size = 4
 	lea	edx, DWORD PTR $T1[ebp]
 	push	edx
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+12]
+	mov	ecx, DWORD PTR [eax+24]
 	call	?getHoldingRegisters@SlaveFactory@@QAE?ATuValue@@USlaveInformation@@I@Z ; SlaveFactory::getHoldingRegisters
 	mov	ecx, DWORD PTR _this$[ebp]
 	mov	dx, WORD PTR [eax]
-	mov	WORD PTR [ecx], dx
-; Line 250
+	mov	WORD PTR [ecx+12], dx
+; Line 178
 	push	edx
 	mov	ecx, ebp
 	push	eax
@@ -6527,6 +6133,7 @@ __$ArrayPad$ = -4					; size = 4
 	mov	esp, ebp
 	pop	ebp
 	ret	0
+	npad	3
 $LN5@readDevice:
 	DD	1
 	DD	$LN4@readDevice
@@ -6561,7 +6168,7 @@ _ulval_param$ = 8					; size = 4
 ??0uValue@@QAE@K@Z PROC					; uValue::uValue, COMDAT
 ; _this$ = ecx
 ; File d:\projects\asu\icpdas\tmminios\tmminios\headersinclude.h
-; Line 121
+; Line 153
 	push	ebp
 	mov	ebp, esp
 	sub	esp, 204				; 000000ccH
@@ -6575,18 +6182,18 @@ _ulval_param$ = 8					; size = 4
 	rep stosd
 	pop	ecx
 	mov	DWORD PTR _this$[ebp], ecx
-; Line 123
+; Line 155
 	push	16					; 00000010H
 	push	0
 	mov	eax, DWORD PTR _this$[ebp]
 	push	eax
 	call	_memset
 	add	esp, 12					; 0000000cH
-; Line 124
+; Line 156
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	ecx, DWORD PTR _ulval_param$[ebp]
 	mov	DWORD PTR [eax], ecx
-; Line 125
+; Line 157
 	mov	eax, DWORD PTR _this$[ebp]
 	pop	edi
 	pop	esi
@@ -6598,6 +6205,77 @@ _ulval_param$ = 8					; size = 4
 	pop	ebp
 	ret	4
 ??0uValue@@QAE@K@Z ENDP					; uValue::uValue
+_TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ??_GModbusRtuMasterFrame@@QAEPAXI@Z
+_TEXT	SEGMENT
+_this$ = -8						; size = 4
+___flags$ = 8						; size = 4
+??_GModbusRtuMasterFrame@@QAEPAXI@Z PROC		; ModbusRtuMasterFrame::`scalar deleting destructor', COMDAT
+; _this$ = ecx
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 204				; 000000ccH
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-204]
+	mov	ecx, 51					; 00000033H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	??1ModbusRtuMasterFrame@@QAE@XZ		; ModbusRtuMasterFrame::~ModbusRtuMasterFrame
+	mov	eax, DWORD PTR ___flags$[ebp]
+	and	eax, 1
+	je	SHORT $LN1@scalar
+	mov	eax, DWORD PTR _this$[ebp]
+	push	eax
+	call	??3@YAXPAX@Z				; operator delete
+	add	esp, 4
+$LN1@scalar:
+	mov	eax, DWORD PTR _this$[ebp]
+	pop	edi
+	pop	esi
+	pop	ebx
+	add	esp, 204				; 000000ccH
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	4
+??_GModbusRtuMasterFrame@@QAEPAXI@Z ENDP		; ModbusRtuMasterFrame::`scalar deleting destructor'
+_TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ??1ModbusRtuMasterFrame@@QAE@XZ
+_TEXT	SEGMENT
+_this$ = -8						; size = 4
+??1ModbusRtuMasterFrame@@QAE@XZ PROC			; ModbusRtuMasterFrame::~ModbusRtuMasterFrame, COMDAT
+; _this$ = ecx
+; File d:\projects\asu\icpdas\tmminios\tmminios\headersinclude.h
+; Line 139
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 204				; 000000ccH
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-204]
+	mov	ecx, 51					; 00000033H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	DWORD PTR _this$[ebp], ecx
+	pop	edi
+	pop	esi
+	pop	ebx
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+??1ModbusRtuMasterFrame@@QAE@XZ ENDP			; ModbusRtuMasterFrame::~ModbusRtuMasterFrame
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ??_FPropertiesStruct@@QAEXXZ
@@ -6648,7 +6326,7 @@ _ext_2$ = 24						; size = 2
 ??0PropertiesStruct@@QAE@FFFFF@Z PROC			; PropertiesStruct::PropertiesStruct, COMDAT
 ; _this$ = ecx
 ; File d:\projects\asu\icpdas\tmminios\tmminios\headersinclude.h
-; Line 101
+; Line 107
 	push	ebp
 	mov	ebp, esp
 	sub	esp, 204				; 000000ccH
@@ -6662,34 +6340,34 @@ _ext_2$ = 24						; size = 2
 	rep stosd
 	pop	ecx
 	mov	DWORD PTR _this$[ebp], ecx
-; Line 103
+; Line 109
 	push	10					; 0000000aH
 	push	0
 	mov	eax, DWORD PTR _this$[ebp]
 	push	eax
 	call	_memset
 	add	esp, 12					; 0000000cH
-; Line 105
+; Line 111
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	cx, WORD PTR _devT$[ebp]
 	mov	WORD PTR [eax], cx
-; Line 106
+; Line 112
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	cx, WORD PTR _modAddress$[ebp]
 	mov	WORD PTR [eax+2], cx
-; Line 107
+; Line 113
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	cx, WORD PTR _startAddress$[ebp]
 	mov	WORD PTR [eax+4], cx
-; Line 108
+; Line 114
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	cx, WORD PTR _ext_1$[ebp]
 	mov	WORD PTR [eax+6], cx
-; Line 109
+; Line 115
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	cx, WORD PTR _ext_2$[ebp]
 	mov	WORD PTR [eax+8], cx
-; Line 110
+; Line 116
 	mov	eax, DWORD PTR _this$[ebp]
 	pop	edi
 	pop	esi
@@ -6711,7 +6389,7 @@ _registNumber$ = 12					; size = 4
 ??0SlaveInformation@@QAE@W4regType@@J@Z PROC		; SlaveInformation::SlaveInformation, COMDAT
 ; _this$ = ecx
 ; File d:\projects\asu\icpdas\tmminios\tmminios\headersinclude.h
-; Line 89
+; Line 95
 	push	ebp
 	mov	ebp, esp
 	sub	esp, 204				; 000000ccH
@@ -6725,22 +6403,22 @@ _registNumber$ = 12					; size = 4
 	rep stosd
 	pop	ecx
 	mov	DWORD PTR _this$[ebp], ecx
-; Line 91
+; Line 97
 	push	8
 	push	0
 	mov	eax, DWORD PTR _this$[ebp]
 	push	eax
 	call	_memset
 	add	esp, 12					; 0000000cH
-; Line 92
+; Line 98
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	ecx, DWORD PTR _registType$[ebp]
 	mov	DWORD PTR [eax], ecx
-; Line 93
+; Line 99
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	ecx, DWORD PTR _registNumber$[ebp]
 	mov	DWORD PTR [eax+4], ecx
-; Line 94
+; Line 100
 	mov	eax, DWORD PTR _this$[ebp]
 	pop	edi
 	pop	esi
@@ -6861,7 +6539,7 @@ __Errval$ = 12						; size = 4
 	test	eax, eax
 	je	SHORT $LN2@default_er
 ; Line 643
-	call	?generic_category@std@@YAABVerror_category@1@XZ ; std::generic_category
+	call	?generic_category@std@@YGABVerror_category@1@XZ ; std::generic_category
 	push	eax
 	mov	eax, DWORD PTR __Errval$[ebp]
 	push	eax
@@ -6873,7 +6551,7 @@ __Errval$ = 12						; size = 4
 	jmp	SHORT $LN3@default_er
 $LN2@default_er:
 ; Line 645
-	call	?system_category@std@@YAABVerror_category@1@XZ ; std::system_category
+	call	?system_category@std@@YGABVerror_category@1@XZ ; std::system_category
 	push	eax
 	mov	eax, DWORD PTR __Errval$[ebp]
 	push	eax
@@ -7976,9 +7654,9 @@ _this$ = -8						; size = 4
 ??0error_category@std@@QAE@XZ ENDP			; std::error_category::error_category
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
-;	COMDAT ?system_category@std@@YAABVerror_category@1@XZ
+;	COMDAT ?system_category@std@@YGABVerror_category@1@XZ
 _TEXT	SEGMENT
-?system_category@std@@YAABVerror_category@1@XZ PROC	; std::system_category, COMDAT
+?system_category@std@@YGABVerror_category@1@XZ PROC	; std::system_category, COMDAT
 ; File c:\program files (x86)\microsoft visual studio 11.0\vc\include\system_error
 ; Line 679
 	push	ebp
@@ -8000,12 +7678,12 @@ _TEXT	SEGMENT
 	mov	esp, ebp
 	pop	ebp
 	ret	0
-?system_category@std@@YAABVerror_category@1@XZ ENDP	; std::system_category
+?system_category@std@@YGABVerror_category@1@XZ ENDP	; std::system_category
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
-;	COMDAT ?generic_category@std@@YAABVerror_category@1@XZ
+;	COMDAT ?generic_category@std@@YGABVerror_category@1@XZ
 _TEXT	SEGMENT
-?generic_category@std@@YAABVerror_category@1@XZ PROC	; std::generic_category, COMDAT
+?generic_category@std@@YGABVerror_category@1@XZ PROC	; std::generic_category, COMDAT
 ; File c:\program files (x86)\microsoft visual studio 11.0\vc\include\system_error
 ; Line 669
 	push	ebp
@@ -8027,15 +7705,15 @@ _TEXT	SEGMENT
 	mov	esp, ebp
 	pop	ebp
 	ret	0
-?generic_category@std@@YAABVerror_category@1@XZ ENDP	; std::generic_category
+?generic_category@std@@YGABVerror_category@1@XZ ENDP	; std::generic_category
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
-;	COMDAT ??$_Debug_pointer@D@std@@YAXPBDPB_WI@Z
+;	COMDAT ??$_Debug_pointer@D@std@@YGXPBDPB_WI@Z
 _TEXT	SEGMENT
 __First$ = 8						; size = 4
 __File$ = 12						; size = 4
 __Line$ = 16						; size = 4
-??$_Debug_pointer@D@std@@YAXPBDPB_WI@Z PROC		; std::_Debug_pointer<char>, COMDAT
+??$_Debug_pointer@D@std@@YGXPBDPB_WI@Z PROC		; std::_Debug_pointer<char>, COMDAT
 ; File c:\program files (x86)\microsoft visual studio 11.0\vc\include\xutility
 ; Line 610
 	push	ebp
@@ -8072,8 +7750,8 @@ $LN2@Debug_poin:
 	call	__RTC_CheckEsp
 	mov	esp, ebp
 	pop	ebp
-	ret	0
-??$_Debug_pointer@D@std@@YAXPBDPB_WI@Z ENDP		; std::_Debug_pointer<char>
+	ret	12					; 0000000cH
+??$_Debug_pointer@D@std@@YGXPBDPB_WI@Z ENDP		; std::_Debug_pointer<char>
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ?_Xran@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEXXZ
@@ -8213,8 +7891,7 @@ $LN4@Tidy:
 	push	eax
 	mov	ecx, DWORD PTR __Ptr$3[ebp]
 	push	ecx
-	call	??$addressof@D@std@@YAPADAAD@Z		; std::addressof<char>
-	add	esp, 4
+	call	??$addressof@D@std@@YGPADAAD@Z		; std::addressof<char>
 	push	eax
 	mov	edx, DWORD PTR _this$[ebp]
 	add	edx, 4
@@ -8975,8 +8652,7 @@ __Ptr$ = 8						; size = 4
 	push	OFFSET ??_C@_1IO@BLKJFPEG@?$AAc?$AA?3?$AA?2?$AAp?$AAr?$AAo?$AAg?$AAr?$AAa?$AAm?$AA?5?$AAf?$AAi?$AAl?$AAe?$AAs?$AA?5?$AA?$CI?$AAx?$AA8?$AA6?$AA?$CJ?$AA?2?$AAm?$AAi?$AAc?$AAr?$AAo?$AAs?$AAo?$AAf?$AAt@
 	mov	eax, DWORD PTR __Ptr$[ebp]
 	push	eax
-	call	??$_Debug_pointer@D@std@@YAXPBDPB_WI@Z	; std::_Debug_pointer<char>
-	add	esp, 12					; 0000000cH
+	call	??$_Debug_pointer@D@std@@YGXPBDPB_WI@Z	; std::_Debug_pointer<char>
 ; Line 1144
 	mov	eax, DWORD PTR __Ptr$[ebp]
 	push	eax
@@ -9030,8 +8706,7 @@ __Count$ = 12						; size = 4
 	push	OFFSET ??_C@_1IO@BLKJFPEG@?$AAc?$AA?3?$AA?2?$AAp?$AAr?$AAo?$AAg?$AAr?$AAa?$AAm?$AA?5?$AAf?$AAi?$AAl?$AAe?$AAs?$AA?5?$AA?$CI?$AAx?$AA8?$AA6?$AA?$CJ?$AA?2?$AAm?$AAi?$AAc?$AAr?$AAo?$AAs?$AAo?$AAf?$AAt@
 	mov	eax, DWORD PTR __Ptr$[ebp]
 	push	eax
-	call	??$_Debug_pointer@D@std@@YAXPBDPB_WI@Z	; std::_Debug_pointer<char>
-	add	esp, 12					; 0000000cH
+	call	??$_Debug_pointer@D@std@@YGXPBDPB_WI@Z	; std::_Debug_pointer<char>
 $LN3@assign:
 ; Line 1129
 	mov	eax, DWORD PTR __Ptr$[ebp]
@@ -9657,8 +9332,7 @@ _this$ = -8						; size = 4
 	mov	ecx, DWORD PTR _this$[ebp]
 	mov	edx, DWORD PTR [ecx+4]
 	push	edx
-	call	??$addressof@D@std@@YAPADAAD@Z		; std::addressof<char>
-	add	esp, 4
+	call	??$addressof@D@std@@YGPADAAD@Z		; std::addressof<char>
 	mov	DWORD PTR tv72[ebp], eax
 	jmp	SHORT $LN4@Myptr
 $LN3@Myptr:
@@ -9708,8 +9382,7 @@ _this$ = -8						; size = 4
 	mov	ecx, DWORD PTR _this$[ebp]
 	mov	edx, DWORD PTR [ecx+4]
 	push	edx
-	call	??$addressof@D@std@@YAPADAAD@Z		; std::addressof<char>
-	add	esp, 4
+	call	??$addressof@D@std@@YGPADAAD@Z		; std::addressof<char>
 	mov	DWORD PTR tv72[ebp], eax
 	jmp	SHORT $LN4@Myptr
 $LN3@Myptr:
@@ -9799,8 +9472,7 @@ _this$ = -8						; size = 4
 ; Line 914
 	mov	eax, DWORD PTR _this$[ebp]
 	push	eax
-	call	?max_size@?$allocator_traits@V?$allocator@D@std@@@std@@SAIABV?$allocator@D@2@@Z ; std::allocator_traits<std::allocator<char> >::max_size
-	add	esp, 4
+	call	?max_size@?$allocator_traits@V?$allocator@D@std@@@std@@SGIABV?$allocator@D@2@@Z ; std::allocator_traits<std::allocator<char> >::max_size
 ; Line 915
 	pop	edi
 	pop	esi
@@ -9931,10 +9603,10 @@ _this$ = -8						; size = 4
 ??0?$_Wrap_alloc@V?$allocator@D@std@@@std@@QAE@XZ ENDP	; std::_Wrap_alloc<std::allocator<char> >::_Wrap_alloc<std::allocator<char> >
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
-;	COMDAT ?max_size@?$allocator_traits@V?$allocator@D@std@@@std@@SAIABV?$allocator@D@2@@Z
+;	COMDAT ?max_size@?$allocator_traits@V?$allocator@D@std@@@std@@SGIABV?$allocator@D@2@@Z
 _TEXT	SEGMENT
 __Al$ = 8						; size = 4
-?max_size@?$allocator_traits@V?$allocator@D@std@@@std@@SAIABV?$allocator@D@2@@Z PROC ; std::allocator_traits<std::allocator<char> >::max_size, COMDAT
+?max_size@?$allocator_traits@V?$allocator@D@std@@@std@@SGIABV?$allocator@D@2@@Z PROC ; std::allocator_traits<std::allocator<char> >::max_size, COMDAT
 ; File c:\program files (x86)\microsoft visual studio 11.0\vc\include\xmemory0
 ; Line 761
 	push	ebp
@@ -9959,8 +9631,8 @@ __Al$ = 8						; size = 4
 	call	__RTC_CheckEsp
 	mov	esp, ebp
 	pop	ebp
-	ret	0
-?max_size@?$allocator_traits@V?$allocator@D@std@@@std@@SAIABV?$allocator@D@2@@Z ENDP ; std::allocator_traits<std::allocator<char> >::max_size
+	ret	4
+?max_size@?$allocator_traits@V?$allocator@D@std@@@std@@SGIABV?$allocator@D@2@@Z ENDP ; std::allocator_traits<std::allocator<char> >::max_size
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ?max_size@?$allocator@D@std@@QBEIXZ
@@ -10020,8 +9692,7 @@ __Count$ = 8						; size = 4
 	push	0
 	mov	eax, DWORD PTR __Count$[ebp]
 	push	eax
-	call	??$_Allocate@D@std@@YAPADIPAD@Z		; std::_Allocate<char>
-	add	esp, 8
+	call	??$_Allocate@D@std@@YGPADIPAD@Z		; std::_Allocate<char>
 ; Line 592
 	pop	edi
 	pop	esi
@@ -10194,73 +9865,6 @@ $T1 = -197						; size = 1
 	ret	0
 ??__Epiecewise_construct@std@@YAXXZ ENDP		; std::`dynamic initializer for 'piecewise_construct''
 text$yc	ENDS
-; Function compile flags: /Odtp /RTCsu /ZI
-;	COMDAT ?eof@?$char_traits@D@std@@SAHXZ
-_TEXT	SEGMENT
-?eof@?$char_traits@D@std@@SAHXZ PROC			; std::char_traits<char>::eof, COMDAT
-; File c:\program files (x86)\microsoft visual studio 11.0\vc\include\iosfwd
-; Line 604
-	push	ebp
-	mov	ebp, esp
-	sub	esp, 192				; 000000c0H
-	push	ebx
-	push	esi
-	push	edi
-	lea	edi, DWORD PTR [ebp-192]
-	mov	ecx, 48					; 00000030H
-	mov	eax, -858993460				; ccccccccH
-	rep stosd
-; Line 605
-	or	eax, -1
-; Line 606
-	pop	edi
-	pop	esi
-	pop	ebx
-	mov	esp, ebp
-	pop	ebp
-	ret	0
-?eof@?$char_traits@D@std@@SAHXZ ENDP			; std::char_traits<char>::eof
-_TEXT	ENDS
-; Function compile flags: /Odtp /RTCsu /ZI
-;	COMDAT ?eq_int_type@?$char_traits@D@std@@SA_NABH0@Z
-_TEXT	SEGMENT
-tv65 = -196						; size = 4
-__Left$ = 8						; size = 4
-__Right$ = 12						; size = 4
-?eq_int_type@?$char_traits@D@std@@SA_NABH0@Z PROC	; std::char_traits<char>::eq_int_type, COMDAT
-; File c:\program files (x86)\microsoft visual studio 11.0\vc\include\iosfwd
-; Line 593
-	push	ebp
-	mov	ebp, esp
-	sub	esp, 196				; 000000c4H
-	push	ebx
-	push	esi
-	push	edi
-	lea	edi, DWORD PTR [ebp-196]
-	mov	ecx, 49					; 00000031H
-	mov	eax, -858993460				; ccccccccH
-	rep stosd
-; Line 594
-	mov	eax, DWORD PTR __Left$[ebp]
-	mov	ecx, DWORD PTR __Right$[ebp]
-	mov	edx, DWORD PTR [eax]
-	cmp	edx, DWORD PTR [ecx]
-	jne	SHORT $LN3@eq_int_typ
-	mov	DWORD PTR tv65[ebp], 1
-	jmp	SHORT $LN4@eq_int_typ
-$LN3@eq_int_typ:
-	mov	DWORD PTR tv65[ebp], 0
-$LN4@eq_int_typ:
-	mov	al, BYTE PTR tv65[ebp]
-; Line 595
-	pop	edi
-	pop	esi
-	pop	ebx
-	mov	esp, ebp
-	pop	ebp
-	ret	0
-?eq_int_type@?$char_traits@D@std@@SA_NABH0@Z ENDP	; std::char_traits<char>::eq_int_type
-_TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ?assign@?$char_traits@D@std@@SAXAADABD@Z
 _TEXT	SEGMENT

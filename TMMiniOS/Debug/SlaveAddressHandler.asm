@@ -800,7 +800,7 @@ PUBLIC	??0?$allocator@D@std@@QAE@XZ			; std::allocator<char>::allocator<char>
 PUBLIC	?deallocate@?$allocator@D@std@@QAEXPADI@Z	; std::allocator<char>::deallocate
 PUBLIC	?allocate@?$allocator@D@std@@QAEPADI@Z		; std::allocator<char>::allocate
 PUBLIC	?max_size@?$allocator@D@std@@QBEIXZ		; std::allocator<char>::max_size
-PUBLIC	?max_size@?$allocator_traits@V?$allocator@D@std@@@std@@SAIABV?$allocator@D@2@@Z ; std::allocator_traits<std::allocator<char> >::max_size
+PUBLIC	?max_size@?$allocator_traits@V?$allocator@D@std@@@std@@SGIABV?$allocator@D@2@@Z ; std::allocator_traits<std::allocator<char> >::max_size
 PUBLIC	??0?$_Wrap_alloc@V?$allocator@D@std@@@std@@QAE@XZ ; std::_Wrap_alloc<std::allocator<char> >::_Wrap_alloc<std::allocator<char> >
 PUBLIC	?allocate@?$_Wrap_alloc@V?$allocator@D@std@@@std@@QAEPADI@Z ; std::_Wrap_alloc<std::allocator<char> >::allocate
 PUBLIC	?deallocate@?$_Wrap_alloc@V?$allocator@D@std@@@std@@QAEXPADI@Z ; std::_Wrap_alloc<std::allocator<char> >::deallocate
@@ -829,9 +829,9 @@ PUBLIC	?_Inside@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE
 PUBLIC	?_Tidy@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEX_NI@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::_Tidy
 PUBLIC	?_Xlen@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEXXZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::_Xlen
 PUBLIC	?_Xran@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEXXZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::_Xran
-PUBLIC	??$_Debug_pointer@D@std@@YAXPBDPB_WI@Z		; std::_Debug_pointer<char>
-PUBLIC	?generic_category@std@@YAABVerror_category@1@XZ	; std::generic_category
-PUBLIC	?system_category@std@@YAABVerror_category@1@XZ	; std::system_category
+PUBLIC	??$_Debug_pointer@D@std@@YGXPBDPB_WI@Z		; std::_Debug_pointer<char>
+PUBLIC	?generic_category@std@@YGABVerror_category@1@XZ	; std::generic_category
+PUBLIC	?system_category@std@@YGABVerror_category@1@XZ	; std::system_category
 PUBLIC	??0error_category@std@@QAE@XZ			; std::error_category::error_category
 PUBLIC	??1error_category@std@@UAE@XZ			; std::error_category::~error_category
 PUBLIC	?default_error_condition@error_category@std@@UBE?AVerror_condition@2@H@Z ; std::error_category::default_error_condition
@@ -863,21 +863,21 @@ PUBLIC	??1_System_error_category@std@@UAE@XZ		; std::_System_error_category::~_S
 PUBLIC	??_G_System_error_category@std@@UAEPAXI@Z	; std::_System_error_category::`scalar deleting destructor'
 PUBLIC	??0SlaveAddressHandler@@AAE@XZ			; SlaveAddressHandler::SlaveAddressHandler
 PUBLIC	??1SlaveAddressHandler@@AAE@XZ			; SlaveAddressHandler::~SlaveAddressHandler
-PUBLIC	?setSlaveInformation@SlaveAddressHandler@@SAXPAVAbstractDevice@@USlaveInformation@@@Z ; SlaveAddressHandler::setSlaveInformation
+PUBLIC	?setSlaveInformation@SlaveAddressHandler@@SGXPAVAbstractDevice@@USlaveInformation@@@Z ; SlaveAddressHandler::setSlaveInformation
 PUBLIC	??$construct@PADAAPAD@?$_Wrap_alloc@V?$allocator@D@std@@@std@@QAEXPAPADAAPAD@Z ; std::_Wrap_alloc<std::allocator<char> >::construct<char *,char * &>
 PUBLIC	??$destroy@PAD@?$_Wrap_alloc@V?$allocator@D@std@@@std@@QAEXPAPAD@Z ; std::_Wrap_alloc<std::allocator<char> >::destroy<char *>
-PUBLIC	??$addressof@D@std@@YAPADAAD@Z			; std::addressof<char>
+PUBLIC	??$addressof@D@std@@YGPADAAD@Z			; std::addressof<char>
 PUBLIC	??0?$allocator@U_Container_proxy@std@@@std@@QAE@XZ ; std::allocator<std::_Container_proxy>::allocator<std::_Container_proxy>
 PUBLIC	?deallocate@?$allocator@U_Container_proxy@std@@@std@@QAEXPAU_Container_proxy@2@I@Z ; std::allocator<std::_Container_proxy>::deallocate
 PUBLIC	?allocate@?$allocator@U_Container_proxy@std@@@std@@QAEPAU_Container_proxy@2@I@Z ; std::allocator<std::_Container_proxy>::allocate
 PUBLIC	??$construct@U_Container_proxy@std@@U12@@?$allocator@U_Container_proxy@std@@@std@@QAEXPAU_Container_proxy@1@$$QAU21@@Z ; std::allocator<std::_Container_proxy>::construct<std::_Container_proxy,std::_Container_proxy>
 PUBLIC	??$destroy@U_Container_proxy@std@@@?$allocator@U_Container_proxy@std@@@std@@QAEXPAU_Container_proxy@1@@Z ; std::allocator<std::_Container_proxy>::destroy<std::_Container_proxy>
-PUBLIC	??$_Allocate@U_Container_proxy@std@@@std@@YAPAU_Container_proxy@0@IPAU10@@Z ; std::_Allocate<std::_Container_proxy>
-PUBLIC	??$_Allocate@D@std@@YAPADIPAD@Z			; std::_Allocate<char>
-PUBLIC	??$forward@AAPAD@std@@YAAAPADAAPAD@Z		; std::forward<char * &>
-PUBLIC	??$construct@PADAAPAD@?$allocator_traits@V?$allocator@D@std@@@std@@SAXAAV?$allocator@D@1@PAPADAAPAD@Z ; std::allocator_traits<std::allocator<char> >::construct<char *,char * &>
-PUBLIC	??$destroy@PAD@?$allocator_traits@V?$allocator@D@std@@@std@@SAXAAV?$allocator@D@1@PAPAD@Z ; std::allocator_traits<std::allocator<char> >::destroy<char *>
-PUBLIC	??$forward@U_Container_proxy@std@@@std@@YA$$QAU_Container_proxy@0@AAU10@@Z ; std::forward<std::_Container_proxy>
+PUBLIC	??$_Allocate@U_Container_proxy@std@@@std@@YGPAU_Container_proxy@0@IPAU10@@Z ; std::_Allocate<std::_Container_proxy>
+PUBLIC	??$_Allocate@D@std@@YGPADIPAD@Z			; std::_Allocate<char>
+PUBLIC	??$forward@AAPAD@std@@YGAAPADAAPAD@Z		; std::forward<char * &>
+PUBLIC	??$construct@PADAAPAD@?$allocator_traits@V?$allocator@D@std@@@std@@SGXAAV?$allocator@D@1@PAPADAAPAD@Z ; std::allocator_traits<std::allocator<char> >::construct<char *,char * &>
+PUBLIC	??$destroy@PAD@?$allocator_traits@V?$allocator@D@std@@@std@@SGXAAV?$allocator@D@1@PAPAD@Z ; std::allocator_traits<std::allocator<char> >::destroy<char *>
+PUBLIC	??$forward@U_Container_proxy@std@@@std@@YG$$QAU_Container_proxy@0@AAU10@@Z ; std::forward<std::_Container_proxy>
 PUBLIC	??$construct@PADAAPAD@?$allocator@D@std@@QAEXPAPADAAPAD@Z ; std::allocator<char>::construct<char *,char * &>
 PUBLIC	??$destroy@PAD@?$allocator@D@std@@QAEXPAPAD@Z	; std::allocator<char>::destroy<char *>
 PUBLIC	??_7error_category@std@@6B@			; std::error_category::`vftable'
@@ -1388,8 +1388,7 @@ __V0$ = 12						; size = 4
 	je	SHORT $LN3@construct
 	mov	ecx, DWORD PTR __V0$[ebp]
 	push	ecx
-	call	??$forward@AAPAD@std@@YAAAPADAAPAD@Z	; std::forward<char * &>
-	add	esp, 4
+	call	??$forward@AAPAD@std@@YGAAPADAAPAD@Z	; std::forward<char * &>
 	mov	edx, DWORD PTR $T3[ebp]
 	mov	eax, DWORD PTR [eax]
 	mov	DWORD PTR [edx], eax
@@ -1436,10 +1435,10 @@ __ehhandler$??$construct@PADAAPAD@?$allocator@D@std@@QAEXPAPADAAPAD@Z:
 text$x	ENDS
 ??$construct@PADAAPAD@?$allocator@D@std@@QAEXPAPADAAPAD@Z ENDP ; std::allocator<char>::construct<char *,char * &>
 ; Function compile flags: /Odtp /RTCsu /ZI
-;	COMDAT ??$forward@U_Container_proxy@std@@@std@@YA$$QAU_Container_proxy@0@AAU10@@Z
+;	COMDAT ??$forward@U_Container_proxy@std@@@std@@YG$$QAU_Container_proxy@0@AAU10@@Z
 _TEXT	SEGMENT
 __Arg$ = 8						; size = 4
-??$forward@U_Container_proxy@std@@@std@@YA$$QAU_Container_proxy@0@AAU10@@Z PROC ; std::forward<std::_Container_proxy>, COMDAT
+??$forward@U_Container_proxy@std@@@std@@YG$$QAU_Container_proxy@0@AAU10@@Z PROC ; std::forward<std::_Container_proxy>, COMDAT
 ; File c:\program files (x86)\microsoft visual studio 11.0\vc\include\type_traits
 ; Line 1775
 	push	ebp
@@ -1460,15 +1459,15 @@ __Arg$ = 8						; size = 4
 	pop	ebx
 	mov	esp, ebp
 	pop	ebp
-	ret	0
-??$forward@U_Container_proxy@std@@@std@@YA$$QAU_Container_proxy@0@AAU10@@Z ENDP ; std::forward<std::_Container_proxy>
+	ret	4
+??$forward@U_Container_proxy@std@@@std@@YG$$QAU_Container_proxy@0@AAU10@@Z ENDP ; std::forward<std::_Container_proxy>
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
-;	COMDAT ??$destroy@PAD@?$allocator_traits@V?$allocator@D@std@@@std@@SAXAAV?$allocator@D@1@PAPAD@Z
+;	COMDAT ??$destroy@PAD@?$allocator_traits@V?$allocator@D@std@@@std@@SGXAAV?$allocator@D@1@PAPAD@Z
 _TEXT	SEGMENT
 __Al$ = 8						; size = 4
 __Ptr$ = 12						; size = 4
-??$destroy@PAD@?$allocator_traits@V?$allocator@D@std@@@std@@SAXAAV?$allocator@D@1@PAPAD@Z PROC ; std::allocator_traits<std::allocator<char> >::destroy<char *>, COMDAT
+??$destroy@PAD@?$allocator_traits@V?$allocator@D@std@@@std@@SGXAAV?$allocator@D@1@PAPAD@Z PROC ; std::allocator_traits<std::allocator<char> >::destroy<char *>, COMDAT
 ; File c:\program files (x86)\microsoft visual studio 11.0\vc\include\xmemory0
 ; Line 755
 	push	ebp
@@ -1495,16 +1494,16 @@ __Ptr$ = 12						; size = 4
 	call	__RTC_CheckEsp
 	mov	esp, ebp
 	pop	ebp
-	ret	0
-??$destroy@PAD@?$allocator_traits@V?$allocator@D@std@@@std@@SAXAAV?$allocator@D@1@PAPAD@Z ENDP ; std::allocator_traits<std::allocator<char> >::destroy<char *>
+	ret	8
+??$destroy@PAD@?$allocator_traits@V?$allocator@D@std@@@std@@SGXAAV?$allocator@D@1@PAPAD@Z ENDP ; std::allocator_traits<std::allocator<char> >::destroy<char *>
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
-;	COMDAT ??$construct@PADAAPAD@?$allocator_traits@V?$allocator@D@std@@@std@@SAXAAV?$allocator@D@1@PAPADAAPAD@Z
+;	COMDAT ??$construct@PADAAPAD@?$allocator_traits@V?$allocator@D@std@@@std@@SGXAAV?$allocator@D@1@PAPADAAPAD@Z
 _TEXT	SEGMENT
 __Al$ = 8						; size = 4
 __Ptr$ = 12						; size = 4
 __V0$ = 16						; size = 4
-??$construct@PADAAPAD@?$allocator_traits@V?$allocator@D@std@@@std@@SAXAAV?$allocator@D@1@PAPADAAPAD@Z PROC ; std::allocator_traits<std::allocator<char> >::construct<char *,char * &>, COMDAT
+??$construct@PADAAPAD@?$allocator_traits@V?$allocator@D@std@@@std@@SGXAAV?$allocator@D@1@PAPADAAPAD@Z PROC ; std::allocator_traits<std::allocator<char> >::construct<char *,char * &>, COMDAT
 ; File c:\program files (x86)\microsoft visual studio 11.0\vc\include\xmemory0
 ; Line 751
 	push	ebp
@@ -1519,8 +1518,7 @@ __V0$ = 16						; size = 4
 	rep stosd
 	mov	eax, DWORD PTR __V0$[ebp]
 	push	eax
-	call	??$forward@AAPAD@std@@YAAAPADAAPAD@Z	; std::forward<char * &>
-	add	esp, 4
+	call	??$forward@AAPAD@std@@YGAAPADAAPAD@Z	; std::forward<char * &>
 	push	eax
 	mov	ecx, DWORD PTR __Ptr$[ebp]
 	push	ecx
@@ -1534,14 +1532,14 @@ __V0$ = 16						; size = 4
 	call	__RTC_CheckEsp
 	mov	esp, ebp
 	pop	ebp
-	ret	0
-??$construct@PADAAPAD@?$allocator_traits@V?$allocator@D@std@@@std@@SAXAAV?$allocator@D@1@PAPADAAPAD@Z ENDP ; std::allocator_traits<std::allocator<char> >::construct<char *,char * &>
+	ret	12					; 0000000cH
+??$construct@PADAAPAD@?$allocator_traits@V?$allocator@D@std@@@std@@SGXAAV?$allocator@D@1@PAPADAAPAD@Z ENDP ; std::allocator_traits<std::allocator<char> >::construct<char *,char * &>
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
-;	COMDAT ??$forward@AAPAD@std@@YAAAPADAAPAD@Z
+;	COMDAT ??$forward@AAPAD@std@@YGAAPADAAPAD@Z
 _TEXT	SEGMENT
 __Arg$ = 8						; size = 4
-??$forward@AAPAD@std@@YAAAPADAAPAD@Z PROC		; std::forward<char * &>, COMDAT
+??$forward@AAPAD@std@@YGAAPADAAPAD@Z PROC		; std::forward<char * &>, COMDAT
 ; File c:\program files (x86)\microsoft visual studio 11.0\vc\include\type_traits
 ; Line 1775
 	push	ebp
@@ -1562,8 +1560,8 @@ __Arg$ = 8						; size = 4
 	pop	ebx
 	mov	esp, ebp
 	pop	ebp
-	ret	0
-??$forward@AAPAD@std@@YAAAPADAAPAD@Z ENDP		; std::forward<char * &>
+	ret	4
+??$forward@AAPAD@std@@YGAAPADAAPAD@Z ENDP		; std::forward<char * &>
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ??__F?_System_object@?$_Error_objects@H@std@@2V_System_error_category@2@A@@YAXXZ
@@ -1743,12 +1741,12 @@ text$yc	SEGMENT
 ??__E?_Generic_object@?$_Error_objects@H@std@@2V_Generic_error_category@2@A@@YAXXZ ENDP ; `dynamic initializer for 'std::_Error_objects<int>::_Generic_object''
 text$yc	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
-;	COMDAT ??$_Allocate@D@std@@YAPADIPAD@Z
+;	COMDAT ??$_Allocate@D@std@@YGPADIPAD@Z
 _TEXT	SEGMENT
 __Ptr$ = -8						; size = 4
 __Count$ = 8						; size = 4
 ___formal$ = 12						; size = 4
-??$_Allocate@D@std@@YAPADIPAD@Z PROC			; std::_Allocate<char>, COMDAT
+??$_Allocate@D@std@@YGPADIPAD@Z PROC			; std::_Allocate<char>, COMDAT
 ; File c:\program files (x86)\microsoft visual studio 11.0\vc\include\xmemory0
 ; Line 22
 	push	ebp
@@ -1798,16 +1796,16 @@ $LN6@Allocate:
 	call	__RTC_CheckEsp
 	mov	esp, ebp
 	pop	ebp
-	ret	0
-??$_Allocate@D@std@@YAPADIPAD@Z ENDP			; std::_Allocate<char>
+	ret	8
+??$_Allocate@D@std@@YGPADIPAD@Z ENDP			; std::_Allocate<char>
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
-;	COMDAT ??$_Allocate@U_Container_proxy@std@@@std@@YAPAU_Container_proxy@0@IPAU10@@Z
+;	COMDAT ??$_Allocate@U_Container_proxy@std@@@std@@YGPAU_Container_proxy@0@IPAU10@@Z
 _TEXT	SEGMENT
 __Ptr$ = -8						; size = 4
 __Count$ = 8						; size = 4
 ___formal$ = 12						; size = 4
-??$_Allocate@U_Container_proxy@std@@@std@@YAPAU_Container_proxy@0@IPAU10@@Z PROC ; std::_Allocate<std::_Container_proxy>, COMDAT
+??$_Allocate@U_Container_proxy@std@@@std@@YGPAU_Container_proxy@0@IPAU10@@Z PROC ; std::_Allocate<std::_Container_proxy>, COMDAT
 ; File c:\program files (x86)\microsoft visual studio 11.0\vc\include\xmemory0
 ; Line 22
 	push	ebp
@@ -1858,8 +1856,8 @@ $LN6@Allocate:
 	call	__RTC_CheckEsp
 	mov	esp, ebp
 	pop	ebp
-	ret	0
-??$_Allocate@U_Container_proxy@std@@@std@@YAPAU_Container_proxy@0@IPAU10@@Z ENDP ; std::_Allocate<std::_Container_proxy>
+	ret	8
+??$_Allocate@U_Container_proxy@std@@@std@@YGPAU_Container_proxy@0@IPAU10@@Z ENDP ; std::_Allocate<std::_Container_proxy>
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ??$destroy@U_Container_proxy@std@@@?$allocator@U_Container_proxy@std@@@std@@QAEXPAU_Container_proxy@1@@Z
@@ -1939,8 +1937,7 @@ __V0$ = 12						; size = 4
 	je	SHORT $LN3@construct
 	mov	ecx, DWORD PTR __V0$[ebp]
 	push	ecx
-	call	??$forward@U_Container_proxy@std@@@std@@YA$$QAU_Container_proxy@0@AAU10@@Z ; std::forward<std::_Container_proxy>
-	add	esp, 4
+	call	??$forward@U_Container_proxy@std@@@std@@YG$$QAU_Container_proxy@0@AAU10@@Z ; std::forward<std::_Container_proxy>
 	mov	edx, DWORD PTR [eax]
 	mov	eax, DWORD PTR [eax+4]
 	mov	ecx, DWORD PTR $T3[ebp]
@@ -2014,8 +2011,7 @@ __Count$ = 8						; size = 4
 	push	0
 	mov	eax, DWORD PTR __Count$[ebp]
 	push	eax
-	call	??$_Allocate@U_Container_proxy@std@@@std@@YAPAU_Container_proxy@0@IPAU10@@Z ; std::_Allocate<std::_Container_proxy>
-	add	esp, 8
+	call	??$_Allocate@U_Container_proxy@std@@@std@@YGPAU_Container_proxy@0@IPAU10@@Z ; std::_Allocate<std::_Container_proxy>
 ; Line 592
 	pop	edi
 	pop	esi
@@ -2100,10 +2096,10 @@ _this$ = -8						; size = 4
 ??0?$allocator@U_Container_proxy@std@@@std@@QAE@XZ ENDP	; std::allocator<std::_Container_proxy>::allocator<std::_Container_proxy>
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
-;	COMDAT ??$addressof@D@std@@YAPADAAD@Z
+;	COMDAT ??$addressof@D@std@@YGPADAAD@Z
 _TEXT	SEGMENT
 __Val$ = 8						; size = 4
-??$addressof@D@std@@YAPADAAD@Z PROC			; std::addressof<char>, COMDAT
+??$addressof@D@std@@YGPADAAD@Z PROC			; std::addressof<char>, COMDAT
 ; File c:\program files (x86)\microsoft visual studio 11.0\vc\include\xstddef
 ; Line 85
 	push	ebp
@@ -2124,8 +2120,8 @@ __Val$ = 8						; size = 4
 	pop	ebx
 	mov	esp, ebp
 	pop	ebp
-	ret	0
-??$addressof@D@std@@YAPADAAD@Z ENDP			; std::addressof<char>
+	ret	4
+??$addressof@D@std@@YGPADAAD@Z ENDP			; std::addressof<char>
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ??$destroy@PAD@?$_Wrap_alloc@V?$allocator@D@std@@@std@@QAEXPAPAD@Z
@@ -2154,8 +2150,7 @@ __Ptr$ = 8						; size = 4
 	push	eax
 	mov	ecx, DWORD PTR _this$[ebp]
 	push	ecx
-	call	??$destroy@PAD@?$allocator_traits@V?$allocator@D@std@@@std@@SAXAAV?$allocator@D@1@PAPAD@Z ; std::allocator_traits<std::allocator<char> >::destroy<char *>
-	add	esp, 8
+	call	??$destroy@PAD@?$allocator_traits@V?$allocator@D@std@@@std@@SGXAAV?$allocator@D@1@PAPAD@Z ; std::allocator_traits<std::allocator<char> >::destroy<char *>
 ; Line 910
 	pop	edi
 	pop	esi
@@ -2193,15 +2188,13 @@ __V0$ = 12						; size = 4
 	mov	DWORD PTR _this$[ebp], ecx
 	mov	eax, DWORD PTR __V0$[ebp]
 	push	eax
-	call	??$forward@AAPAD@std@@YAAAPADAAPAD@Z	; std::forward<char * &>
-	add	esp, 4
+	call	??$forward@AAPAD@std@@YGAAPADAAPAD@Z	; std::forward<char * &>
 	push	eax
 	mov	ecx, DWORD PTR __Ptr$[ebp]
 	push	ecx
 	mov	edx, DWORD PTR _this$[ebp]
 	push	edx
-	call	??$construct@PADAAPAD@?$allocator_traits@V?$allocator@D@std@@@std@@SAXAAV?$allocator@D@1@PAPADAAPAD@Z ; std::allocator_traits<std::allocator<char> >::construct<char *,char * &>
-	add	esp, 12					; 0000000cH
+	call	??$construct@PADAAPAD@?$allocator_traits@V?$allocator@D@std@@@std@@SGXAAV?$allocator@D@1@PAPADAAPAD@Z ; std::allocator_traits<std::allocator<char> >::construct<char *,char * &>
 	pop	edi
 	pop	esi
 	pop	ebx
@@ -2214,12 +2207,12 @@ __V0$ = 12						; size = 4
 ??$construct@PADAAPAD@?$_Wrap_alloc@V?$allocator@D@std@@@std@@QAEXPAPADAAPAD@Z ENDP ; std::_Wrap_alloc<std::allocator<char> >::construct<char *,char * &>
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
-;	COMDAT ?setSlaveInformation@SlaveAddressHandler@@SAXPAVAbstractDevice@@USlaveInformation@@@Z
+;	COMDAT ?setSlaveInformation@SlaveAddressHandler@@SGXPAVAbstractDevice@@USlaveInformation@@@Z
 _TEXT	SEGMENT
 _i$1 = -8						; size = 4
 _device$ = 8						; size = 4
 _startAddress$ = 12					; size = 8
-?setSlaveInformation@SlaveAddressHandler@@SAXPAVAbstractDevice@@USlaveInformation@@@Z PROC ; SlaveAddressHandler::setSlaveInformation, COMDAT
+?setSlaveInformation@SlaveAddressHandler@@SGXPAVAbstractDevice@@USlaveInformation@@@Z PROC ; SlaveAddressHandler::setSlaveInformation, COMDAT
 ; File d:\projects\asu\icpdas\tmminios\tmminios\slaveaddresshandler.cpp
 ; Line 12
 	push	ebp
@@ -2241,19 +2234,19 @@ $LN2@setSlaveIn:
 	mov	DWORD PTR _i$1[ebp], eax
 $LN3@setSlaveIn:
 	mov	eax, DWORD PTR _device$[ebp]
-	movsx	ecx, WORD PTR [eax+124]
+	movsx	ecx, WORD PTR [eax+132]
 	cmp	DWORD PTR _i$1[ebp], ecx
 	jge	SHORT $LN4@setSlaveIn
 ; Line 15
 	mov	eax, DWORD PTR _device$[ebp]
-	mov	ecx, DWORD PTR [eax+132]
+	mov	ecx, DWORD PTR [eax+140]
 	mov	edx, DWORD PTR _i$1[ebp]
 	mov	eax, DWORD PTR [ecx+edx*4]
 	mov	ecx, DWORD PTR _startAddress$[ebp+4]
 	mov	DWORD PTR [eax+124], ecx
 ; Line 16
 	mov	eax, DWORD PTR _device$[ebp]
-	mov	ecx, DWORD PTR [eax+132]
+	mov	ecx, DWORD PTR [eax+140]
 	mov	edx, DWORD PTR _i$1[ebp]
 	mov	eax, DWORD PTR [ecx+edx*4]
 	mov	ecx, DWORD PTR _startAddress$[ebp]
@@ -2271,8 +2264,8 @@ $LN4@setSlaveIn:
 	pop	ebx
 	mov	esp, ebp
 	pop	ebp
-	ret	0
-?setSlaveInformation@SlaveAddressHandler@@SAXPAVAbstractDevice@@USlaveInformation@@@Z ENDP ; SlaveAddressHandler::setSlaveInformation
+	ret	12					; 0000000cH
+?setSlaveInformation@SlaveAddressHandler@@SGXPAVAbstractDevice@@USlaveInformation@@@Z ENDP ; SlaveAddressHandler::setSlaveInformation
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ??1SlaveAddressHandler@@AAE@XZ
@@ -2443,7 +2436,7 @@ __Errval$ = 12						; size = 4
 	test	eax, eax
 	je	SHORT $LN2@default_er
 ; Line 643
-	call	?generic_category@std@@YAABVerror_category@1@XZ ; std::generic_category
+	call	?generic_category@std@@YGABVerror_category@1@XZ ; std::generic_category
 	push	eax
 	mov	eax, DWORD PTR __Errval$[ebp]
 	push	eax
@@ -2455,7 +2448,7 @@ __Errval$ = 12						; size = 4
 	jmp	SHORT $LN3@default_er
 $LN2@default_er:
 ; Line 645
-	call	?system_category@std@@YAABVerror_category@1@XZ ; std::system_category
+	call	?system_category@std@@YGABVerror_category@1@XZ ; std::system_category
 	push	eax
 	mov	eax, DWORD PTR __Errval$[ebp]
 	push	eax
@@ -3558,9 +3551,9 @@ _this$ = -8						; size = 4
 ??0error_category@std@@QAE@XZ ENDP			; std::error_category::error_category
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
-;	COMDAT ?system_category@std@@YAABVerror_category@1@XZ
+;	COMDAT ?system_category@std@@YGABVerror_category@1@XZ
 _TEXT	SEGMENT
-?system_category@std@@YAABVerror_category@1@XZ PROC	; std::system_category, COMDAT
+?system_category@std@@YGABVerror_category@1@XZ PROC	; std::system_category, COMDAT
 ; File c:\program files (x86)\microsoft visual studio 11.0\vc\include\system_error
 ; Line 679
 	push	ebp
@@ -3582,12 +3575,12 @@ _TEXT	SEGMENT
 	mov	esp, ebp
 	pop	ebp
 	ret	0
-?system_category@std@@YAABVerror_category@1@XZ ENDP	; std::system_category
+?system_category@std@@YGABVerror_category@1@XZ ENDP	; std::system_category
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
-;	COMDAT ?generic_category@std@@YAABVerror_category@1@XZ
+;	COMDAT ?generic_category@std@@YGABVerror_category@1@XZ
 _TEXT	SEGMENT
-?generic_category@std@@YAABVerror_category@1@XZ PROC	; std::generic_category, COMDAT
+?generic_category@std@@YGABVerror_category@1@XZ PROC	; std::generic_category, COMDAT
 ; File c:\program files (x86)\microsoft visual studio 11.0\vc\include\system_error
 ; Line 669
 	push	ebp
@@ -3609,15 +3602,15 @@ _TEXT	SEGMENT
 	mov	esp, ebp
 	pop	ebp
 	ret	0
-?generic_category@std@@YAABVerror_category@1@XZ ENDP	; std::generic_category
+?generic_category@std@@YGABVerror_category@1@XZ ENDP	; std::generic_category
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
-;	COMDAT ??$_Debug_pointer@D@std@@YAXPBDPB_WI@Z
+;	COMDAT ??$_Debug_pointer@D@std@@YGXPBDPB_WI@Z
 _TEXT	SEGMENT
 __First$ = 8						; size = 4
 __File$ = 12						; size = 4
 __Line$ = 16						; size = 4
-??$_Debug_pointer@D@std@@YAXPBDPB_WI@Z PROC		; std::_Debug_pointer<char>, COMDAT
+??$_Debug_pointer@D@std@@YGXPBDPB_WI@Z PROC		; std::_Debug_pointer<char>, COMDAT
 ; File c:\program files (x86)\microsoft visual studio 11.0\vc\include\xutility
 ; Line 610
 	push	ebp
@@ -3654,8 +3647,8 @@ $LN2@Debug_poin:
 	call	__RTC_CheckEsp
 	mov	esp, ebp
 	pop	ebp
-	ret	0
-??$_Debug_pointer@D@std@@YAXPBDPB_WI@Z ENDP		; std::_Debug_pointer<char>
+	ret	12					; 0000000cH
+??$_Debug_pointer@D@std@@YGXPBDPB_WI@Z ENDP		; std::_Debug_pointer<char>
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ?_Xran@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEXXZ
@@ -3795,8 +3788,7 @@ $LN4@Tidy:
 	push	eax
 	mov	ecx, DWORD PTR __Ptr$3[ebp]
 	push	ecx
-	call	??$addressof@D@std@@YAPADAAD@Z		; std::addressof<char>
-	add	esp, 4
+	call	??$addressof@D@std@@YGPADAAD@Z		; std::addressof<char>
 	push	eax
 	mov	edx, DWORD PTR _this$[ebp]
 	add	edx, 4
@@ -4557,8 +4549,7 @@ __Ptr$ = 8						; size = 4
 	push	OFFSET ??_C@_1IO@BLKJFPEG@?$AAc?$AA?3?$AA?2?$AAp?$AAr?$AAo?$AAg?$AAr?$AAa?$AAm?$AA?5?$AAf?$AAi?$AAl?$AAe?$AAs?$AA?5?$AA?$CI?$AAx?$AA8?$AA6?$AA?$CJ?$AA?2?$AAm?$AAi?$AAc?$AAr?$AAo?$AAs?$AAo?$AAf?$AAt@
 	mov	eax, DWORD PTR __Ptr$[ebp]
 	push	eax
-	call	??$_Debug_pointer@D@std@@YAXPBDPB_WI@Z	; std::_Debug_pointer<char>
-	add	esp, 12					; 0000000cH
+	call	??$_Debug_pointer@D@std@@YGXPBDPB_WI@Z	; std::_Debug_pointer<char>
 ; Line 1144
 	mov	eax, DWORD PTR __Ptr$[ebp]
 	push	eax
@@ -4612,8 +4603,7 @@ __Count$ = 12						; size = 4
 	push	OFFSET ??_C@_1IO@BLKJFPEG@?$AAc?$AA?3?$AA?2?$AAp?$AAr?$AAo?$AAg?$AAr?$AAa?$AAm?$AA?5?$AAf?$AAi?$AAl?$AAe?$AAs?$AA?5?$AA?$CI?$AAx?$AA8?$AA6?$AA?$CJ?$AA?2?$AAm?$AAi?$AAc?$AAr?$AAo?$AAs?$AAo?$AAf?$AAt@
 	mov	eax, DWORD PTR __Ptr$[ebp]
 	push	eax
-	call	??$_Debug_pointer@D@std@@YAXPBDPB_WI@Z	; std::_Debug_pointer<char>
-	add	esp, 12					; 0000000cH
+	call	??$_Debug_pointer@D@std@@YGXPBDPB_WI@Z	; std::_Debug_pointer<char>
 $LN3@assign:
 ; Line 1129
 	mov	eax, DWORD PTR __Ptr$[ebp]
@@ -5239,8 +5229,7 @@ _this$ = -8						; size = 4
 	mov	ecx, DWORD PTR _this$[ebp]
 	mov	edx, DWORD PTR [ecx+4]
 	push	edx
-	call	??$addressof@D@std@@YAPADAAD@Z		; std::addressof<char>
-	add	esp, 4
+	call	??$addressof@D@std@@YGPADAAD@Z		; std::addressof<char>
 	mov	DWORD PTR tv72[ebp], eax
 	jmp	SHORT $LN4@Myptr
 $LN3@Myptr:
@@ -5290,8 +5279,7 @@ _this$ = -8						; size = 4
 	mov	ecx, DWORD PTR _this$[ebp]
 	mov	edx, DWORD PTR [ecx+4]
 	push	edx
-	call	??$addressof@D@std@@YAPADAAD@Z		; std::addressof<char>
-	add	esp, 4
+	call	??$addressof@D@std@@YGPADAAD@Z		; std::addressof<char>
 	mov	DWORD PTR tv72[ebp], eax
 	jmp	SHORT $LN4@Myptr
 $LN3@Myptr:
@@ -5381,8 +5369,7 @@ _this$ = -8						; size = 4
 ; Line 914
 	mov	eax, DWORD PTR _this$[ebp]
 	push	eax
-	call	?max_size@?$allocator_traits@V?$allocator@D@std@@@std@@SAIABV?$allocator@D@2@@Z ; std::allocator_traits<std::allocator<char> >::max_size
-	add	esp, 4
+	call	?max_size@?$allocator_traits@V?$allocator@D@std@@@std@@SGIABV?$allocator@D@2@@Z ; std::allocator_traits<std::allocator<char> >::max_size
 ; Line 915
 	pop	edi
 	pop	esi
@@ -5513,10 +5500,10 @@ _this$ = -8						; size = 4
 ??0?$_Wrap_alloc@V?$allocator@D@std@@@std@@QAE@XZ ENDP	; std::_Wrap_alloc<std::allocator<char> >::_Wrap_alloc<std::allocator<char> >
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
-;	COMDAT ?max_size@?$allocator_traits@V?$allocator@D@std@@@std@@SAIABV?$allocator@D@2@@Z
+;	COMDAT ?max_size@?$allocator_traits@V?$allocator@D@std@@@std@@SGIABV?$allocator@D@2@@Z
 _TEXT	SEGMENT
 __Al$ = 8						; size = 4
-?max_size@?$allocator_traits@V?$allocator@D@std@@@std@@SAIABV?$allocator@D@2@@Z PROC ; std::allocator_traits<std::allocator<char> >::max_size, COMDAT
+?max_size@?$allocator_traits@V?$allocator@D@std@@@std@@SGIABV?$allocator@D@2@@Z PROC ; std::allocator_traits<std::allocator<char> >::max_size, COMDAT
 ; File c:\program files (x86)\microsoft visual studio 11.0\vc\include\xmemory0
 ; Line 761
 	push	ebp
@@ -5541,8 +5528,8 @@ __Al$ = 8						; size = 4
 	call	__RTC_CheckEsp
 	mov	esp, ebp
 	pop	ebp
-	ret	0
-?max_size@?$allocator_traits@V?$allocator@D@std@@@std@@SAIABV?$allocator@D@2@@Z ENDP ; std::allocator_traits<std::allocator<char> >::max_size
+	ret	4
+?max_size@?$allocator_traits@V?$allocator@D@std@@@std@@SGIABV?$allocator@D@2@@Z ENDP ; std::allocator_traits<std::allocator<char> >::max_size
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ?max_size@?$allocator@D@std@@QBEIXZ
@@ -5602,8 +5589,7 @@ __Count$ = 8						; size = 4
 	push	0
 	mov	eax, DWORD PTR __Count$[ebp]
 	push	eax
-	call	??$_Allocate@D@std@@YAPADIPAD@Z		; std::_Allocate<char>
-	add	esp, 8
+	call	??$_Allocate@D@std@@YGPADIPAD@Z		; std::_Allocate<char>
 ; Line 592
 	pop	edi
 	pop	esi

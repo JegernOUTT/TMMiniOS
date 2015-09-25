@@ -789,7 +789,6 @@ CONST	ENDS
 CONST	SEGMENT
 ?skipws@?$_Iosb@H@std@@2W4_Fmtflags@12@B DD 01H		; std::_Iosb<int>::skipws
 CONST	ENDS
-PUBLIC	??_H@YGXPAXIHP6EPAX0@Z@Z			; `vector constructor iterator'
 PUBLIC	??2@YAPAXIPAX@Z					; operator new
 PUBLIC	??3@YAXPAX0@Z					; operator delete
 PUBLIC	?length@?$char_traits@D@std@@SAIPBD@Z		; std::char_traits<char>::length
@@ -801,7 +800,7 @@ PUBLIC	??0?$allocator@D@std@@QAE@XZ			; std::allocator<char>::allocator<char>
 PUBLIC	?deallocate@?$allocator@D@std@@QAEXPADI@Z	; std::allocator<char>::deallocate
 PUBLIC	?allocate@?$allocator@D@std@@QAEPADI@Z		; std::allocator<char>::allocate
 PUBLIC	?max_size@?$allocator@D@std@@QBEIXZ		; std::allocator<char>::max_size
-PUBLIC	?max_size@?$allocator_traits@V?$allocator@D@std@@@std@@SAIABV?$allocator@D@2@@Z ; std::allocator_traits<std::allocator<char> >::max_size
+PUBLIC	?max_size@?$allocator_traits@V?$allocator@D@std@@@std@@SGIABV?$allocator@D@2@@Z ; std::allocator_traits<std::allocator<char> >::max_size
 PUBLIC	??0?$_Wrap_alloc@V?$allocator@D@std@@@std@@QAE@XZ ; std::_Wrap_alloc<std::allocator<char> >::_Wrap_alloc<std::allocator<char> >
 PUBLIC	?allocate@?$_Wrap_alloc@V?$allocator@D@std@@@std@@QAEPADI@Z ; std::_Wrap_alloc<std::allocator<char> >::allocate
 PUBLIC	?deallocate@?$_Wrap_alloc@V?$allocator@D@std@@@std@@QAEXPADI@Z ; std::_Wrap_alloc<std::allocator<char> >::deallocate
@@ -830,9 +829,9 @@ PUBLIC	?_Inside@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE
 PUBLIC	?_Tidy@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEX_NI@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::_Tidy
 PUBLIC	?_Xlen@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEXXZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::_Xlen
 PUBLIC	?_Xran@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEXXZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::_Xran
-PUBLIC	??$_Debug_pointer@D@std@@YAXPBDPB_WI@Z		; std::_Debug_pointer<char>
-PUBLIC	?generic_category@std@@YAABVerror_category@1@XZ	; std::generic_category
-PUBLIC	?system_category@std@@YAABVerror_category@1@XZ	; std::system_category
+PUBLIC	??$_Debug_pointer@D@std@@YGXPBDPB_WI@Z		; std::_Debug_pointer<char>
+PUBLIC	?generic_category@std@@YGABVerror_category@1@XZ	; std::generic_category
+PUBLIC	?system_category@std@@YGABVerror_category@1@XZ	; std::system_category
 PUBLIC	??0error_category@std@@QAE@XZ			; std::error_category::error_category
 PUBLIC	??1error_category@std@@UAE@XZ			; std::error_category::~error_category
 PUBLIC	?default_error_condition@error_category@std@@UBE?AVerror_condition@2@H@Z ; std::error_category::default_error_condition
@@ -863,12 +862,14 @@ PUBLIC	?default_error_condition@_System_error_category@std@@UBE?AVerror_conditio
 PUBLIC	??1_System_error_category@std@@UAE@XZ		; std::_System_error_category::~_System_error_category
 PUBLIC	??_G_System_error_category@std@@UAEPAXI@Z	; std::_System_error_category::`scalar deleting destructor'
 PUBLIC	??0SlaveInformation@@QAE@W4regType@@J@Z		; SlaveInformation::SlaveInformation
+PUBLIC	??0ModbusRtuMasterFrame@@QAE@HHHHHHHH@Z		; ModbusRtuMasterFrame::ModbusRtuMasterFrame
 PUBLIC	??0uValue@@QAE@K@Z				; uValue::uValue
-PUBLIC	??_FuValue@@QAEXXZ				; uValue::`default constructor closure'
+PUBLIC	?getVal@AbstractDevice@@UAEIPAVProperty@@@Z	; AbstractDevice::getVal
+PUBLIC	?setVal@AbstractDevice@@UAEIPAVProperty@@@Z	; AbstractDevice::setVal
 PUBLIC	??0BskzhDevice@@QAE@GG@Z			; BskzhDevice::BskzhDevice
 PUBLIC	??1BskzhDevice@@UAE@XZ				; BskzhDevice::~BskzhDevice
-PUBLIC	?getVal@BskzhDevice@@UAEIPAVProperty@@@Z	; BskzhDevice::getVal
-PUBLIC	?setVal@BskzhDevice@@UAEIPAVProperty@@@Z	; BskzhDevice::setVal
+PUBLIC	?getTasksProperties@BskzhDevice@@UAEXXZ		; BskzhDevice::getTasksProperties
+PUBLIC	?update@BskzhDevice@@UAEXXZ			; BskzhDevice::update
 PUBLIC	??_GBskzhDevice@@UAEPAXI@Z			; BskzhDevice::`scalar deleting destructor'
 PUBLIC	??0X304Device@@QAE@GG@Z				; X304Device::X304Device
 PUBLIC	??1X304Device@@UAE@XZ				; X304Device::~X304Device
@@ -879,28 +880,30 @@ PUBLIC	?saveCountsToEEPROM@X304Device@@QAEXPAVProperty@@@Z ; X304Device::saveCou
 PUBLIC	??_GX304Device@@UAEPAXI@Z			; X304Device::`scalar deleting destructor'
 PUBLIC	??0I7002Device@@QAE@GG@Z			; I7002Device::I7002Device
 PUBLIC	??1I7002Device@@UAE@XZ				; I7002Device::~I7002Device
-PUBLIC	?getVal@I7002Device@@UAEIPAVProperty@@@Z	; I7002Device::getVal
-PUBLIC	?setVal@I7002Device@@UAEIPAVProperty@@@Z	; I7002Device::setVal
+PUBLIC	?getTasksProperties@I7002Device@@UAEXXZ		; I7002Device::getTasksProperties
+PUBLIC	?getTasksEvents@I7002Device@@UAEXXZ		; I7002Device::getTasksEvents
+PUBLIC	?update@I7002Device@@UAEXXZ			; I7002Device::update
 PUBLIC	??_GI7002Device@@UAEPAXI@Z			; I7002Device::`scalar deleting destructor'
 PUBLIC	??0I7041Device@@QAE@GG@Z			; I7041Device::I7041Device
 PUBLIC	??1I7041Device@@UAE@XZ				; I7041Device::~I7041Device
-PUBLIC	?getVal@I7041Device@@UAEIPAVProperty@@@Z	; I7041Device::getVal
-PUBLIC	?setVal@I7041Device@@UAEIPAVProperty@@@Z	; I7041Device::setVal
+PUBLIC	?getTasksProperties@I7041Device@@UAEXXZ		; I7041Device::getTasksProperties
+PUBLIC	?update@I7041Device@@UAEXXZ			; I7041Device::update
 PUBLIC	??_GI7041Device@@UAEPAXI@Z			; I7041Device::`scalar deleting destructor'
+PUBLIC	??0TaskFrame@@QAE@PAUModbusRtuMasterFrame@@PAXW4taskType@@@Z ; TaskFrame::TaskFrame
 PUBLIC	??$construct@PADAAPAD@?$_Wrap_alloc@V?$allocator@D@std@@@std@@QAEXPAPADAAPAD@Z ; std::_Wrap_alloc<std::allocator<char> >::construct<char *,char * &>
 PUBLIC	??$destroy@PAD@?$_Wrap_alloc@V?$allocator@D@std@@@std@@QAEXPAPAD@Z ; std::_Wrap_alloc<std::allocator<char> >::destroy<char *>
-PUBLIC	??$addressof@D@std@@YAPADAAD@Z			; std::addressof<char>
+PUBLIC	??$addressof@D@std@@YGPADAAD@Z			; std::addressof<char>
 PUBLIC	??0?$allocator@U_Container_proxy@std@@@std@@QAE@XZ ; std::allocator<std::_Container_proxy>::allocator<std::_Container_proxy>
 PUBLIC	?deallocate@?$allocator@U_Container_proxy@std@@@std@@QAEXPAU_Container_proxy@2@I@Z ; std::allocator<std::_Container_proxy>::deallocate
 PUBLIC	?allocate@?$allocator@U_Container_proxy@std@@@std@@QAEPAU_Container_proxy@2@I@Z ; std::allocator<std::_Container_proxy>::allocate
 PUBLIC	??$construct@U_Container_proxy@std@@U12@@?$allocator@U_Container_proxy@std@@@std@@QAEXPAU_Container_proxy@1@$$QAU21@@Z ; std::allocator<std::_Container_proxy>::construct<std::_Container_proxy,std::_Container_proxy>
 PUBLIC	??$destroy@U_Container_proxy@std@@@?$allocator@U_Container_proxy@std@@@std@@QAEXPAU_Container_proxy@1@@Z ; std::allocator<std::_Container_proxy>::destroy<std::_Container_proxy>
-PUBLIC	??$_Allocate@U_Container_proxy@std@@@std@@YAPAU_Container_proxy@0@IPAU10@@Z ; std::_Allocate<std::_Container_proxy>
-PUBLIC	??$_Allocate@D@std@@YAPADIPAD@Z			; std::_Allocate<char>
-PUBLIC	??$forward@AAPAD@std@@YAAAPADAAPAD@Z		; std::forward<char * &>
-PUBLIC	??$construct@PADAAPAD@?$allocator_traits@V?$allocator@D@std@@@std@@SAXAAV?$allocator@D@1@PAPADAAPAD@Z ; std::allocator_traits<std::allocator<char> >::construct<char *,char * &>
-PUBLIC	??$destroy@PAD@?$allocator_traits@V?$allocator@D@std@@@std@@SAXAAV?$allocator@D@1@PAPAD@Z ; std::allocator_traits<std::allocator<char> >::destroy<char *>
-PUBLIC	??$forward@U_Container_proxy@std@@@std@@YA$$QAU_Container_proxy@0@AAU10@@Z ; std::forward<std::_Container_proxy>
+PUBLIC	??$_Allocate@U_Container_proxy@std@@@std@@YGPAU_Container_proxy@0@IPAU10@@Z ; std::_Allocate<std::_Container_proxy>
+PUBLIC	??$_Allocate@D@std@@YGPADIPAD@Z			; std::_Allocate<char>
+PUBLIC	??$forward@AAPAD@std@@YGAAPADAAPAD@Z		; std::forward<char * &>
+PUBLIC	??$construct@PADAAPAD@?$allocator_traits@V?$allocator@D@std@@@std@@SGXAAV?$allocator@D@1@PAPADAAPAD@Z ; std::allocator_traits<std::allocator<char> >::construct<char *,char * &>
+PUBLIC	??$destroy@PAD@?$allocator_traits@V?$allocator@D@std@@@std@@SGXAAV?$allocator@D@1@PAPAD@Z ; std::allocator_traits<std::allocator<char> >::destroy<char *>
+PUBLIC	??$forward@U_Container_proxy@std@@@std@@YG$$QAU_Container_proxy@0@AAU10@@Z ; std::forward<std::_Container_proxy>
 PUBLIC	??$construct@PADAAPAD@?$allocator@D@std@@QAEXPAPADAAPAD@Z ; std::allocator<char>::construct<char *,char * &>
 PUBLIC	??$destroy@PAD@?$allocator@D@std@@QAEXPAPAD@Z	; std::allocator<char>::destroy<char *>
 PUBLIC	??_7error_category@std@@6B@			; std::error_category::`vftable'
@@ -988,6 +991,8 @@ EXTRN	__imp__fopen:PROC
 EXTRN	__imp__fread:PROC
 EXTRN	__imp__fwrite:PROC
 EXTRN	__imp__sprintf:PROC
+EXTRN	__imp__free:PROC
+EXTRN	__imp__malloc:PROC
 EXTRN	_memcpy:PROC
 EXTRN	_memset:PROC
 EXTRN	_strlen:PROC
@@ -1008,15 +1013,18 @@ EXTRN	??_E_System_error_category@std@@UAEPAXI@Z:PROC	; std::_System_error_catego
 EXTRN	??0AbstractDevice@@IAE@FGG@Z:PROC		; AbstractDevice::AbstractDevice
 EXTRN	??1AbstractDevice@@UAE@XZ:PROC			; AbstractDevice::~AbstractDevice
 EXTRN	?getAddress@AbstractDevice@@QAEGXZ:PROC		; AbstractDevice::getAddress
+EXTRN	?getTasksProperties@AbstractDevice@@UAEXXZ:PROC	; AbstractDevice::getTasksProperties
+EXTRN	?getTasksEvents@AbstractDevice@@UAEXXZ:PROC	; AbstractDevice::getTasksEvents
+EXTRN	?update@AbstractDevice@@UAEXXZ:PROC		; AbstractDevice::update
 EXTRN	??_EBskzhDevice@@UAEPAXI@Z:PROC			; BskzhDevice::`vector deleting destructor'
 EXTRN	??_EX304Device@@UAEPAXI@Z:PROC			; X304Device::`vector deleting destructor'
 EXTRN	??_EI7002Device@@UAEPAXI@Z:PROC			; I7002Device::`vector deleting destructor'
 EXTRN	??_EI7041Device@@UAEPAXI@Z:PROC			; I7041Device::`vector deleting destructor'
+EXTRN	?getValueUnsignedLong@Property@@QAEKXZ:PROC	; Property::getValueUnsignedLong
 EXTRN	?getValueBool@Property@@QAE?AW4bool_t@@XZ:PROC	; Property::getValueBool
 EXTRN	?setValueFloat@Property@@QAEXM@Z:PROC		; Property::setValueFloat
 EXTRN	?setValueInt@Property@@QAEXF@Z:PROC		; Property::setValueInt
 EXTRN	?setValueUnsignedLong@Property@@QAEXK@Z:PROC	; Property::setValueUnsignedLong
-EXTRN	?setValueBool@Property@@QAEXW4bool_t@@@Z:PROC	; Property::setValueBool
 EXTRN	?getNativeValue@Property@@QAEPAXXZ:PROC		; Property::getNativeValue
 EXTRN	??0BskzhMass1Property@@QAE@XZ:PROC		; BskzhMass1Property::BskzhMass1Property
 EXTRN	??0BskzhMass2Property@@QAE@XZ:PROC		; BskzhMass2Property::BskzhMass2Property
@@ -1028,20 +1036,16 @@ EXTRN	??0I7002DiscreteOutputProperty@@QAE@F@Z:PROC	; I7002DiscreteOutputProperty
 EXTRN	??0I7002AnalogProperty@@QAE@F@Z:PROC		; I7002AnalogProperty::I7002AnalogProperty
 EXTRN	??0I7041DiscreteProperty@@QAE@F@Z:PROC		; I7041DiscreteProperty::I7041DiscreteProperty
 EXTRN	??0ErrorProperty@@QAE@XZ:PROC			; ErrorProperty::ErrorProperty
-EXTRN	?setCoils@SlaveFactory@@QAEXUSlaveInformation@@ABTuValue@@@Z:PROC ; SlaveFactory::setCoils
 EXTRN	?setInputRegisters@SlaveFactory@@QAEXUSlaveInformation@@ABTuValue@@@Z:PROC ; SlaveFactory::setInputRegisters
-EXTRN	?getDisreteInput@SlaveFactory@@QAE?ATuValue@@USlaveInformation@@I@Z:PROC ; SlaveFactory::getDisreteInput
-EXTRN	?getCoils@SlaveFactory@@QAE?ATuValue@@USlaveInformation@@I@Z:PROC ; SlaveFactory::getCoils
-EXTRN	?getInputRegisters@SlaveFactory@@QAE?ATuValue@@USlaveInformation@@I@Z:PROC ; SlaveFactory::getInputRegisters
-EXTRN	?getHoldingRegisters@SlaveFactory@@QAE?ATuValue@@USlaveInformation@@I@Z:PROC ; SlaveFactory::getHoldingRegisters
-EXTRN	?GetTimeTicks@@YA_JXZ:PROC			; GetTimeTicks
-EXTRN	?ModbusRTU_Master@@YAHHHHHHHHH@Z:PROC		; ModbusRTU_Master
-EXTRN	?X304_AnalogIn@@YAMH@Z:PROC			; X304_AnalogIn
-EXTRN	?X304_DigitalIn@@YAGXZ:PROC			; X304_DigitalIn
-EXTRN	?X304_Init@@YAGXZ:PROC				; X304_Init
-EXTRN	?X304_Read_All_DO@@YAGXZ:PROC			; X304_Read_All_DO
-EXTRN	?X304_Write_All_DO@@YAXI@Z:PROC			; X304_Write_All_DO
-EXTRN	?pow_2@@YAKH@Z:PROC				; pow_2
+EXTRN	?push_back@Deque@@QAEHQAVTaskFrame@@@Z:PROC	; Deque::push_back
+EXTRN	?push_front@Deque@@QAEHQAVTaskFrame@@@Z:PROC	; Deque::push_front
+EXTRN	?GetTimeTicks@@YG_JXZ:PROC			; GetTimeTicks
+EXTRN	?X304_AnalogIn@@YGMH@Z:PROC			; X304_AnalogIn
+EXTRN	?X304_DigitalIn@@YGGXZ:PROC			; X304_DigitalIn
+EXTRN	?X304_Init@@YGGXZ:PROC				; X304_Init
+EXTRN	?X304_Read_All_DO@@YGGXZ:PROC			; X304_Read_All_DO
+EXTRN	?X304_Write_All_DO@@YGXI@Z:PROC			; X304_Write_All_DO
+EXTRN	?pow_2@@YGKH@Z:PROC				; pow_2
 EXTRN	@_RTC_CheckStackVars@8:PROC
 EXTRN	@__security_check_cookie@4:PROC
 EXTRN	__CxxThrowException@8:PROC
@@ -1479,15 +1483,21 @@ CONST	ENDS
 CONST	SEGMENT
 ??_7I7041Device@@6B@ DD FLAT:??_R4I7041Device@@6B@	; I7041Device::`vftable'
 	DD	FLAT:??_EI7041Device@@UAEPAXI@Z
-	DD	FLAT:?getVal@I7041Device@@UAEIPAVProperty@@@Z
-	DD	FLAT:?setVal@I7041Device@@UAEIPAVProperty@@@Z
+	DD	FLAT:?getVal@AbstractDevice@@UAEIPAVProperty@@@Z
+	DD	FLAT:?setVal@AbstractDevice@@UAEIPAVProperty@@@Z
+	DD	FLAT:?getTasksProperties@I7041Device@@UAEXXZ
+	DD	FLAT:?getTasksEvents@AbstractDevice@@UAEXXZ
+	DD	FLAT:?update@I7041Device@@UAEXXZ
 CONST	ENDS
 ;	COMDAT ??_7I7002Device@@6B@
 CONST	SEGMENT
 ??_7I7002Device@@6B@ DD FLAT:??_R4I7002Device@@6B@	; I7002Device::`vftable'
 	DD	FLAT:??_EI7002Device@@UAEPAXI@Z
-	DD	FLAT:?getVal@I7002Device@@UAEIPAVProperty@@@Z
-	DD	FLAT:?setVal@I7002Device@@UAEIPAVProperty@@@Z
+	DD	FLAT:?getVal@AbstractDevice@@UAEIPAVProperty@@@Z
+	DD	FLAT:?setVal@AbstractDevice@@UAEIPAVProperty@@@Z
+	DD	FLAT:?getTasksProperties@I7002Device@@UAEXXZ
+	DD	FLAT:?getTasksEvents@I7002Device@@UAEXXZ
+	DD	FLAT:?update@I7002Device@@UAEXXZ
 CONST	ENDS
 ;	COMDAT ??_7X304Device@@6B@
 CONST	SEGMENT
@@ -1495,13 +1505,19 @@ CONST	SEGMENT
 	DD	FLAT:??_EX304Device@@UAEPAXI@Z
 	DD	FLAT:?getVal@X304Device@@UAEIPAVProperty@@@Z
 	DD	FLAT:?setVal@X304Device@@UAEIPAVProperty@@@Z
+	DD	FLAT:?getTasksProperties@AbstractDevice@@UAEXXZ
+	DD	FLAT:?getTasksEvents@AbstractDevice@@UAEXXZ
+	DD	FLAT:?update@AbstractDevice@@UAEXXZ
 CONST	ENDS
 ;	COMDAT ??_7BskzhDevice@@6B@
 CONST	SEGMENT
 ??_7BskzhDevice@@6B@ DD FLAT:??_R4BskzhDevice@@6B@	; BskzhDevice::`vftable'
 	DD	FLAT:??_EBskzhDevice@@UAEPAXI@Z
-	DD	FLAT:?getVal@BskzhDevice@@UAEIPAVProperty@@@Z
-	DD	FLAT:?setVal@BskzhDevice@@UAEIPAVProperty@@@Z
+	DD	FLAT:?getVal@AbstractDevice@@UAEIPAVProperty@@@Z
+	DD	FLAT:?setVal@AbstractDevice@@UAEIPAVProperty@@@Z
+	DD	FLAT:?getTasksProperties@BskzhDevice@@UAEXXZ
+	DD	FLAT:?getTasksEvents@AbstractDevice@@UAEXXZ
+	DD	FLAT:?update@BskzhDevice@@UAEXXZ
 CONST	ENDS
 ;	COMDAT ??_C@_06FHFOAHML@system?$AA@
 CONST	SEGMENT
@@ -1590,6 +1606,28 @@ __ehfuncinfo$??$construct@U_Container_proxy@std@@U12@@?$allocator@U_Container_pr
 xdata$x	ENDS
 ;	COMDAT xdata$x
 xdata$x	SEGMENT
+__ehfuncinfo$?getTasksProperties@I7041Device@@UAEXXZ DD 019930522H
+	DD	06H
+	DD	FLAT:__unwindtable$?getTasksProperties@I7041Device@@UAEXXZ
+	DD	2 DUP(00H)
+	DD	2 DUP(00H)
+	DD	00H
+	DD	01H
+__unwindtable$?getTasksProperties@I7041Device@@UAEXXZ DD 0ffffffffH
+	DD	FLAT:__unwindfunclet$?getTasksProperties@I7041Device@@UAEXXZ$0
+	DD	00H
+	DD	FLAT:__unwindfunclet$?getTasksProperties@I7041Device@@UAEXXZ$1
+	DD	0ffffffffH
+	DD	FLAT:__unwindfunclet$?getTasksProperties@I7041Device@@UAEXXZ$2
+	DD	02H
+	DD	FLAT:__unwindfunclet$?getTasksProperties@I7041Device@@UAEXXZ$3
+	DD	0ffffffffH
+	DD	FLAT:__unwindfunclet$?getTasksProperties@I7041Device@@UAEXXZ$4
+	DD	04H
+	DD	FLAT:__unwindfunclet$?getTasksProperties@I7041Device@@UAEXXZ$5
+xdata$x	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
 __unwindtable$??0I7041Device@@QAE@GG@Z DD 0ffffffffH
 	DD	FLAT:__unwindfunclet$??0I7041Device@@QAE@GG@Z$0
 	DD	00H
@@ -1603,6 +1641,50 @@ __ehfuncinfo$??0I7041Device@@QAE@GG@Z DD 019930522H
 	DD	2 DUP(00H)
 	DD	00H
 	DD	01H
+xdata$x	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
+__unwindtable$?getTasksEvents@I7002Device@@UAEXXZ DD 0ffffffffH
+	DD	FLAT:__unwindfunclet$?getTasksEvents@I7002Device@@UAEXXZ$0
+	DD	00H
+	DD	FLAT:__unwindfunclet$?getTasksEvents@I7002Device@@UAEXXZ$1
+__ehfuncinfo$?getTasksEvents@I7002Device@@UAEXXZ DD 019930522H
+	DD	02H
+	DD	FLAT:__unwindtable$?getTasksEvents@I7002Device@@UAEXXZ
+	DD	2 DUP(00H)
+	DD	2 DUP(00H)
+	DD	00H
+	DD	01H
+xdata$x	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
+__ehfuncinfo$?getTasksProperties@I7002Device@@UAEXXZ DD 019930522H
+	DD	0aH
+	DD	FLAT:__unwindtable$?getTasksProperties@I7002Device@@UAEXXZ
+	DD	2 DUP(00H)
+	DD	2 DUP(00H)
+	DD	00H
+	DD	01H
+__unwindtable$?getTasksProperties@I7002Device@@UAEXXZ DD 0ffffffffH
+	DD	FLAT:__unwindfunclet$?getTasksProperties@I7002Device@@UAEXXZ$0
+	DD	00H
+	DD	FLAT:__unwindfunclet$?getTasksProperties@I7002Device@@UAEXXZ$1
+	DD	0ffffffffH
+	DD	FLAT:__unwindfunclet$?getTasksProperties@I7002Device@@UAEXXZ$2
+	DD	02H
+	DD	FLAT:__unwindfunclet$?getTasksProperties@I7002Device@@UAEXXZ$3
+	DD	0ffffffffH
+	DD	FLAT:__unwindfunclet$?getTasksProperties@I7002Device@@UAEXXZ$4
+	DD	04H
+	DD	FLAT:__unwindfunclet$?getTasksProperties@I7002Device@@UAEXXZ$5
+	DD	0ffffffffH
+	DD	FLAT:__unwindfunclet$?getTasksProperties@I7002Device@@UAEXXZ$6
+	DD	06H
+	DD	FLAT:__unwindfunclet$?getTasksProperties@I7002Device@@UAEXXZ$7
+	DD	0ffffffffH
+	DD	FLAT:__unwindfunclet$?getTasksProperties@I7002Device@@UAEXXZ$8
+	DD	08H
+	DD	FLAT:__unwindfunclet$?getTasksProperties@I7002Device@@UAEXXZ$9
 xdata$x	ENDS
 ;	COMDAT xdata$x
 xdata$x	SEGMENT
@@ -1643,6 +1725,20 @@ __unwindtable$??0X304Device@@QAE@GG@Z DD 0ffffffffH
 	DD	FLAT:__unwindfunclet$??0X304Device@@QAE@GG@Z$3
 	DD	00H
 	DD	FLAT:__unwindfunclet$??0X304Device@@QAE@GG@Z$4
+xdata$x	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
+__unwindtable$?getTasksProperties@BskzhDevice@@UAEXXZ DD 0ffffffffH
+	DD	FLAT:__unwindfunclet$?getTasksProperties@BskzhDevice@@UAEXXZ$0
+	DD	00H
+	DD	FLAT:__unwindfunclet$?getTasksProperties@BskzhDevice@@UAEXXZ$1
+__ehfuncinfo$?getTasksProperties@BskzhDevice@@UAEXXZ DD 019930522H
+	DD	02H
+	DD	FLAT:__unwindtable$?getTasksProperties@BskzhDevice@@UAEXXZ
+	DD	2 DUP(00H)
+	DD	2 DUP(00H)
+	DD	00H
+	DD	01H
 xdata$x	ENDS
 ;	COMDAT xdata$x
 xdata$x	SEGMENT
@@ -1816,8 +1912,7 @@ __V0$ = 12						; size = 4
 	je	SHORT $LN3@construct
 	mov	ecx, DWORD PTR __V0$[ebp]
 	push	ecx
-	call	??$forward@AAPAD@std@@YAAAPADAAPAD@Z	; std::forward<char * &>
-	add	esp, 4
+	call	??$forward@AAPAD@std@@YGAAPADAAPAD@Z	; std::forward<char * &>
 	mov	edx, DWORD PTR $T3[ebp]
 	mov	eax, DWORD PTR [eax]
 	mov	DWORD PTR [edx], eax
@@ -1864,10 +1959,10 @@ __ehhandler$??$construct@PADAAPAD@?$allocator@D@std@@QAEXPAPADAAPAD@Z:
 text$x	ENDS
 ??$construct@PADAAPAD@?$allocator@D@std@@QAEXPAPADAAPAD@Z ENDP ; std::allocator<char>::construct<char *,char * &>
 ; Function compile flags: /Odtp /RTCsu /ZI
-;	COMDAT ??$forward@U_Container_proxy@std@@@std@@YA$$QAU_Container_proxy@0@AAU10@@Z
+;	COMDAT ??$forward@U_Container_proxy@std@@@std@@YG$$QAU_Container_proxy@0@AAU10@@Z
 _TEXT	SEGMENT
 __Arg$ = 8						; size = 4
-??$forward@U_Container_proxy@std@@@std@@YA$$QAU_Container_proxy@0@AAU10@@Z PROC ; std::forward<std::_Container_proxy>, COMDAT
+??$forward@U_Container_proxy@std@@@std@@YG$$QAU_Container_proxy@0@AAU10@@Z PROC ; std::forward<std::_Container_proxy>, COMDAT
 ; File c:\program files (x86)\microsoft visual studio 11.0\vc\include\type_traits
 ; Line 1775
 	push	ebp
@@ -1888,15 +1983,15 @@ __Arg$ = 8						; size = 4
 	pop	ebx
 	mov	esp, ebp
 	pop	ebp
-	ret	0
-??$forward@U_Container_proxy@std@@@std@@YA$$QAU_Container_proxy@0@AAU10@@Z ENDP ; std::forward<std::_Container_proxy>
+	ret	4
+??$forward@U_Container_proxy@std@@@std@@YG$$QAU_Container_proxy@0@AAU10@@Z ENDP ; std::forward<std::_Container_proxy>
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
-;	COMDAT ??$destroy@PAD@?$allocator_traits@V?$allocator@D@std@@@std@@SAXAAV?$allocator@D@1@PAPAD@Z
+;	COMDAT ??$destroy@PAD@?$allocator_traits@V?$allocator@D@std@@@std@@SGXAAV?$allocator@D@1@PAPAD@Z
 _TEXT	SEGMENT
 __Al$ = 8						; size = 4
 __Ptr$ = 12						; size = 4
-??$destroy@PAD@?$allocator_traits@V?$allocator@D@std@@@std@@SAXAAV?$allocator@D@1@PAPAD@Z PROC ; std::allocator_traits<std::allocator<char> >::destroy<char *>, COMDAT
+??$destroy@PAD@?$allocator_traits@V?$allocator@D@std@@@std@@SGXAAV?$allocator@D@1@PAPAD@Z PROC ; std::allocator_traits<std::allocator<char> >::destroy<char *>, COMDAT
 ; File c:\program files (x86)\microsoft visual studio 11.0\vc\include\xmemory0
 ; Line 755
 	push	ebp
@@ -1923,16 +2018,16 @@ __Ptr$ = 12						; size = 4
 	call	__RTC_CheckEsp
 	mov	esp, ebp
 	pop	ebp
-	ret	0
-??$destroy@PAD@?$allocator_traits@V?$allocator@D@std@@@std@@SAXAAV?$allocator@D@1@PAPAD@Z ENDP ; std::allocator_traits<std::allocator<char> >::destroy<char *>
+	ret	8
+??$destroy@PAD@?$allocator_traits@V?$allocator@D@std@@@std@@SGXAAV?$allocator@D@1@PAPAD@Z ENDP ; std::allocator_traits<std::allocator<char> >::destroy<char *>
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
-;	COMDAT ??$construct@PADAAPAD@?$allocator_traits@V?$allocator@D@std@@@std@@SAXAAV?$allocator@D@1@PAPADAAPAD@Z
+;	COMDAT ??$construct@PADAAPAD@?$allocator_traits@V?$allocator@D@std@@@std@@SGXAAV?$allocator@D@1@PAPADAAPAD@Z
 _TEXT	SEGMENT
 __Al$ = 8						; size = 4
 __Ptr$ = 12						; size = 4
 __V0$ = 16						; size = 4
-??$construct@PADAAPAD@?$allocator_traits@V?$allocator@D@std@@@std@@SAXAAV?$allocator@D@1@PAPADAAPAD@Z PROC ; std::allocator_traits<std::allocator<char> >::construct<char *,char * &>, COMDAT
+??$construct@PADAAPAD@?$allocator_traits@V?$allocator@D@std@@@std@@SGXAAV?$allocator@D@1@PAPADAAPAD@Z PROC ; std::allocator_traits<std::allocator<char> >::construct<char *,char * &>, COMDAT
 ; File c:\program files (x86)\microsoft visual studio 11.0\vc\include\xmemory0
 ; Line 751
 	push	ebp
@@ -1947,8 +2042,7 @@ __V0$ = 16						; size = 4
 	rep stosd
 	mov	eax, DWORD PTR __V0$[ebp]
 	push	eax
-	call	??$forward@AAPAD@std@@YAAAPADAAPAD@Z	; std::forward<char * &>
-	add	esp, 4
+	call	??$forward@AAPAD@std@@YGAAPADAAPAD@Z	; std::forward<char * &>
 	push	eax
 	mov	ecx, DWORD PTR __Ptr$[ebp]
 	push	ecx
@@ -1962,14 +2056,14 @@ __V0$ = 16						; size = 4
 	call	__RTC_CheckEsp
 	mov	esp, ebp
 	pop	ebp
-	ret	0
-??$construct@PADAAPAD@?$allocator_traits@V?$allocator@D@std@@@std@@SAXAAV?$allocator@D@1@PAPADAAPAD@Z ENDP ; std::allocator_traits<std::allocator<char> >::construct<char *,char * &>
+	ret	12					; 0000000cH
+??$construct@PADAAPAD@?$allocator_traits@V?$allocator@D@std@@@std@@SGXAAV?$allocator@D@1@PAPADAAPAD@Z ENDP ; std::allocator_traits<std::allocator<char> >::construct<char *,char * &>
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
-;	COMDAT ??$forward@AAPAD@std@@YAAAPADAAPAD@Z
+;	COMDAT ??$forward@AAPAD@std@@YGAAPADAAPAD@Z
 _TEXT	SEGMENT
 __Arg$ = 8						; size = 4
-??$forward@AAPAD@std@@YAAAPADAAPAD@Z PROC		; std::forward<char * &>, COMDAT
+??$forward@AAPAD@std@@YGAAPADAAPAD@Z PROC		; std::forward<char * &>, COMDAT
 ; File c:\program files (x86)\microsoft visual studio 11.0\vc\include\type_traits
 ; Line 1775
 	push	ebp
@@ -1990,8 +2084,8 @@ __Arg$ = 8						; size = 4
 	pop	ebx
 	mov	esp, ebp
 	pop	ebp
-	ret	0
-??$forward@AAPAD@std@@YAAAPADAAPAD@Z ENDP		; std::forward<char * &>
+	ret	4
+??$forward@AAPAD@std@@YGAAPADAAPAD@Z ENDP		; std::forward<char * &>
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ??__F?_System_object@?$_Error_objects@H@std@@2V_System_error_category@2@A@@YAXXZ
@@ -2171,12 +2265,12 @@ text$yc	SEGMENT
 ??__E?_Generic_object@?$_Error_objects@H@std@@2V_Generic_error_category@2@A@@YAXXZ ENDP ; `dynamic initializer for 'std::_Error_objects<int>::_Generic_object''
 text$yc	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
-;	COMDAT ??$_Allocate@D@std@@YAPADIPAD@Z
+;	COMDAT ??$_Allocate@D@std@@YGPADIPAD@Z
 _TEXT	SEGMENT
 __Ptr$ = -8						; size = 4
 __Count$ = 8						; size = 4
 ___formal$ = 12						; size = 4
-??$_Allocate@D@std@@YAPADIPAD@Z PROC			; std::_Allocate<char>, COMDAT
+??$_Allocate@D@std@@YGPADIPAD@Z PROC			; std::_Allocate<char>, COMDAT
 ; File c:\program files (x86)\microsoft visual studio 11.0\vc\include\xmemory0
 ; Line 22
 	push	ebp
@@ -2226,16 +2320,16 @@ $LN6@Allocate:
 	call	__RTC_CheckEsp
 	mov	esp, ebp
 	pop	ebp
-	ret	0
-??$_Allocate@D@std@@YAPADIPAD@Z ENDP			; std::_Allocate<char>
+	ret	8
+??$_Allocate@D@std@@YGPADIPAD@Z ENDP			; std::_Allocate<char>
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
-;	COMDAT ??$_Allocate@U_Container_proxy@std@@@std@@YAPAU_Container_proxy@0@IPAU10@@Z
+;	COMDAT ??$_Allocate@U_Container_proxy@std@@@std@@YGPAU_Container_proxy@0@IPAU10@@Z
 _TEXT	SEGMENT
 __Ptr$ = -8						; size = 4
 __Count$ = 8						; size = 4
 ___formal$ = 12						; size = 4
-??$_Allocate@U_Container_proxy@std@@@std@@YAPAU_Container_proxy@0@IPAU10@@Z PROC ; std::_Allocate<std::_Container_proxy>, COMDAT
+??$_Allocate@U_Container_proxy@std@@@std@@YGPAU_Container_proxy@0@IPAU10@@Z PROC ; std::_Allocate<std::_Container_proxy>, COMDAT
 ; File c:\program files (x86)\microsoft visual studio 11.0\vc\include\xmemory0
 ; Line 22
 	push	ebp
@@ -2286,8 +2380,8 @@ $LN6@Allocate:
 	call	__RTC_CheckEsp
 	mov	esp, ebp
 	pop	ebp
-	ret	0
-??$_Allocate@U_Container_proxy@std@@@std@@YAPAU_Container_proxy@0@IPAU10@@Z ENDP ; std::_Allocate<std::_Container_proxy>
+	ret	8
+??$_Allocate@U_Container_proxy@std@@@std@@YGPAU_Container_proxy@0@IPAU10@@Z ENDP ; std::_Allocate<std::_Container_proxy>
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ??$destroy@U_Container_proxy@std@@@?$allocator@U_Container_proxy@std@@@std@@QAEXPAU_Container_proxy@1@@Z
@@ -2367,8 +2461,7 @@ __V0$ = 12						; size = 4
 	je	SHORT $LN3@construct
 	mov	ecx, DWORD PTR __V0$[ebp]
 	push	ecx
-	call	??$forward@U_Container_proxy@std@@@std@@YA$$QAU_Container_proxy@0@AAU10@@Z ; std::forward<std::_Container_proxy>
-	add	esp, 4
+	call	??$forward@U_Container_proxy@std@@@std@@YG$$QAU_Container_proxy@0@AAU10@@Z ; std::forward<std::_Container_proxy>
 	mov	edx, DWORD PTR [eax]
 	mov	eax, DWORD PTR [eax+4]
 	mov	ecx, DWORD PTR $T3[ebp]
@@ -2442,8 +2535,7 @@ __Count$ = 8						; size = 4
 	push	0
 	mov	eax, DWORD PTR __Count$[ebp]
 	push	eax
-	call	??$_Allocate@U_Container_proxy@std@@@std@@YAPAU_Container_proxy@0@IPAU10@@Z ; std::_Allocate<std::_Container_proxy>
-	add	esp, 8
+	call	??$_Allocate@U_Container_proxy@std@@@std@@YGPAU_Container_proxy@0@IPAU10@@Z ; std::_Allocate<std::_Container_proxy>
 ; Line 592
 	pop	edi
 	pop	esi
@@ -2528,10 +2620,10 @@ _this$ = -8						; size = 4
 ??0?$allocator@U_Container_proxy@std@@@std@@QAE@XZ ENDP	; std::allocator<std::_Container_proxy>::allocator<std::_Container_proxy>
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
-;	COMDAT ??$addressof@D@std@@YAPADAAD@Z
+;	COMDAT ??$addressof@D@std@@YGPADAAD@Z
 _TEXT	SEGMENT
 __Val$ = 8						; size = 4
-??$addressof@D@std@@YAPADAAD@Z PROC			; std::addressof<char>, COMDAT
+??$addressof@D@std@@YGPADAAD@Z PROC			; std::addressof<char>, COMDAT
 ; File c:\program files (x86)\microsoft visual studio 11.0\vc\include\xstddef
 ; Line 85
 	push	ebp
@@ -2552,8 +2644,8 @@ __Val$ = 8						; size = 4
 	pop	ebx
 	mov	esp, ebp
 	pop	ebp
-	ret	0
-??$addressof@D@std@@YAPADAAD@Z ENDP			; std::addressof<char>
+	ret	4
+??$addressof@D@std@@YGPADAAD@Z ENDP			; std::addressof<char>
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ??$destroy@PAD@?$_Wrap_alloc@V?$allocator@D@std@@@std@@QAEXPAPAD@Z
@@ -2582,8 +2674,7 @@ __Ptr$ = 8						; size = 4
 	push	eax
 	mov	ecx, DWORD PTR _this$[ebp]
 	push	ecx
-	call	??$destroy@PAD@?$allocator_traits@V?$allocator@D@std@@@std@@SAXAAV?$allocator@D@1@PAPAD@Z ; std::allocator_traits<std::allocator<char> >::destroy<char *>
-	add	esp, 8
+	call	??$destroy@PAD@?$allocator_traits@V?$allocator@D@std@@@std@@SGXAAV?$allocator@D@1@PAPAD@Z ; std::allocator_traits<std::allocator<char> >::destroy<char *>
 ; Line 910
 	pop	edi
 	pop	esi
@@ -2621,15 +2712,13 @@ __V0$ = 12						; size = 4
 	mov	DWORD PTR _this$[ebp], ecx
 	mov	eax, DWORD PTR __V0$[ebp]
 	push	eax
-	call	??$forward@AAPAD@std@@YAAAPADAAPAD@Z	; std::forward<char * &>
-	add	esp, 4
+	call	??$forward@AAPAD@std@@YGAAPADAAPAD@Z	; std::forward<char * &>
 	push	eax
 	mov	ecx, DWORD PTR __Ptr$[ebp]
 	push	ecx
 	mov	edx, DWORD PTR _this$[ebp]
 	push	edx
-	call	??$construct@PADAAPAD@?$allocator_traits@V?$allocator@D@std@@@std@@SAXAAV?$allocator@D@1@PAPADAAPAD@Z ; std::allocator_traits<std::allocator<char> >::construct<char *,char * &>
-	add	esp, 12					; 0000000cH
+	call	??$construct@PADAAPAD@?$allocator_traits@V?$allocator@D@std@@@std@@SGXAAV?$allocator@D@1@PAPADAAPAD@Z ; std::allocator_traits<std::allocator<char> >::construct<char *,char * &>
 	pop	edi
 	pop	esi
 	pop	ebx
@@ -2640,6 +2729,55 @@ __V0$ = 12						; size = 4
 	pop	ebp
 	ret	8
 ??$construct@PADAAPAD@?$_Wrap_alloc@V?$allocator@D@std@@@std@@QAEXPAPADAAPAD@Z ENDP ; std::_Wrap_alloc<std::allocator<char> >::construct<char *,char * &>
+_TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ??0TaskFrame@@QAE@PAUModbusRtuMasterFrame@@PAXW4taskType@@@Z
+_TEXT	SEGMENT
+_this$ = -8						; size = 4
+_msFrame$ = 8						; size = 4
+_nativeVal$ = 12					; size = 4
+_type$ = 16						; size = 4
+??0TaskFrame@@QAE@PAUModbusRtuMasterFrame@@PAXW4taskType@@@Z PROC ; TaskFrame::TaskFrame, COMDAT
+; _this$ = ecx
+; File d:\projects\asu\icpdas\tmminios\tmminios\model.h
+; Line 551
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 204				; 000000ccH
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-204]
+	mov	ecx, 51					; 00000033H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR _msFrame$[ebp]
+	mov	DWORD PTR [eax], ecx
+; Line 552
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR _msFrame$[ebp]
+	mov	DWORD PTR [eax], ecx
+; Line 553
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR _nativeVal$[ebp]
+	mov	DWORD PTR [eax+4], ecx
+; Line 554
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR _type$[ebp]
+	mov	DWORD PTR [eax+8], ecx
+; Line 555
+	mov	eax, DWORD PTR _this$[ebp]
+	pop	edi
+	pop	esi
+	pop	ebx
+	mov	esp, ebp
+	pop	ebp
+	ret	12					; 0000000cH
+??0TaskFrame@@QAE@PAUModbusRtuMasterFrame@@PAXW4taskType@@@Z ENDP ; TaskFrame::TaskFrame
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ??_GI7041Device@@UAEPAXI@Z
@@ -2684,227 +2822,527 @@ $LN1@scalar:
 ??_GI7041Device@@UAEPAXI@Z ENDP				; I7041Device::`scalar deleting destructor'
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
-;	COMDAT ?setVal@I7041Device@@UAEIPAVProperty@@@Z
+;	COMDAT ?update@I7041Device@@UAEXXZ
 _TEXT	SEGMENT
+_i$1 = -56						; size = 4
+_discreteInputCount$2 = -44				; size = 4
+_values$3 = -32						; size = 4
+_i$4 = -20						; size = 4
 _this$ = -8						; size = 4
-_prop$ = 8						; size = 4
-?setVal@I7041Device@@UAEIPAVProperty@@@Z PROC		; I7041Device::setVal, COMDAT
+?update@I7041Device@@UAEXXZ PROC			; I7041Device::update, COMDAT
 ; _this$ = ecx
 ; File d:\projects\asu\icpdas\tmminios\tmminios\deviceclasses.cpp
-; Line 501
+; Line 562
 	push	ebp
 	mov	ebp, esp
-	sub	esp, 204				; 000000ccH
+	sub	esp, 252				; 000000fcH
 	push	ebx
 	push	esi
 	push	edi
 	push	ecx
-	lea	edi, DWORD PTR [ebp-204]
-	mov	ecx, 51					; 00000033H
+	lea	edi, DWORD PTR [ebp-252]
+	mov	ecx, 63					; 0000003fH
 	mov	eax, -858993460				; ccccccccH
 	rep stosd
 	pop	ecx
 	mov	DWORD PTR _this$[ebp], ecx
-; Line 502
-	xor	eax, eax
-; Line 503
+; Line 563
+	mov	DWORD PTR _i$4[ebp], 0
+	jmp	SHORT $LN11@update
+$LN10@update:
+	mov	eax, DWORD PTR _i$4[ebp]
+	add	eax, 1
+	mov	DWORD PTR _i$4[ebp], eax
+$LN11@update:
+	mov	eax, DWORD PTR _this$[ebp]
+	movsx	ecx, WORD PTR [eax+132]
+	cmp	DWORD PTR _i$4[ebp], ecx
+	jge	$LN12@update
+; Line 565
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+28]
+	mov	DWORD PTR _values$3[ebp], ecx
+; Line 566
+	mov	DWORD PTR _discreteInputCount$2[ebp], 0
+; Line 568
+	mov	DWORD PTR _i$1[ebp], 0
+	jmp	SHORT $LN8@update
+$LN7@update:
+	mov	eax, DWORD PTR _i$1[ebp]
+	add	eax, 1
+	mov	DWORD PTR _i$1[ebp], eax
+$LN8@update:
+	mov	eax, DWORD PTR _this$[ebp]
+	movsx	ecx, WORD PTR [eax+132]
+	cmp	DWORD PTR _i$1[ebp], ecx
+	jge	$LN6@update
+; Line 570
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+140]
+	mov	edx, DWORD PTR _i$1[ebp]
+	mov	eax, DWORD PTR [ecx+edx*4]
+	cmp	DWORD PTR [eax+108], 108		; 0000006cH
+	jne	SHORT $LN5@update
+; Line 572
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+140]
+	mov	edx, DWORD PTR _i$1[ebp]
+	mov	eax, DWORD PTR [ecx+edx*4]
+	cmp	DWORD PTR [eax+164], 0
+	je	SHORT $LN4@update
+; Line 574
+	mov	eax, DWORD PTR _discreteInputCount$2[ebp]
+	mov	ecx, DWORD PTR _values$3[ebp]
+	movzx	esi, WORD PTR [ecx+eax*2]
+	mov	edx, DWORD PTR _this$[ebp]
+	mov	eax, DWORD PTR [edx+140]
+	mov	ecx, DWORD PTR _i$1[ebp]
+	mov	ecx, DWORD PTR [eax+ecx*4]
+	call	?getNativeValue@Property@@QAEPAXXZ	; Property::getNativeValue
+	mov	DWORD PTR [eax], esi
+; Line 576
+	jmp	SHORT $LN3@update
+$LN4@update:
+; Line 578
+	mov	eax, DWORD PTR _discreteInputCount$2[ebp]
+	mov	ecx, DWORD PTR _values$3[ebp]
+	movzx	edx, WORD PTR [ecx+eax*2]
+	push	edx
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+140]
+	mov	edx, DWORD PTR _i$1[ebp]
+	mov	ecx, DWORD PTR [ecx+edx*4]
+	call	?setValueInt@Property@@QAEXF@Z		; Property::setValueInt
+$LN3@update:
+; Line 580
+	mov	eax, DWORD PTR _discreteInputCount$2[ebp]
+	add	eax, 1
+	mov	DWORD PTR _discreteInputCount$2[ebp], eax
+	jmp	SHORT $LN2@update
+$LN5@update:
+; Line 582
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+140]
+	mov	edx, DWORD PTR _i$1[ebp]
+	mov	eax, DWORD PTR [ecx+edx*4]
+	cmp	DWORD PTR [eax+108], 109		; 0000006dH
+	jne	SHORT $LN2@update
+; Line 584
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+16]
+	push	ecx
+	mov	edx, DWORD PTR _this$[ebp]
+	mov	eax, DWORD PTR [edx+140]
+	mov	ecx, DWORD PTR _i$1[ebp]
+	mov	ecx, DWORD PTR [eax+ecx*4]
+	call	?setValueUnsignedLong@Property@@QAEXK@Z	; Property::setValueUnsignedLong
+$LN2@update:
+; Line 586
+	jmp	$LN7@update
+$LN6@update:
+; Line 588
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?update@AbstractDevice@@UAEXXZ		; AbstractDevice::update
+; Line 589
+	jmp	$LN10@update
+$LN12@update:
+; Line 590
 	pop	edi
 	pop	esi
 	pop	ebx
+	add	esp, 252				; 000000fcH
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
 	mov	esp, ebp
 	pop	ebp
-	ret	4
-?setVal@I7041Device@@UAEIPAVProperty@@@Z ENDP		; I7041Device::setVal
+	ret	0
+?update@I7041Device@@UAEXXZ ENDP			; I7041Device::update
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
-;	COMDAT ?getVal@I7041Device@@UAEIPAVProperty@@@Z
+;	COMDAT ?getTasksProperties@I7041Device@@UAEXXZ
 _TEXT	SEGMENT
-$T1 = -308						; size = 16
-$T2 = -284						; size = 16
-_sv$3 = -68						; size = 8
-_property$4 = -52					; size = 4
-_sv$5 = -40						; size = 8
-_property$6 = -24					; size = 4
-_this$ = -12						; size = 4
-__$ArrayPad$ = -4					; size = 4
-_prop$ = 8						; size = 4
-?getVal@I7041Device@@UAEIPAVProperty@@@Z PROC		; I7041Device::getVal, COMDAT
+tv265 = -440						; size = 4
+tv225 = -440						; size = 4
+tv160 = -440						; size = 4
+tv264 = -436						; size = 4
+tv224 = -436						; size = 4
+tv159 = -436						; size = 4
+$T2 = -428						; size = 4
+$T3 = -416						; size = 4
+$T4 = -404						; size = 4
+$T5 = -392						; size = 4
+$T6 = -380						; size = 4
+$T7 = -368						; size = 4
+$T8 = -356						; size = 4
+$T9 = -344						; size = 4
+$T10 = -332						; size = 4
+$T11 = -320						; size = 4
+$T12 = -308						; size = 4
+$T13 = -296						; size = 4
+_i$14 = -92						; size = 4
+_i$15 = -80						; size = 4
+_isPropCountable$ = -68					; size = 4
+_frame$ = -56						; size = 4
+_propCount$ = -44					; size = 4
+_usVal$ = -32						; size = 4
+_this$ = -20						; size = 4
+__$EHRec$ = -12						; size = 12
+?getTasksProperties@I7041Device@@UAEXXZ PROC		; I7041Device::getTasksProperties, COMDAT
 ; _this$ = ecx
 ; File d:\projects\asu\icpdas\tmminios\tmminios\deviceclasses.cpp
-; Line 468
+; Line 515
 	push	ebp
 	mov	ebp, esp
-	sub	esp, 312				; 00000138H
+	push	-1
+	push	__ehhandler$?getTasksProperties@I7041Device@@UAEXXZ
+	mov	eax, DWORD PTR fs:0
+	push	eax
+	sub	esp, 428				; 000001acH
 	push	ebx
 	push	esi
 	push	edi
 	push	ecx
-	lea	edi, DWORD PTR [ebp-312]
-	mov	ecx, 78					; 0000004eH
+	lea	edi, DWORD PTR [ebp-440]
+	mov	ecx, 107				; 0000006bH
 	mov	eax, -858993460				; ccccccccH
 	rep stosd
 	pop	ecx
 	mov	eax, DWORD PTR ___security_cookie
 	xor	eax, ebp
-	mov	DWORD PTR __$ArrayPad$[ebp], eax
+	push	eax
+	lea	eax, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, eax
 	mov	DWORD PTR _this$[ebp], ecx
-; Line 469
-	mov	eax, DWORD PTR _prop$[ebp]
+; Line 516
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+28]
+	mov	DWORD PTR _usVal$[ebp], ecx
+; Line 517
+	mov	DWORD PTR _propCount$[ebp], 0
+; Line 521
+	mov	DWORD PTR _isPropCountable$[ebp], 0
+; Line 522
+	mov	DWORD PTR _i$15[ebp], 0
+	jmp	SHORT $LN13@getTasksPr
+$LN12@getTasksPr:
+	mov	eax, DWORD PTR _i$15[ebp]
+	add	eax, 1
+	mov	DWORD PTR _i$15[ebp], eax
+$LN13@getTasksPr:
+	mov	eax, DWORD PTR _this$[ebp]
+	movsx	ecx, WORD PTR [eax+132]
+	cmp	DWORD PTR _i$15[ebp], ecx
+	jge	SHORT $LN11@getTasksPr
+; Line 524
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+140]
+	mov	edx, DWORD PTR _i$15[ebp]
+	mov	eax, DWORD PTR [ecx+edx*4]
 	cmp	DWORD PTR [eax+108], 108		; 0000006cH
-	jne	$LN5@getVal
-; Line 471
-	mov	eax, DWORD PTR _prop$[ebp]
+	jne	SHORT $LN10@getTasksPr
+; Line 525
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+140]
+	mov	edx, DWORD PTR _i$15[ebp]
+	mov	eax, DWORD PTR [ecx+edx*4]
 	cmp	DWORD PTR [eax+164], 0
-	jne	$LN4@getVal
-; Line 473
-	mov	eax, DWORD PTR _prop$[ebp]
-	mov	DWORD PTR _property$6[ebp], eax
-; Line 474
+	je	SHORT $LN10@getTasksPr
+; Line 526
+	mov	DWORD PTR _isPropCountable$[ebp], 1
+$LN10@getTasksPr:
+; Line 527
+	jmp	SHORT $LN12@getTasksPr
+$LN11@getTasksPr:
+; Line 529
+	cmp	DWORD PTR _isPropCountable$[ebp], 0
+	jne	$LN8@getTasksPr
+; Line 532
+	push	12					; 0000000cH
+	call	??2@YAPAXI@Z				; operator new
+	add	esp, 4
+	mov	DWORD PTR $T3[ebp], eax
+	mov	DWORD PTR __$EHRec$[ebp+8], 0
+	cmp	DWORD PTR $T3[ebp], 0
+	je	$LN18@getTasksPr
+	push	32					; 00000020H
+	call	??2@YAPAXI@Z				; operator new
+	add	esp, 4
+	mov	DWORD PTR $T5[ebp], eax
+	mov	BYTE PTR __$EHRec$[ebp+8], 1
+	cmp	DWORD PTR $T5[ebp], 0
+	je	SHORT $LN16@getTasksPr
 	push	0
 	push	1000					; 000003e8H
-	push	1
-	mov	eax, DWORD PTR _property$6[ebp]
-	movsx	ecx, WORD PTR [eax+168]
-	add	ecx, 32					; 00000020H
-	push	ecx
+	push	14					; 0000000eH
+	push	32					; 00000020H
 	push	899					; 00000383H
 	push	1
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?getAddress@AbstractDevice@@QAEGXZ	; AbstractDevice::getAddress
-	movzx	edx, ax
-	push	edx
-	push	2
-	call	?ModbusRTU_Master@@YAHHHHHHHHH@Z	; ModbusRTU_Master
-	add	esp, 32					; 00000020H
-	mov	ecx, DWORD PTR _prop$[ebp]
-	mov	DWORD PTR [ecx+112], eax
-; Line 475
-	push	899					; 00000383H
-	push	1
-	lea	ecx, DWORD PTR _sv$5[ebp]
-	call	??0SlaveInformation@@QAE@W4regType@@J@Z	; SlaveInformation::SlaveInformation
-; Line 477
-	push	2
-	mov	eax, DWORD PTR _sv$5[ebp+4]
+	movzx	eax, ax
 	push	eax
-	mov	ecx, DWORD PTR _sv$5[ebp]
-	push	ecx
-	lea	edx, DWORD PTR $T1[ebp]
+	push	2
+	mov	ecx, DWORD PTR $T5[ebp]
+	call	??0ModbusRtuMasterFrame@@QAE@HHHHHHHH@Z	; ModbusRtuMasterFrame::ModbusRtuMasterFrame
+	mov	DWORD PTR tv159[ebp], eax
+	jmp	SHORT $LN17@getTasksPr
+$LN16@getTasksPr:
+	mov	DWORD PTR tv159[ebp], 0
+$LN17@getTasksPr:
+	mov	ecx, DWORD PTR tv159[ebp]
+	mov	DWORD PTR $T4[ebp], ecx
+	mov	BYTE PTR __$EHRec$[ebp+8], 0
+	push	50					; 00000032H
+	mov	edx, DWORD PTR _usVal$[ebp]
 	push	edx
+	mov	eax, DWORD PTR $T4[ebp]
+	push	eax
+	mov	ecx, DWORD PTR $T3[ebp]
+	call	??0TaskFrame@@QAE@PAUModbusRtuMasterFrame@@PAXW4taskType@@@Z ; TaskFrame::TaskFrame
+	mov	DWORD PTR tv160[ebp], eax
+	jmp	SHORT $LN19@getTasksPr
+$LN18@getTasksPr:
+	mov	DWORD PTR tv160[ebp], 0
+$LN19@getTasksPr:
+	mov	ecx, DWORD PTR tv160[ebp]
+	mov	DWORD PTR $T2[ebp], ecx
+	mov	DWORD PTR __$EHRec$[ebp+8], -1
+	mov	edx, DWORD PTR $T2[ebp]
+	mov	DWORD PTR _frame$[ebp], edx
+; Line 533
+	mov	eax, DWORD PTR _frame$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [ecx+24]
+	call	?push_back@Deque@@QAEHQAVTaskFrame@@@Z	; Deque::push_back
+; Line 535
+	jmp	$LN14@getTasksPr
+$LN8@getTasksPr:
+; Line 537
+	mov	DWORD PTR _i$14[ebp], 0
+	jmp	SHORT $LN6@getTasksPr
+$LN5@getTasksPr:
+	mov	eax, DWORD PTR _i$14[ebp]
+	add	eax, 1
+	mov	DWORD PTR _i$14[ebp], eax
+$LN6@getTasksPr:
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+12]
-	call	?getCoils@SlaveFactory@@QAE?ATuValue@@USlaveInformation@@I@Z ; SlaveFactory::getCoils
-	mov	ecx, 4
-	imul	ecx, 0
-	mov	edx, DWORD PTR [eax+ecx]
-	push	edx
-	mov	ecx, DWORD PTR _prop$[ebp]
-	call	?setValueBool@Property@@QAEXW4bool_t@@@Z ; Property::setValueBool
-; Line 481
-	jmp	SHORT $LN3@getVal
-$LN4@getVal:
-; Line 483
-	mov	eax, DWORD PTR _prop$[ebp]
-	mov	DWORD PTR _property$4[ebp], eax
-; Line 484
+	movsx	ecx, WORD PTR [eax+132]
+	cmp	DWORD PTR _i$14[ebp], ecx
+	jge	$LN14@getTasksPr
+; Line 539
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+140]
+	mov	edx, DWORD PTR _i$14[ebp]
+	mov	eax, DWORD PTR [ecx+edx*4]
+	cmp	DWORD PTR [eax+108], 108		; 0000006cH
+	jne	$LN3@getTasksPr
+; Line 541
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+140]
+	mov	edx, DWORD PTR _i$14[ebp]
+	mov	eax, DWORD PTR [ecx+edx*4]
+	cmp	DWORD PTR [eax+164], 0
+	je	$LN2@getTasksPr
+; Line 544
+	push	12					; 0000000cH
+	call	??2@YAPAXI@Z				; operator new
+	add	esp, 4
+	mov	DWORD PTR $T7[ebp], eax
+	mov	DWORD PTR __$EHRec$[ebp+8], 2
+	cmp	DWORD PTR $T7[ebp], 0
+	je	$LN22@getTasksPr
+	push	32					; 00000020H
+	call	??2@YAPAXI@Z				; operator new
+	add	esp, 4
+	mov	DWORD PTR $T9[ebp], eax
+	mov	BYTE PTR __$EHRec$[ebp+8], 3
+	cmp	DWORD PTR $T9[ebp], 0
+	je	SHORT $LN20@getTasksPr
 	push	0
 	push	1000					; 000003e8H
 	push	1
-	mov	eax, DWORD PTR _property$4[ebp]
-	movsx	ecx, WORD PTR [eax+168]
-	push	ecx
+	mov	eax, DWORD PTR _propCount$[ebp]
+	push	eax
 	push	899					; 00000383H
 	push	4
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?getAddress@AbstractDevice@@QAEGXZ	; AbstractDevice::getAddress
-	movzx	edx, ax
-	push	edx
+	movzx	ecx, ax
+	push	ecx
 	push	2
-	call	?ModbusRTU_Master@@YAHHHHHHHHH@Z	; ModbusRTU_Master
-	add	esp, 32					; 00000020H
-	mov	ecx, DWORD PTR _prop$[ebp]
-	mov	DWORD PTR [ecx+112], eax
-; Line 485
+	mov	ecx, DWORD PTR $T9[ebp]
+	call	??0ModbusRtuMasterFrame@@QAE@HHHHHHHH@Z	; ModbusRtuMasterFrame::ModbusRtuMasterFrame
+	mov	DWORD PTR tv224[ebp], eax
+	jmp	SHORT $LN21@getTasksPr
+$LN20@getTasksPr:
+	mov	DWORD PTR tv224[ebp], 0
+$LN21@getTasksPr:
+	mov	edx, DWORD PTR tv224[ebp]
+	mov	DWORD PTR $T8[ebp], edx
+	mov	BYTE PTR __$EHRec$[ebp+8], 2
+	push	50					; 00000032H
+	mov	eax, DWORD PTR _usVal$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR $T8[ebp]
+	push	ecx
+	mov	ecx, DWORD PTR $T7[ebp]
+	call	??0TaskFrame@@QAE@PAUModbusRtuMasterFrame@@PAXW4taskType@@@Z ; TaskFrame::TaskFrame
+	mov	DWORD PTR tv225[ebp], eax
+	jmp	SHORT $LN23@getTasksPr
+$LN22@getTasksPr:
+	mov	DWORD PTR tv225[ebp], 0
+$LN23@getTasksPr:
+	mov	edx, DWORD PTR tv225[ebp]
+	mov	DWORD PTR $T6[ebp], edx
+	mov	DWORD PTR __$EHRec$[ebp+8], -1
+	mov	eax, DWORD PTR $T6[ebp]
+	mov	DWORD PTR _frame$[ebp], eax
+; Line 545
+	mov	eax, DWORD PTR _frame$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [ecx+24]
+	call	?push_back@Deque@@QAEHQAVTaskFrame@@@Z	; Deque::push_back
+; Line 547
+	jmp	$LN1@getTasksPr
+$LN2@getTasksPr:
+; Line 550
+	push	12					; 0000000cH
+	call	??2@YAPAXI@Z				; operator new
+	add	esp, 4
+	mov	DWORD PTR $T11[ebp], eax
+	mov	DWORD PTR __$EHRec$[ebp+8], 4
+	cmp	DWORD PTR $T11[ebp], 0
+	je	$LN26@getTasksPr
+	push	32					; 00000020H
+	call	??2@YAPAXI@Z				; operator new
+	add	esp, 4
+	mov	DWORD PTR $T13[ebp], eax
+	mov	BYTE PTR __$EHRec$[ebp+8], 5
+	cmp	DWORD PTR $T13[ebp], 0
+	je	SHORT $LN24@getTasksPr
+	push	0
+	push	1000					; 000003e8H
+	push	14					; 0000000eH
+	mov	eax, DWORD PTR _propCount$[ebp]
+	add	eax, 32					; 00000020H
+	push	eax
 	push	899					; 00000383H
-	push	3
-	lea	ecx, DWORD PTR _sv$3[ebp]
-	call	??0SlaveInformation@@QAE@W4regType@@J@Z	; SlaveInformation::SlaveInformation
-; Line 487
+	push	1
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?getAddress@AbstractDevice@@QAEGXZ	; AbstractDevice::getAddress
+	movzx	ecx, ax
+	push	ecx
 	push	2
-	mov	eax, DWORD PTR _sv$3[ebp+4]
+	mov	ecx, DWORD PTR $T13[ebp]
+	call	??0ModbusRtuMasterFrame@@QAE@HHHHHHHH@Z	; ModbusRtuMasterFrame::ModbusRtuMasterFrame
+	mov	DWORD PTR tv264[ebp], eax
+	jmp	SHORT $LN25@getTasksPr
+$LN24@getTasksPr:
+	mov	DWORD PTR tv264[ebp], 0
+$LN25@getTasksPr:
+	mov	edx, DWORD PTR tv264[ebp]
+	mov	DWORD PTR $T12[ebp], edx
+	mov	BYTE PTR __$EHRec$[ebp+8], 4
+	push	50					; 00000032H
+	mov	eax, DWORD PTR _usVal$[ebp]
 	push	eax
-	mov	ecx, DWORD PTR _sv$3[ebp]
+	mov	ecx, DWORD PTR $T12[ebp]
 	push	ecx
-	lea	edx, DWORD PTR $T2[ebp]
-	push	edx
-	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+12]
-	call	?getInputRegisters@SlaveFactory@@QAE?ATuValue@@USlaveInformation@@I@Z ; SlaveFactory::getInputRegisters
-	mov	ecx, 2
-	imul	ecx, 0
-	movsx	esi, WORD PTR [eax+ecx]
-	mov	ecx, DWORD PTR _prop$[ebp]
-	call	?getNativeValue@Property@@QAEPAXXZ	; Property::getNativeValue
-	mov	DWORD PTR [eax], esi
-$LN3@getVal:
-; Line 490
-	jmp	SHORT $LN2@getVal
-$LN5@getVal:
-; Line 492
-	mov	eax, DWORD PTR _prop$[ebp]
-	cmp	DWORD PTR [eax+108], 109		; 0000006dH
-	jne	SHORT $LN2@getVal
-; Line 494
-	mov	eax, DWORD PTR _prop$[ebp]
-	mov	ecx, DWORD PTR [eax+112]
-	push	ecx
-	mov	ecx, DWORD PTR _prop$[ebp]
-	call	?setValueUnsignedLong@Property@@QAEXK@Z	; Property::setValueUnsignedLong
-$LN2@getVal:
-; Line 497
-	mov	eax, DWORD PTR _prop$[ebp]
-	mov	eax, DWORD PTR [eax+112]
-; Line 498
-	push	edx
-	mov	ecx, ebp
+	mov	ecx, DWORD PTR $T11[ebp]
+	call	??0TaskFrame@@QAE@PAUModbusRtuMasterFrame@@PAXW4taskType@@@Z ; TaskFrame::TaskFrame
+	mov	DWORD PTR tv265[ebp], eax
+	jmp	SHORT $LN27@getTasksPr
+$LN26@getTasksPr:
+	mov	DWORD PTR tv265[ebp], 0
+$LN27@getTasksPr:
+	mov	edx, DWORD PTR tv265[ebp]
+	mov	DWORD PTR $T10[ebp], edx
+	mov	DWORD PTR __$EHRec$[ebp+8], -1
+	mov	eax, DWORD PTR $T10[ebp]
+	mov	DWORD PTR _frame$[ebp], eax
+; Line 551
+	mov	eax, DWORD PTR _frame$[ebp]
 	push	eax
-	lea	edx, DWORD PTR $LN11@getVal
-	call	@_RTC_CheckStackVars@8
-	pop	eax
-	pop	edx
+	mov	ecx, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [ecx+24]
+	call	?push_back@Deque@@QAEHQAVTaskFrame@@@Z	; Deque::push_back
+$LN1@getTasksPr:
+; Line 554
+	mov	eax, DWORD PTR _usVal$[ebp]
+	add	eax, 2
+	mov	DWORD PTR _usVal$[ebp], eax
+; Line 555
+	mov	eax, DWORD PTR _propCount$[ebp]
+	add	eax, 1
+	mov	DWORD PTR _propCount$[ebp], eax
+$LN3@getTasksPr:
+; Line 557
+	jmp	$LN5@getTasksPr
+$LN14@getTasksPr:
+; Line 559
+	mov	ecx, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, ecx
+	pop	ecx
 	pop	edi
 	pop	esi
 	pop	ebx
-	mov	ecx, DWORD PTR __$ArrayPad$[ebp]
-	xor	ecx, ebp
-	call	@__security_check_cookie@4
-	add	esp, 312				; 00000138H
+	add	esp, 440				; 000001b8H
 	cmp	ebp, esp
 	call	__RTC_CheckEsp
 	mov	esp, ebp
 	pop	ebp
-	ret	4
-	npad	2
-$LN11@getVal:
-	DD	2
-	DD	$LN10@getVal
-$LN10@getVal:
-	DD	-40					; ffffffd8H
-	DD	8
-	DD	$LN8@getVal
-	DD	-68					; ffffffbcH
-	DD	8
-	DD	$LN9@getVal
-$LN9@getVal:
-	DB	115					; 00000073H
-	DB	118					; 00000076H
-	DB	0
-$LN8@getVal:
-	DB	115					; 00000073H
-	DB	118					; 00000076H
-	DB	0
-?getVal@I7041Device@@UAEIPAVProperty@@@Z ENDP		; I7041Device::getVal
+	ret	0
 _TEXT	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+__unwindfunclet$?getTasksProperties@I7041Device@@UAEXXZ$0:
+	mov	eax, DWORD PTR $T3[ebp]
+	push	eax
+	call	??3@YAXPAX@Z				; operator delete
+	pop	ecx
+	ret	0
+__unwindfunclet$?getTasksProperties@I7041Device@@UAEXXZ$1:
+	mov	eax, DWORD PTR $T5[ebp]
+	push	eax
+	call	??3@YAXPAX@Z				; operator delete
+	pop	ecx
+	ret	0
+__unwindfunclet$?getTasksProperties@I7041Device@@UAEXXZ$2:
+	mov	eax, DWORD PTR $T7[ebp]
+	push	eax
+	call	??3@YAXPAX@Z				; operator delete
+	pop	ecx
+	ret	0
+__unwindfunclet$?getTasksProperties@I7041Device@@UAEXXZ$3:
+	mov	eax, DWORD PTR $T9[ebp]
+	push	eax
+	call	??3@YAXPAX@Z				; operator delete
+	pop	ecx
+	ret	0
+__unwindfunclet$?getTasksProperties@I7041Device@@UAEXXZ$4:
+	mov	eax, DWORD PTR $T11[ebp]
+	push	eax
+	call	??3@YAXPAX@Z				; operator delete
+	pop	ecx
+	ret	0
+__unwindfunclet$?getTasksProperties@I7041Device@@UAEXXZ$5:
+	mov	eax, DWORD PTR $T13[ebp]
+	push	eax
+	call	??3@YAXPAX@Z				; operator delete
+	pop	ecx
+	ret	0
+__ehhandler$?getTasksProperties@I7041Device@@UAEXXZ:
+	mov	edx, DWORD PTR [esp+8]
+	lea	eax, DWORD PTR [edx+12]
+	mov	ecx, DWORD PTR [edx-444]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	eax, OFFSET __ehfuncinfo$?getTasksProperties@I7041Device@@UAEXXZ
+	jmp	___CxxFrameHandler3
+text$x	ENDS
+?getTasksProperties@I7041Device@@UAEXXZ ENDP		; I7041Device::getTasksProperties
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ??1I7041Device@@UAE@XZ
 _TEXT	SEGMENT
@@ -2912,7 +3350,7 @@ _this$ = -8						; size = 4
 ??1I7041Device@@UAE@XZ PROC				; I7041Device::~I7041Device, COMDAT
 ; _this$ = ecx
 ; File d:\projects\asu\icpdas\tmminios\tmminios\deviceclasses.cpp
-; Line 463
+; Line 510
 	push	ebp
 	mov	ebp, esp
 	sub	esp, 204				; 000000ccH
@@ -2928,7 +3366,16 @@ _this$ = -8						; size = 4
 	mov	DWORD PTR _this$[ebp], ecx
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	DWORD PTR [eax], OFFSET ??_7I7041Device@@6B@
-; Line 465
+; Line 511
+	mov	esi, esp
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+28]
+	push	ecx
+	call	DWORD PTR __imp__free
+	add	esp, 4
+	cmp	esi, esp
+	call	__RTC_CheckEsp
+; Line 512
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	??1AbstractDevice@@UAE@XZ		; AbstractDevice::~AbstractDevice
 	pop	edi
@@ -2959,7 +3406,7 @@ _evMask$ = 12						; size = 2
 ??0I7041Device@@QAE@GG@Z PROC				; I7041Device::I7041Device, COMDAT
 ; _this$ = ecx
 ; File d:\projects\asu\icpdas\tmminios\tmminios\deviceclasses.cpp
-; Line 449
+; Line 493
 	push	ebp
 	mov	ebp, esp
 	push	-1
@@ -2992,25 +3439,25 @@ _evMask$ = 12						; size = 2
 	mov	DWORD PTR __$EHRec$[ebp+8], 0
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	DWORD PTR [eax], OFFSET ??_7I7041Device@@6B@
-; Line 450
+; Line 494
 	mov	DWORD PTR _i$[ebp], 0
-; Line 451
+; Line 495
 	movzx	eax, WORD PTR _addrr$[ebp]
 	mov	esi, esp
 	push	eax
 	push	OFFSET ??_C@_05GAHPNDDB@I7041?$AA@
 	push	OFFSET ??_C@_09KPBEDMKF@?$CFs?5ch?3?5?$CFd?$AA@
 	mov	ecx, DWORD PTR _this$[ebp]
-	add	ecx, 24					; 00000018H
+	add	ecx, 32					; 00000020H
 	push	ecx
 	call	DWORD PTR __imp__sprintf
 	add	esp, 16					; 00000010H
 	cmp	esi, esp
 	call	__RTC_CheckEsp
-; Line 452
+; Line 496
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	DWORD PTR [eax+140], 4
-; Line 454
+	mov	DWORD PTR [eax+148], 4
+; Line 498
 	mov	DWORD PTR _i$[ebp], 0
 	jmp	SHORT $LN3@I7041Devic
 $LN2@I7041Devic:
@@ -3020,7 +3467,7 @@ $LN2@I7041Devic:
 $LN3@I7041Devic:
 	cmp	DWORD PTR _i$[ebp], 14			; 0000000eH
 	jge	SHORT $LN1@I7041Devic
-; Line 456
+; Line 500
 	push	172					; 000000acH
 	call	??2@YAPAXI@Z				; operator new
 	add	esp, 4
@@ -3041,14 +3488,14 @@ $LN7@I7041Devic:
 	mov	DWORD PTR $T2[ebp], ecx
 	mov	BYTE PTR __$EHRec$[ebp+8], 0
 	mov	edx, DWORD PTR _this$[ebp]
-	mov	eax, DWORD PTR [edx+132]
+	mov	eax, DWORD PTR [edx+140]
 	mov	ecx, DWORD PTR _i$[ebp]
 	mov	edx, DWORD PTR $T2[ebp]
 	mov	DWORD PTR [eax+ecx*4], edx
-; Line 457
+; Line 501
 	jmp	SHORT $LN2@I7041Devic
 $LN1@I7041Devic:
-; Line 459
+; Line 503
 	push	168					; 000000a8H
 	call	??2@YAPAXI@Z				; operator new
 	add	esp, 4
@@ -3069,10 +3516,27 @@ $LN9@I7041Devic:
 	mov	ecx, 4
 	imul	ecx, 14					; 0000000eH
 	mov	edx, DWORD PTR _this$[ebp]
-	mov	eax, DWORD PTR [edx+132]
+	mov	eax, DWORD PTR [edx+140]
 	mov	edx, DWORD PTR $T4[ebp]
 	mov	DWORD PTR [ecx+eax], edx
-; Line 460
+; Line 505
+	mov	esi, esp
+	push	30					; 0000001eH
+	call	DWORD PTR __imp__malloc
+	add	esp, 4
+	cmp	esi, esp
+	call	__RTC_CheckEsp
+	mov	ecx, DWORD PTR _this$[ebp]
+	mov	DWORD PTR [ecx+28], eax
+; Line 506
+	push	30					; 0000001eH
+	push	0
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+28]
+	push	ecx
+	call	_memset
+	add	esp, 12					; 0000000cH
+; Line 507
 	mov	DWORD PTR __$EHRec$[ebp+8], -1
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	ecx, DWORD PTR __$EHRec$[ebp]
@@ -3158,428 +3622,934 @@ $LN1@scalar:
 ??_GI7002Device@@UAEPAXI@Z ENDP				; I7002Device::`scalar deleting destructor'
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
-;	COMDAT ?setVal@I7002Device@@UAEIPAVProperty@@@Z
+;	COMDAT ?update@I7002Device@@UAEXXZ
 _TEXT	SEGMENT
-$T1 = -256						; size = 16
-_sv$2 = -40						; size = 8
-_property$3 = -24					; size = 4
-_this$ = -12						; size = 4
-__$ArrayPad$ = -4					; size = 4
-_prop$ = 8						; size = 4
-?setVal@I7002Device@@UAEIPAVProperty@@@Z PROC		; I7002Device::setVal, COMDAT
+_val$1 = -92						; size = 4
+_i$2 = -80						; size = 4
+_discreteOutputCount$3 = -68				; size = 4
+_discreteInputCount$4 = -56				; size = 4
+_analogCount$5 = -44					; size = 4
+_values$6 = -32						; size = 4
+_i$7 = -20						; size = 4
+_this$ = -8						; size = 4
+?update@I7002Device@@UAEXXZ PROC			; I7002Device::update, COMDAT
 ; _this$ = ecx
 ; File d:\projects\asu\icpdas\tmminios\tmminios\deviceclasses.cpp
-; Line 432
+; Line 448
 	push	ebp
 	mov	ebp, esp
-	sub	esp, 260				; 00000104H
+	sub	esp, 288				; 00000120H
 	push	ebx
 	push	esi
 	push	edi
 	push	ecx
-	lea	edi, DWORD PTR [ebp-260]
-	mov	ecx, 65					; 00000041H
+	lea	edi, DWORD PTR [ebp-288]
+	mov	ecx, 72					; 00000048H
 	mov	eax, -858993460				; ccccccccH
 	rep stosd
 	pop	ecx
-	mov	eax, DWORD PTR ___security_cookie
-	xor	eax, ebp
-	mov	DWORD PTR __$ArrayPad$[ebp], eax
 	mov	DWORD PTR _this$[ebp], ecx
-; Line 433
-	mov	eax, DWORD PTR _prop$[ebp]
-	cmp	DWORD PTR [eax+108], 106		; 0000006aH
-	jne	SHORT $LN1@setVal
-; Line 435
-	mov	eax, DWORD PTR _prop$[ebp]
-	mov	DWORD PTR _property$3[ebp], eax
-; Line 436
-	push	899					; 00000383H
-	push	1
-	lea	ecx, DWORD PTR _sv$2[ebp]
-	call	??0SlaveInformation@@QAE@W4regType@@J@Z	; SlaveInformation::SlaveInformation
-; Line 437
-	mov	ecx, DWORD PTR _property$3[ebp]
-	call	?getValueBool@Property@@QAE?AW4bool_t@@XZ ; Property::getValueBool
-	push	eax
-	lea	ecx, DWORD PTR $T1[ebp]
-	call	??0uValue@@QAE@K@Z			; uValue::uValue
-	lea	eax, DWORD PTR $T1[ebp]
-	push	eax
-	mov	ecx, DWORD PTR _sv$2[ebp+4]
-	push	ecx
-	mov	edx, DWORD PTR _sv$2[ebp]
-	push	edx
+; Line 449
+	mov	DWORD PTR _i$7[ebp], 0
+	jmp	SHORT $LN15@update
+$LN14@update:
+	mov	eax, DWORD PTR _i$7[ebp]
+	add	eax, 1
+	mov	DWORD PTR _i$7[ebp], eax
+$LN15@update:
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+12]
-	call	?setCoils@SlaveFactory@@QAEXUSlaveInformation@@ABTuValue@@@Z ; SlaveFactory::setCoils
-; Line 438
-	push	0
-	push	1000					; 000003e8H
-	push	1
-	mov	eax, DWORD PTR _property$3[ebp]
-	movsx	ecx, WORD PTR [eax+168]
-	push	ecx
-	push	899					; 00000383H
-	push	5
-	mov	ecx, DWORD PTR _this$[ebp]
-	call	?getAddress@AbstractDevice@@QAEGXZ	; AbstractDevice::getAddress
-	movzx	edx, ax
-	push	edx
-	push	2
-	call	?ModbusRTU_Master@@YAHHHHHHHHH@Z	; ModbusRTU_Master
-	add	esp, 32					; 00000020H
-	mov	ecx, DWORD PTR _prop$[ebp]
-	mov	DWORD PTR [ecx+116], eax
-$LN1@setVal:
-; Line 442
-	mov	eax, DWORD PTR _prop$[ebp]
-	mov	eax, DWORD PTR [eax+116]
-; Line 443
-	push	edx
-	mov	ecx, ebp
-	push	eax
-	lea	edx, DWORD PTR $LN6@setVal
-	call	@_RTC_CheckStackVars@8
-	pop	eax
-	pop	edx
-	pop	edi
-	pop	esi
-	pop	ebx
-	mov	ecx, DWORD PTR __$ArrayPad$[ebp]
-	xor	ecx, ebp
-	call	@__security_check_cookie@4
-	add	esp, 260				; 00000104H
-	cmp	ebp, esp
-	call	__RTC_CheckEsp
-	mov	esp, ebp
-	pop	ebp
-	ret	4
-	npad	1
-$LN6@setVal:
-	DD	1
-	DD	$LN5@setVal
-$LN5@setVal:
-	DD	-40					; ffffffd8H
-	DD	8
-	DD	$LN4@setVal
-$LN4@setVal:
-	DB	115					; 00000073H
-	DB	118					; 00000076H
-	DB	0
-?setVal@I7002Device@@UAEIPAVProperty@@@Z ENDP		; I7002Device::setVal
-_TEXT	ENDS
-; Function compile flags: /Odtp /RTCsu /ZI
-;	COMDAT ?getVal@I7002Device@@UAEIPAVProperty@@@Z
-_TEXT	SEGMENT
-$T1 = -412						; size = 16
-$T2 = -388						; size = 16
-$T3 = -364						; size = 16
-$T4 = -340						; size = 16
-_sv$5 = -124						; size = 8
-_property$6 = -108					; size = 4
-_sv$7 = -96						; size = 8
-_property$8 = -80					; size = 4
-_sv$9 = -68						; size = 8
-_property$10 = -52					; size = 4
-_sv$11 = -40						; size = 8
-_property$12 = -24					; size = 4
-_this$ = -12						; size = 4
-__$ArrayPad$ = -4					; size = 4
-_prop$ = 8						; size = 4
-?getVal@I7002Device@@UAEIPAVProperty@@@Z PROC		; I7002Device::getVal, COMDAT
-; _this$ = ecx
-; File d:\projects\asu\icpdas\tmminios\tmminios\deviceclasses.cpp
-; Line 378
-	push	ebp
-	mov	ebp, esp
-	sub	esp, 416				; 000001a0H
-	push	ebx
-	push	esi
-	push	edi
-	push	ecx
-	lea	edi, DWORD PTR [ebp-416]
-	mov	ecx, 104				; 00000068H
-	mov	eax, -858993460				; ccccccccH
-	rep stosd
-	pop	ecx
-	mov	eax, DWORD PTR ___security_cookie
-	xor	eax, ebp
-	mov	DWORD PTR __$ArrayPad$[ebp], eax
-	mov	DWORD PTR _this$[ebp], ecx
-; Line 379
-	mov	eax, DWORD PTR _prop$[ebp]
-	cmp	DWORD PTR [eax+108], 105		; 00000069H
-	jne	$LN9@getVal
-; Line 381
-	mov	eax, DWORD PTR _prop$[ebp]
-	cmp	DWORD PTR [eax+164], 0
-	jne	$LN8@getVal
-; Line 383
-	mov	eax, DWORD PTR _prop$[ebp]
-	mov	DWORD PTR _property$12[ebp], eax
-; Line 384
-	push	0
-	push	1000					; 000003e8H
-	push	1
-	mov	eax, DWORD PTR _property$12[ebp]
-	movsx	ecx, WORD PTR [eax+168]
-	add	ecx, 32					; 00000020H
-	push	ecx
-	push	899					; 00000383H
-	push	1
-	mov	ecx, DWORD PTR _this$[ebp]
-	call	?getAddress@AbstractDevice@@QAEGXZ	; AbstractDevice::getAddress
-	movzx	edx, ax
-	push	edx
-	push	2
-	call	?ModbusRTU_Master@@YAHHHHHHHHH@Z	; ModbusRTU_Master
-	add	esp, 32					; 00000020H
-	mov	ecx, DWORD PTR _prop$[ebp]
-	mov	DWORD PTR [ecx+112], eax
-; Line 385
-	push	899					; 00000383H
-	push	1
-	lea	ecx, DWORD PTR _sv$11[ebp]
-	call	??0SlaveInformation@@QAE@W4regType@@J@Z	; SlaveInformation::SlaveInformation
-; Line 387
-	push	2
-	mov	eax, DWORD PTR _sv$11[ebp+4]
-	push	eax
-	mov	ecx, DWORD PTR _sv$11[ebp]
-	push	ecx
-	lea	edx, DWORD PTR $T1[ebp]
-	push	edx
+	movsx	ecx, WORD PTR [eax+132]
+	cmp	DWORD PTR _i$7[ebp], ecx
+	jge	$LN13@update
+; Line 451
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+12]
-	call	?getCoils@SlaveFactory@@QAE?ATuValue@@USlaveInformation@@I@Z ; SlaveFactory::getCoils
-	mov	ecx, 4
-	imul	ecx, 0
-	mov	edx, DWORD PTR [eax+ecx]
-	push	edx
-	mov	ecx, DWORD PTR _prop$[ebp]
-	call	?setValueBool@Property@@QAEXW4bool_t@@@Z ; Property::setValueBool
-; Line 391
-	jmp	$LN7@getVal
-$LN8@getVal:
-; Line 393
-	mov	eax, DWORD PTR _prop$[ebp]
-	mov	DWORD PTR _property$10[ebp], eax
-; Line 394
-	push	0
-	push	1000					; 000003e8H
-	push	1
-	mov	eax, DWORD PTR _property$10[ebp]
-	movsx	ecx, WORD PTR [eax+168]
-	add	ecx, 96					; 00000060H
-	push	ecx
-	push	899					; 00000383H
-	push	3
-	mov	ecx, DWORD PTR _this$[ebp]
-	call	?getAddress@AbstractDevice@@QAEGXZ	; AbstractDevice::getAddress
-	movzx	edx, ax
-	push	edx
-	push	2
-	call	?ModbusRTU_Master@@YAHHHHHHHHH@Z	; ModbusRTU_Master
-	add	esp, 32					; 00000020H
-	mov	ecx, DWORD PTR _prop$[ebp]
-	mov	DWORD PTR [ecx+112], eax
-; Line 395
-	push	899					; 00000383H
-	push	4
-	lea	ecx, DWORD PTR _sv$9[ebp]
-	call	??0SlaveInformation@@QAE@W4regType@@J@Z	; SlaveInformation::SlaveInformation
-; Line 397
-	push	2
-	mov	eax, DWORD PTR _sv$9[ebp+4]
-	push	eax
-	mov	ecx, DWORD PTR _sv$9[ebp]
-	push	ecx
-	lea	edx, DWORD PTR $T2[ebp]
-	push	edx
+	mov	ecx, DWORD PTR [eax+28]
+	mov	DWORD PTR _values$6[ebp], ecx
+; Line 452
+	mov	DWORD PTR _analogCount$5[ebp], 0
+	mov	DWORD PTR _discreteInputCount$4[ebp], 0
+	mov	DWORD PTR _discreteOutputCount$3[ebp], 0
+; Line 454
+	mov	DWORD PTR _i$2[ebp], 0
+	jmp	SHORT $LN12@update
+$LN11@update:
+	mov	eax, DWORD PTR _i$2[ebp]
+	add	eax, 1
+	mov	DWORD PTR _i$2[ebp], eax
+$LN12@update:
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+12]
-	call	?getHoldingRegisters@SlaveFactory@@QAE?ATuValue@@USlaveInformation@@I@Z ; SlaveFactory::getHoldingRegisters
-	mov	ecx, 2
-	imul	ecx, 0
-	movsx	esi, WORD PTR [eax+ecx]
-	mov	ecx, DWORD PTR _prop$[ebp]
-	call	?getNativeValue@Property@@QAEPAXXZ	; Property::getNativeValue
-	mov	DWORD PTR [eax], esi
-$LN7@getVal:
-; Line 400
-	jmp	$LN1@getVal
-$LN9@getVal:
-; Line 402
-	mov	eax, DWORD PTR _prop$[ebp]
-	cmp	DWORD PTR [eax+108], 106		; 0000006aH
-	jne	$LN5@getVal
-; Line 404
-	mov	eax, DWORD PTR _prop$[ebp]
-	mov	DWORD PTR _property$8[ebp], eax
-; Line 405
-	push	0
-	push	1000					; 000003e8H
-	push	1
-	mov	eax, DWORD PTR _property$8[ebp]
-	movsx	ecx, WORD PTR [eax+168]
-	push	ecx
-	push	899					; 00000383H
-	push	2
-	mov	ecx, DWORD PTR _this$[ebp]
-	call	?getAddress@AbstractDevice@@QAEGXZ	; AbstractDevice::getAddress
-	movzx	edx, ax
-	push	edx
-	push	2
-	call	?ModbusRTU_Master@@YAHHHHHHHHH@Z	; ModbusRTU_Master
-	add	esp, 32					; 00000020H
-	mov	ecx, DWORD PTR _prop$[ebp]
-	mov	DWORD PTR [ecx+112], eax
-; Line 406
-	push	899					; 00000383H
-	push	0
-	lea	ecx, DWORD PTR _sv$7[ebp]
-	call	??0SlaveInformation@@QAE@W4regType@@J@Z	; SlaveInformation::SlaveInformation
-; Line 408
-	push	2
-	mov	eax, DWORD PTR _sv$7[ebp+4]
-	push	eax
-	mov	ecx, DWORD PTR _sv$7[ebp]
-	push	ecx
-	lea	edx, DWORD PTR $T3[ebp]
-	push	edx
+	movsx	ecx, WORD PTR [eax+132]
+	cmp	DWORD PTR _i$2[ebp], ecx
+	jge	$LN10@update
+; Line 456
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+12]
-	call	?getDisreteInput@SlaveFactory@@QAE?ATuValue@@USlaveInformation@@I@Z ; SlaveFactory::getDisreteInput
-	mov	ecx, 4
-	imul	ecx, 0
-	mov	edx, DWORD PTR [eax+ecx]
-	push	edx
-	mov	ecx, DWORD PTR _prop$[ebp]
-	call	?setValueBool@Property@@QAEXW4bool_t@@@Z ; Property::setValueBool
-	jmp	$LN1@getVal
-$LN5@getVal:
-; Line 412
-	mov	eax, DWORD PTR _prop$[ebp]
+	mov	ecx, DWORD PTR [eax+140]
+	mov	edx, DWORD PTR _i$2[ebp]
+	mov	eax, DWORD PTR [ecx+edx*4]
 	cmp	DWORD PTR [eax+108], 107		; 0000006bH
-	jne	$LN3@getVal
-; Line 414
-	mov	eax, DWORD PTR _prop$[ebp]
-	mov	DWORD PTR _property$6[ebp], eax
-; Line 415
-	push	0
-	push	1000					; 000003e8H
-	push	1
-	mov	eax, DWORD PTR _property$6[ebp]
-	movsx	ecx, WORD PTR [eax+168]
-	push	ecx
-	push	899					; 00000383H
-	push	4
-	mov	ecx, DWORD PTR _this$[ebp]
-	call	?getAddress@AbstractDevice@@QAEGXZ	; AbstractDevice::getAddress
-	movzx	edx, ax
-	push	edx
-	push	2
-	call	?ModbusRTU_Master@@YAHHHHHHHHH@Z	; ModbusRTU_Master
-	add	esp, 32					; 00000020H
-	mov	ecx, DWORD PTR _prop$[ebp]
-	mov	DWORD PTR [ecx+112], eax
-; Line 416
-	push	899					; 00000383H
-	push	3
-	lea	ecx, DWORD PTR _sv$5[ebp]
-	call	??0SlaveInformation@@QAE@W4regType@@J@Z	; SlaveInformation::SlaveInformation
-; Line 418
-	push	2
-	mov	eax, DWORD PTR _sv$5[ebp+4]
-	push	eax
-	mov	ecx, DWORD PTR _sv$5[ebp]
-	push	ecx
-	lea	edx, DWORD PTR $T4[ebp]
-	push	edx
-	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+12]
-	call	?getInputRegisters@SlaveFactory@@QAE?ATuValue@@USlaveInformation@@I@Z ; SlaveFactory::getInputRegisters
-	mov	ecx, 2
-	imul	ecx, 0
-	movsx	edx, WORD PTR [eax+ecx]
-	cvtsi2ss xmm0, edx
+	jne	SHORT $LN9@update
+; Line 458
+	mov	eax, DWORD PTR _analogCount$5[ebp]
+	mov	ecx, DWORD PTR _values$6[ebp]
+	lea	edx, DWORD PTR [ecx+eax*2]
+	mov	DWORD PTR _val$1[ebp], edx
+; Line 459
+	mov	eax, DWORD PTR _val$1[ebp]
+	movsx	ecx, WORD PTR [eax]
+	cvtsi2ss xmm0, ecx
 	divss	xmm0, DWORD PTR __real@447a0000
 	push	ecx
 	movss	DWORD PTR [esp], xmm0
-	mov	ecx, DWORD PTR _prop$[ebp]
+	mov	edx, DWORD PTR _this$[ebp]
+	mov	eax, DWORD PTR [edx+140]
+	mov	ecx, DWORD PTR _i$2[ebp]
+	mov	ecx, DWORD PTR [eax+ecx*4]
 	call	?setValueFloat@Property@@QAEXM@Z	; Property::setValueFloat
-	jmp	SHORT $LN1@getVal
-$LN3@getVal:
-; Line 422
-	mov	eax, DWORD PTR _prop$[ebp]
-	cmp	DWORD PTR [eax+108], 109		; 0000006dH
-	jne	SHORT $LN1@getVal
-; Line 424
-	mov	eax, DWORD PTR _prop$[ebp]
-	mov	ecx, DWORD PTR [eax+112]
-	push	ecx
-	mov	ecx, DWORD PTR _prop$[ebp]
-	call	?setValueUnsignedLong@Property@@QAEXK@Z	; Property::setValueUnsignedLong
-$LN1@getVal:
-; Line 428
-	mov	eax, DWORD PTR _prop$[ebp]
-	mov	eax, DWORD PTR [eax+112]
-; Line 429
+; Line 460
+	mov	eax, DWORD PTR _analogCount$5[ebp]
+	add	eax, 1
+	mov	DWORD PTR _analogCount$5[ebp], eax
+	jmp	$LN1@update
+$LN9@update:
+; Line 462
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+140]
+	mov	edx, DWORD PTR _i$2[ebp]
+	mov	eax, DWORD PTR [ecx+edx*4]
+	cmp	DWORD PTR [eax+108], 106		; 0000006aH
+	jne	SHORT $LN7@update
+; Line 464
+	mov	eax, DWORD PTR _discreteOutputCount$3[ebp]
+	mov	ecx, DWORD PTR _values$6[ebp]
+	movzx	edx, WORD PTR [ecx+eax*2+8]
 	push	edx
-	mov	ecx, ebp
-	push	eax
-	lea	edx, DWORD PTR $LN17@getVal
-	call	@_RTC_CheckStackVars@8
-	pop	eax
-	pop	edx
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+140]
+	mov	edx, DWORD PTR _i$2[ebp]
+	mov	ecx, DWORD PTR [ecx+edx*4]
+	call	?setValueInt@Property@@QAEXF@Z		; Property::setValueInt
+; Line 465
+	mov	eax, DWORD PTR _discreteOutputCount$3[ebp]
+	add	eax, 1
+	mov	DWORD PTR _discreteOutputCount$3[ebp], eax
+	jmp	$LN1@update
+$LN7@update:
+; Line 467
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+140]
+	mov	edx, DWORD PTR _i$2[ebp]
+	mov	eax, DWORD PTR [ecx+edx*4]
+	cmp	DWORD PTR [eax+108], 105		; 00000069H
+	jne	SHORT $LN5@update
+; Line 469
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+140]
+	mov	edx, DWORD PTR _i$2[ebp]
+	mov	eax, DWORD PTR [ecx+edx*4]
+	cmp	DWORD PTR [eax+164], 0
+	je	SHORT $LN4@update
+; Line 471
+	mov	eax, DWORD PTR _discreteInputCount$4[ebp]
+	mov	ecx, DWORD PTR _values$6[ebp]
+	movzx	esi, WORD PTR [ecx+eax*2+16]
+	mov	edx, DWORD PTR _this$[ebp]
+	mov	eax, DWORD PTR [edx+140]
+	mov	ecx, DWORD PTR _i$2[ebp]
+	mov	ecx, DWORD PTR [eax+ecx*4]
+	call	?getNativeValue@Property@@QAEPAXXZ	; Property::getNativeValue
+	mov	DWORD PTR [eax], esi
+; Line 473
+	jmp	SHORT $LN3@update
+$LN4@update:
+; Line 475
+	mov	eax, DWORD PTR _discreteInputCount$4[ebp]
+	mov	ecx, DWORD PTR _values$6[ebp]
+	movzx	edx, WORD PTR [ecx+eax*2+16]
+	push	edx
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+140]
+	mov	edx, DWORD PTR _i$2[ebp]
+	mov	ecx, DWORD PTR [ecx+edx*4]
+	call	?setValueInt@Property@@QAEXF@Z		; Property::setValueInt
+$LN3@update:
+; Line 477
+	mov	eax, DWORD PTR _discreteInputCount$4[ebp]
+	add	eax, 1
+	mov	DWORD PTR _discreteInputCount$4[ebp], eax
+	jmp	SHORT $LN1@update
+$LN5@update:
+; Line 479
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+140]
+	mov	edx, DWORD PTR _i$2[ebp]
+	mov	eax, DWORD PTR [ecx+edx*4]
+	cmp	DWORD PTR [eax+108], 109		; 0000006dH
+	jne	SHORT $LN1@update
+; Line 481
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+16]
+	push	ecx
+	mov	edx, DWORD PTR _this$[ebp]
+	mov	eax, DWORD PTR [edx+140]
+	mov	ecx, DWORD PTR _i$2[ebp]
+	mov	ecx, DWORD PTR [eax+ecx*4]
+	call	?setValueUnsignedLong@Property@@QAEXK@Z	; Property::setValueUnsignedLong
+$LN1@update:
+; Line 483
+	jmp	$LN11@update
+$LN10@update:
+; Line 485
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?update@AbstractDevice@@UAEXXZ		; AbstractDevice::update
+; Line 486
+	jmp	$LN14@update
+$LN13@update:
+; Line 487
 	pop	edi
 	pop	esi
 	pop	ebx
-	mov	ecx, DWORD PTR __$ArrayPad$[ebp]
-	xor	ecx, ebp
-	call	@__security_check_cookie@4
-	add	esp, 416				; 000001a0H
+	add	esp, 288				; 00000120H
 	cmp	ebp, esp
 	call	__RTC_CheckEsp
 	mov	esp, ebp
 	pop	ebp
-	ret	4
-	npad	2
-$LN17@getVal:
-	DD	4
-	DD	$LN16@getVal
-$LN16@getVal:
-	DD	-40					; ffffffd8H
-	DD	8
-	DD	$LN12@getVal
-	DD	-68					; ffffffbcH
-	DD	8
-	DD	$LN13@getVal
-	DD	-96					; ffffffa0H
-	DD	8
-	DD	$LN14@getVal
-	DD	-124					; ffffff84H
-	DD	8
-	DD	$LN15@getVal
-$LN15@getVal:
-	DB	115					; 00000073H
-	DB	118					; 00000076H
-	DB	0
-$LN14@getVal:
-	DB	115					; 00000073H
-	DB	118					; 00000076H
-	DB	0
-$LN13@getVal:
-	DB	115					; 00000073H
-	DB	118					; 00000076H
-	DB	0
-$LN12@getVal:
-	DB	115					; 00000073H
-	DB	118					; 00000076H
-	DB	0
-?getVal@I7002Device@@UAEIPAVProperty@@@Z ENDP		; I7002Device::getVal
+	ret	0
+?update@I7002Device@@UAEXXZ ENDP			; I7002Device::update
 _TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ?getTasksEvents@I7002Device@@UAEXXZ
+_TEXT	SEGMENT
+tv163 = -308						; size = 4
+tv162 = -304						; size = 4
+$T2 = -296						; size = 4
+$T3 = -284						; size = 4
+$T4 = -272						; size = 4
+$T5 = -260						; size = 4
+_usVal$ = -56						; size = 4
+_i$ = -44						; size = 4
+_frame$ = -32						; size = 4
+_this$ = -20						; size = 4
+__$EHRec$ = -12						; size = 12
+?getTasksEvents@I7002Device@@UAEXXZ PROC		; I7002Device::getTasksEvents, COMDAT
+; _this$ = ecx
+; File d:\projects\asu\icpdas\tmminios\tmminios\deviceclasses.cpp
+; Line 425
+	push	ebp
+	mov	ebp, esp
+	push	-1
+	push	__ehhandler$?getTasksEvents@I7002Device@@UAEXXZ
+	mov	eax, DWORD PTR fs:0
+	push	eax
+	sub	esp, 296				; 00000128H
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-308]
+	mov	ecx, 74					; 0000004aH
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	eax, DWORD PTR ___security_cookie
+	xor	eax, ebp
+	push	eax
+	lea	eax, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, eax
+	mov	DWORD PTR _this$[ebp], ecx
+; Line 428
+	mov	DWORD PTR _i$[ebp], 0
+; Line 429
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+28]
+	mov	DWORD PTR _usVal$[ebp], ecx
+; Line 430
+	mov	eax, DWORD PTR _usVal$[ebp]
+	add	eax, 8
+	mov	DWORD PTR _usVal$[ebp], eax
+; Line 432
+	mov	DWORD PTR _i$[ebp], 0
+	jmp	SHORT $LN4@getTasksEv
+$LN3@getTasksEv:
+	mov	eax, DWORD PTR _i$[ebp]
+	add	eax, 1
+	mov	DWORD PTR _i$[ebp], eax
+$LN4@getTasksEv:
+	mov	eax, DWORD PTR _this$[ebp]
+	movsx	ecx, WORD PTR [eax+132]
+	cmp	DWORD PTR _i$[ebp], ecx
+	jge	SHORT $LN2@getTasksEv
+; Line 434
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+140]
+	mov	edx, DWORD PTR _i$[ebp]
+	mov	eax, DWORD PTR [ecx+edx*4]
+	cmp	DWORD PTR [eax+108], 106		; 0000006aH
+	jne	SHORT $LN1@getTasksEv
+; Line 436
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+140]
+	mov	edx, DWORD PTR _i$[ebp]
+	mov	ecx, DWORD PTR [ecx+edx*4]
+	call	?getValueUnsignedLong@Property@@QAEKXZ	; Property::getValueUnsignedLong
+	mov	ecx, DWORD PTR _usVal$[ebp]
+	mov	WORD PTR [ecx], ax
+; Line 437
+	mov	eax, DWORD PTR _usVal$[ebp]
+	add	eax, 2
+	mov	DWORD PTR _usVal$[ebp], eax
+$LN1@getTasksEv:
+; Line 439
+	jmp	SHORT $LN3@getTasksEv
+$LN2@getTasksEv:
+; Line 440
+	mov	eax, DWORD PTR _usVal$[ebp]
+	sub	eax, 8
+	mov	DWORD PTR _usVal$[ebp], eax
+; Line 443
+	push	12					; 0000000cH
+	call	??2@YAPAXI@Z				; operator new
+	add	esp, 4
+	mov	DWORD PTR $T3[ebp], eax
+	mov	DWORD PTR __$EHRec$[ebp+8], 0
+	cmp	DWORD PTR $T3[ebp], 0
+	je	$LN9@getTasksEv
+	push	32					; 00000020H
+	call	??2@YAPAXI@Z				; operator new
+	add	esp, 4
+	mov	DWORD PTR $T5[ebp], eax
+	mov	BYTE PTR __$EHRec$[ebp+8], 1
+	cmp	DWORD PTR $T5[ebp], 0
+	je	SHORT $LN7@getTasksEv
+	push	0
+	push	1000					; 000003e8H
+	push	4
+	push	0
+	push	899					; 00000383H
+	push	15					; 0000000fH
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?getAddress@AbstractDevice@@QAEGXZ	; AbstractDevice::getAddress
+	movzx	eax, ax
+	push	eax
+	push	2
+	mov	ecx, DWORD PTR $T5[ebp]
+	call	??0ModbusRtuMasterFrame@@QAE@HHHHHHHH@Z	; ModbusRtuMasterFrame::ModbusRtuMasterFrame
+	mov	DWORD PTR tv162[ebp], eax
+	jmp	SHORT $LN8@getTasksEv
+$LN7@getTasksEv:
+	mov	DWORD PTR tv162[ebp], 0
+$LN8@getTasksEv:
+	mov	ecx, DWORD PTR tv162[ebp]
+	mov	DWORD PTR $T4[ebp], ecx
+	mov	BYTE PTR __$EHRec$[ebp+8], 0
+	push	51					; 00000033H
+	mov	edx, DWORD PTR _usVal$[ebp]
+	push	edx
+	mov	eax, DWORD PTR $T4[ebp]
+	push	eax
+	mov	ecx, DWORD PTR $T3[ebp]
+	call	??0TaskFrame@@QAE@PAUModbusRtuMasterFrame@@PAXW4taskType@@@Z ; TaskFrame::TaskFrame
+	mov	DWORD PTR tv163[ebp], eax
+	jmp	SHORT $LN10@getTasksEv
+$LN9@getTasksEv:
+	mov	DWORD PTR tv163[ebp], 0
+$LN10@getTasksEv:
+	mov	ecx, DWORD PTR tv163[ebp]
+	mov	DWORD PTR $T2[ebp], ecx
+	mov	DWORD PTR __$EHRec$[ebp+8], -1
+	mov	edx, DWORD PTR $T2[ebp]
+	mov	DWORD PTR _frame$[ebp], edx
+; Line 444
+	mov	eax, DWORD PTR _frame$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [ecx+24]
+	call	?push_front@Deque@@QAEHQAVTaskFrame@@@Z	; Deque::push_front
+; Line 445
+	mov	ecx, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, ecx
+	pop	ecx
+	pop	edi
+	pop	esi
+	pop	ebx
+	add	esp, 308				; 00000134H
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+_TEXT	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+__unwindfunclet$?getTasksEvents@I7002Device@@UAEXXZ$0:
+	mov	eax, DWORD PTR $T3[ebp]
+	push	eax
+	call	??3@YAXPAX@Z				; operator delete
+	pop	ecx
+	ret	0
+__unwindfunclet$?getTasksEvents@I7002Device@@UAEXXZ$1:
+	mov	eax, DWORD PTR $T5[ebp]
+	push	eax
+	call	??3@YAXPAX@Z				; operator delete
+	pop	ecx
+	ret	0
+__ehhandler$?getTasksEvents@I7002Device@@UAEXXZ:
+	mov	edx, DWORD PTR [esp+8]
+	lea	eax, DWORD PTR [edx+12]
+	mov	ecx, DWORD PTR [edx-312]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	eax, OFFSET __ehfuncinfo$?getTasksEvents@I7002Device@@UAEXXZ
+	jmp	___CxxFrameHandler3
+text$x	ENDS
+?getTasksEvents@I7002Device@@UAEXXZ ENDP		; I7002Device::getTasksEvents
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ?getTasksProperties@I7002Device@@UAEXXZ
+_TEXT	SEGMENT
+tv346 = -524						; size = 4
+tv306 = -524						; size = 4
+tv240 = -524						; size = 4
+tv173 = -524						; size = 4
+tv133 = -524						; size = 4
+tv345 = -520						; size = 4
+tv305 = -520						; size = 4
+tv239 = -520						; size = 4
+tv172 = -520						; size = 4
+tv132 = -520						; size = 4
+$T2 = -512						; size = 4
+$T3 = -500						; size = 4
+$T4 = -488						; size = 4
+$T5 = -476						; size = 4
+$T6 = -464						; size = 4
+$T7 = -452						; size = 4
+$T8 = -440						; size = 4
+$T9 = -428						; size = 4
+$T10 = -416						; size = 4
+$T11 = -404						; size = 4
+$T12 = -392						; size = 4
+$T13 = -380						; size = 4
+$T14 = -368						; size = 4
+$T15 = -356						; size = 4
+$T16 = -344						; size = 4
+$T17 = -332						; size = 4
+$T18 = -320						; size = 4
+$T19 = -308						; size = 4
+$T20 = -296						; size = 4
+$T21 = -284						; size = 4
+_isPropCountable$ = -80					; size = 4
+_frame$ = -68						; size = 4
+_i$ = -56						; size = 4
+_propCount$ = -44					; size = 4
+_usVal$ = -32						; size = 4
+_this$ = -20						; size = 4
+__$EHRec$ = -12						; size = 12
+?getTasksProperties@I7002Device@@UAEXXZ PROC		; I7002Device::getTasksProperties, COMDAT
+; _this$ = ecx
+; File d:\projects\asu\icpdas\tmminios\tmminios\deviceclasses.cpp
+; Line 367
+	push	ebp
+	mov	ebp, esp
+	push	-1
+	push	__ehhandler$?getTasksProperties@I7002Device@@UAEXXZ
+	mov	eax, DWORD PTR fs:0
+	push	eax
+	sub	esp, 512				; 00000200H
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-524]
+	mov	ecx, 128				; 00000080H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	eax, DWORD PTR ___security_cookie
+	xor	eax, ebp
+	push	eax
+	lea	eax, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, eax
+	mov	DWORD PTR _this$[ebp], ecx
+; Line 368
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+28]
+	mov	DWORD PTR _usVal$[ebp], ecx
+; Line 369
+	mov	DWORD PTR _propCount$[ebp], 0
+	mov	DWORD PTR _i$[ebp], 0
+; Line 373
+	push	12					; 0000000cH
+	call	??2@YAPAXI@Z				; operator new
+	add	esp, 4
+	mov	DWORD PTR $T3[ebp], eax
+	mov	DWORD PTR __$EHRec$[ebp+8], 0
+	cmp	DWORD PTR $T3[ebp], 0
+	je	$LN18@getTasksPr
+	push	32					; 00000020H
+	call	??2@YAPAXI@Z				; operator new
+	add	esp, 4
+	mov	DWORD PTR $T5[ebp], eax
+	mov	BYTE PTR __$EHRec$[ebp+8], 1
+	cmp	DWORD PTR $T5[ebp], 0
+	je	SHORT $LN16@getTasksPr
+	push	0
+	push	1000					; 000003e8H
+	push	4
+	push	0
+	push	899					; 00000383H
+	push	4
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?getAddress@AbstractDevice@@QAEGXZ	; AbstractDevice::getAddress
+	movzx	eax, ax
+	push	eax
+	push	2
+	mov	ecx, DWORD PTR $T5[ebp]
+	call	??0ModbusRtuMasterFrame@@QAE@HHHHHHHH@Z	; ModbusRtuMasterFrame::ModbusRtuMasterFrame
+	mov	DWORD PTR tv132[ebp], eax
+	jmp	SHORT $LN17@getTasksPr
+$LN16@getTasksPr:
+	mov	DWORD PTR tv132[ebp], 0
+$LN17@getTasksPr:
+	mov	ecx, DWORD PTR tv132[ebp]
+	mov	DWORD PTR $T4[ebp], ecx
+	mov	BYTE PTR __$EHRec$[ebp+8], 0
+	push	50					; 00000032H
+	mov	edx, DWORD PTR _usVal$[ebp]
+	push	edx
+	mov	eax, DWORD PTR $T4[ebp]
+	push	eax
+	mov	ecx, DWORD PTR $T3[ebp]
+	call	??0TaskFrame@@QAE@PAUModbusRtuMasterFrame@@PAXW4taskType@@@Z ; TaskFrame::TaskFrame
+	mov	DWORD PTR tv133[ebp], eax
+	jmp	SHORT $LN19@getTasksPr
+$LN18@getTasksPr:
+	mov	DWORD PTR tv133[ebp], 0
+$LN19@getTasksPr:
+	mov	ecx, DWORD PTR tv133[ebp]
+	mov	DWORD PTR $T2[ebp], ecx
+	mov	DWORD PTR __$EHRec$[ebp+8], -1
+	mov	edx, DWORD PTR $T2[ebp]
+	mov	DWORD PTR _frame$[ebp], edx
+; Line 374
+	mov	eax, DWORD PTR _frame$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [ecx+24]
+	call	?push_back@Deque@@QAEHQAVTaskFrame@@@Z	; Deque::push_back
+; Line 377
+	mov	eax, DWORD PTR _usVal$[ebp]
+	add	eax, 8
+	mov	DWORD PTR _usVal$[ebp], eax
+; Line 379
+	push	12					; 0000000cH
+	call	??2@YAPAXI@Z				; operator new
+	add	esp, 4
+	mov	DWORD PTR $T7[ebp], eax
+	mov	DWORD PTR __$EHRec$[ebp+8], 2
+	cmp	DWORD PTR $T7[ebp], 0
+	je	$LN22@getTasksPr
+	push	32					; 00000020H
+	call	??2@YAPAXI@Z				; operator new
+	add	esp, 4
+	mov	DWORD PTR $T9[ebp], eax
+	mov	BYTE PTR __$EHRec$[ebp+8], 3
+	cmp	DWORD PTR $T9[ebp], 0
+	je	SHORT $LN20@getTasksPr
+	push	0
+	push	1000					; 000003e8H
+	push	4
+	push	0
+	push	899					; 00000383H
+	push	2
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?getAddress@AbstractDevice@@QAEGXZ	; AbstractDevice::getAddress
+	movzx	eax, ax
+	push	eax
+	push	2
+	mov	ecx, DWORD PTR $T9[ebp]
+	call	??0ModbusRtuMasterFrame@@QAE@HHHHHHHH@Z	; ModbusRtuMasterFrame::ModbusRtuMasterFrame
+	mov	DWORD PTR tv172[ebp], eax
+	jmp	SHORT $LN21@getTasksPr
+$LN20@getTasksPr:
+	mov	DWORD PTR tv172[ebp], 0
+$LN21@getTasksPr:
+	mov	ecx, DWORD PTR tv172[ebp]
+	mov	DWORD PTR $T8[ebp], ecx
+	mov	BYTE PTR __$EHRec$[ebp+8], 2
+	push	50					; 00000032H
+	mov	edx, DWORD PTR _usVal$[ebp]
+	push	edx
+	mov	eax, DWORD PTR $T8[ebp]
+	push	eax
+	mov	ecx, DWORD PTR $T7[ebp]
+	call	??0TaskFrame@@QAE@PAUModbusRtuMasterFrame@@PAXW4taskType@@@Z ; TaskFrame::TaskFrame
+	mov	DWORD PTR tv173[ebp], eax
+	jmp	SHORT $LN23@getTasksPr
+$LN22@getTasksPr:
+	mov	DWORD PTR tv173[ebp], 0
+$LN23@getTasksPr:
+	mov	ecx, DWORD PTR tv173[ebp]
+	mov	DWORD PTR $T6[ebp], ecx
+	mov	DWORD PTR __$EHRec$[ebp+8], -1
+	mov	edx, DWORD PTR $T6[ebp]
+	mov	DWORD PTR _frame$[ebp], edx
+; Line 380
+	mov	eax, DWORD PTR _frame$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [ecx+24]
+	call	?push_back@Deque@@QAEHQAVTaskFrame@@@Z	; Deque::push_back
+; Line 383
+	mov	eax, DWORD PTR _usVal$[ebp]
+	add	eax, 8
+	mov	DWORD PTR _usVal$[ebp], eax
+; Line 384
+	mov	DWORD PTR _isPropCountable$[ebp], 0
+; Line 385
+	mov	DWORD PTR _i$[ebp], 0
+	jmp	SHORT $LN13@getTasksPr
+$LN12@getTasksPr:
+	mov	eax, DWORD PTR _i$[ebp]
+	add	eax, 1
+	mov	DWORD PTR _i$[ebp], eax
+$LN13@getTasksPr:
+	mov	eax, DWORD PTR _this$[ebp]
+	movsx	ecx, WORD PTR [eax+132]
+	cmp	DWORD PTR _i$[ebp], ecx
+	jge	SHORT $LN11@getTasksPr
+; Line 387
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+140]
+	mov	edx, DWORD PTR _i$[ebp]
+	mov	eax, DWORD PTR [ecx+edx*4]
+	cmp	DWORD PTR [eax+108], 105		; 00000069H
+	jne	SHORT $LN10@getTasksPr
+; Line 388
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+140]
+	mov	edx, DWORD PTR _i$[ebp]
+	mov	eax, DWORD PTR [ecx+edx*4]
+	cmp	DWORD PTR [eax+164], 0
+	je	SHORT $LN10@getTasksPr
+; Line 389
+	mov	DWORD PTR _isPropCountable$[ebp], 1
+$LN10@getTasksPr:
+; Line 390
+	jmp	SHORT $LN12@getTasksPr
+$LN11@getTasksPr:
+; Line 392
+	cmp	DWORD PTR _isPropCountable$[ebp], 0
+	jne	$LN8@getTasksPr
+; Line 395
+	push	12					; 0000000cH
+	call	??2@YAPAXI@Z				; operator new
+	add	esp, 4
+	mov	DWORD PTR $T11[ebp], eax
+	mov	DWORD PTR __$EHRec$[ebp+8], 4
+	cmp	DWORD PTR $T11[ebp], 0
+	je	$LN26@getTasksPr
+	push	32					; 00000020H
+	call	??2@YAPAXI@Z				; operator new
+	add	esp, 4
+	mov	DWORD PTR $T13[ebp], eax
+	mov	BYTE PTR __$EHRec$[ebp+8], 5
+	cmp	DWORD PTR $T13[ebp], 0
+	je	SHORT $LN24@getTasksPr
+	push	0
+	push	1000					; 000003e8H
+	push	4
+	push	32					; 00000020H
+	push	899					; 00000383H
+	push	1
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?getAddress@AbstractDevice@@QAEGXZ	; AbstractDevice::getAddress
+	movzx	eax, ax
+	push	eax
+	push	2
+	mov	ecx, DWORD PTR $T13[ebp]
+	call	??0ModbusRtuMasterFrame@@QAE@HHHHHHHH@Z	; ModbusRtuMasterFrame::ModbusRtuMasterFrame
+	mov	DWORD PTR tv239[ebp], eax
+	jmp	SHORT $LN25@getTasksPr
+$LN24@getTasksPr:
+	mov	DWORD PTR tv239[ebp], 0
+$LN25@getTasksPr:
+	mov	ecx, DWORD PTR tv239[ebp]
+	mov	DWORD PTR $T12[ebp], ecx
+	mov	BYTE PTR __$EHRec$[ebp+8], 4
+	push	50					; 00000032H
+	mov	edx, DWORD PTR _usVal$[ebp]
+	push	edx
+	mov	eax, DWORD PTR $T12[ebp]
+	push	eax
+	mov	ecx, DWORD PTR $T11[ebp]
+	call	??0TaskFrame@@QAE@PAUModbusRtuMasterFrame@@PAXW4taskType@@@Z ; TaskFrame::TaskFrame
+	mov	DWORD PTR tv240[ebp], eax
+	jmp	SHORT $LN27@getTasksPr
+$LN26@getTasksPr:
+	mov	DWORD PTR tv240[ebp], 0
+$LN27@getTasksPr:
+	mov	ecx, DWORD PTR tv240[ebp]
+	mov	DWORD PTR $T10[ebp], ecx
+	mov	DWORD PTR __$EHRec$[ebp+8], -1
+	mov	edx, DWORD PTR $T10[ebp]
+	mov	DWORD PTR _frame$[ebp], edx
+; Line 396
+	mov	eax, DWORD PTR _frame$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [ecx+24]
+	call	?push_back@Deque@@QAEHQAVTaskFrame@@@Z	; Deque::push_back
+; Line 398
+	jmp	$LN14@getTasksPr
+$LN8@getTasksPr:
+; Line 400
+	mov	DWORD PTR _i$[ebp], 0
+	jmp	SHORT $LN6@getTasksPr
+$LN5@getTasksPr:
+	mov	eax, DWORD PTR _i$[ebp]
+	add	eax, 1
+	mov	DWORD PTR _i$[ebp], eax
+$LN6@getTasksPr:
+	mov	eax, DWORD PTR _this$[ebp]
+	movsx	ecx, WORD PTR [eax+132]
+	cmp	DWORD PTR _i$[ebp], ecx
+	jge	$LN14@getTasksPr
+; Line 402
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+140]
+	mov	edx, DWORD PTR _i$[ebp]
+	mov	eax, DWORD PTR [ecx+edx*4]
+	cmp	DWORD PTR [eax+108], 105		; 00000069H
+	jne	$LN3@getTasksPr
+; Line 404
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+140]
+	mov	edx, DWORD PTR _i$[ebp]
+	mov	eax, DWORD PTR [ecx+edx*4]
+	cmp	DWORD PTR [eax+164], 0
+	je	$LN2@getTasksPr
+; Line 407
+	push	12					; 0000000cH
+	call	??2@YAPAXI@Z				; operator new
+	add	esp, 4
+	mov	DWORD PTR $T15[ebp], eax
+	mov	DWORD PTR __$EHRec$[ebp+8], 6
+	cmp	DWORD PTR $T15[ebp], 0
+	je	$LN30@getTasksPr
+	push	32					; 00000020H
+	call	??2@YAPAXI@Z				; operator new
+	add	esp, 4
+	mov	DWORD PTR $T17[ebp], eax
+	mov	BYTE PTR __$EHRec$[ebp+8], 7
+	cmp	DWORD PTR $T17[ebp], 0
+	je	SHORT $LN28@getTasksPr
+	push	0
+	push	1000					; 000003e8H
+	push	1
+	mov	eax, DWORD PTR _propCount$[ebp]
+	add	eax, 96					; 00000060H
+	push	eax
+	push	899					; 00000383H
+	push	3
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?getAddress@AbstractDevice@@QAEGXZ	; AbstractDevice::getAddress
+	movzx	ecx, ax
+	push	ecx
+	push	2
+	mov	ecx, DWORD PTR $T17[ebp]
+	call	??0ModbusRtuMasterFrame@@QAE@HHHHHHHH@Z	; ModbusRtuMasterFrame::ModbusRtuMasterFrame
+	mov	DWORD PTR tv305[ebp], eax
+	jmp	SHORT $LN29@getTasksPr
+$LN28@getTasksPr:
+	mov	DWORD PTR tv305[ebp], 0
+$LN29@getTasksPr:
+	mov	edx, DWORD PTR tv305[ebp]
+	mov	DWORD PTR $T16[ebp], edx
+	mov	BYTE PTR __$EHRec$[ebp+8], 6
+	push	50					; 00000032H
+	mov	eax, DWORD PTR _usVal$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR $T16[ebp]
+	push	ecx
+	mov	ecx, DWORD PTR $T15[ebp]
+	call	??0TaskFrame@@QAE@PAUModbusRtuMasterFrame@@PAXW4taskType@@@Z ; TaskFrame::TaskFrame
+	mov	DWORD PTR tv306[ebp], eax
+	jmp	SHORT $LN31@getTasksPr
+$LN30@getTasksPr:
+	mov	DWORD PTR tv306[ebp], 0
+$LN31@getTasksPr:
+	mov	edx, DWORD PTR tv306[ebp]
+	mov	DWORD PTR $T14[ebp], edx
+	mov	DWORD PTR __$EHRec$[ebp+8], -1
+	mov	eax, DWORD PTR $T14[ebp]
+	mov	DWORD PTR _frame$[ebp], eax
+; Line 408
+	mov	eax, DWORD PTR _frame$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [ecx+24]
+	call	?push_back@Deque@@QAEHQAVTaskFrame@@@Z	; Deque::push_back
+; Line 410
+	jmp	$LN1@getTasksPr
+$LN2@getTasksPr:
+; Line 413
+	push	12					; 0000000cH
+	call	??2@YAPAXI@Z				; operator new
+	add	esp, 4
+	mov	DWORD PTR $T19[ebp], eax
+	mov	DWORD PTR __$EHRec$[ebp+8], 8
+	cmp	DWORD PTR $T19[ebp], 0
+	je	$LN34@getTasksPr
+	push	32					; 00000020H
+	call	??2@YAPAXI@Z				; operator new
+	add	esp, 4
+	mov	DWORD PTR $T21[ebp], eax
+	mov	BYTE PTR __$EHRec$[ebp+8], 9
+	cmp	DWORD PTR $T21[ebp], 0
+	je	SHORT $LN32@getTasksPr
+	push	0
+	push	1000					; 000003e8H
+	push	1
+	mov	eax, DWORD PTR _propCount$[ebp]
+	add	eax, 32					; 00000020H
+	push	eax
+	push	899					; 00000383H
+	push	1
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?getAddress@AbstractDevice@@QAEGXZ	; AbstractDevice::getAddress
+	movzx	ecx, ax
+	push	ecx
+	push	2
+	mov	ecx, DWORD PTR $T21[ebp]
+	call	??0ModbusRtuMasterFrame@@QAE@HHHHHHHH@Z	; ModbusRtuMasterFrame::ModbusRtuMasterFrame
+	mov	DWORD PTR tv345[ebp], eax
+	jmp	SHORT $LN33@getTasksPr
+$LN32@getTasksPr:
+	mov	DWORD PTR tv345[ebp], 0
+$LN33@getTasksPr:
+	mov	edx, DWORD PTR tv345[ebp]
+	mov	DWORD PTR $T20[ebp], edx
+	mov	BYTE PTR __$EHRec$[ebp+8], 8
+	push	50					; 00000032H
+	mov	eax, DWORD PTR _usVal$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR $T20[ebp]
+	push	ecx
+	mov	ecx, DWORD PTR $T19[ebp]
+	call	??0TaskFrame@@QAE@PAUModbusRtuMasterFrame@@PAXW4taskType@@@Z ; TaskFrame::TaskFrame
+	mov	DWORD PTR tv346[ebp], eax
+	jmp	SHORT $LN35@getTasksPr
+$LN34@getTasksPr:
+	mov	DWORD PTR tv346[ebp], 0
+$LN35@getTasksPr:
+	mov	edx, DWORD PTR tv346[ebp]
+	mov	DWORD PTR $T18[ebp], edx
+	mov	DWORD PTR __$EHRec$[ebp+8], -1
+	mov	eax, DWORD PTR $T18[ebp]
+	mov	DWORD PTR _frame$[ebp], eax
+; Line 414
+	mov	eax, DWORD PTR _frame$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [ecx+24]
+	call	?push_back@Deque@@QAEHQAVTaskFrame@@@Z	; Deque::push_back
+$LN1@getTasksPr:
+; Line 417
+	mov	eax, DWORD PTR _usVal$[ebp]
+	add	eax, 2
+	mov	DWORD PTR _usVal$[ebp], eax
+; Line 418
+	mov	eax, DWORD PTR _propCount$[ebp]
+	add	eax, 1
+	mov	DWORD PTR _propCount$[ebp], eax
+$LN3@getTasksPr:
+; Line 420
+	jmp	$LN5@getTasksPr
+$LN14@getTasksPr:
+; Line 422
+	mov	ecx, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, ecx
+	pop	ecx
+	pop	edi
+	pop	esi
+	pop	ebx
+	add	esp, 524				; 0000020cH
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+_TEXT	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+__unwindfunclet$?getTasksProperties@I7002Device@@UAEXXZ$0:
+	mov	eax, DWORD PTR $T3[ebp]
+	push	eax
+	call	??3@YAXPAX@Z				; operator delete
+	pop	ecx
+	ret	0
+__unwindfunclet$?getTasksProperties@I7002Device@@UAEXXZ$1:
+	mov	eax, DWORD PTR $T5[ebp]
+	push	eax
+	call	??3@YAXPAX@Z				; operator delete
+	pop	ecx
+	ret	0
+__unwindfunclet$?getTasksProperties@I7002Device@@UAEXXZ$2:
+	mov	eax, DWORD PTR $T7[ebp]
+	push	eax
+	call	??3@YAXPAX@Z				; operator delete
+	pop	ecx
+	ret	0
+__unwindfunclet$?getTasksProperties@I7002Device@@UAEXXZ$3:
+	mov	eax, DWORD PTR $T9[ebp]
+	push	eax
+	call	??3@YAXPAX@Z				; operator delete
+	pop	ecx
+	ret	0
+__unwindfunclet$?getTasksProperties@I7002Device@@UAEXXZ$4:
+	mov	eax, DWORD PTR $T11[ebp]
+	push	eax
+	call	??3@YAXPAX@Z				; operator delete
+	pop	ecx
+	ret	0
+__unwindfunclet$?getTasksProperties@I7002Device@@UAEXXZ$5:
+	mov	eax, DWORD PTR $T13[ebp]
+	push	eax
+	call	??3@YAXPAX@Z				; operator delete
+	pop	ecx
+	ret	0
+__unwindfunclet$?getTasksProperties@I7002Device@@UAEXXZ$6:
+	mov	eax, DWORD PTR $T15[ebp]
+	push	eax
+	call	??3@YAXPAX@Z				; operator delete
+	pop	ecx
+	ret	0
+__unwindfunclet$?getTasksProperties@I7002Device@@UAEXXZ$7:
+	mov	eax, DWORD PTR $T17[ebp]
+	push	eax
+	call	??3@YAXPAX@Z				; operator delete
+	pop	ecx
+	ret	0
+__unwindfunclet$?getTasksProperties@I7002Device@@UAEXXZ$8:
+	mov	eax, DWORD PTR $T19[ebp]
+	push	eax
+	call	??3@YAXPAX@Z				; operator delete
+	pop	ecx
+	ret	0
+__unwindfunclet$?getTasksProperties@I7002Device@@UAEXXZ$9:
+	mov	eax, DWORD PTR $T21[ebp]
+	push	eax
+	call	??3@YAXPAX@Z				; operator delete
+	pop	ecx
+	ret	0
+__ehhandler$?getTasksProperties@I7002Device@@UAEXXZ:
+	mov	edx, DWORD PTR [esp+8]
+	lea	eax, DWORD PTR [edx+12]
+	mov	ecx, DWORD PTR [edx-528]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	eax, OFFSET __ehfuncinfo$?getTasksProperties@I7002Device@@UAEXXZ
+	jmp	___CxxFrameHandler3
+text$x	ENDS
+?getTasksProperties@I7002Device@@UAEXXZ ENDP		; I7002Device::getTasksProperties
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ??1I7002Device@@UAE@XZ
 _TEXT	SEGMENT
@@ -3587,7 +4557,7 @@ _this$ = -8						; size = 4
 ??1I7002Device@@UAE@XZ PROC				; I7002Device::~I7002Device, COMDAT
 ; _this$ = ecx
 ; File d:\projects\asu\icpdas\tmminios\tmminios\deviceclasses.cpp
-; Line 373
+; Line 362
 	push	ebp
 	mov	ebp, esp
 	sub	esp, 204				; 000000ccH
@@ -3603,7 +4573,16 @@ _this$ = -8						; size = 4
 	mov	DWORD PTR _this$[ebp], ecx
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	DWORD PTR [eax], OFFSET ??_7I7002Device@@6B@
-; Line 375
+; Line 363
+	mov	esi, esp
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+28]
+	push	ecx
+	call	DWORD PTR __imp__free
+	add	esp, 4
+	cmp	esi, esp
+	call	__RTC_CheckEsp
+; Line 364
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	??1AbstractDevice@@UAE@XZ		; AbstractDevice::~AbstractDevice
 	pop	edi
@@ -3640,7 +4619,7 @@ _evMask$ = 12						; size = 2
 ??0I7002Device@@QAE@GG@Z PROC				; I7002Device::I7002Device, COMDAT
 ; _this$ = ecx
 ; File d:\projects\asu\icpdas\tmminios\tmminios\deviceclasses.cpp
-; Line 349
+; Line 335
 	push	ebp
 	mov	ebp, esp
 	push	-1
@@ -3673,25 +4652,25 @@ _evMask$ = 12						; size = 2
 	mov	DWORD PTR __$EHRec$[ebp+8], 0
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	DWORD PTR [eax], OFFSET ??_7I7002Device@@6B@
-; Line 350
+; Line 336
 	mov	DWORD PTR _i$[ebp], 0
-; Line 351
+; Line 337
 	movzx	eax, WORD PTR _addrr$[ebp]
 	mov	esi, esp
 	push	eax
 	push	OFFSET ??_C@_05EMFLCICO@I7002?$AA@
 	push	OFFSET ??_C@_09KPBEDMKF@?$CFs?5ch?3?5?$CFd?$AA@
 	mov	ecx, DWORD PTR _this$[ebp]
-	add	ecx, 24					; 00000018H
+	add	ecx, 32					; 00000020H
 	push	ecx
 	call	DWORD PTR __imp__sprintf
 	add	esp, 16					; 00000010H
 	cmp	esi, esp
 	call	__RTC_CheckEsp
-; Line 352
+; Line 338
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	DWORD PTR [eax+140], 2
-; Line 354
+	mov	DWORD PTR [eax+148], 2
+; Line 340
 	mov	DWORD PTR _i$[ebp], 0
 	jmp	SHORT $LN9@I7002Devic
 $LN8@I7002Devic:
@@ -3701,7 +4680,7 @@ $LN8@I7002Devic:
 $LN9@I7002Devic:
 	cmp	DWORD PTR _i$[ebp], 5
 	jge	SHORT $LN7@I7002Devic
-; Line 356
+; Line 342
 	push	172					; 000000acH
 	call	??2@YAPAXI@Z				; operator new
 	add	esp, 4
@@ -3722,14 +4701,14 @@ $LN13@I7002Devic:
 	mov	DWORD PTR $T2[ebp], ecx
 	mov	BYTE PTR __$EHRec$[ebp+8], 0
 	mov	edx, DWORD PTR _this$[ebp]
-	mov	eax, DWORD PTR [edx+132]
+	mov	eax, DWORD PTR [edx+140]
 	mov	ecx, DWORD PTR _i$[ebp]
 	mov	edx, DWORD PTR $T2[ebp]
 	mov	DWORD PTR [eax+ecx*4], edx
-; Line 357
+; Line 343
 	jmp	SHORT $LN8@I7002Devic
 $LN7@I7002Devic:
-; Line 359
+; Line 345
 	mov	DWORD PTR _i$[ebp], 5
 	jmp	SHORT $LN6@I7002Devic
 $LN5@I7002Devic:
@@ -3739,7 +4718,7 @@ $LN5@I7002Devic:
 $LN6@I7002Devic:
 	cmp	DWORD PTR _i$[ebp], 9
 	jge	SHORT $LN4@I7002Devic
-; Line 361
+; Line 347
 	push	172					; 000000acH
 	call	??2@YAPAXI@Z				; operator new
 	add	esp, 4
@@ -3761,14 +4740,14 @@ $LN15@I7002Devic:
 	mov	DWORD PTR $T4[ebp], ecx
 	mov	BYTE PTR __$EHRec$[ebp+8], 0
 	mov	edx, DWORD PTR _this$[ebp]
-	mov	eax, DWORD PTR [edx+132]
+	mov	eax, DWORD PTR [edx+140]
 	mov	ecx, DWORD PTR _i$[ebp]
 	mov	edx, DWORD PTR $T4[ebp]
 	mov	DWORD PTR [eax+ecx*4], edx
-; Line 362
+; Line 348
 	jmp	SHORT $LN5@I7002Devic
 $LN4@I7002Devic:
-; Line 364
+; Line 350
 	mov	DWORD PTR _i$[ebp], 9
 	jmp	SHORT $LN3@I7002Devic
 $LN2@I7002Devic:
@@ -3778,7 +4757,7 @@ $LN2@I7002Devic:
 $LN3@I7002Devic:
 	cmp	DWORD PTR _i$[ebp], 13			; 0000000dH
 	jge	SHORT $LN1@I7002Devic
-; Line 366
+; Line 352
 	push	172					; 000000acH
 	call	??2@YAPAXI@Z				; operator new
 	add	esp, 4
@@ -3800,14 +4779,14 @@ $LN17@I7002Devic:
 	mov	DWORD PTR $T6[ebp], ecx
 	mov	BYTE PTR __$EHRec$[ebp+8], 0
 	mov	edx, DWORD PTR _this$[ebp]
-	mov	eax, DWORD PTR [edx+132]
+	mov	eax, DWORD PTR [edx+140]
 	mov	ecx, DWORD PTR _i$[ebp]
 	mov	edx, DWORD PTR $T6[ebp]
 	mov	DWORD PTR [eax+ecx*4], edx
-; Line 367
+; Line 353
 	jmp	SHORT $LN2@I7002Devic
 $LN1@I7002Devic:
-; Line 369
+; Line 355
 	push	168					; 000000a8H
 	call	??2@YAPAXI@Z				; operator new
 	add	esp, 4
@@ -3828,10 +4807,27 @@ $LN19@I7002Devic:
 	mov	ecx, 4
 	imul	ecx, 13					; 0000000dH
 	mov	edx, DWORD PTR _this$[ebp]
-	mov	eax, DWORD PTR [edx+132]
+	mov	eax, DWORD PTR [edx+140]
 	mov	edx, DWORD PTR $T8[ebp]
 	mov	DWORD PTR [ecx+eax], edx
-; Line 370
+; Line 357
+	mov	esi, esp
+	push	28					; 0000001cH
+	call	DWORD PTR __imp__malloc
+	add	esp, 4
+	cmp	esi, esp
+	call	__RTC_CheckEsp
+	mov	ecx, DWORD PTR _this$[ebp]
+	mov	DWORD PTR [ecx+28], eax
+; Line 358
+	push	28					; 0000001cH
+	push	0
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+28]
+	push	ecx
+	call	_memset
+	add	esp, 12					; 0000000cH
+; Line 359
 	mov	DWORD PTR __$EHRec$[ebp+8], -1
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	ecx, DWORD PTR __$EHRec$[ebp]
@@ -3950,7 +4946,7 @@ _prop$ = 8						; size = 4
 ?saveCountsToEEPROM@X304Device@@QAEXPAVProperty@@@Z PROC ; X304Device::saveCountsToEEPROM, COMDAT
 ; _this$ = ecx
 ; File d:\projects\asu\icpdas\tmminios\tmminios\deviceclasses.cpp
-; Line 258
+; Line 244
 	push	ebp
 	mov	ebp, esp
 	sub	esp, 528				; 00000210H
@@ -3967,17 +4963,17 @@ _prop$ = 8						; size = 4
 	xor	eax, ebp
 	mov	DWORD PTR __$ArrayPad$[ebp], eax
 	mov	DWORD PTR _this$[ebp], ecx
-; Line 260
+; Line 246
 	mov	DWORD PTR _checkTime$[ebp], 300		; 0000012cH
-; Line 265
+; Line 251
 	mov	eax, DWORD PTR _prop$[ebp]
 	cmp	DWORD PTR [eax+108], 103		; 00000067H
 	jne	$LN13@saveCounts
-; Line 267
+; Line 253
 	mov	eax, DWORD PTR _prop$[ebp]
 	mov	DWORD PTR _discreteProperty$8[ebp], eax
-; Line 268
-	call	?GetTimeTicks@@YA_JXZ			; GetTimeTicks
+; Line 254
+	call	?GetTimeTicks@@YG_JXZ			; GetTimeTicks
 	mov	ecx, DWORD PTR _discreteProperty$8[ebp]
 	xor	esi, esi
 	sub	eax, DWORD PTR [ecx+180]
@@ -3996,11 +4992,11 @@ _prop$ = 8						; size = 4
 	cmp	eax, DWORD PTR tv190[ebp]
 	jbe	$LN11@saveCounts
 $LN15@saveCounts:
-; Line 270
-	call	?GetTimeTicks@@YA_JXZ			; GetTimeTicks
+; Line 256
+	call	?GetTimeTicks@@YG_JXZ			; GetTimeTicks
 	mov	ecx, DWORD PTR _discreteProperty$8[ebp]
 	mov	DWORD PTR [ecx+180], eax
-; Line 274
+; Line 260
 	mov	ecx, DWORD PTR _discreteProperty$8[ebp]
 	call	?getNativeValue@Property@@QAEPAXXZ	; Property::getNativeValue
 	mov	ecx, DWORD PTR _discreteProperty$8[ebp]
@@ -4008,63 +5004,63 @@ $LN15@saveCounts:
 	sub	edx, DWORD PTR [ecx+168]
 	mov	eax, DWORD PTR _discreteProperty$8[ebp]
 	mov	DWORD PTR [eax+176], edx
-; Line 275
+; Line 261
 	mov	eax, DWORD PTR _discreteProperty$8[ebp]
 	cmp	DWORD PTR [eax+176], 0
 	jne	SHORT $LN10@saveCounts
-; Line 278
+; Line 264
 	mov	DWORD PTR _checkTime$7[ebp], 3600	; 00000e10H
 	jmp	SHORT $LN9@saveCounts
 $LN10@saveCounts:
-; Line 283
+; Line 269
 	mov	eax, DWORD PTR _discreteProperty$8[ebp]
 	cmp	DWORD PTR [eax+176], 1
 	jb	SHORT $LN8@saveCounts
 	mov	eax, DWORD PTR _discreteProperty$8[ebp]
 	cmp	DWORD PTR [eax+176], 2
 	ja	SHORT $LN8@saveCounts
-; Line 286
+; Line 272
 	mov	DWORD PTR _checkTime$6[ebp], 1200	; 000004b0H
 	jmp	SHORT $LN9@saveCounts
 $LN8@saveCounts:
-; Line 291
+; Line 277
 	mov	eax, DWORD PTR _discreteProperty$8[ebp]
 	cmp	DWORD PTR [eax+176], 2
 	jbe	SHORT $LN6@saveCounts
 	mov	eax, DWORD PTR _discreteProperty$8[ebp]
 	cmp	DWORD PTR [eax+176], 5
 	ja	SHORT $LN6@saveCounts
-; Line 294
+; Line 280
 	mov	DWORD PTR _checkTime$5[ebp], 600	; 00000258H
 	jmp	SHORT $LN9@saveCounts
 $LN6@saveCounts:
-; Line 299
+; Line 285
 	mov	eax, DWORD PTR _discreteProperty$8[ebp]
 	cmp	DWORD PTR [eax+176], 5
 	jbe	SHORT $LN4@saveCounts
 	mov	eax, DWORD PTR _discreteProperty$8[ebp]
 	cmp	DWORD PTR [eax+176], 10			; 0000000aH
 	ja	SHORT $LN4@saveCounts
-; Line 302
+; Line 288
 	mov	DWORD PTR _checkTime$4[ebp], 300	; 0000012cH
 	jmp	SHORT $LN9@saveCounts
 $LN4@saveCounts:
-; Line 307
+; Line 293
 	mov	eax, DWORD PTR _discreteProperty$8[ebp]
 	cmp	DWORD PTR [eax+176], 10			; 0000000aH
 	jbe	SHORT $LN9@saveCounts
-; Line 310
+; Line 296
 	mov	DWORD PTR _checkTime$3[ebp], 60		; 0000003cH
 $LN9@saveCounts:
-; Line 316
+; Line 302
 	mov	ecx, DWORD PTR _discreteProperty$8[ebp]
 	call	?getNativeValue@Property@@QAEPAXXZ	; Property::getNativeValue
 	mov	ecx, DWORD PTR _discreteProperty$8[ebp]
 	mov	edx, DWORD PTR [eax]
 	mov	DWORD PTR [ecx+168], edx
 $LN11@saveCounts:
-; Line 319
-	call	?GetTimeTicks@@YA_JXZ			; GetTimeTicks
+; Line 305
+	call	?GetTimeTicks@@YG_JXZ			; GetTimeTicks
 	mov	ecx, DWORD PTR _discreteProperty$8[ebp]
 	xor	esi, esi
 	sub	eax, DWORD PTR [ecx+184]
@@ -4084,11 +5080,11 @@ $LN11@saveCounts:
 	cmp	eax, DWORD PTR tv235[ebp]
 	jbe	$LN13@saveCounts
 $LN16@saveCounts:
-; Line 321
-	call	?GetTimeTicks@@YA_JXZ			; GetTimeTicks
+; Line 307
+	call	?GetTimeTicks@@YG_JXZ			; GetTimeTicks
 	mov	ecx, DWORD PTR _discreteProperty$8[ebp]
 	mov	DWORD PTR [ecx+184], eax
-; Line 328
+; Line 314
 	mov	eax, DWORD PTR _discreteProperty$8[ebp]
 	movsx	ecx, WORD PTR [eax+188]
 	mov	esi, esp
@@ -4100,7 +5096,7 @@ $LN16@saveCounts:
 	add	esp, 12					; 0000000cH
 	cmp	esi, esp
 	call	__RTC_CheckEsp
-; Line 329
+; Line 315
 	mov	esi, esp
 	push	OFFSET ??_C@_02GMLFBBN@wb?$AA@
 	lea	eax, DWORD PTR _buff$2[ebp]
@@ -4110,7 +5106,7 @@ $LN16@saveCounts:
 	cmp	esi, esp
 	call	__RTC_CheckEsp
 	mov	DWORD PTR _fp$1[ebp], eax
-; Line 331
+; Line 317
 	mov	esi, esp
 	mov	eax, DWORD PTR _fp$1[ebp]
 	push	eax
@@ -4123,7 +5119,7 @@ $LN16@saveCounts:
 	add	esp, 16					; 00000010H
 	cmp	esi, esp
 	call	__RTC_CheckEsp
-; Line 333
+; Line 319
 	mov	esi, esp
 	mov	eax, DWORD PTR _fp$1[ebp]
 	push	eax
@@ -4132,7 +5128,7 @@ $LN16@saveCounts:
 	cmp	esi, esp
 	call	__RTC_CheckEsp
 $LN13@saveCounts:
-; Line 343
+; Line 329
 	push	edx
 	mov	ecx, ebp
 	push	eax
@@ -4180,7 +5176,7 @@ __$ArrayPad$ = -4					; size = 4
 ?loadSavedCountsFromEEPROM@X304Device@@QAEXXZ PROC	; X304Device::loadSavedCountsFromEEPROM, COMDAT
 ; _this$ = ecx
 ; File d:\projects\asu\icpdas\tmminios\tmminios\deviceclasses.cpp
-; Line 225
+; Line 211
 	push	ebp
 	mov	ebp, esp
 	sub	esp, 452				; 000001c4H
@@ -4197,7 +5193,7 @@ __$ArrayPad$ = -4					; size = 4
 	xor	eax, ebp
 	mov	DWORD PTR __$ArrayPad$[ebp], eax
 	mov	DWORD PTR _this$[ebp], ecx
-; Line 227
+; Line 213
 	mov	DWORD PTR _i$4[ebp], 0
 	jmp	SHORT $LN5@loadSavedC
 $LN4@loadSavedC:
@@ -4206,23 +5202,23 @@ $LN4@loadSavedC:
 	mov	DWORD PTR _i$4[ebp], eax
 $LN5@loadSavedC:
 	mov	eax, DWORD PTR _this$[ebp]
-	movsx	ecx, WORD PTR [eax+124]
+	movsx	ecx, WORD PTR [eax+132]
 	cmp	DWORD PTR _i$4[ebp], ecx
 	jge	$LN6@loadSavedC
-; Line 229
+; Line 215
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+132]
+	mov	ecx, DWORD PTR [eax+140]
 	mov	edx, DWORD PTR _i$4[ebp]
 	mov	eax, DWORD PTR [ecx+edx*4]
 	cmp	DWORD PTR [eax+108], 103		; 00000067H
 	jne	$LN2@loadSavedC
-; Line 231
+; Line 217
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+132]
+	mov	ecx, DWORD PTR [eax+140]
 	mov	edx, DWORD PTR _i$4[ebp]
 	mov	eax, DWORD PTR [ecx+edx*4]
 	mov	DWORD PTR _discreteProperty$3[ebp], eax
-; Line 236
+; Line 222
 	mov	eax, DWORD PTR _discreteProperty$3[ebp]
 	movsx	ecx, WORD PTR [eax+188]
 	mov	esi, esp
@@ -4234,7 +5230,7 @@ $LN5@loadSavedC:
 	add	esp, 12					; 0000000cH
 	cmp	esi, esp
 	call	__RTC_CheckEsp
-; Line 237
+; Line 223
 	mov	esi, esp
 	push	OFFSET ??_C@_02JDPG@rb?$AA@
 	lea	eax, DWORD PTR _buff$2[ebp]
@@ -4244,10 +5240,10 @@ $LN5@loadSavedC:
 	cmp	esi, esp
 	call	__RTC_CheckEsp
 	mov	DWORD PTR _fp$1[ebp], eax
-; Line 239
+; Line 225
 	cmp	DWORD PTR _fp$1[ebp], 0
 	je	SHORT $LN1@loadSavedC
-; Line 241
+; Line 227
 	mov	esi, esp
 	mov	eax, DWORD PTR _fp$1[ebp]
 	push	eax
@@ -4260,7 +5256,7 @@ $LN5@loadSavedC:
 	add	esp, 16					; 00000010H
 	cmp	esi, esp
 	call	__RTC_CheckEsp
-; Line 242
+; Line 228
 	mov	esi, esp
 	mov	eax, DWORD PTR _fp$1[ebp]
 	push	eax
@@ -4269,17 +5265,17 @@ $LN5@loadSavedC:
 	cmp	esi, esp
 	call	__RTC_CheckEsp
 $LN1@loadSavedC:
-; Line 252
+; Line 238
 	mov	ecx, DWORD PTR _discreteProperty$3[ebp]
 	call	?getNativeValue@Property@@QAEPAXXZ	; Property::getNativeValue
 	mov	ecx, DWORD PTR _discreteProperty$3[ebp]
 	mov	edx, DWORD PTR [ecx+168]
 	mov	DWORD PTR [eax], edx
 $LN2@loadSavedC:
-; Line 254
+; Line 240
 	jmp	$LN4@loadSavedC
 $LN6@loadSavedC:
-; Line 255
+; Line 241
 	push	edx
 	mov	ecx, ebp
 	push	eax
@@ -4299,7 +5295,7 @@ $LN6@loadSavedC:
 	mov	esp, ebp
 	pop	ebp
 	ret	0
-	npad	1
+	npad	2
 $LN10@loadSavedC:
 	DD	1
 	DD	$LN9@loadSavedC
@@ -4326,7 +5322,7 @@ _prop$ = 8						; size = 4
 ?setVal@X304Device@@UAEIPAVProperty@@@Z PROC		; X304Device::setVal, COMDAT
 ; _this$ = ecx
 ; File d:\projects\asu\icpdas\tmminios\tmminios\deviceclasses.cpp
-; Line 199
+; Line 185
 	push	ebp
 	mov	ebp, esp
 	sub	esp, 240				; 000000f0H
@@ -4340,10 +5336,10 @@ _prop$ = 8						; size = 4
 	rep stosd
 	pop	ecx
 	mov	DWORD PTR _this$[ebp], ecx
-; Line 200
+; Line 186
 	xor	eax, eax
 	mov	WORD PTR _val$[ebp], ax
-; Line 202
+; Line 188
 	mov	DWORD PTR _i$2[ebp], 0
 	jmp	SHORT $LN6@setVal
 $LN5@setVal:
@@ -4352,63 +5348,60 @@ $LN5@setVal:
 	mov	DWORD PTR _i$2[ebp], eax
 $LN6@setVal:
 	mov	eax, DWORD PTR _this$[ebp]
-	movsx	ecx, WORD PTR [eax+124]
+	movsx	ecx, WORD PTR [eax+132]
 	cmp	DWORD PTR _i$2[ebp], ecx
 	jge	SHORT $LN4@setVal
-; Line 204
+; Line 190
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+132]
+	mov	ecx, DWORD PTR [eax+140]
 	mov	edx, DWORD PTR _i$2[ebp]
 	mov	eax, DWORD PTR [ecx+edx*4]
 	cmp	DWORD PTR [eax+108], 104		; 00000068H
 	jne	SHORT $LN3@setVal
-; Line 206
+; Line 192
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+132]
+	mov	ecx, DWORD PTR [eax+140]
 	mov	edx, DWORD PTR _i$2[ebp]
 	mov	eax, DWORD PTR [ecx+edx*4]
 	mov	DWORD PTR _x304Property$1[ebp], eax
-; Line 208
+; Line 194
 	mov	ecx, DWORD PTR _x304Property$1[ebp]
 	call	?getValueBool@Property@@QAE?AW4bool_t@@XZ ; Property::getValueBool
 	test	eax, eax
 	je	SHORT $LN2@setVal
-; Line 210
+; Line 196
 	mov	eax, DWORD PTR _x304Property$1[ebp]
 	movsx	ecx, WORD PTR [eax+168]
 	push	ecx
-	call	?pow_2@@YAKH@Z				; pow_2
-	add	esp, 4
+	call	?pow_2@@YGKH@Z				; pow_2
 	movzx	edx, ax
 	movzx	eax, WORD PTR _val$[ebp]
 	or	eax, edx
 	mov	WORD PTR _val$[ebp], ax
-; Line 212
+; Line 198
 	jmp	SHORT $LN3@setVal
 $LN2@setVal:
-; Line 214
+; Line 200
 	mov	eax, DWORD PTR _x304Property$1[ebp]
 	movsx	ecx, WORD PTR [eax+168]
 	push	ecx
-	call	?pow_2@@YAKH@Z				; pow_2
-	add	esp, 4
+	call	?pow_2@@YGKH@Z				; pow_2
 	movzx	edx, ax
 	not	edx
 	movzx	eax, WORD PTR _val$[ebp]
 	and	eax, edx
 	mov	WORD PTR _val$[ebp], ax
 $LN3@setVal:
-; Line 217
+; Line 203
 	jmp	$LN5@setVal
 $LN4@setVal:
-; Line 219
+; Line 205
 	movzx	eax, WORD PTR _val$[ebp]
 	push	eax
-	call	?X304_Write_All_DO@@YAXI@Z		; X304_Write_All_DO
-	add	esp, 4
-; Line 221
+	call	?X304_Write_All_DO@@YGXI@Z		; X304_Write_All_DO
+; Line 207
 	xor	eax, eax
-; Line 222
+; Line 208
 	pop	edi
 	pop	esi
 	pop	ebx
@@ -4437,7 +5430,7 @@ _prop$ = 8						; size = 4
 ?getVal@X304Device@@UAEIPAVProperty@@@Z PROC		; X304Device::getVal, COMDAT
 ; _this$ = ecx
 ; File d:\projects\asu\icpdas\tmminios\tmminios\deviceclasses.cpp
-; Line 119
+; Line 105
 	push	ebp
 	mov	ebp, esp
 	sub	esp, 312				; 00000138H
@@ -4454,78 +5447,78 @@ _prop$ = 8						; size = 4
 	xor	eax, ebp
 	mov	DWORD PTR __$ArrayPad$[ebp], eax
 	mov	DWORD PTR _this$[ebp], ecx
-; Line 120
+; Line 106
 	mov	eax, DWORD PTR _this$[ebp]
-	movzx	ecx, WORD PTR [eax+144]
+	movzx	ecx, WORD PTR [eax+152]
 	test	ecx, ecx
 	jne	$LN17@getVal
-; Line 122
+; Line 108
 	xor	eax, eax
 	mov	WORD PTR _discreteInputValues$7[ebp], ax
 	xor	eax, eax
 	mov	WORD PTR _discreteOutputValues$6[ebp], ax
-; Line 123
-	call	?X304_DigitalIn@@YAGXZ			; X304_DigitalIn
+; Line 109
+	call	?X304_DigitalIn@@YGGXZ			; X304_DigitalIn
 	mov	WORD PTR _discreteInputValues$7[ebp], ax
-; Line 124
-	call	?X304_Read_All_DO@@YAGXZ		; X304_Read_All_DO
+; Line 110
+	call	?X304_Read_All_DO@@YGGXZ		; X304_Read_All_DO
 	mov	WORD PTR _discreteOutputValues$6[ebp], ax
-; Line 126
+; Line 112
 	mov	eax, DWORD PTR _this$[ebp]
-	movzx	ecx, WORD PTR [eax+144]
+	movzx	ecx, WORD PTR [eax+152]
 	mov	edx, DWORD PTR _prop$[ebp]
 	mov	DWORD PTR [edx+112], ecx
-; Line 128
+; Line 114
 	mov	eax, DWORD PTR _prop$[ebp]
 	cmp	DWORD PTR [eax+108], 102		; 00000066H
 	jne	SHORT $LN16@getVal
-; Line 130
+; Line 116
 	mov	eax, DWORD PTR _prop$[ebp]
 	mov	DWORD PTR _property$5[ebp], eax
-; Line 131
+; Line 117
 	mov	eax, DWORD PTR _property$5[ebp]
 	movsx	ecx, WORD PTR [eax+168]
 	push	ecx
-	call	?X304_AnalogIn@@YAMH@Z			; X304_AnalogIn
+	call	?X304_AnalogIn@@YGMH@Z			; X304_AnalogIn
+	push	ecx
 	fstp	DWORD PTR [esp]
 	mov	ecx, DWORD PTR _prop$[ebp]
 	call	?setValueFloat@Property@@QAEXM@Z	; Property::setValueFloat
 	jmp	$LN2@getVal
 $LN16@getVal:
-; Line 133
+; Line 119
 	mov	eax, DWORD PTR _prop$[ebp]
 	cmp	DWORD PTR [eax+108], 103		; 00000067H
 	jne	$LN14@getVal
-; Line 135
+; Line 121
 	mov	eax, DWORD PTR _prop$[ebp]
 	mov	DWORD PTR _property$4[ebp], eax
-; Line 137
+; Line 123
 	movzx	esi, WORD PTR _discreteInputValues$7[ebp]
 	mov	eax, DWORD PTR _property$4[ebp]
 	movsx	ecx, WORD PTR [eax+188]
 	push	ecx
-	call	?pow_2@@YAKH@Z				; pow_2
-	add	esp, 4
+	call	?pow_2@@YGKH@Z				; pow_2
 	movzx	edx, ax
 	and	esi, edx
 	je	SHORT $LN13@getVal
-; Line 139
+; Line 125
 	push	1
 	mov	ecx, DWORD PTR _prop$[ebp]
 	call	?setValueInt@Property@@QAEXF@Z		; Property::setValueInt
-; Line 141
+; Line 127
 	jmp	SHORT $LN12@getVal
 $LN13@getVal:
-; Line 143
+; Line 129
 	push	0
 	mov	ecx, DWORD PTR _prop$[ebp]
 	call	?setValueInt@Property@@QAEXF@Z		; Property::setValueInt
 $LN12@getVal:
-; Line 146
+; Line 132
 	mov	eax, DWORD PTR _property$4[ebp]
 	cmp	DWORD PTR [eax+164], 0
 	je	$LN11@getVal
-; Line 148
+; Line 134
 	mov	ecx, DWORD PTR _property$4[ebp]
 	call	?getValueBool@Property@@QAE?AW4bool_t@@XZ ; Property::getValueBool
 	mov	ecx, 4
@@ -4533,12 +5526,12 @@ $LN12@getVal:
 	mov	edx, DWORD PTR _property$4[ebp]
 	cmp	eax, DWORD PTR [edx+ecx+144]
 	je	$LN9@getVal
-; Line 150
+; Line 136
 	mov	ecx, DWORD PTR _property$4[ebp]
 	call	?getValueBool@Property@@QAE?AW4bool_t@@XZ ; Property::getValueBool
 	test	eax, eax
 	jne	$LN9@getVal
-; Line 152
+; Line 138
 	mov	ecx, DWORD PTR _property$4[ebp]
 	call	?getNativeValue@Property@@QAEPAXXZ	; Property::getNativeValue
 	mov	DWORD PTR tv169[ebp], eax
@@ -4547,23 +5540,23 @@ $LN12@getVal:
 	add	ecx, 1
 	mov	edx, DWORD PTR tv169[ebp]
 	mov	DWORD PTR [edx], ecx
-; Line 153
+; Line 139
 	mov	eax, DWORD PTR _property$4[ebp]
 	push	eax
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?saveCountsToEEPROM@X304Device@@QAEXPAVProperty@@@Z ; X304Device::saveCountsToEEPROM
-; Line 155
+; Line 141
 	push	500					; 000001f4H
 	push	3
 	lea	ecx, DWORD PTR _inf$3[ebp]
 	call	??0SlaveInformation@@QAE@W4regType@@J@Z	; SlaveInformation::SlaveInformation
-; Line 156
+; Line 142
 	mov	eax, DWORD PTR _property$4[ebp]
 	mov	ecx, DWORD PTR [eax+168]
 	push	ecx
 	lea	ecx, DWORD PTR _val$2[ebp]
 	call	??0uValue@@QAE@K@Z			; uValue::uValue
-; Line 157
+; Line 143
 	lea	eax, DWORD PTR _val$2[ebp]
 	push	eax
 	mov	ecx, DWORD PTR _inf$3[ebp+4]
@@ -4573,13 +5566,13 @@ $LN12@getVal:
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	ecx, DWORD PTR [eax+12]
 	call	?setInputRegisters@SlaveFactory@@QAEXUSlaveInformation@@ABTuValue@@@Z ; SlaveFactory::setInputRegisters
-; Line 159
+; Line 145
 	mov	DWORD PTR _inf$3[ebp+4], 502		; 000001f6H
-; Line 160
+; Line 146
 	mov	eax, DWORD PTR _property$4[ebp]
 	mov	ecx, DWORD PTR [eax+176]
 	mov	DWORD PTR _val$2[ebp], ecx
-; Line 161
+; Line 147
 	lea	eax, DWORD PTR _val$2[ebp]
 	push	eax
 	mov	ecx, DWORD PTR _inf$3[ebp+4]
@@ -4590,15 +5583,15 @@ $LN12@getVal:
 	mov	ecx, DWORD PTR [eax+12]
 	call	?setInputRegisters@SlaveFactory@@QAEXUSlaveInformation@@ABTuValue@@@Z ; SlaveFactory::setInputRegisters
 $LN9@getVal:
-; Line 165
+; Line 151
 	jmp	SHORT $LN8@getVal
 $LN11@getVal:
-; Line 167
+; Line 153
 	mov	ecx, DWORD PTR _property$4[ebp]
 	call	?getNativeValue@Property@@QAEPAXXZ	; Property::getNativeValue
 	mov	DWORD PTR [eax], 0
 $LN8@getVal:
-; Line 170
+; Line 156
 	mov	ecx, DWORD PTR _property$4[ebp]
 	call	?getValueBool@Property@@QAE?AW4bool_t@@XZ ; Property::getValueBool
 	mov	ecx, 4
@@ -4607,61 +5600,60 @@ $LN8@getVal:
 	mov	DWORD PTR [edx+ecx+144], eax
 	jmp	SHORT $LN2@getVal
 $LN14@getVal:
-; Line 172
+; Line 158
 	mov	eax, DWORD PTR _prop$[ebp]
 	cmp	DWORD PTR [eax+108], 104		; 00000068H
 	jne	SHORT $LN6@getVal
-; Line 174
+; Line 160
 	mov	eax, DWORD PTR _prop$[ebp]
 	mov	DWORD PTR _property$1[ebp], eax
-; Line 176
+; Line 162
 	movzx	esi, WORD PTR _discreteOutputValues$6[ebp]
 	mov	eax, DWORD PTR _property$1[ebp]
 	movsx	ecx, WORD PTR [eax+168]
 	push	ecx
-	call	?pow_2@@YAKH@Z				; pow_2
-	add	esp, 4
+	call	?pow_2@@YGKH@Z				; pow_2
 	movzx	edx, ax
 	and	esi, edx
 	je	SHORT $LN5@getVal
-; Line 178
+; Line 164
 	push	1
 	mov	ecx, DWORD PTR _prop$[ebp]
 	call	?setValueInt@Property@@QAEXF@Z		; Property::setValueInt
-; Line 180
+; Line 166
 	jmp	SHORT $LN4@getVal
 $LN5@getVal:
-; Line 182
+; Line 168
 	push	0
 	mov	ecx, DWORD PTR _prop$[ebp]
 	call	?setValueInt@Property@@QAEXF@Z		; Property::setValueInt
 $LN4@getVal:
-; Line 183
+; Line 169
 	jmp	SHORT $LN2@getVal
 $LN6@getVal:
-; Line 185
+; Line 171
 	mov	eax, DWORD PTR _prop$[ebp]
 	cmp	DWORD PTR [eax+108], 109		; 0000006dH
 	jne	SHORT $LN2@getVal
-; Line 187
+; Line 173
 	mov	eax, DWORD PTR _prop$[ebp]
 	mov	ecx, DWORD PTR [eax+112]
 	push	ecx
 	mov	ecx, DWORD PTR _prop$[ebp]
 	call	?setValueUnsignedLong@Property@@QAEXK@Z	; Property::setValueUnsignedLong
 $LN2@getVal:
-; Line 190
+; Line 176
 	jmp	SHORT $LN1@getVal
 $LN17@getVal:
-; Line 192
-	call	?X304_Init@@YAGXZ			; X304_Init
+; Line 178
+	call	?X304_Init@@YGGXZ			; X304_Init
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	WORD PTR [ecx+144], ax
+	mov	WORD PTR [ecx+152], ax
 $LN1@getVal:
-; Line 195
+; Line 181
 	mov	eax, DWORD PTR _this$[ebp]
-	movzx	eax, WORD PTR [eax+144]
-; Line 196
+	movzx	eax, WORD PTR [eax+152]
+; Line 182
 	push	edx
 	mov	ecx, ebp
 	push	eax
@@ -4681,7 +5673,7 @@ $LN1@getVal:
 	mov	esp, ebp
 	pop	ebp
 	ret	4
-	npad	1
+	npad	2
 $LN23@getVal:
 	DD	2
 	DD	$LN22@getVal
@@ -4711,7 +5703,7 @@ _this$ = -8						; size = 4
 ??1X304Device@@UAE@XZ PROC				; X304Device::~X304Device, COMDAT
 ; _this$ = ecx
 ; File d:\projects\asu\icpdas\tmminios\tmminios\deviceclasses.cpp
-; Line 114
+; Line 100
 	push	ebp
 	mov	ebp, esp
 	sub	esp, 204				; 000000ccH
@@ -4727,7 +5719,7 @@ _this$ = -8						; size = 4
 	mov	DWORD PTR _this$[ebp], ecx
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	DWORD PTR [eax], OFFSET ??_7X304Device@@6B@
-; Line 116
+; Line 102
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	??1AbstractDevice@@UAE@XZ		; AbstractDevice::~AbstractDevice
 	pop	edi
@@ -4764,7 +5756,7 @@ _evMask$ = 12						; size = 2
 ??0X304Device@@QAE@GG@Z PROC				; X304Device::X304Device, COMDAT
 ; _this$ = ecx
 ; File d:\projects\asu\icpdas\tmminios\tmminios\deviceclasses.cpp
-; Line 84
+; Line 70
 	push	ebp
 	mov	ebp, esp
 	push	-1
@@ -4797,32 +5789,32 @@ _evMask$ = 12						; size = 2
 	mov	DWORD PTR __$EHRec$[ebp+8], 0
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	DWORD PTR [eax], OFFSET ??_7X304Device@@6B@
-; Line 85
+; Line 71
 	xor	eax, eax
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	WORD PTR [ecx+144], ax
-; Line 86
+	mov	WORD PTR [ecx+152], ax
+; Line 72
 	mov	DWORD PTR _i$[ebp], 0
-; Line 87
+; Line 73
 	movzx	eax, WORD PTR _addrr$[ebp]
 	mov	esi, esp
 	push	eax
 	push	OFFSET ??_C@_04EMGBMNMA@X304?$AA@
 	push	OFFSET ??_C@_09KPBEDMKF@?$CFs?5ch?3?5?$CFd?$AA@
 	mov	ecx, DWORD PTR _this$[ebp]
-	add	ecx, 24					; 00000018H
+	add	ecx, 32					; 00000020H
 	push	ecx
 	call	DWORD PTR __imp__sprintf
 	add	esp, 16					; 00000010H
 	cmp	esi, esp
 	call	__RTC_CheckEsp
-; Line 88
+; Line 74
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	DWORD PTR [eax+140], 3
-; Line 89
+	mov	DWORD PTR [eax+148], 3
+; Line 75
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	DWORD PTR [eax+128], 2
-; Line 91
+	mov	DWORD PTR [eax+136], 2
+; Line 77
 	mov	DWORD PTR _i$[ebp], 0
 	jmp	SHORT $LN9@X304Device
 $LN8@X304Device:
@@ -4832,7 +5824,7 @@ $LN8@X304Device:
 $LN9@X304Device:
 	cmp	DWORD PTR _i$[ebp], 3
 	jge	SHORT $LN7@X304Device
-; Line 93
+; Line 79
 	push	172					; 000000acH
 	call	??2@YAPAXI@Z				; operator new
 	add	esp, 4
@@ -4853,14 +5845,14 @@ $LN13@X304Device:
 	mov	DWORD PTR $T2[ebp], ecx
 	mov	BYTE PTR __$EHRec$[ebp+8], 0
 	mov	edx, DWORD PTR _this$[ebp]
-	mov	eax, DWORD PTR [edx+132]
+	mov	eax, DWORD PTR [edx+140]
 	mov	ecx, DWORD PTR _i$[ebp]
 	mov	edx, DWORD PTR $T2[ebp]
 	mov	DWORD PTR [eax+ecx*4], edx
-; Line 94
+; Line 80
 	jmp	SHORT $LN8@X304Device
 $LN7@X304Device:
-; Line 96
+; Line 82
 	mov	DWORD PTR _i$[ebp], 3
 	jmp	SHORT $LN6@X304Device
 $LN5@X304Device:
@@ -4870,7 +5862,7 @@ $LN5@X304Device:
 $LN6@X304Device:
 	cmp	DWORD PTR _i$[ebp], 7
 	jge	SHORT $LN4@X304Device
-; Line 98
+; Line 84
 	push	192					; 000000c0H
 	call	??2@YAPAXI@Z				; operator new
 	add	esp, 4
@@ -4892,14 +5884,14 @@ $LN15@X304Device:
 	mov	DWORD PTR $T4[ebp], ecx
 	mov	BYTE PTR __$EHRec$[ebp+8], 0
 	mov	edx, DWORD PTR _this$[ebp]
-	mov	eax, DWORD PTR [edx+132]
+	mov	eax, DWORD PTR [edx+140]
 	mov	ecx, DWORD PTR _i$[ebp]
 	mov	edx, DWORD PTR $T4[ebp]
 	mov	DWORD PTR [eax+ecx*4], edx
-; Line 99
+; Line 85
 	jmp	SHORT $LN5@X304Device
 $LN4@X304Device:
-; Line 101
+; Line 87
 	mov	DWORD PTR _i$[ebp], 7
 	jmp	SHORT $LN3@X304Device
 $LN2@X304Device:
@@ -4909,7 +5901,7 @@ $LN2@X304Device:
 $LN3@X304Device:
 	cmp	DWORD PTR _i$[ebp], 11			; 0000000bH
 	jge	SHORT $LN1@X304Device
-; Line 103
+; Line 89
 	push	172					; 000000acH
 	call	??2@YAPAXI@Z				; operator new
 	add	esp, 4
@@ -4931,14 +5923,14 @@ $LN17@X304Device:
 	mov	DWORD PTR $T6[ebp], ecx
 	mov	BYTE PTR __$EHRec$[ebp+8], 0
 	mov	edx, DWORD PTR _this$[ebp]
-	mov	eax, DWORD PTR [edx+132]
+	mov	eax, DWORD PTR [edx+140]
 	mov	ecx, DWORD PTR _i$[ebp]
 	mov	edx, DWORD PTR $T6[ebp]
 	mov	DWORD PTR [eax+ecx*4], edx
-; Line 104
+; Line 90
 	jmp	SHORT $LN2@X304Device
 $LN1@X304Device:
-; Line 106
+; Line 92
 	push	168					; 000000a8H
 	call	??2@YAPAXI@Z				; operator new
 	add	esp, 4
@@ -4959,17 +5951,17 @@ $LN19@X304Device:
 	mov	ecx, 4
 	imul	ecx, 11					; 0000000bH
 	mov	edx, DWORD PTR _this$[ebp]
-	mov	eax, DWORD PTR [edx+132]
+	mov	eax, DWORD PTR [edx+140]
 	mov	edx, DWORD PTR $T8[ebp]
 	mov	DWORD PTR [ecx+eax], edx
-; Line 108
-	call	?X304_Init@@YAGXZ			; X304_Init
+; Line 94
+	call	?X304_Init@@YGGXZ			; X304_Init
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	WORD PTR [ecx+144], ax
-; Line 110
+	mov	WORD PTR [ecx+152], ax
+; Line 96
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?loadSavedCountsFromEEPROM@X304Device@@QAEXXZ ; X304Device::loadSavedCountsFromEEPROM
-; Line 111
+; Line 97
 	mov	DWORD PTR __$EHRec$[ebp+8], -1
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	ecx, DWORD PTR __$EHRec$[ebp]
@@ -5067,82 +6059,231 @@ $LN1@scalar:
 ??_GBskzhDevice@@UAEPAXI@Z ENDP				; BskzhDevice::`scalar deleting destructor'
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
-;	COMDAT ?setVal@BskzhDevice@@UAEIPAVProperty@@@Z
+;	COMDAT ?update@BskzhDevice@@UAEXXZ
 _TEXT	SEGMENT
+_i$1 = -44						; size = 4
+_values$2 = -32						; size = 4
+_i$3 = -20						; size = 4
 _this$ = -8						; size = 4
-_prop$ = 8						; size = 4
-?setVal@BskzhDevice@@UAEIPAVProperty@@@Z PROC		; BskzhDevice::setVal, COMDAT
+?update@BskzhDevice@@UAEXXZ PROC			; BskzhDevice::update, COMDAT
 ; _this$ = ecx
 ; File d:\projects\asu\icpdas\tmminios\tmminios\deviceclasses.cpp
-; Line 76
+; Line 41
 	push	ebp
 	mov	ebp, esp
-	sub	esp, 204				; 000000ccH
+	sub	esp, 240				; 000000f0H
 	push	ebx
 	push	esi
 	push	edi
 	push	ecx
-	lea	edi, DWORD PTR [ebp-204]
-	mov	ecx, 51					; 00000033H
+	lea	edi, DWORD PTR [ebp-240]
+	mov	ecx, 60					; 0000003cH
 	mov	eax, -858993460				; ccccccccH
 	rep stosd
 	pop	ecx
 	mov	DWORD PTR _this$[ebp], ecx
-; Line 77
-	xor	eax, eax
-; Line 78
+; Line 42
+	mov	DWORD PTR _i$3[ebp], 0
+	jmp	SHORT $LN11@update
+$LN10@update:
+	mov	eax, DWORD PTR _i$3[ebp]
+	add	eax, 1
+	mov	DWORD PTR _i$3[ebp], eax
+$LN11@update:
+	mov	eax, DWORD PTR _this$[ebp]
+	movsx	ecx, WORD PTR [eax+132]
+	cmp	DWORD PTR _i$3[ebp], ecx
+	jge	$LN9@update
+; Line 44
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+28]
+	mov	DWORD PTR _values$2[ebp], ecx
+; Line 46
+	mov	DWORD PTR _i$1[ebp], 0
+	jmp	SHORT $LN8@update
+$LN7@update:
+	mov	eax, DWORD PTR _i$1[ebp]
+	add	eax, 1
+	mov	DWORD PTR _i$1[ebp], eax
+$LN8@update:
+	mov	eax, DWORD PTR _this$[ebp]
+	movsx	ecx, WORD PTR [eax+132]
+	cmp	DWORD PTR _i$1[ebp], ecx
+	jge	$LN6@update
+; Line 48
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+140]
+	mov	edx, DWORD PTR _i$1[ebp]
+	mov	eax, DWORD PTR [ecx+edx*4]
+	cmp	DWORD PTR [eax+108], 100		; 00000064H
+	jne	$LN5@update
+; Line 50
+	mov	eax, 2
+	imul	eax, 0
+	mov	ecx, DWORD PTR _values$2[ebp]
+	movzx	edx, WORD PTR [ecx+eax]
+	cvtsi2sd xmm0, edx
+	mulsd	xmm0, QWORD PTR __real@41f0000000000000
+	mov	eax, 2
+	shl	eax, 0
+	mov	ecx, DWORD PTR _values$2[ebp]
+	movzx	edx, WORD PTR [ecx+eax]
+	cvtsi2sd xmm1, edx
+	mulsd	xmm1, QWORD PTR __real@40f0000000000000
+	addsd	xmm0, xmm1
+	mov	eax, 2
+	shl	eax, 1
+	mov	ecx, DWORD PTR _values$2[ebp]
+	movzx	edx, WORD PTR [ecx+eax]
+	cvtsi2sd xmm1, edx
+	addsd	xmm0, xmm1
+	cvtsd2ss xmm0, xmm0
+	cvtss2sd xmm0, xmm0
+	divsd	xmm0, QWORD PTR __real@416312d000000000
+	cvtsd2ss xmm0, xmm0
+	push	ecx
+	movss	DWORD PTR [esp], xmm0
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+140]
+	mov	edx, DWORD PTR _i$1[ebp]
+	mov	ecx, DWORD PTR [ecx+edx*4]
+	call	?setValueFloat@Property@@QAEXM@Z	; Property::setValueFloat
+	jmp	$LN1@update
+$LN5@update:
+; Line 52
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+140]
+	mov	edx, DWORD PTR _i$1[ebp]
+	mov	eax, DWORD PTR [ecx+edx*4]
+	cmp	DWORD PTR [eax+108], 101		; 00000065H
+	jne	$LN3@update
+; Line 54
+	mov	eax, 2
+	imul	eax, 9
+	mov	ecx, DWORD PTR _values$2[ebp]
+	movzx	edx, WORD PTR [ecx+eax]
+	cvtsi2sd xmm0, edx
+	mulsd	xmm0, QWORD PTR __real@41f0000000000000
+	mov	eax, 2
+	imul	eax, 10					; 0000000aH
+	mov	ecx, DWORD PTR _values$2[ebp]
+	movzx	edx, WORD PTR [ecx+eax]
+	cvtsi2sd xmm1, edx
+	mulsd	xmm1, QWORD PTR __real@40f0000000000000
+	addsd	xmm0, xmm1
+	mov	eax, 2
+	imul	eax, 11					; 0000000bH
+	mov	ecx, DWORD PTR _values$2[ebp]
+	movzx	edx, WORD PTR [ecx+eax]
+	cvtsi2sd xmm1, edx
+	addsd	xmm0, xmm1
+	cvtsd2ss xmm0, xmm0
+	cvtss2sd xmm0, xmm0
+	divsd	xmm0, QWORD PTR __real@416312d000000000
+	cvtsd2ss xmm0, xmm0
+	push	ecx
+	movss	DWORD PTR [esp], xmm0
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+140]
+	mov	edx, DWORD PTR _i$1[ebp]
+	mov	ecx, DWORD PTR [ecx+edx*4]
+	call	?setValueFloat@Property@@QAEXM@Z	; Property::setValueFloat
+	jmp	SHORT $LN1@update
+$LN3@update:
+; Line 56
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+140]
+	mov	edx, DWORD PTR _i$1[ebp]
+	mov	eax, DWORD PTR [ecx+edx*4]
+	cmp	DWORD PTR [eax+108], 109		; 0000006dH
+	jne	SHORT $LN1@update
+; Line 58
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+16]
+	push	ecx
+	mov	edx, DWORD PTR _this$[ebp]
+	mov	eax, DWORD PTR [edx+140]
+	mov	ecx, DWORD PTR _i$1[ebp]
+	mov	ecx, DWORD PTR [eax+ecx*4]
+	call	?setValueUnsignedLong@Property@@QAEXK@Z	; Property::setValueUnsignedLong
+$LN1@update:
+; Line 60
+	jmp	$LN7@update
+$LN6@update:
+; Line 62
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?update@AbstractDevice@@UAEXXZ		; AbstractDevice::update
+; Line 63
+	jmp	$LN10@update
+$LN9@update:
+; Line 64
 	pop	edi
 	pop	esi
 	pop	ebx
+	add	esp, 240				; 000000f0H
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
 	mov	esp, ebp
 	pop	ebp
-	ret	4
-?setVal@BskzhDevice@@UAEIPAVProperty@@@Z ENDP		; BskzhDevice::setVal
+	ret	0
+?update@BskzhDevice@@UAEXXZ ENDP			; BskzhDevice::update
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
-;	COMDAT ?getVal@BskzhDevice@@UAEIPAVProperty@@@Z
+;	COMDAT ?getTasksProperties@BskzhDevice@@UAEXXZ
 _TEXT	SEGMENT
-$T1 = -492						; size = 16
-$T2 = -468						; size = 16
-$T3 = -444						; size = 16
-$T4 = -420						; size = 16
-$T5 = -396						; size = 16
-$T6 = -372						; size = 16
-_sv$7 = -156						; size = 8
-_regs$8 = -140						; size = 48
-_sv$9 = -84						; size = 8
-_regs$10 = -68						; size = 48
-_this$ = -12						; size = 4
-__$ArrayPad$ = -4					; size = 4
-_prop$ = 8						; size = 4
-?getVal@BskzhDevice@@UAEIPAVProperty@@@Z PROC		; BskzhDevice::getVal, COMDAT
+tv133 = -284						; size = 4
+tv132 = -280						; size = 4
+$T2 = -272						; size = 4
+$T3 = -260						; size = 4
+$T4 = -248						; size = 4
+$T5 = -236						; size = 4
+_frame$ = -32						; size = 4
+_this$ = -20						; size = 4
+__$EHRec$ = -12						; size = 12
+?getTasksProperties@BskzhDevice@@UAEXXZ PROC		; BskzhDevice::getTasksProperties, COMDAT
 ; _this$ = ecx
 ; File d:\projects\asu\icpdas\tmminios\tmminios\deviceclasses.cpp
-; Line 30
+; Line 34
 	push	ebp
 	mov	ebp, esp
-	sub	esp, 496				; 000001f0H
+	push	-1
+	push	__ehhandler$?getTasksProperties@BskzhDevice@@UAEXXZ
+	mov	eax, DWORD PTR fs:0
+	push	eax
+	sub	esp, 272				; 00000110H
 	push	ebx
 	push	esi
 	push	edi
 	push	ecx
-	lea	edi, DWORD PTR [ebp-496]
-	mov	ecx, 124				; 0000007cH
+	lea	edi, DWORD PTR [ebp-284]
+	mov	ecx, 68					; 00000044H
 	mov	eax, -858993460				; ccccccccH
 	rep stosd
 	pop	ecx
 	mov	eax, DWORD PTR ___security_cookie
 	xor	eax, ebp
-	mov	DWORD PTR __$ArrayPad$[ebp], eax
+	push	eax
+	lea	eax, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, eax
 	mov	DWORD PTR _this$[ebp], ecx
-; Line 31
-	mov	eax, DWORD PTR _prop$[ebp]
-	cmp	DWORD PTR [eax+108], 100		; 00000064H
-	jne	$LN5@getVal
-; Line 33
+; Line 36
+	push	12					; 0000000cH
+	call	??2@YAPAXI@Z				; operator new
+	add	esp, 4
+	mov	DWORD PTR $T3[ebp], eax
+	mov	DWORD PTR __$EHRec$[ebp+8], 0
+	cmp	DWORD PTR $T3[ebp], 0
+	je	$LN5@getTasksPr
+	push	32					; 00000020H
+	call	??2@YAPAXI@Z				; operator new
+	add	esp, 4
+	mov	DWORD PTR $T5[ebp], eax
+	mov	BYTE PTR __$EHRec$[ebp+8], 1
+	cmp	DWORD PTR $T5[ebp], 0
+	je	SHORT $LN3@getTasksPr
 	push	0
 	push	1000					; 000003e8H
-	push	3
+	push	20					; 00000014H
 	push	50					; 00000032H
 	push	899					; 00000383H
 	push	4
@@ -5151,323 +6292,78 @@ _prop$ = 8						; size = 4
 	movzx	eax, ax
 	push	eax
 	push	2
-	call	?ModbusRTU_Master@@YAHHHHHHHHH@Z	; ModbusRTU_Master
-	add	esp, 32					; 00000020H
-	mov	ecx, DWORD PTR _prop$[ebp]
-	mov	DWORD PTR [ecx+112], eax
-; Line 35
-	push	OFFSET ??_FuValue@@QAEXXZ
-	push	3
-	push	16					; 00000010H
-	lea	eax, DWORD PTR _regs$10[ebp]
+	mov	ecx, DWORD PTR $T5[ebp]
+	call	??0ModbusRtuMasterFrame@@QAE@HHHHHHHH@Z	; ModbusRtuMasterFrame::ModbusRtuMasterFrame
+	mov	DWORD PTR tv132[ebp], eax
+	jmp	SHORT $LN4@getTasksPr
+$LN3@getTasksPr:
+	mov	DWORD PTR tv132[ebp], 0
+$LN4@getTasksPr:
+	mov	ecx, DWORD PTR tv132[ebp]
+	mov	DWORD PTR $T4[ebp], ecx
+	mov	BYTE PTR __$EHRec$[ebp+8], 0
+	push	50					; 00000032H
+	mov	edx, DWORD PTR _this$[ebp]
+	mov	eax, DWORD PTR [edx+28]
 	push	eax
-	call	??_H@YGXPAXIHP6EPAX0@Z@Z
-; Line 36
-	push	899					; 00000383H
-	push	3
-	lea	ecx, DWORD PTR _sv$9[ebp]
-	call	??0SlaveInformation@@QAE@W4regType@@J@Z	; SlaveInformation::SlaveInformation
-; Line 38
-	push	2
-	mov	eax, DWORD PTR _sv$9[ebp+4]
+	mov	ecx, DWORD PTR $T4[ebp]
+	push	ecx
+	mov	ecx, DWORD PTR $T3[ebp]
+	call	??0TaskFrame@@QAE@PAUModbusRtuMasterFrame@@PAXW4taskType@@@Z ; TaskFrame::TaskFrame
+	mov	DWORD PTR tv133[ebp], eax
+	jmp	SHORT $LN6@getTasksPr
+$LN5@getTasksPr:
+	mov	DWORD PTR tv133[ebp], 0
+$LN6@getTasksPr:
+	mov	edx, DWORD PTR tv133[ebp]
+	mov	DWORD PTR $T2[ebp], edx
+	mov	DWORD PTR __$EHRec$[ebp+8], -1
+	mov	eax, DWORD PTR $T2[ebp]
+	mov	DWORD PTR _frame$[ebp], eax
+; Line 37
+	mov	eax, DWORD PTR _frame$[ebp]
 	push	eax
-	mov	ecx, DWORD PTR _sv$9[ebp]
-	push	ecx
-	lea	edx, DWORD PTR $T1[ebp]
-	push	edx
-	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+12]
-	call	?getInputRegisters@SlaveFactory@@QAE?ATuValue@@USlaveInformation@@I@Z ; SlaveFactory::getInputRegisters
-	mov	ecx, 16					; 00000010H
-	imul	ecx, 0
-	lea	edx, DWORD PTR _regs$10[ebp+ecx]
-	mov	ecx, DWORD PTR [eax]
-	mov	DWORD PTR [edx], ecx
-	mov	ecx, DWORD PTR [eax+4]
-	mov	DWORD PTR [edx+4], ecx
-	mov	ecx, DWORD PTR [eax+8]
-	mov	DWORD PTR [edx+8], ecx
-	mov	eax, DWORD PTR [eax+12]
-	mov	DWORD PTR [edx+12], eax
-; Line 39
-	mov	eax, DWORD PTR _sv$9[ebp+4]
-	add	eax, 1
-	mov	DWORD PTR _sv$9[ebp+4], eax
-; Line 40
-	push	2
-	mov	eax, DWORD PTR _sv$9[ebp+4]
-	push	eax
-	mov	ecx, DWORD PTR _sv$9[ebp]
-	push	ecx
-	lea	edx, DWORD PTR $T2[ebp]
-	push	edx
-	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+12]
-	call	?getInputRegisters@SlaveFactory@@QAE?ATuValue@@USlaveInformation@@I@Z ; SlaveFactory::getInputRegisters
-	mov	ecx, 16					; 00000010H
-	shl	ecx, 0
-	lea	edx, DWORD PTR _regs$10[ebp+ecx]
-	mov	ecx, DWORD PTR [eax]
-	mov	DWORD PTR [edx], ecx
-	mov	ecx, DWORD PTR [eax+4]
-	mov	DWORD PTR [edx+4], ecx
-	mov	ecx, DWORD PTR [eax+8]
-	mov	DWORD PTR [edx+8], ecx
-	mov	eax, DWORD PTR [eax+12]
-	mov	DWORD PTR [edx+12], eax
-; Line 41
-	mov	eax, DWORD PTR _sv$9[ebp+4]
-	add	eax, 1
-	mov	DWORD PTR _sv$9[ebp+4], eax
-; Line 42
-	push	2
-	mov	eax, DWORD PTR _sv$9[ebp+4]
-	push	eax
-	mov	ecx, DWORD PTR _sv$9[ebp]
-	push	ecx
-	lea	edx, DWORD PTR $T3[ebp]
-	push	edx
-	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+12]
-	call	?getInputRegisters@SlaveFactory@@QAE?ATuValue@@USlaveInformation@@I@Z ; SlaveFactory::getInputRegisters
-	mov	ecx, 16					; 00000010H
-	shl	ecx, 1
-	lea	edx, DWORD PTR _regs$10[ebp+ecx]
-	mov	ecx, DWORD PTR [eax]
-	mov	DWORD PTR [edx], ecx
-	mov	ecx, DWORD PTR [eax+4]
-	mov	DWORD PTR [edx+4], ecx
-	mov	ecx, DWORD PTR [eax+8]
-	mov	DWORD PTR [edx+8], ecx
-	mov	eax, DWORD PTR [eax+12]
-	mov	DWORD PTR [edx+12], eax
-; Line 44
-	mov	eax, 16					; 00000010H
-	imul	eax, 0
-	cvtsi2sd xmm0, DWORD PTR _regs$10[ebp+eax]
-	mulsd	xmm0, QWORD PTR __real@41f0000000000000
-	mov	ecx, 16					; 00000010H
-	shl	ecx, 0
-	cvtsi2sd xmm1, DWORD PTR _regs$10[ebp+ecx]
-	mulsd	xmm1, QWORD PTR __real@40f0000000000000
-	addsd	xmm0, xmm1
-	mov	edx, 16					; 00000010H
-	shl	edx, 1
-	cvtsi2sd xmm1, DWORD PTR _regs$10[ebp+edx]
-	addsd	xmm0, xmm1
-	cvtsd2ss xmm0, xmm0
-	cvtss2sd xmm0, xmm0
-	divsd	xmm0, QWORD PTR __real@416312d000000000
-	cvtsd2ss xmm0, xmm0
-	push	ecx
-	movss	DWORD PTR [esp], xmm0
-	mov	ecx, DWORD PTR _prop$[ebp]
-	call	?setValueFloat@Property@@QAEXM@Z	; Property::setValueFloat
-	jmp	$LN1@getVal
-$LN5@getVal:
-; Line 49
-	mov	eax, DWORD PTR _prop$[ebp]
-	cmp	DWORD PTR [eax+108], 101		; 00000065H
-	jne	$LN3@getVal
-; Line 51
-	push	0
-	push	1000					; 000003e8H
-	push	3
-	push	59					; 0000003bH
-	push	899					; 00000383H
-	push	4
 	mov	ecx, DWORD PTR _this$[ebp]
-	call	?getAddress@AbstractDevice@@QAEGXZ	; AbstractDevice::getAddress
-	movzx	eax, ax
-	push	eax
-	push	2
-	call	?ModbusRTU_Master@@YAHHHHHHHHH@Z	; ModbusRTU_Master
-	add	esp, 32					; 00000020H
-	mov	ecx, DWORD PTR _prop$[ebp]
-	mov	DWORD PTR [ecx+112], eax
-; Line 53
-	push	OFFSET ??_FuValue@@QAEXXZ
-	push	3
-	push	16					; 00000010H
-	lea	eax, DWORD PTR _regs$8[ebp]
-	push	eax
-	call	??_H@YGXPAXIHP6EPAX0@Z@Z
-; Line 54
-	push	899					; 00000383H
-	push	3
-	lea	ecx, DWORD PTR _sv$7[ebp]
-	call	??0SlaveInformation@@QAE@W4regType@@J@Z	; SlaveInformation::SlaveInformation
-; Line 56
-	push	2
-	mov	eax, DWORD PTR _sv$7[ebp+4]
-	push	eax
-	mov	ecx, DWORD PTR _sv$7[ebp]
-	push	ecx
-	lea	edx, DWORD PTR $T4[ebp]
-	push	edx
-	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+12]
-	call	?getInputRegisters@SlaveFactory@@QAE?ATuValue@@USlaveInformation@@I@Z ; SlaveFactory::getInputRegisters
-	mov	ecx, 16					; 00000010H
-	imul	ecx, 0
-	lea	edx, DWORD PTR _regs$8[ebp+ecx]
-	mov	ecx, DWORD PTR [eax]
-	mov	DWORD PTR [edx], ecx
-	mov	ecx, DWORD PTR [eax+4]
-	mov	DWORD PTR [edx+4], ecx
-	mov	ecx, DWORD PTR [eax+8]
-	mov	DWORD PTR [edx+8], ecx
-	mov	eax, DWORD PTR [eax+12]
-	mov	DWORD PTR [edx+12], eax
-; Line 57
-	mov	eax, DWORD PTR _sv$7[ebp+4]
-	add	eax, 1
-	mov	DWORD PTR _sv$7[ebp+4], eax
-; Line 58
-	push	2
-	mov	eax, DWORD PTR _sv$7[ebp+4]
-	push	eax
-	mov	ecx, DWORD PTR _sv$7[ebp]
-	push	ecx
-	lea	edx, DWORD PTR $T5[ebp]
-	push	edx
-	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+12]
-	call	?getInputRegisters@SlaveFactory@@QAE?ATuValue@@USlaveInformation@@I@Z ; SlaveFactory::getInputRegisters
-	mov	ecx, 16					; 00000010H
-	shl	ecx, 0
-	lea	edx, DWORD PTR _regs$8[ebp+ecx]
-	mov	ecx, DWORD PTR [eax]
-	mov	DWORD PTR [edx], ecx
-	mov	ecx, DWORD PTR [eax+4]
-	mov	DWORD PTR [edx+4], ecx
-	mov	ecx, DWORD PTR [eax+8]
-	mov	DWORD PTR [edx+8], ecx
-	mov	eax, DWORD PTR [eax+12]
-	mov	DWORD PTR [edx+12], eax
-; Line 59
-	mov	eax, DWORD PTR _sv$7[ebp+4]
-	add	eax, 1
-	mov	DWORD PTR _sv$7[ebp+4], eax
-; Line 60
-	push	2
-	mov	eax, DWORD PTR _sv$7[ebp+4]
-	push	eax
-	mov	ecx, DWORD PTR _sv$7[ebp]
-	push	ecx
-	lea	edx, DWORD PTR $T6[ebp]
-	push	edx
-	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+12]
-	call	?getInputRegisters@SlaveFactory@@QAE?ATuValue@@USlaveInformation@@I@Z ; SlaveFactory::getInputRegisters
-	mov	ecx, 16					; 00000010H
-	shl	ecx, 1
-	lea	edx, DWORD PTR _regs$8[ebp+ecx]
-	mov	ecx, DWORD PTR [eax]
-	mov	DWORD PTR [edx], ecx
-	mov	ecx, DWORD PTR [eax+4]
-	mov	DWORD PTR [edx+4], ecx
-	mov	ecx, DWORD PTR [eax+8]
-	mov	DWORD PTR [edx+8], ecx
-	mov	eax, DWORD PTR [eax+12]
-	mov	DWORD PTR [edx+12], eax
-; Line 62
-	mov	eax, 16					; 00000010H
-	imul	eax, 0
-	cvtsi2sd xmm0, DWORD PTR _regs$8[ebp+eax]
-	mulsd	xmm0, QWORD PTR __real@41f0000000000000
-	mov	ecx, 16					; 00000010H
-	shl	ecx, 0
-	cvtsi2sd xmm1, DWORD PTR _regs$8[ebp+ecx]
-	mulsd	xmm1, QWORD PTR __real@40f0000000000000
-	addsd	xmm0, xmm1
-	mov	edx, 16					; 00000010H
-	shl	edx, 1
-	cvtsi2sd xmm1, DWORD PTR _regs$8[ebp+edx]
-	addsd	xmm0, xmm1
-	cvtsd2ss xmm0, xmm0
-	cvtss2sd xmm0, xmm0
-	divsd	xmm0, QWORD PTR __real@416312d000000000
-	cvtsd2ss xmm0, xmm0
-	push	ecx
-	movss	DWORD PTR [esp], xmm0
-	mov	ecx, DWORD PTR _prop$[ebp]
-	call	?setValueFloat@Property@@QAEXM@Z	; Property::setValueFloat
-	jmp	SHORT $LN1@getVal
-$LN3@getVal:
-; Line 67
-	mov	eax, DWORD PTR _prop$[ebp]
-	cmp	DWORD PTR [eax+108], 109		; 0000006dH
-	jne	SHORT $LN1@getVal
-; Line 69
-	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+16]
-	push	ecx
-	mov	ecx, DWORD PTR _prop$[ebp]
-	call	?setValueUnsignedLong@Property@@QAEXK@Z	; Property::setValueUnsignedLong
-$LN1@getVal:
-; Line 72
-	mov	eax, DWORD PTR _prop$[ebp]
-	mov	eax, DWORD PTR [eax+112]
-; Line 73
-	push	edx
-	mov	ecx, ebp
-	push	eax
-	lea	edx, DWORD PTR $LN13@getVal
-	call	@_RTC_CheckStackVars@8
-	pop	eax
-	pop	edx
+	mov	ecx, DWORD PTR [ecx+24]
+	call	?push_back@Deque@@QAEHQAVTaskFrame@@@Z	; Deque::push_back
+; Line 38
+	mov	ecx, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, ecx
+	pop	ecx
 	pop	edi
 	pop	esi
 	pop	ebx
-	mov	ecx, DWORD PTR __$ArrayPad$[ebp]
-	xor	ecx, ebp
-	call	@__security_check_cookie@4
-	add	esp, 496				; 000001f0H
+	add	esp, 284				; 0000011cH
 	cmp	ebp, esp
 	call	__RTC_CheckEsp
 	mov	esp, ebp
 	pop	ebp
-	ret	4
-	npad	3
-$LN13@getVal:
-	DD	4
-	DD	$LN12@getVal
-$LN12@getVal:
-	DD	-68					; ffffffbcH
-	DD	48					; 00000030H
-	DD	$LN8@getVal
-	DD	-84					; ffffffacH
-	DD	8
-	DD	$LN9@getVal
-	DD	-140					; ffffff74H
-	DD	48					; 00000030H
-	DD	$LN10@getVal
-	DD	-156					; ffffff64H
-	DD	8
-	DD	$LN11@getVal
-$LN11@getVal:
-	DB	115					; 00000073H
-	DB	118					; 00000076H
-	DB	0
-$LN10@getVal:
-	DB	114					; 00000072H
-	DB	101					; 00000065H
-	DB	103					; 00000067H
-	DB	115					; 00000073H
-	DB	0
-$LN9@getVal:
-	DB	115					; 00000073H
-	DB	118					; 00000076H
-	DB	0
-$LN8@getVal:
-	DB	114					; 00000072H
-	DB	101					; 00000065H
-	DB	103					; 00000067H
-	DB	115					; 00000073H
-	DB	0
-?getVal@BskzhDevice@@UAEIPAVProperty@@@Z ENDP		; BskzhDevice::getVal
+	ret	0
 _TEXT	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+__unwindfunclet$?getTasksProperties@BskzhDevice@@UAEXXZ$0:
+	mov	eax, DWORD PTR $T3[ebp]
+	push	eax
+	call	??3@YAXPAX@Z				; operator delete
+	pop	ecx
+	ret	0
+__unwindfunclet$?getTasksProperties@BskzhDevice@@UAEXXZ$1:
+	mov	eax, DWORD PTR $T5[ebp]
+	push	eax
+	call	??3@YAXPAX@Z				; operator delete
+	pop	ecx
+	ret	0
+__ehhandler$?getTasksProperties@BskzhDevice@@UAEXXZ:
+	mov	edx, DWORD PTR [esp+8]
+	lea	eax, DWORD PTR [edx+12]
+	mov	ecx, DWORD PTR [edx-288]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	eax, OFFSET __ehfuncinfo$?getTasksProperties@BskzhDevice@@UAEXXZ
+	jmp	___CxxFrameHandler3
+text$x	ENDS
+?getTasksProperties@BskzhDevice@@UAEXXZ ENDP		; BskzhDevice::getTasksProperties
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ??1BskzhDevice@@UAE@XZ
 _TEXT	SEGMENT
@@ -5475,7 +6371,7 @@ _this$ = -8						; size = 4
 ??1BskzhDevice@@UAE@XZ PROC				; BskzhDevice::~BskzhDevice, COMDAT
 ; _this$ = ecx
 ; File d:\projects\asu\icpdas\tmminios\tmminios\deviceclasses.cpp
-; Line 26
+; Line 29
 	push	ebp
 	mov	ebp, esp
 	sub	esp, 204				; 000000ccH
@@ -5491,7 +6387,16 @@ _this$ = -8						; size = 4
 	mov	DWORD PTR _this$[ebp], ecx
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	DWORD PTR [eax], OFFSET ??_7BskzhDevice@@6B@
-; Line 27
+; Line 30
+	mov	esi, esp
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+28]
+	push	ecx
+	call	DWORD PTR __imp__free
+	add	esp, 4
+	cmp	esi, esp
+	call	__RTC_CheckEsp
+; Line 31
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	??1AbstractDevice@@UAE@XZ		; AbstractDevice::~AbstractDevice
 	pop	edi
@@ -5564,7 +6469,7 @@ _evMask$ = 12						; size = 2
 	push	OFFSET ??_C@_05GGIAPBHH@BSKZH?$AA@
 	push	OFFSET ??_C@_09KPBEDMKF@?$CFs?5ch?3?5?$CFd?$AA@
 	mov	ecx, DWORD PTR _this$[ebp]
-	add	ecx, 24					; 00000018H
+	add	ecx, 32					; 00000020H
 	push	ecx
 	call	DWORD PTR __imp__sprintf
 	add	esp, 16					; 00000010H
@@ -5572,7 +6477,7 @@ _evMask$ = 12						; size = 2
 	call	__RTC_CheckEsp
 ; Line 19
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	DWORD PTR [eax+140], 1
+	mov	DWORD PTR [eax+148], 1
 ; Line 20
 	push	168					; 000000a8H
 	call	??2@YAPAXI@Z				; operator new
@@ -5594,7 +6499,7 @@ $LN4@BskzhDevic:
 	mov	ecx, 4
 	imul	ecx, 0
 	mov	edx, DWORD PTR _this$[ebp]
-	mov	eax, DWORD PTR [edx+132]
+	mov	eax, DWORD PTR [edx+140]
 	mov	edx, DWORD PTR $T2[ebp]
 	mov	DWORD PTR [ecx+eax], edx
 ; Line 21
@@ -5618,7 +6523,7 @@ $LN6@BskzhDevic:
 	mov	ecx, 4
 	shl	ecx, 0
 	mov	edx, DWORD PTR _this$[ebp]
-	mov	eax, DWORD PTR [edx+132]
+	mov	eax, DWORD PTR [edx+140]
 	mov	edx, DWORD PTR $T4[ebp]
 	mov	DWORD PTR [ecx+eax], edx
 ; Line 22
@@ -5642,10 +6547,27 @@ $LN8@BskzhDevic:
 	mov	ecx, 4
 	shl	ecx, 1
 	mov	edx, DWORD PTR _this$[ebp]
-	mov	eax, DWORD PTR [edx+132]
+	mov	eax, DWORD PTR [edx+140]
 	mov	edx, DWORD PTR $T6[ebp]
 	mov	DWORD PTR [ecx+eax], edx
-; Line 23
+; Line 24
+	mov	esi, esp
+	push	40					; 00000028H
+	call	DWORD PTR __imp__malloc
+	add	esp, 4
+	cmp	esi, esp
+	call	__RTC_CheckEsp
+	mov	ecx, DWORD PTR _this$[ebp]
+	mov	DWORD PTR [ecx+28], eax
+; Line 25
+	push	40					; 00000028H
+	push	0
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+28]
+	push	ecx
+	call	_memset
+	add	esp, 12					; 0000000cH
+; Line 26
 	mov	DWORD PTR __$EHRec$[ebp+8], -1
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	ecx, DWORD PTR __$EHRec$[ebp]
@@ -5695,11 +6617,14 @@ __ehhandler$??0BskzhDevice@@QAE@GG@Z:
 text$x	ENDS
 ??0BskzhDevice@@QAE@GG@Z ENDP				; BskzhDevice::BskzhDevice
 ; Function compile flags: /Odtp /RTCsu /ZI
-;	COMDAT ??_FuValue@@QAEXXZ
+;	COMDAT ?setVal@AbstractDevice@@UAEIPAVProperty@@@Z
 _TEXT	SEGMENT
 _this$ = -8						; size = 4
-??_FuValue@@QAEXXZ PROC					; uValue::`default constructor closure', COMDAT
+___formal$ = 8						; size = 4
+?setVal@AbstractDevice@@UAEIPAVProperty@@@Z PROC	; AbstractDevice::setVal, COMDAT
 ; _this$ = ecx
+; File d:\projects\asu\icpdas\tmminios\tmminios\model.h
+; Line 62
 	push	ebp
 	mov	ebp, esp
 	sub	esp, 204				; 000000ccH
@@ -5713,19 +6638,45 @@ _this$ = -8						; size = 4
 	rep stosd
 	pop	ecx
 	mov	DWORD PTR _this$[ebp], ecx
-	push	0
-	mov	ecx, DWORD PTR _this$[ebp]
-	call	??0uValue@@QAE@K@Z			; uValue::uValue
+	xor	eax, eax
 	pop	edi
 	pop	esi
 	pop	ebx
-	add	esp, 204				; 000000ccH
-	cmp	ebp, esp
-	call	__RTC_CheckEsp
 	mov	esp, ebp
 	pop	ebp
-	ret	0
-??_FuValue@@QAEXXZ ENDP					; uValue::`default constructor closure'
+	ret	4
+?setVal@AbstractDevice@@UAEIPAVProperty@@@Z ENDP	; AbstractDevice::setVal
+_TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ?getVal@AbstractDevice@@UAEIPAVProperty@@@Z
+_TEXT	SEGMENT
+_this$ = -8						; size = 4
+___formal$ = 8						; size = 4
+?getVal@AbstractDevice@@UAEIPAVProperty@@@Z PROC	; AbstractDevice::getVal, COMDAT
+; _this$ = ecx
+; File d:\projects\asu\icpdas\tmminios\tmminios\model.h
+; Line 61
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 204				; 000000ccH
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-204]
+	mov	ecx, 51					; 00000033H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	DWORD PTR _this$[ebp], ecx
+	xor	eax, eax
+	pop	edi
+	pop	esi
+	pop	ebx
+	mov	esp, ebp
+	pop	ebp
+	ret	4
+?getVal@AbstractDevice@@UAEIPAVProperty@@@Z ENDP	; AbstractDevice::getVal
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ??0uValue@@QAE@K@Z
@@ -5735,7 +6686,7 @@ _ulval_param$ = 8					; size = 4
 ??0uValue@@QAE@K@Z PROC					; uValue::uValue, COMDAT
 ; _this$ = ecx
 ; File d:\projects\asu\icpdas\tmminios\tmminios\headersinclude.h
-; Line 121
+; Line 153
 	push	ebp
 	mov	ebp, esp
 	sub	esp, 204				; 000000ccH
@@ -5749,18 +6700,18 @@ _ulval_param$ = 8					; size = 4
 	rep stosd
 	pop	ecx
 	mov	DWORD PTR _this$[ebp], ecx
-; Line 123
+; Line 155
 	push	16					; 00000010H
 	push	0
 	mov	eax, DWORD PTR _this$[ebp]
 	push	eax
 	call	_memset
 	add	esp, 12					; 0000000cH
-; Line 124
+; Line 156
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	ecx, DWORD PTR _ulval_param$[ebp]
 	mov	DWORD PTR [eax], ecx
-; Line 125
+; Line 157
 	mov	eax, DWORD PTR _this$[ebp]
 	pop	edi
 	pop	esi
@@ -5774,15 +6725,21 @@ _ulval_param$ = 8					; size = 4
 ??0uValue@@QAE@K@Z ENDP					; uValue::uValue
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
-;	COMDAT ??0SlaveInformation@@QAE@W4regType@@J@Z
+;	COMDAT ??0ModbusRtuMasterFrame@@QAE@HHHHHHHH@Z
 _TEXT	SEGMENT
 _this$ = -8						; size = 4
-_registType$ = 8					; size = 4
-_registNumber$ = 12					; size = 4
-??0SlaveInformation@@QAE@W4regType@@J@Z PROC		; SlaveInformation::SlaveInformation, COMDAT
+_com$ = 8						; size = 4
+_modbusAddr$ = 12					; size = 4
+_function$ = 16						; size = 4
+_to$ = 20						; size = 4
+_from$ = 24						; size = 4
+_howMuch$ = 28						; size = 4
+_tmout$ = 32						; size = 4
+_mode$ = 36						; size = 4
+??0ModbusRtuMasterFrame@@QAE@HHHHHHHH@Z PROC		; ModbusRtuMasterFrame::ModbusRtuMasterFrame, COMDAT
 ; _this$ = ecx
 ; File d:\projects\asu\icpdas\tmminios\tmminios\headersinclude.h
-; Line 89
+; Line 127
 	push	ebp
 	mov	ebp, esp
 	sub	esp, 204				; 000000ccH
@@ -5796,22 +6753,97 @@ _registNumber$ = 12					; size = 4
 	rep stosd
 	pop	ecx
 	mov	DWORD PTR _this$[ebp], ecx
-; Line 91
+; Line 129
+	push	32					; 00000020H
+	push	0
+	mov	eax, DWORD PTR _this$[ebp]
+	push	eax
+	call	_memset
+	add	esp, 12					; 0000000cH
+; Line 130
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR _com$[ebp]
+	mov	DWORD PTR [eax], ecx
+; Line 131
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR _modbusAddr$[ebp]
+	mov	DWORD PTR [eax+4], ecx
+; Line 132
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR _function$[ebp]
+	mov	DWORD PTR [eax+8], ecx
+; Line 133
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR _to$[ebp]
+	mov	DWORD PTR [eax+12], ecx
+; Line 134
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR _from$[ebp]
+	mov	DWORD PTR [eax+16], ecx
+; Line 135
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR _howMuch$[ebp]
+	mov	DWORD PTR [eax+20], ecx
+; Line 136
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR _tmout$[ebp]
+	mov	DWORD PTR [eax+24], ecx
+; Line 137
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR _mode$[ebp]
+	mov	DWORD PTR [eax+28], ecx
+; Line 138
+	mov	eax, DWORD PTR _this$[ebp]
+	pop	edi
+	pop	esi
+	pop	ebx
+	add	esp, 204				; 000000ccH
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	32					; 00000020H
+??0ModbusRtuMasterFrame@@QAE@HHHHHHHH@Z ENDP		; ModbusRtuMasterFrame::ModbusRtuMasterFrame
+_TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ??0SlaveInformation@@QAE@W4regType@@J@Z
+_TEXT	SEGMENT
+_this$ = -8						; size = 4
+_registType$ = 8					; size = 4
+_registNumber$ = 12					; size = 4
+??0SlaveInformation@@QAE@W4regType@@J@Z PROC		; SlaveInformation::SlaveInformation, COMDAT
+; _this$ = ecx
+; File d:\projects\asu\icpdas\tmminios\tmminios\headersinclude.h
+; Line 95
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 204				; 000000ccH
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-204]
+	mov	ecx, 51					; 00000033H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	DWORD PTR _this$[ebp], ecx
+; Line 97
 	push	8
 	push	0
 	mov	eax, DWORD PTR _this$[ebp]
 	push	eax
 	call	_memset
 	add	esp, 12					; 0000000cH
-; Line 92
+; Line 98
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	ecx, DWORD PTR _registType$[ebp]
 	mov	DWORD PTR [eax], ecx
-; Line 93
+; Line 99
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	ecx, DWORD PTR _registNumber$[ebp]
 	mov	DWORD PTR [eax+4], ecx
-; Line 94
+; Line 100
 	mov	eax, DWORD PTR _this$[ebp]
 	pop	edi
 	pop	esi
@@ -5932,7 +6964,7 @@ __Errval$ = 12						; size = 4
 	test	eax, eax
 	je	SHORT $LN2@default_er
 ; Line 643
-	call	?generic_category@std@@YAABVerror_category@1@XZ ; std::generic_category
+	call	?generic_category@std@@YGABVerror_category@1@XZ ; std::generic_category
 	push	eax
 	mov	eax, DWORD PTR __Errval$[ebp]
 	push	eax
@@ -5944,7 +6976,7 @@ __Errval$ = 12						; size = 4
 	jmp	SHORT $LN3@default_er
 $LN2@default_er:
 ; Line 645
-	call	?system_category@std@@YAABVerror_category@1@XZ ; std::system_category
+	call	?system_category@std@@YGABVerror_category@1@XZ ; std::system_category
 	push	eax
 	mov	eax, DWORD PTR __Errval$[ebp]
 	push	eax
@@ -7047,9 +8079,9 @@ _this$ = -8						; size = 4
 ??0error_category@std@@QAE@XZ ENDP			; std::error_category::error_category
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
-;	COMDAT ?system_category@std@@YAABVerror_category@1@XZ
+;	COMDAT ?system_category@std@@YGABVerror_category@1@XZ
 _TEXT	SEGMENT
-?system_category@std@@YAABVerror_category@1@XZ PROC	; std::system_category, COMDAT
+?system_category@std@@YGABVerror_category@1@XZ PROC	; std::system_category, COMDAT
 ; File c:\program files (x86)\microsoft visual studio 11.0\vc\include\system_error
 ; Line 679
 	push	ebp
@@ -7071,12 +8103,12 @@ _TEXT	SEGMENT
 	mov	esp, ebp
 	pop	ebp
 	ret	0
-?system_category@std@@YAABVerror_category@1@XZ ENDP	; std::system_category
+?system_category@std@@YGABVerror_category@1@XZ ENDP	; std::system_category
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
-;	COMDAT ?generic_category@std@@YAABVerror_category@1@XZ
+;	COMDAT ?generic_category@std@@YGABVerror_category@1@XZ
 _TEXT	SEGMENT
-?generic_category@std@@YAABVerror_category@1@XZ PROC	; std::generic_category, COMDAT
+?generic_category@std@@YGABVerror_category@1@XZ PROC	; std::generic_category, COMDAT
 ; File c:\program files (x86)\microsoft visual studio 11.0\vc\include\system_error
 ; Line 669
 	push	ebp
@@ -7098,15 +8130,15 @@ _TEXT	SEGMENT
 	mov	esp, ebp
 	pop	ebp
 	ret	0
-?generic_category@std@@YAABVerror_category@1@XZ ENDP	; std::generic_category
+?generic_category@std@@YGABVerror_category@1@XZ ENDP	; std::generic_category
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
-;	COMDAT ??$_Debug_pointer@D@std@@YAXPBDPB_WI@Z
+;	COMDAT ??$_Debug_pointer@D@std@@YGXPBDPB_WI@Z
 _TEXT	SEGMENT
 __First$ = 8						; size = 4
 __File$ = 12						; size = 4
 __Line$ = 16						; size = 4
-??$_Debug_pointer@D@std@@YAXPBDPB_WI@Z PROC		; std::_Debug_pointer<char>, COMDAT
+??$_Debug_pointer@D@std@@YGXPBDPB_WI@Z PROC		; std::_Debug_pointer<char>, COMDAT
 ; File c:\program files (x86)\microsoft visual studio 11.0\vc\include\xutility
 ; Line 610
 	push	ebp
@@ -7143,8 +8175,8 @@ $LN2@Debug_poin:
 	call	__RTC_CheckEsp
 	mov	esp, ebp
 	pop	ebp
-	ret	0
-??$_Debug_pointer@D@std@@YAXPBDPB_WI@Z ENDP		; std::_Debug_pointer<char>
+	ret	12					; 0000000cH
+??$_Debug_pointer@D@std@@YGXPBDPB_WI@Z ENDP		; std::_Debug_pointer<char>
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ?_Xran@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEXXZ
@@ -7284,8 +8316,7 @@ $LN4@Tidy:
 	push	eax
 	mov	ecx, DWORD PTR __Ptr$3[ebp]
 	push	ecx
-	call	??$addressof@D@std@@YAPADAAD@Z		; std::addressof<char>
-	add	esp, 4
+	call	??$addressof@D@std@@YGPADAAD@Z		; std::addressof<char>
 	push	eax
 	mov	edx, DWORD PTR _this$[ebp]
 	add	edx, 4
@@ -8046,8 +9077,7 @@ __Ptr$ = 8						; size = 4
 	push	OFFSET ??_C@_1IO@BLKJFPEG@?$AAc?$AA?3?$AA?2?$AAp?$AAr?$AAo?$AAg?$AAr?$AAa?$AAm?$AA?5?$AAf?$AAi?$AAl?$AAe?$AAs?$AA?5?$AA?$CI?$AAx?$AA8?$AA6?$AA?$CJ?$AA?2?$AAm?$AAi?$AAc?$AAr?$AAo?$AAs?$AAo?$AAf?$AAt@
 	mov	eax, DWORD PTR __Ptr$[ebp]
 	push	eax
-	call	??$_Debug_pointer@D@std@@YAXPBDPB_WI@Z	; std::_Debug_pointer<char>
-	add	esp, 12					; 0000000cH
+	call	??$_Debug_pointer@D@std@@YGXPBDPB_WI@Z	; std::_Debug_pointer<char>
 ; Line 1144
 	mov	eax, DWORD PTR __Ptr$[ebp]
 	push	eax
@@ -8101,8 +9131,7 @@ __Count$ = 12						; size = 4
 	push	OFFSET ??_C@_1IO@BLKJFPEG@?$AAc?$AA?3?$AA?2?$AAp?$AAr?$AAo?$AAg?$AAr?$AAa?$AAm?$AA?5?$AAf?$AAi?$AAl?$AAe?$AAs?$AA?5?$AA?$CI?$AAx?$AA8?$AA6?$AA?$CJ?$AA?2?$AAm?$AAi?$AAc?$AAr?$AAo?$AAs?$AAo?$AAf?$AAt@
 	mov	eax, DWORD PTR __Ptr$[ebp]
 	push	eax
-	call	??$_Debug_pointer@D@std@@YAXPBDPB_WI@Z	; std::_Debug_pointer<char>
-	add	esp, 12					; 0000000cH
+	call	??$_Debug_pointer@D@std@@YGXPBDPB_WI@Z	; std::_Debug_pointer<char>
 $LN3@assign:
 ; Line 1129
 	mov	eax, DWORD PTR __Ptr$[ebp]
@@ -8728,8 +9757,7 @@ _this$ = -8						; size = 4
 	mov	ecx, DWORD PTR _this$[ebp]
 	mov	edx, DWORD PTR [ecx+4]
 	push	edx
-	call	??$addressof@D@std@@YAPADAAD@Z		; std::addressof<char>
-	add	esp, 4
+	call	??$addressof@D@std@@YGPADAAD@Z		; std::addressof<char>
 	mov	DWORD PTR tv72[ebp], eax
 	jmp	SHORT $LN4@Myptr
 $LN3@Myptr:
@@ -8779,8 +9807,7 @@ _this$ = -8						; size = 4
 	mov	ecx, DWORD PTR _this$[ebp]
 	mov	edx, DWORD PTR [ecx+4]
 	push	edx
-	call	??$addressof@D@std@@YAPADAAD@Z		; std::addressof<char>
-	add	esp, 4
+	call	??$addressof@D@std@@YGPADAAD@Z		; std::addressof<char>
 	mov	DWORD PTR tv72[ebp], eax
 	jmp	SHORT $LN4@Myptr
 $LN3@Myptr:
@@ -8870,8 +9897,7 @@ _this$ = -8						; size = 4
 ; Line 914
 	mov	eax, DWORD PTR _this$[ebp]
 	push	eax
-	call	?max_size@?$allocator_traits@V?$allocator@D@std@@@std@@SAIABV?$allocator@D@2@@Z ; std::allocator_traits<std::allocator<char> >::max_size
-	add	esp, 4
+	call	?max_size@?$allocator_traits@V?$allocator@D@std@@@std@@SGIABV?$allocator@D@2@@Z ; std::allocator_traits<std::allocator<char> >::max_size
 ; Line 915
 	pop	edi
 	pop	esi
@@ -9002,10 +10028,10 @@ _this$ = -8						; size = 4
 ??0?$_Wrap_alloc@V?$allocator@D@std@@@std@@QAE@XZ ENDP	; std::_Wrap_alloc<std::allocator<char> >::_Wrap_alloc<std::allocator<char> >
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
-;	COMDAT ?max_size@?$allocator_traits@V?$allocator@D@std@@@std@@SAIABV?$allocator@D@2@@Z
+;	COMDAT ?max_size@?$allocator_traits@V?$allocator@D@std@@@std@@SGIABV?$allocator@D@2@@Z
 _TEXT	SEGMENT
 __Al$ = 8						; size = 4
-?max_size@?$allocator_traits@V?$allocator@D@std@@@std@@SAIABV?$allocator@D@2@@Z PROC ; std::allocator_traits<std::allocator<char> >::max_size, COMDAT
+?max_size@?$allocator_traits@V?$allocator@D@std@@@std@@SGIABV?$allocator@D@2@@Z PROC ; std::allocator_traits<std::allocator<char> >::max_size, COMDAT
 ; File c:\program files (x86)\microsoft visual studio 11.0\vc\include\xmemory0
 ; Line 761
 	push	ebp
@@ -9030,8 +10056,8 @@ __Al$ = 8						; size = 4
 	call	__RTC_CheckEsp
 	mov	esp, ebp
 	pop	ebp
-	ret	0
-?max_size@?$allocator_traits@V?$allocator@D@std@@@std@@SAIABV?$allocator@D@2@@Z ENDP ; std::allocator_traits<std::allocator<char> >::max_size
+	ret	4
+?max_size@?$allocator_traits@V?$allocator@D@std@@@std@@SGIABV?$allocator@D@2@@Z ENDP ; std::allocator_traits<std::allocator<char> >::max_size
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ?max_size@?$allocator@D@std@@QBEIXZ
@@ -9091,8 +10117,7 @@ __Count$ = 8						; size = 4
 	push	0
 	mov	eax, DWORD PTR __Count$[ebp]
 	push	eax
-	call	??$_Allocate@D@std@@YAPADIPAD@Z		; std::_Allocate<char>
-	add	esp, 8
+	call	??$_Allocate@D@std@@YGPADIPAD@Z		; std::_Allocate<char>
 ; Line 592
 	pop	edi
 	pop	esi
@@ -9500,49 +10525,5 @@ __Where$ = 12						; size = 4
 	pop	ebp
 	ret	0
 ??2@YAPAXIPAX@Z ENDP					; operator new
-_TEXT	ENDS
-; Function compile flags: /Odtp /RTCsu /ZI
-;	COMDAT ??_H@YGXPAXIHP6EPAX0@Z@Z
-_TEXT	SEGMENT
-___t$ = 8						; size = 4
-___s$ = 12						; size = 4
-___n$ = 16						; size = 4
-___f$ = 20						; size = 4
-??_H@YGXPAXIHP6EPAX0@Z@Z PROC				; `vector constructor iterator', COMDAT
-	push	ebp
-	mov	ebp, esp
-	sub	esp, 192				; 000000c0H
-	push	ebx
-	push	esi
-	push	edi
-	lea	edi, DWORD PTR [ebp-192]
-	mov	ecx, 48					; 00000030H
-	mov	eax, -858993460				; ccccccccH
-	rep stosd
-$LN2@vector:
-	mov	eax, DWORD PTR ___n$[ebp]
-	sub	eax, 1
-	mov	DWORD PTR ___n$[ebp], eax
-	js	SHORT $LN3@vector
-	mov	esi, esp
-	mov	ecx, DWORD PTR ___t$[ebp]
-	call	DWORD PTR ___f$[ebp]
-	cmp	esi, esp
-	call	__RTC_CheckEsp
-	mov	eax, DWORD PTR ___t$[ebp]
-	add	eax, DWORD PTR ___s$[ebp]
-	mov	DWORD PTR ___t$[ebp], eax
-	jmp	SHORT $LN2@vector
-$LN3@vector:
-	pop	edi
-	pop	esi
-	pop	ebx
-	add	esp, 192				; 000000c0H
-	cmp	ebp, esp
-	call	__RTC_CheckEsp
-	mov	esp, ebp
-	pop	ebp
-	ret	16					; 00000010H
-??_H@YGXPAXIHP6EPAX0@Z@Z ENDP				; `vector constructor iterator'
 _TEXT	ENDS
 END

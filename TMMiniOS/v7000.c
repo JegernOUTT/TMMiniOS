@@ -119,7 +119,7 @@ int UserCmd(unsigned char *Cmd,unsigned char *Response)
 	//sprintf((char *)Response,"%s",Cmd);
 	return 1;		// return ok
 }
-
+          
 
 void PortUserStart(int skt)
 {
@@ -137,7 +137,6 @@ void PortUserStart(int skt)
     skt: socket number assigned to the TCP/IP client.
     */
                       
-    
     skt=skt; //do nothing
 }
 

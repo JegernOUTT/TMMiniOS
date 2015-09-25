@@ -2,6 +2,10 @@
 
 #ifdef MVS_2012_32BIT 
 
+#ifdef _DEBUG
+	#include <vld.h>
+#endif
+
 using namespace std;
 
 extern void UserInit();
@@ -121,6 +125,7 @@ unsigned short X304_Read_All_DO()
 	return DOValues;
 }
 
+
 int main()
 {
 	/*
@@ -130,8 +135,9 @@ int main()
 	!		-Подумать про прерывания
 	*/
 	UserInit();
+
 	while (true)
-	{
+	{  
 		UserLoopFun();
 	}
 

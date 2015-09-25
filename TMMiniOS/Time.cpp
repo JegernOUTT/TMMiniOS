@@ -18,3 +18,4 @@ void Time::timeUpdate()
 }
 
 #endif VC_1992_16BIT
+

@@ -10,6 +10,8 @@ class Event;
 class Property;
 class SlaveAddressHandler;
 class SlaveFactory;
+class Deque;
+class TaskFrame;
 
 /*
 ///   AbstractDevice   ///
@@ -26,6 +28,8 @@ protected:
 	SlaveFactory & slave;
 	unsigned long  readErrror;
 	unsigned long  writeErrror;
+	Deque & deque;
+	void * nativeValue;
 
 public:
 	char				name[100];
@@ -54,10 +58,15 @@ public:
 
 	unsigned int		processRead(Property *);
 	unsigned int		processWrite(Property *);
-	virtual unsigned int getVal(Property *) = 0;
-	virtual unsigned int setVal(Property *) = 0;
-	void				writeDataToSlave(Property*);
-	void				logProperty(Property*);
+	virtual unsigned int getVal(Property *){return 0;};
+	virtual unsigned int setVal(Property *){return 0;};
+	void				writeDataToSlave();
+	void				logProperty();
+	bool_t				isOwnProperty(Property *);
+
+	virtual void		getTasksProperties();
+	virtual void		getTasksEvents();
+	virtual void		update();
 
 	void				eventsProcess();
 	void				constructEvents();
@@ -69,12 +78,13 @@ class BskzhDevice:
 public:
 	BskzhDevice(unsigned short int, unsigned short);
 	virtual ~BskzhDevice(void);
-	unsigned int getVal(Property*) 
+	void getTasksProperties() 
 #ifdef MVS_2012_32BIT 
 		override 
 #endif
 		;
-	unsigned int setVal(Property*) 
+
+	void update() 
 #ifdef MVS_2012_32BIT 
 		override 
 #endif
@@ -100,6 +110,7 @@ public:
 		override 
 #endif
 		;
+
 	void loadSavedCountsFromEEPROM();
 	void saveCountsToEEPROM(Property * prop);
 };
@@ -110,12 +121,20 @@ class I7002Device:
 public:
 	I7002Device(unsigned short int, unsigned short);
 	virtual ~I7002Device(void);
-	unsigned int getVal(Property*) 
+	
+	void getTasksProperties() 
 #ifdef MVS_2012_32BIT 
 		override 
 #endif
 		;
-	unsigned int setVal(Property*) 
+
+	void getTasksEvents() 
+#ifdef MVS_2012_32BIT 
+		override 
+#endif
+		;
+
+	void update() 
 #ifdef MVS_2012_32BIT 
 		override 
 #endif
@@ -128,12 +147,13 @@ class I7041Device:
 public:
 	I7041Device(unsigned short int, unsigned short);
 	virtual ~I7041Device(void);
-	unsigned int getVal(Property*) 
+
+	void getTasksProperties() 
 #ifdef MVS_2012_32BIT 
 		override 
 #endif
 		;
-	unsigned int setVal(Property*) 
+	void update() 
 #ifdef MVS_2012_32BIT 
 		override 
 #endif
@@ -148,6 +168,10 @@ public:
 class CycleController
 {
 private:
+	Deque & deque;
+	int frameIsProcessed;
+	TaskFrame * currentFrame;
+
 	unsigned short	deviceMask;
 	unsigned short deviceMaskOld;
 	void	readDeviceMask();
@@ -159,11 +183,10 @@ private:
 
 	void checkMask();
 	void propertiesToSlave();
-	void next();
 	void eventsProcess();
 	void readNonModbusDevices();
-
-private:
+	void readModbusDevices();
+	void nativeToRegisters();
 	void constructNewDevices();
 
 private:
@@ -183,7 +206,7 @@ private:
 	bool_t readProcess;
 
 public:
-	static	CycleController& getInstance();
+	static	CycleController & getInstance();
 
 	void	init();
 	void	read();
@@ -227,6 +250,7 @@ class SwitchOnSignalEvent : public Event
 private:
 	const int channelNumberFrom;
 	const int channelNumberTo;
+	bool_t lastVal;
 
 public:
 	SwitchOnSignalEvent(AbstractDevice *);
@@ -427,7 +451,6 @@ public:
 
 
 
-
 /*
 ///   SlaveAddressHandler   ///
 */
@@ -470,6 +493,66 @@ public:
 	uValue getHoldingRegisters(SlaveInformation, size_t);
 
 	void registerClear		(SlaveInformation, int);
+};
+
+
+
+/*
+///	Deque	///
+*/
+class Deque
+{
+private:
+	unsigned long *				err;
+	ModbusRtuMasterFrame *		errFrame;
+	long						maxElementCount;
+	TaskFrame **				memAlloc;
+	TaskFrame **				head;
+	TaskFrame **				back;
+	long						elementCount;
+	
+	static Deque *				deque;
+	Deque						(long);	
+	~Deque						(void);
+	Deque & operator=			(Deque &);
+
+public:
+	TaskFrame *	operator[]		(const int) const;  
+	bool_t	isEmpty				();
+
+	int		push_back			(TaskFrame * const);
+	int		push_front			(TaskFrame * const);
+	TaskFrame *	pop_back		();
+	TaskFrame *	pop_front		();
+
+	int		stabilize			();
+	long	getElementCount		();
+	long	getMaxElementCount	();
+	int		clearDeque_unsafe	();
+
+	static	Deque & getInstance	(long);
+};
+
+
+
+/*
+///	TaskFrame	///
+*/
+class TaskFrame
+{
+public:
+	ModbusRtuMasterFrame *	frame;
+	void *					nativeValueAddr;
+	taskType				taskTypeParameter;
+
+	TaskFrame(ModbusRtuMasterFrame * msFrame, void * nativeVal, taskType type)
+		: frame(msFrame)
+	{
+		frame = msFrame;
+		nativeValueAddr = nativeVal;
+		taskTypeParameter = type;
+	}
+	~TaskFrame(){};
 };
 
 
